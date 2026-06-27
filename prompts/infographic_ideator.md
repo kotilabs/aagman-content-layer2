@@ -51,7 +51,7 @@ Interesting but insufficient data points:
 
 ## Output format
 
-Write to `layer2/drafts/signal-{id}-infographic-concepts.md`.
+Write to `drafts/signal-{id}-infographic-concepts.md`.
 
 ```markdown
 # Infographic Concepts: {signal title}
@@ -89,4 +89,4 @@ Proceed with [concept numbers] / Hold — no strong visual case.
 
 ## Correction mode
 
-If this is a revision pass, read `layer2/reviews/signal-{id}/markets-review.md`. Apply the infographic-specific feedback and the cross-surface consistency section. Fix every blocker — especially claim-vs-data misalignment. Address should-fix items unless you have a defended reason not to. Optional suggestions are at your discretion. Update the concepts file in place. If the reviewer introduces new sources worth keeping, append them to `layer2/research/signal-{id}.md`.
+If this is a revision pass, read `reviews/signal-{id}/markets-review.md`. Apply the infographic-specific feedback and the cross-surface consistency section. Fix every blocker — especially claim-vs-data misalignment. Address should-fix items unless you have a defended reason not to. Optional suggestions are at your discretion. Update the concepts file in place. If the reviewer introduces new sources worth keeping, append them to `research/signal-{id}.md`.

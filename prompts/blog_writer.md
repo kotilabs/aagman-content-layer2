@@ -201,4 +201,4 @@ Proceed accordingly.
 
 ## Correction mode
 
-If this is a revision pass, read `layer2/reviews/signal-{id}/markets-review.md`. Apply the blog-specific feedback and the cross-surface consistency section. Fix every blocker. Address should-fix items unless you have a defended reason not to. Optional suggestions are at your discretion, but never at the cost of voice or accuracy. Update the draft in place. If the reviewer introduces new sources worth keeping, append them to `layer2/research/signal-{id}.md`.
+If this is a revision pass, read `reviews/signal-{id}/markets-review.md`. Apply the blog-specific feedback and the cross-surface consistency section. Fix every blocker. Address should-fix items unless you have a defended reason not to. Optional suggestions are at your discretion, but never at the cost of voice or accuracy. Update the draft in place. If the reviewer introduces new sources worth keeping, append them to `research/signal-{id}.md`.

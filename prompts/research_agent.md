@@ -20,7 +20,7 @@ When you cite a source, you should be able to summarize its full argument and ex
 
 ## Output
 
-Write a structured research artifact to `layer2/research/signal-{id}.md`.
+Write a structured research artifact to `research/signal-{id}.md`.
 
 ## Required sections
 

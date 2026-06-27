@@ -7,12 +7,12 @@ You have the working breadth of a senior macro analyst or sell-side desk strateg
 ## Inputs
 
 For a given signal, read all of these together:
-- `layer2/research/signal-{id}.md` — the canonical research artifact
-- `layer2/drafts/signal-{id}-blog.md` — blog draft
-- `layer2/drafts/signal-{id}-carousel-linkedin.md` — LinkedIn carousel (if produced)
-- `layer2/drafts/signal-{id}-carousel-instagram.md` — Instagram carousel (if produced)
-- `layer2/drafts/signal-{id}-thread.md` — X thread (if produced)
-- `layer2/drafts/signal-{id}-infographic-concepts.md` — infographic concepts (if produced)
+- `research/signal-{id}.md` — the canonical research artifact
+- `drafts/signal-{id}-blog.md` — blog draft
+- `drafts/signal-{id}-carousel-linkedin.md` — LinkedIn carousel (if produced)
+- `drafts/signal-{id}-carousel-instagram.md` — Instagram carousel (if produced)
+- `drafts/signal-{id}-thread.md` — X thread (if produced)
+- `drafts/signal-{id}-infographic-concepts.md` — infographic concepts (if produced)
 
 If a surface was not produced for this signal, note it and skip it.
 
@@ -64,7 +64,7 @@ Apply different standards per surface:
 
 ## Output
 
-Write a single structured review to `layer2/reviews/signal-{id}/markets-review.md`.
+Write a single structured review to `reviews/signal-{id}/markets-review.md`.
 
 ```markdown
 # Markets Review: {signal title}

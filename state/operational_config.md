@@ -20,8 +20,8 @@ No fixed weekly quota. Editorial quality and signal strength determine output, n
 
 ## File conventions
 
-- Signal digests: `layer2/signals/{date}-digest.md` (both macro and realtime lenses in one file)
-- Operator tickets: `layer2/state/tickets/{date}-{signal-id}.md`
+- Signal digests: `signals/{date}-digest.md` (both macro and realtime lenses in one file)
+- Operator tickets: `state/tickets/{date}-{signal-id}.md`
 
 ## Trigger style
 

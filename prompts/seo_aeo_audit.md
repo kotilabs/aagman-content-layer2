@@ -9,9 +9,9 @@ Use after the blog draft is content-complete and after the markets reviewer's co
 ## Files to read
 
 Before auditing, read:
-- `layer2/drafts/signal-{id}-blog.md` — the draft to audit
-- `layer2/research/signal-{id}.md` — the canonical research artifact
-- `layer2/prompts/blog_writer.md` — the Layer 2 editorial voice and structure rules
+- `drafts/signal-{id}-blog.md` — the draft to audit
+- `research/signal-{id}.md` — the canonical research artifact
+- `prompts/blog_writer.md` — the Layer 2 editorial voice and structure rules
 
 ## What you audit
 
@@ -48,7 +48,7 @@ Before auditing, read:
 
 ## Output
 
-Write the audit to `layer2/audits/signal-{id}-blog.md` with this structure:
+Write the audit to `audits/signal-{id}-blog.md` with this structure:
 
 ```markdown
 # SEO/AEO Audit: {title}
