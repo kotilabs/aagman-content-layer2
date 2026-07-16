@@ -75,51 +75,39 @@ The pattern is clear: trade is not breaking. It is bending around political boun
 
 **Interpretation A: Managed decoupling is working.**
 
-*Who makes it:* U.S. administration officials, the 2026 Economic Report of the President, and some reshoring advocates.
+This is the view you would hear from U.S. administration officials and the 2026 Economic Report of the President. The argument is that the policy mix is doing exactly what it was designed to do. U.S. imports from China have fallen by nearly $100 billion in annualised terms, China’s share of U.S. imports is back to where it was before China joined the WTO, and Mexico, Vietnam, and India have all gained meaningful share. Investment commitments are flowing into U.S. strategic sectors, and the bilateral tariff architecture is forcing a reorganisation of supply chains in America’s favour.
 
-*Evidence supporting:* U.S. imports from China have fallen materially; China’s import share is back to pre-WTO levels; Mexico, Vietnam, and India have gained share; large investment commitments are flowing into U.S. strategic sectors.
-
-*Evidence contradicting:* The U.S. trade deficit has not disappeared. It has shifted to Vietnam, Mexico, and Taiwan. Many “alternative” suppliers still rely on Chinese inputs.
-
-*Why it might be wrong:* It conflates rerouting with genuine reshoring. The U.S. remains dependent on Asian manufacturing. It has simply changed the mailing address.
+The problem with this reading is that it treats rerouting as if it were reshoring. The U.S. trade deficit has not disappeared; it has simply moved. Vietnam’s surplus with the U.S. rose by more than 40% in 2025. Mexico became the largest U.S. goods-trading partner. And many of the “alternative” suppliers are still importing Chinese components, capital equipment, and active pharmaceutical ingredients. The dependence has not ended. The mailing address has changed. So the interpretation is best understood as a political claim about leverage, not an economic claim about self-sufficiency.
 
 **Interpretation B: This is fragmentation, not deglobalisation — and global trade is still growing.**
 
-*Who makes it:* The WTO, UNCTAD, and analysts who emphasize that trade volumes remain positive.
+This is the WTO–UNCTAD view. World merchandise trade grew 4.6% in 2025. Global trade hit a record nominal value of $35 trillion. AI-related goods trade has surged. The system, on this reading, is adapting rather than collapsing. Trade is simply being reconstituted along regional and political lines.
 
-*Evidence supporting:* World merchandise trade grew 4.6% in 2025; global trade reached a record $35 trillion; AI-related goods trade has surged.
-
-*Evidence contradicting:* 2026 growth is forecast at only 1.9%; much of 2025’s strength was front-loading ahead of tariffs; regional blocs and compliance costs are rising.
-
-*Why it might be wrong:* It understates how much of the 2025 trade surge was a one-off pull-forward and how much persistent uncertainty is weighing on long-term investment.
+The counterargument is that 2026 growth is forecast at only 1.9%, services trade growth is expected to slow, and much of 2025’s strength was front-loading ahead of anticipated tariffs. More importantly, the interpretation risks confusing volume with governance. Trade can keep growing even as the rules that govern it become more fragmented, more bilateral, and less predictable. A world of record nominal trade and paralysed WTO dispute settlement is not a world of healthy globalisation. It is a world in which the plumbing still works but the rulebook is being rewritten ad hoc.
 
 **Interpretation C: China is exporting its way through containment.**
 
-*Who makes it:* China-focused analysts pointing to China’s record trade surplus.
+This reading starts from China’s record trade surplus. In the first five months of 2026, China ran a $451.7 billion surplus, with May alone posting $105.4 billion. Exports accelerated to $376.8 billion in May, up 19.4% year-on-year. China has clearly diverted goods to ASEAN, Latin America, and other markets to compensate for weaker U.S. demand. For some analysts, this is evidence that containment is failing: the world still wants Chinese goods, just through different ports.
 
-*Evidence supporting:* China’s January–May 2026 surplus was $451.7 billion; exports accelerated to $376.8 billion in May; China has diverted goods to ASEAN, Latin America, and other markets.
-
-*Evidence contradicting:* U.S.-bound exports have fallen; China’s domestic demand remains weak; advanced semiconductor access is constrained.
-
-*Why it might be wrong:* A rising surplus with the rest of the world may invite new trade barriers, and over-reliance on exports leaves China exposed to a global demand slowdown.
+But the picture is more fragile than the surplus suggests. U.S.-bound exports have fallen. Domestic demand in China remains weak. And advanced semiconductor access is constrained by the BIS licensing regime and allied export controls. A rising surplus with the rest of the world may invite new trade barriers in Europe, Southeast Asia, or Latin America. It also leaves China exposed to a global demand slowdown. The surplus is impressive, but it may be a sign of imbalance as much as resilience.
 
 **Interpretation D: India is the biggest structural winner.**
 
-*Who makes it:* India-focused investors and the Indian government.
+This is the India-focused investor view, and it is not without evidence. India is now the U.S.’s fourth-largest trading partner. The February 2026 framework cut U.S. tariffs on Indian goods to 18%. The U.S. goods trade deficit with India reached $58.4 billion in 2025, up sharply from prior years, reflecting rising Indian exports. India is gaining share in electronics, pharmaceuticals, and services.
 
-*Evidence supporting:* India is now the U.S.’s fourth-largest trading partner; the February 2026 framework cut U.S. tariffs on Indian goods to 18%; the U.S. goods trade deficit with India reached $58.4 billion in 2025, up from lower levels, reflecting rising Indian exports.
-
-*Evidence contradicting:* India’s deficit with China is widening; India’s exports are concentrated in services, pharmaceuticals, and gems; manufacturing competitiveness lags Vietnam in several sectors.
-
-*Why it might be wrong:* Improved U.S. access is not the same as broad-based competitiveness. India is gaining share, but it is not yet replacing China at scale in electronics or machinery. Note that India’s reported $41.2 billion surplus with the U.S. in fiscal 2024–25 measures a different basket and period than the U.S. Census Bureau’s $58.4 billion calendar-2025 goods deficit; they should not be read as the same number.
+The weakness is that improved U.S. access is not the same as broad-based competitiveness. India’s trade deficit with China is widening, not narrowing. India’s manufacturing competitiveness still lags Vietnam’s in several sectors. And India’s exports remain concentrated in services, pharmaceuticals, and gems. India is gaining share, but it is not yet replacing China at scale in electronics or machinery. One should also be careful with the numbers: India’s reported $41.2 billion surplus with the U.S. in fiscal 2024–25 measures a different basket and period than the U.S. Census Bureau’s $58.4 billion calendar-2025 goods deficit. They should not be read as the same number.
 
 Our view, clearly labeled as interpretation: the fragmentation thesis best fits the data. Trade volumes have held up, but the routing, composition, and governance of trade have shifted. This is a more useful frame than either “decoupling” or “deglobalisation.”
 
 ### Historical or Structural Memory
 
-The 1930 Smoot-Hawley Tariff and the subsequent imperial preference blocs offer one structural memory: when a major economy uses tariffs as a macro and geopolitical tool, trading partners respond by negotiating bilateral deals and forming blocs. The legacy can outlast the political moment that created it.
+The closest structural analogue is the 1930 Smoot-Hawley Tariff and the trade-bloc system that followed. In 1930, the United States raised tariffs across thousands of product lines in an attempt to protect domestic farmers and manufacturers. The result was not a revival of U.S. manufacturing but a cascade of retaliation. Canada, France, Britain, and others raised their own barriers. Within a few years, the world had fractured into imperial preference blocs and bilateral clearing arrangements. Trade did not end, but it became politicised, route-dependent, and burdened by rules that outlasted the Depression itself.
 
-The 1980s U.S.–Japan trade friction offers another. The U.S. used Section 301, voluntary export restraints, and technology controls to manage Japan’s rise in autos and semiconductors. Even after political agreements, sectoral restrictions persisted for years and reshaped global supply chains.
+The lesson is not that tariffs caused the Depression. The lesson is that once a major economy treats trade policy as a macro and geopolitical instrument, the response from trading partners is not passive adjustment. They build workarounds. They negotiate bilateral deals. They create blocs. And those institutional structures persist long after the original political moment has passed. A tariff can be announced in a press conference; the supply chains, supplier relationships, and compliance departments that form around it take years to unwind.
+
+The 1980s U.S.–Japan trade conflict is a more recent echo. The U.S. used Section 301 investigations, voluntary export restraints, and technology controls to manage Japan’s rise in autos, steel, and semiconductors. The 1986 U.S.–Japan Semiconductor Trade Agreement did not simply reduce Japanese exports; it reshaped the geography of chip manufacturing, pushing investment toward South Korea, Taiwan, and eventually China. Even after the political agreements were signed, sectoral restrictions and distrust persisted for years. American firms learned to design around Japanese suppliers; Japanese firms learned to build final assembly outside Japan; and the global electronics supply chain was permanently reconfigured.
+
+What is happening now has the same structural shape with a larger scale. The U.S. is using the same Section 301 statute. It is negotiating bilateral investment and purchase commitments. It is encouraging allies and firms to reroute supply chains. And China is responding not by collapsing but by exporting more aggressively to third markets and accelerating domestic technology substitution. The specific products are different — semiconductors and batteries rather than steel and autos — but the pattern is familiar. Trade restrictions create new lanes. Firms adapt. The adaptation becomes durable. And the world that emerges is less integrated, more bloc-like, and harder to reverse than the headlines suggest.
 
 Neither episode predicts the future. Both remind us that trade restrictions tend to leave durable institutional and commercial scars even after the original dispute fades.
 
