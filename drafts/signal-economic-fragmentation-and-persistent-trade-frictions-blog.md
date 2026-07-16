@@ -22,7 +22,7 @@ The signal operates through three reinforcing channels. Each is worth separating
 
 **1. Tariff and regulatory stacking**
 
-A single shipment of Chinese-origin goods can face multiple layers of duty and control: the standard MFN tariff, the Section 301 rate (up to 25% on many categories, 50% on some semiconductor items), the Section 232 sectoral tariff if it is a metal or auto, the 10% Section 122 surcharge, and fentanyl-related IEEPA duties whose legal status has shifted after court rulings.
+A single shipment of Chinese-origin goods can face multiple layers of duty and control: the standard MFN tariff, the Section 301 rate (up to 25% on many categories, 50% on some semiconductor items), the Section 232 sectoral tariff if it is a metal or auto, and the 10% Section 122 surcharge.
 
 This means the *effective* trade barrier for a given product is not the headline U.S.–China rate. It is the sum of overlapping duties, each with its own legal basis, product coverage, and enforcement mechanism. The exact effective rate is shipment-specific and hard to pin down.
 
@@ -87,13 +87,17 @@ The counterargument is that 2026 growth is forecast at only 1.9%, services trade
 
 **Interpretation C: China is exporting its way through containment.**
 
-This reading starts from China’s record trade surplus. In the first five months of 2026, China ran a $451.7 billion surplus, with May alone posting $105.4 billion. Exports accelerated to $376.8 billion in May, up 19.4% year-on-year. China has clearly diverted goods to ASEAN, Latin America, and other markets to compensate for weaker U.S. demand. For some analysts, this is evidence that containment is failing: the world still wants Chinese goods, just through different ports.
+This reading starts from China’s large trade surplus. In the first five months of 2026, China ran a $451.7 billion surplus, with May alone posting $105.4 billion. Exports accelerated to $376.8 billion in May, up 19.4% year-on-year. China has clearly diverted goods to ASEAN, Latin America, and other markets to compensate for weaker U.S. demand. For some analysts, this is evidence that containment is failing: the world still wants Chinese goods, just through different ports.
+
+The framing deserves a caveat. The January–May 2026 surplus was actually down from $471.9 billion in the same period of 2025. May 2026 was the largest monthly surplus since January, not a record. And some of the May export surge was inventory building ahead of Middle East energy disruption, which slightly undercuts the clean “exporting through containment” story.
 
 But the picture is more fragile than the surplus suggests. U.S.-bound exports have fallen. Domestic demand in China remains weak. And advanced semiconductor access is constrained by the BIS licensing regime and allied export controls. A rising surplus with the rest of the world may invite new trade barriers in Europe, Southeast Asia, or Latin America. It also leaves China exposed to a global demand slowdown. The surplus is impressive, but it may be a sign of imbalance as much as resilience.
 
 **Interpretation D: India is the biggest structural winner.**
 
-This is the India-focused investor view, and it is not without evidence. India is now the U.S.’s fourth-largest trading partner. The February 2026 framework cut U.S. tariffs on Indian goods to 18%. The U.S. goods trade deficit with India reached $58.4 billion in 2025, up sharply from prior years, reflecting rising Indian exports. India is gaining share in electronics, pharmaceuticals, and services.
+This is the India-focused investor view, and it is not without evidence. The February 2026 framework announced a cut in U.S. tariffs on Indian goods to 18% and a $500 billion Indian purchase intention over five years. The U.S. goods trade deficit with India reached $58.4 billion in 2025, up sharply from prior years, reflecting rising Indian exports. India is gaining share in electronics, pharmaceuticals, and services.
+
+The framing needs context. The 18% rate was IEEPA-based and legally terminated on February 24, 2026, less than three weeks after the framework was announced. Since then, India has paid the same flat 10% Section 122 surcharge as most other countries, while Section 301 replacement investigations run. So the 18% figure is real as an announced intention, but it is not the operative rate in July 2026.
 
 The weakness is that improved U.S. access is not the same as broad-based competitiveness. India’s trade deficit with China is widening, not narrowing. India’s manufacturing competitiveness still lags Vietnam’s in several sectors. And India’s exports remain concentrated in services, pharmaceuticals, and gems. India is gaining share, but it is not yet replacing China at scale in electronics or machinery. One should also be careful with the numbers: India’s reported $41.2 billion surplus with the U.S. in fiscal 2024–25 measures a different basket and period than the U.S. Census Bureau’s $58.4 billion calendar-2025 goods deficit. They should not be read as the same number.
 
@@ -135,8 +139,8 @@ What this does **not** affect is the case for making bold directional bets on a 
 
 ### Open Question
 
-The July 24, 2026 expiration of the 10% Section 122 surcharge is the nearest observable decision point. If it expires and is not replaced, the effective tariff stack eases. If it is extended or converted into something more permanent, the current equilibrium hardens into something closer to a new baseline.
+The July 24, 2026 expiration of the 10% Section 122 surcharge is the nearest observable decision point, but the legal context matters. The Court of International Trade ruled the surcharge invalid on May 7, 2026, for failing to identify a qualifying balance-of-payments deficit. The government is appealing, and collection has continued for most importers under a stay. The administration’s planned replacement is accelerated Section 301 tariffs, with the excess-capacity and forced-labor investigations launched in March timed to conclude before the expiry. So “if it expires and is not replaced” is a narrower condition than it sounds: the more likely path is replacement by a new tariff layer rather than a clean return to the old baseline.
 
-The deeper question is this: if the world can have record nominal trade, falling direct U.S.–China shipments, and a historic Chinese surplus all at the same time, what exactly are we measuring when we say “global trade”?
+The deeper question is this: if the world can have record nominal trade, falling direct U.S.–China shipments, and a large Chinese surplus all at the same time, what exactly are we measuring when we say “global trade”?
 
 We will be watching whether the rerouting we see in the data reflects genuine diversification or simply a more elaborate version of the same dependence.
