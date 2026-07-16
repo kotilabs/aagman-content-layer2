@@ -53,7 +53,7 @@ Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advic
 ## Slide 7
 - **Kicker:** The capital angle
 - **Headline:** Market access is being tied to capital placement.
-- **Body:** India committed to $500 billion in U.S. purchases over five years. Taiwan pledged $250 billion in investment plus $250 billion in government financing.
+- **Body:** India committed to $500 billion in U.S. purchases over five years. Japan and South Korea also made large investment commitments.
 - **Hero stat or quote:** $500 billion — India's U.S. purchase commitment under the February 2026 framework.
 - **Design note:** Flow diagram: investment pledges into the U.S. in exchange for tariff lanes.
 - **Speaker note:** Show the second-order capital-flow realignment.

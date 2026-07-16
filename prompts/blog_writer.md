@@ -95,6 +95,20 @@ Never: what to buy or sell
 Open Question (End-State)
 Leave the reader with a question, not a conclusion
 This is crucial for reading habit and return engagement
+Explanatory Depth and Pacing (Mandatory)
+
+Take space to talk things through. The reader should feel walked through the argument, not handed a compressed brief.
+
+- One idea per paragraph. Let each idea breathe.
+- Explain mechanisms step by step, with transitions that show how one point leads to the next.
+- When you introduce a number, spend a sentence on what it means and why it matters.
+- Interpretations should be argued, not listed. Give each view room: what evidence supports it, what weakens it, and why someone might hold it.
+- Historical analogies should be set up, compared, and tied back to the present.
+- Do not compress five points into one dense paragraph. Expand where the material supports it.
+- Target length: 1500–1800 words. Go longer if the signal has more moving parts and the extra explanation adds clarity. Never pad.
+
+The piece should feel like a smart friend explaining a complex idea over coffee, not a market briefing.
+
 Opening Convention (Mandatory)
 Every piece must begin with an everyday analogy rendered in a conversational tone. This opening should feel like someone explaining a complex idea over coffee, not a market briefing. Limit this section to 100–150 words. The analogy should make the reader feel at home before the structural analysis begins.
 Data, Charts & Sources (Mandatory Standard)

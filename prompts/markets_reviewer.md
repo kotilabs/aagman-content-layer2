@@ -62,6 +62,17 @@ Apply different standards per surface:
 - **Thread:** Standalone-post lens. Can every post survive being quoted alone? Does the thread avoid rhetorical questions and engagement bait?
 - **Infographic:** Claim-vs-data alignment lens. Does every visualized number trace to a source? Is the visual concept the right way to show the data?
 
+### Pass 6 — Explanatory depth and pacing
+This is a quality pass, not a style pass. For the blog especially, check whether the piece *explains* or merely *states*:
+
+- Are mechanisms unpacked step by step, or compressed into single dense sentences?
+- Are interpretations argued (evidence for, evidence against, why it matters), or just listed?
+- Are historical analogies set up, compared, and tied back, or only named?
+- Does each paragraph carry one developed idea, or are ideas stacked?
+- Does the writer take space to talk the reader through the logic?
+
+Flag shallow explanation as **should-fix**; flag missing canonical sections or bullet-list shorthand where paragraphs are expected as **should-fix** or **blocker** for the blog.
+
 ## Output
 
 Write a single structured review to `reviews/signal-{id}/markets-review.md`.

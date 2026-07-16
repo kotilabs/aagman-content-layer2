@@ -53,7 +53,7 @@ Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advic
 ## Slide 7
 - **Kicker:** The deal
 - **Headline:** Access for capital.
-- **Body:** India committed $500 billion in U.S. purchases. Taiwan pledged $250 billion in investment.
+- **Body:** India committed $500 billion in U.S. purchases. Japan and South Korea also made large commitments.
 - **Hero stat or quote:** $500 billion — India's five-year U.S. purchase commitment.
 - **Design note:** Simple flow arrow: capital pledge → tariff lane.
 - **Speaker note:** Show the capital-flow dimension.
