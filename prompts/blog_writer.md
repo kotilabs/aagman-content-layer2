@@ -109,6 +109,25 @@ Take space to talk things through. The reader should feel walked through the arg
 
 The piece should feel like a smart friend explaining a complex idea over coffee, not a market briefing.
 
+Title and Subheadline (Mandatory)
+Every blog must open with:
+1. A clear H1 title that names the signal in plain language.
+2. A one-sentence H2 subheadline that frames the stakes or the central tension, without restating the title.
+
+Place the SEBI disclosure line before the title. Format:
+
+```
+Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advice — no buy/sell recommendation.
+
+# Title Goes Here
+
+## Subheadline that explains why the reader should care.
+
+[Everyday analogy opening]
+```
+
+The subheadline should make the reader feel the central question before the analogy begins. It must not be a summary, a call to action, or a price prediction.
+
 Opening Convention (Mandatory)
 Every piece must begin with an everyday analogy rendered in a conversational tone. This opening should feel like someone explaining a complex idea over coffee, not a market briefing. Limit this section to 100–150 words. The analogy should make the reader feel at home before the structural analysis begins.
 Data, Charts & Sources (Mandatory Standard)

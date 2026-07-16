@@ -1,5 +1,9 @@
 Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advice — no buy/sell recommendation.
 
+# The Rupee–Equity Divergence in India
+
+## The currency is clearing external pressure while domestic flows hold the index steady. Both readings are true.
+
 Think of a family-run restaurant that has survived a decade by building local loyalty. On a Friday evening, the dining room is full. Regulars keep returning. The owner has enough neighbourhood support that the place can absorb a few cancelled tourist buses without emptying out. But in the back office, the produce supplier has raised prices, the gas bill is climbing, and the bank line of credit costs more than it used to. The dining room says the business is healthy. The ledger says the margin is thinner. Both readings are true. The question is which one tells you what happens next.
 
 That is roughly where India finds itself in July 2026.

@@ -1,6 +1,8 @@
 Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advice — no buy/sell recommendation.
 
-### The Endgame of the Global Rate-Cut Cycle
+# The Endgame of the Global Rate-Cut Cycle
+
+## Central banks are no longer cutting. The hard part is living with where they have stopped.
 
 Imagine a homeowner who has spent a decade taking long baths because water was cheap. The boiler worked, the bills were small, and no one questioned the habit. Then the utility company raised rates. Now every bath costs meaningfully more. He can still bathe, but he can no longer pretend the cost does not matter. He cannot go back to the old routine without wasting money, and he cannot stop bathing entirely without real discomfort. So he sits in a constrained middle: warm enough to function, expensive enough to change behavior.
 

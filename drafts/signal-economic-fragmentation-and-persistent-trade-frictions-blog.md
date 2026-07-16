@@ -1,6 +1,8 @@
 Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advice — no buy/sell recommendation.
 
-**The House After the Truce**
+# The House After the Truce
+
+## Calmer headlines in 2025 hid a tariff and rerouting architecture that is still very much intact.
 
 Think of two old business partners who have spent years sharing a house. They stop speaking in the spring. They shout for a month. Then they sit down over dinner and agree to lower their voices. The shouting stops. But the locks on the doors stay. The separate bank accounts stay. The list of rooms each is forbidden to enter stays. Outsiders hear the silence and assume the partnership is repaired. Inside the house, nothing fundamental has changed. The peace is administrative, not emotional.
 
