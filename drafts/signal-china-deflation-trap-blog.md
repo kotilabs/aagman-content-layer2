@@ -89,11 +89,23 @@ The counterargument: official rhetoric repeatedly stresses expanding domestic de
 
 ## Historical Memory
 
-Two historical episodes are worth keeping in mind, not as predictions, but as perspective.
+Some economic patterns only reveal themselves across decades. Two episodes are worth keeping in mind, not as predictions, but as perspective.
 
-Japan after 1991 is the most frequently cited parallel. Land prices in Tokyo had tripled in the late 1980s, and banks had lent against collateral values that assumed the rise would continue. When the bubble burst, the damage showed up as a slow erosion of confidence: households stopped borrowing, corporates stopped investing, and prices stopped rising. Richard Koo called it a "balance-sheet recession," in which the private sector prioritizes debt repayment over profit maximization even at zero rates. China has tools Japan did not — state-controlled banks, capital controls, and a competitive export sector — but the underlying feedback loop from property wealth loss to weak consumption is similar.
+### Japan after 1991
 
-China's own 1998–2002 deflation is the domestic precedent. The Asian financial crisis, state-enterprise restructuring, and a property correction pushed CPI into negative territory for multiple years. Beijing responded with infrastructure spending, monetary easing, bank recapitalization, and a push toward exports, helped by WTO entry in 2001. The playbook worked, but the starting conditions were different: China was less indebted, its working-age population was expanding, and the global trading system was opening up. Today, debt is higher, the population is ageing, and the external environment is more hostile. The same tools may not work as well this time.
+Japan in 1991 looked, on the surface, like a rich country with a temporary property problem. Land prices in Tokyo had tripled in the late 1980s. Banks had lent against collateral values that assumed the rise would continue. When the bubble burst, the damage did not show up immediately as a banking crisis. It showed up as a slow erosion of confidence: households stopped borrowing, corporates stopped investing, and prices stopped rising. Nominal GDP growth stayed weak for decades. The phrase "lost decade" eventually became "lost decades."
+
+Richard Koo called the underlying mechanism a "balance-sheet recession." In a normal recession, businesses and households borrow and spend when interest rates fall. In a balance-sheet recession, the private sector is so focused on repairing its balance sheet that even zero interest rates do not revive borrowing. The policy response that works in a normal cycle — monetary easing — becomes less effective because the problem is not the cost of credit; it is the desire for it.
+
+The lesson for China is not that it will necessarily repeat Japan's experience. China has tools Japan did not: state-controlled banks that can extend forbearance, capital controls that limit sudden capital flight, and a competitive export sector that can earn foreign currency even when domestic demand is soft. But the underlying feedback loop is similar. Property wealth loss makes households feel poorer. Poorer households spend less. Weaker consumption erodes corporate pricing power. Lower pricing power discourages investment. And the investment that does happen increasingly flows through state-directed channels that support supply rather than household income. Japan proved that an economy can avoid a systemic banking collapse and still struggle with deflationary psychology for a very long time.
+
+### China’s own deflation, 1998–2002
+
+China has faced this before. In the late 1990s, the Asian financial crisis, state-enterprise restructuring, and a property correction pushed the economy into deflation. CPI fell for multiple years. Urban unemployment rose. Local governments faced falling revenue. Beijing responded with a playbook that should sound familiar: fiscal stimulus directed at infrastructure, monetary easing, bank recapitalization, and a deliberate push to make the economy more export-oriented.
+
+The entry into the World Trade Organization in 2001 gave that export push a powerful tailwind. Chinese manufacturers gained access to global markets just as foreign companies were looking for lower-cost production. By the mid-2000s, China was growing rapidly again, and the deflation episode looked like a successfully managed transition. The playbook worked because the starting conditions were favorable: China was far less indebted, its working-age population was expanding, and the global trading system was opening up.
+
+Today, those conditions have changed. Total debt is high. The population is ageing. The external environment is more hostile, with tariffs and technology restrictions proliferating. Export growth can still help, but it is less likely to absorb the scale of domestic overcapacity that exists now. Infrastructure spending can still boost output, but it adds to local-government debt and, unless it raises household income, does not solve the demand shortfall. The historical memory is useful precisely because it shows that China knows how to escape deflation — and because it shows why the same tools may not work as well this time.
 
 ## Implications for Decision-Makers
 
