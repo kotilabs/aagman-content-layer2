@@ -29,7 +29,7 @@ The binding constraint has shifted from the headline compute layer — GPUs and 
 
 Imagine you are opening a restaurant. You buy the best ovens, the fastest grills, and a walk-in freezer the size of a studio apartment. Then the electrician tells you the building cannot take the load. The breaker panel is too small, the transformer down the street is oversubscribed, and the wiring behind the walls was installed when toast was the most demanding item on the menu. The kitchen hardware is extraordinary. The electrons to run it are not.
 
-That is roughly where the artificial-intelligence infrastructure boom sits today. The GPUs, the high-bandwidth memory, and the advanced packaging have captured the imagination. But the binding constraint is increasingly the unglamorous layer between the wall socket and the chip: power management integrated circuits, baseboard management controllers, voltage regulators, transformers, switchgear, and the interconnection agreements that let a data center draw from the grid.
+That is roughly where the artificial-intelligence infrastructure boom sits today. GPUs, high-bandwidth memory, and advanced packaging have captured the imagination. But the binding constraint is increasingly the unglamorous layer between the wall socket and the chip: power management integrated circuits, baseboard management controllers, voltage regulators, transformers, switchgear, and the interconnection agreements that let a data center draw from the grid.
 
 The power-semiconductor wall is the point where AI data-center buildouts are gated not by GPU or HBM supply, but by mature-node power chips, transformers, and grid interconnection.
 
@@ -41,11 +41,11 @@ The new pressure point is the infrastructure that lets the compute run. Data-cen
 
 ## Why are AI data centers hitting a power wall?
 
-Because the bottleneck has moved downstream: power management chips, transformers, and grid interconnection now take longer to scale than the GPUs they are supposed to feed.
+The bottleneck has moved downstream. Power management chips, transformers, and grid interconnection now take longer to scale than the GPUs they are supposed to feed.
 
 ## Mechanism: How the Bottleneck Moved Downstream
 
-AI data centers consume semiconductors at two levels. The first is the headline compute layer: GPUs, custom accelerators, HBM, and advanced packaging. The second is the enabling infrastructure layer: power conversion, management controllers, cooling, electrical equipment, and grid interconnection. The signal is concentrated in the second layer.
+AI data centers consume semiconductors at two levels. The first is the headline compute layer: GPUs, custom accelerators, HBM, and advanced packaging. The second is the enabling infrastructure layer: power conversion, management controllers, cooling, electrical equipment, and grid interconnection. The story is concentrated in the second layer.
 
 Power management ICs and baseboard management controllers are manufactured mainly on mature process nodes, often 200-mm wafer fabs using Bipolar-CMOS-DMOS processes. These are not the leading-edge nodes that draw the capex headlines. Yet a single GPU rack can draw more than 100 kilowatts, requiring high-current voltage regulators, power converters, gate drivers, and current sensors. Each of those components competes for the same mature-node capacity that also supplies automotive, industrial, medical, and consumer electronics.
 
@@ -81,7 +81,7 @@ Every line in that table points to the same relocation: the scarce input is no l
 
 ## Interpretation Spectrum
 
-There are at least four plausible readings of this signal.
+Four readings compete for attention. Each has a hole in it.
 
 **Interpretation A: A structural, multi-year infrastructure supercycle.** Proponents point to the $600–700 billion hyperscaler capex trajectory, the projected 165% growth in data-center power demand by 2030 (vs. 2023 levels), transformer lead times exceeding 160 weeks, and the shrinking of mature-node capacity. The argument is that AI buildouts have created a sustained shortage in the physical enablers of compute, and that the marginal AI dollar will increasingly flow to power, cooling, and grid infrastructure. The weakness is that it assumes exponential AI demand continues without a major efficiency breakthrough or macro-driven capex pause.
 
@@ -91,11 +91,11 @@ There are at least four plausible readings of this signal.
 
 **Interpretation D: A sectoral reallocation that benefits infrastructure enablers over chip designers.** This view holds that the AI bottleneck has moved from GPUs to power, cooling, and grid, and that power semiconductors, transformers, liquid cooling, and utilities are becoming strategic. Gartner identified Infineon as "the company to beat" in AI data-center power semiconductors as of May 2026. The limitation is that power semiconductors are derivative demand. Without compute demand, there is no power-infrastructure demand.
 
-A near-term counterweight to the supercycle view is worth holding in view. The IEA's April 2026 analysis finds that power consumption per AI task is declining rapidly, but those per-task efficiency gains are being offset by rising AI adoption, larger models, and agentic workloads.
+A near-term counterweight to the supercycle view is worth keeping in mind. The IEA's April 2026 analysis finds that power consumption per AI task is declining rapidly, but those per-task efficiency gains are being offset by rising AI adoption, larger models, and agentic workloads.
 
 ## Historical Memory
 
-Two episodes are worth holding in mind, not because they predict the outcome, but because they show how these dynamics tend to play out.
+Two episodes are worth keeping in mind, not because they predict the outcome, but because they show how these dynamics tend to play out.
 
 The telecom fiber and optical buildout of 1999–2000 saw massive capital deployment into physical infrastructure ahead of revenue certainty, with shortages in optical components, power systems, and specialty materials. Prices and lead times rose sharply, then the oversupply lasted for years. The structural point is that infrastructure buildouts can overshoot and create lasting supply-chain scarring even when final demand eventually absorbs the capacity.
 
@@ -115,8 +115,8 @@ The signal matters for how one reads the AI capital cycle more broadly. It also 
 
 Aagman's structural bias treats AI as a capital-reallocation shock comparable to steam engines, but the bottleneck location is data-driven here: the power-semiconductor constraint is visible in lead times, capex, and grid timelines, not assumed from the technology narrative.
 
-What this does not do is resolve which company will win, which stock is cheap, or whether AI infrastructure spending is justified. The signal is about the structure of demand and the location of bottlenecks, not about valuation.
+This signal will not tell you which company will win, which stock is cheap, or whether AI infrastructure spending is justified. It is about the structure of demand and the location of bottlenecks, not about valuation.
 
 ## Open Question
 
-The central tension is between the speed at which hyperscalers can write checks and the speed at which the physical world can convert those checks into energized capacity. If the power-semiconductor shortage spreads from AI servers into automotive, industrial, and medical power electronics, as it did in 2020–2022, will the response come from mature-node foundry expansion, on-site generation by hyperscalers, or a forced rationing of demand? On-site options such as gas turbines, nuclear small modular reactors, and geothermal offtake are attracting tech-sector interest, though each faces permitting, financing, and technical hurdles. The answer will determine not just who benefits from the AI buildout, but how long the wall stays up.
+The central tension is between how fast hyperscalers can write checks and how fast the physical world can convert those checks into energized capacity. If the power-semiconductor shortage spreads from AI servers into automotive, industrial, and medical power electronics, as it did in 2020–2022, will the response come from mature-node foundry expansion, on-site generation by hyperscalers, or a forced rationing of demand? On-site options such as gas turbines, nuclear small modular reactors, and geothermal offtake are attracting tech-sector interest, though each faces permitting, financing, and technical hurdles. The answer will determine not just who benefits from the AI buildout, but how long the wall stays up.

@@ -6,7 +6,7 @@
 |---|---|---|---|
 | Full-year 2025 CPI: 0.0% YoY | Headline consumer prices were flat for the whole year, far below Beijing’s ~2% target. | NBS annual release (2026-01-19) | Strong |
 | December 2025 CPI: +0.8% YoY | A late-year uptick in headline inflation. | NBS CPI release (2026-01-10) | Strong |
-| Core CPI (ex food & energy): +1.2% YoY in Dec; +0.7% for full-year 2025 | Underlying demand inflation remains subdued even as headline CPI ticked up. | NBS annual release (2026-01-19) | Strong |
+| Core CPI (ex food & energy): +1.2% YoY in Dec; +0.7% for full-year 2025 | Underlying demand inflation stayed subdued even as headline CPI ticked up. | NBS annual release (2026-01-19) | Strong |
 | PPI: -2.6% YoY full-year 2025; -1.9% YoY in Dec | Factory-gate prices fell for a third consecutive year. | NBS annual release (2026-01-19); State Council / Xinhua (2026-01-09) | Strong |
 | Fresh vegetable prices: +18.2% YoY in Dec | The main temporary driver of the December headline CPI bounce. | NBS CPI release (2026-01-10) | Strong |
 | Pork prices: -14.6% YoY in Dec | A food-price drag, confirming the December CPI move was supply-side, not demand-driven. | NBS CPI release (2026-01-10) | Strong |
@@ -27,18 +27,18 @@
 - **Central insight:** The headline CPI uptick to +0.8% in December was driven by temporary food-supply shocks, not a broad demand recovery.
 - **Data:** Full-year CPI 0.0% YoY; December CPI +0.8% YoY; core CPI +1.2% YoY in December and only +0.7% for the full year; fresh vegetables +18.2% YoY; pork -14.6% YoY.
 - **Visualization type:** Deconstruction / stacked-impact waterfall or split bar.
-- **Composition notes:** Lead with the +0.8% headline number, then visually pull it apart: show the vegetable spike pushing the bar up and pork pulling it down, leaving a small core-CPI sliver. Place full-year CPI (0.0%) and the 2% target as horizontal benchmarks so the reader sees the December number is an exception, not a trend.
+- **Composition notes:** Lead with the +0.8% headline number, then pull it apart: show the vegetable spike pushing the bar up and pork pulling it down, leaving a small core-CPI sliver. Add horizontal benchmarks for full-year CPI (0.0%) and the 2% target so the reader sees the December number is an exception, not a trend.
 - **Sources:** NBS CPI release (2026-01-10); NBS annual release (2026-01-19).
 
 ### Concept 2: Stimulus is flowing to factories and local governments, not household wallets
 - **Central insight:** Beijing’s 2025 stimulus is historically large, but the biggest channels are supply-side and balance-sheet repair, while direct household support is comparatively small.
 - **Data:** Government deficit RMB 5.66 trn (~4% of GDP); local special-purpose bonds RMB 4.4 trn; ultra-long special treasury bonds RMB 1.3 trn; consumer-goods trade-in RMB 300 bn; GDP +5.0% YoY but CPI 0.0% and PPI -2.6%.
 - **Visualization type:** Diverging scale / Sankey-style flow diagram or side-by-side bar comparison.
-- **Composition notes:** Left side: a tall stack of supply-side/balance-sheet channels (deficit, special bonds, bank/local-government support). Right side: a much smaller stack labelled direct household demand support (RMB 300 bn trade-in). Between them, show the outcome puzzle: GDP grew 5% while prices stayed flat. The eye follows from "big stimulus" to "not reaching consumption."
+- **Composition notes:** Left side: a tall stack of supply-side/balance-sheet channels (deficit, special bonds, bank/local-government support). Right side: a much smaller stack labelled direct household demand support (RMB 300 bn trade-in). Between them, show the outcome puzzle: GDP grew 5% while prices stayed flat. The eye should move from "big stimulus" to "not reaching consumption."
 - **Sources:** State Council / Xinhua (2025-03-07; 2025-09-30); NBS annual release (2026-01-19).
 
 ### Concept 3: Three straight years of factory-gate deflation
-- **Central insight:** Producer prices have fallen for three consecutive years, signalling industrial overcapacity and weak pricing power.
+- **Central insight:** Producer prices have fallen for three consecutive years, a sign of industrial overcapacity and weak pricing power.
 - **Data:** PPI -2.6% YoY full-year 2025; -1.9% YoY in December; this follows declines in 2023 and 2024 (third consecutive year of PPI deflation).
 - **Visualization type:** Timeline / descending staircase bar chart.
 - **Composition notes:** Three downward-step bars labelled 2023, 2024, 2025, each below the zero line, with 2025 at -2.6%. Add a thin horizontal line at 0% and a call-out: "3 years of falling factory-gate prices." Keep the colour in the red/deflation zone to reinforce persistence.

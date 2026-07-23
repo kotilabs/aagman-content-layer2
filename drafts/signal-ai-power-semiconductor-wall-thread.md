@@ -17,7 +17,7 @@ The shortage has migrated to the less glamorous layer.
 Power management IC lead times are now 35–40 weeks. Baseboard management controllers are at 21–26 weeks. TrendForce cut its 2026 general server shipment forecast from ~20% growth to ~13% because suppliers are prioritizing higher-margin AI server components.
 
 5/
-These parts are made on mature nodes—often 8-inch wafers using BCD processes—that have not attracted the investment showered on leading-edge logic.
+These parts are made on mature nodes—often 8-inch wafers using BCD processes—that never got the investment showered on leading-edge logic.
 
 Global 8-inch wafer foundry capacity is expected to contract by about 2.4% in 2026. Demand is rising into a shrinking supply base.
 
@@ -32,7 +32,7 @@ Chips are fast. Grids are slow.
 AI data center projects entering service in PJM territory in 2025 took more than seven years from start to operation. Generator step-up transformer lead times exceeded 160 weeks in early 2026. Wood Mackenzie projects the US data center electrical equipment market will grow from roughly $20 billion this year to $65 billion by 2030.
 
 8/
-Suppliers are responding, but with long-cycle capex.
+Suppliers are responding. Their capex cycles are long.
 
 Infineon raised fiscal 2026 capex by €500 million to €2.7 billion, targeting power semiconductors for AI data centers. It expects €1.5 billion in AI data-center revenue this year and €2.5 billion next. Gartner now calls Infineon the company to beat in the segment.
 
@@ -52,6 +52,6 @@ The allocation is zero-sum.
 AI servers, general-purpose servers, automotive, and industrial power electronics are drawing from the same mature-node pool. The spread of the shortage into non-AI sectors is the variable to watch.
 
 12/
-What remains unresolved is whether the physical layer can keep believing in the software layer.
+The open question is whether the physical layer can keep believing in the software layer.
 
 Hyperscalers can raise capex. Grids, foundries, and copper supply cannot accelerate on the same schedule.

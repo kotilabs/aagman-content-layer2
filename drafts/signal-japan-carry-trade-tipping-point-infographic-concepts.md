@@ -4,18 +4,18 @@
 
 | Data point | What it shows | Source | Verdict |
 |---|---|---|---|
-| BoJ policy rate raised to **1.0%** (from 0.75%) on 16 June 2026; highest since September 1995 | Japan has entered its first sustained hiking cycle in roughly three decades | Bank of Japan, 16 June 2026; Kyodo News+, 16 June 2026 | Strong |
-| Fed funds target **3.50–3.75%**; effective rate **3.63%** as of 21 July 2026 | The US side of the carry differential remains high | Federal Reserve, 17 June 2026; FRED, 21 July 2026 | Strong |
-| Fed–BoJ policy-rate spread: **+2.62%** now, projected **+1.38%** in 12 months | Carry-trade profitability is narrowing from both ends | CentralBank.watch, 23 July 2026 | Estimate / projection — label as forecast |
-| USD/JPY near **163.15** on 22 July 2026; breached **163** intraday on 21 July — a 40-year dollar high / yen low | The yen is at historic weakness despite hikes and intervention | Caixin, 22 July 2026; NS Journal, 22 July 2026 | Strong |
-| MOF yen-buying FX intervention totaled **¥11.7349 trillion** during 28 April – 27 May 2026 | Record official firepower failed to reverse yen weakness | Ministry of Finance Japan, 29 May 2026 | Strong |
-| CFTC COT: leveraged funds net short **90,461** JPY futures contracts as of 14 July 2026 | A crowded short base creates short-squeeze / feedback-loop risk | CFTC, 14 July 2026 | Strong |
-| BIS estimated outstanding yen carry positions at roughly **¥40 trillion (~$250 billion)** going into the August 2024 unwind | Speculative carry exposure is large enough to amplify global moves | BIS Bulletin No. 90, 27 August 2024 | Estimate — timeframe clear |
-| Yen-side FX swaps / forwards / currency swaps notional reached **$14.2 trillion (¥1,994 trillion)** by end-2023, up 27% in yen terms since end-2021 | The structural depth of yen-funded markets dwarfs the speculative slice | BIS Quarterly Review, September 2024 | Strong (lagged structural stock) |
-| August 2024 unwind: Nikkei 225 **−12.4%**, VIX intraday **>65**, Bitcoin **−24%**, S&P 500 **−3%** on 5 August 2024 | A small BoJ move once triggered rapid global deleveraging | l0g.fr, 13 July 2026, citing BIS Bulletin No. 90 | Strong |
-| 10-year JGB auction cleared at **2.755%** on 2 July 2026 | Domestic yields are rising with BoJ normalization | Ministry of Finance Japan, 2 July 2026 | Strong |
-| Japan general government gross debt: **248.7%** of GDP in 2025 | Fiscal constraint on how far / fast the BoJ can tighten | Trading Economics / Ministry of Finance | Strong |
-| 2026 Shuntō wage increase **+5.26%**; real wages fell **−1.3%** in 2025 | Wage-price support for hikes coexists with weak household purchasing power | ISVD, 5 May 2026, citing Rengō and MHLW | Strong |
+| BoJ policy rate raised to **1.0%** (from 0.75%) on 16 June 2026; highest since September 1995 | Japan has entered its first sustained hiking cycle in roughly three decades. | Bank of Japan, 16 June 2026; Kyodo News+, 16 June 2026 | Strong |
+| Fed funds target **3.50–3.75%**; effective rate **3.63%** as of 21 July 2026 | The US side of the carry differential remains high. | Federal Reserve, 17 June 2026; FRED, 21 July 2026 | Strong |
+| Fed–BoJ policy-rate spread: **+2.62%** now, projected **+1.38%** in 12 months | Carry-trade profitability is narrowing from both ends. | CentralBank.watch, 23 July 2026 | Estimate / projection — label as forecast |
+| USD/JPY near **163.15** on 22 July 2026; breached **163** intraday on 21 July — a 40-year dollar high / yen low | The yen is at historic weakness despite hikes and intervention. | Caixin, 22 July 2026; NS Journal, 22 July 2026 | Strong |
+| MOF yen-buying FX intervention totaled **¥11.7349 trillion** during 28 April – 27 May 2026 | Record official firepower failed to reverse yen weakness. | Ministry of Finance Japan, 29 May 2026 | Strong |
+| CFTC COT: leveraged funds net short **90,461** JPY futures contracts as of 14 July 2026 | A crowded short base creates short-squeeze / feedback-loop risk. | CFTC, 14 July 2026 | Strong |
+| BIS estimated outstanding yen carry positions at roughly **¥40 trillion (~$250 billion)** going into the August 2024 unwind | Speculative carry exposure is large enough to amplify global moves. | BIS Bulletin No. 90, 27 August 2024 | Estimate — timeframe clear |
+| Yen-side FX swaps / forwards / currency swaps notional reached **$14.2 trillion (¥1,994 trillion)** by end-2023, up 27% in yen terms since end-2021 | The structural depth of yen-funded markets dwarfs the speculative slice. | BIS Quarterly Review, September 2024 | Strong (lagged structural stock) |
+| August 2024 unwind: Nikkei 225 **−12.4%**, VIX intraday **>65**, Bitcoin **−24%**, S&P 500 **−3%** on 5 August 2024 | A small BoJ move once triggered rapid global deleveraging. | l0g.fr, 13 July 2026, citing BIS Bulletin No. 90 | Strong |
+| 10-year JGB auction cleared at **2.755%** on 2 July 2026 | Domestic yields are rising with BoJ normalization. | Ministry of Finance Japan, 2 July 2026 | Strong |
+| Japan general government gross debt: **248.7%** of GDP in 2025 | Fiscal constraint on how far / fast the BoJ can tighten. | Trading Economics / Ministry of Finance | Strong |
+| 2026 Shuntō wage increase **+5.26%**; real wages fell **−1.3%** in 2025 | Wage-price support for hikes coexists with weak household purchasing power. | ISVD, 5 May 2026, citing Rengō and MHLW | Strong |
 
 ## Recommended concepts
 
@@ -26,7 +26,7 @@
   - Fed effective funds rate **3.63%** as of 21 July 2026.
   - Current Fed–BoJ spread **+2.62%**; projected 12-month spread **+1.38%**.
 - **Visualization type:** Slope / connected-dot chart or dual-axis rate-and-spread timeline.
-- **Composition notes:** The reader sees two converging lines first — the BoJ line rising from near zero and the effective Fed line flat-to-falling. A bold band between them narrows visibly toward the right, ending at the projected **1.38%** gap. The payoff: carry math is weakening even without a market crisis.
+- **Composition notes:** Show two converging lines first — the BoJ line rising from near zero and the effective Fed line flat-to-falling. A bold band between them narrows visibly toward the right, ending at the projected **1.38%** gap. The payoff: carry math is weakening even without a market crisis.
 - **Caveat / competing channel:** Energy prices and geopolitics can override or delay the rate-differential story. Japan imports nearly all its energy, and Middle East conflict-driven oil prices have widened the trade deficit — a channel that works independently of Fed–BoJ spread compression.
 - **Sources:**
   - Bank of Japan, 16 June 2026 — https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260616a.pdf
@@ -40,7 +40,7 @@
   - USD/JPY near **163.15** on 22 July 2026, a 40-year low for the yen.
   - MOF spent **¥11.7349 trillion** on yen-buying intervention from 28 April to 27 May 2026, yet USD/JPY kept rising.
 - **Visualization type:** Circular flow diagram / loop chart with a positioning gauge.
-- **Composition notes:** Start with the crowded-short gauge at the top (**90,461 net shorts**). Arrow 1: yen appreciates. Arrow 2: yen-funded investors face mark-to-market losses. Arrow 3: forced buying of yen to close positions. Arrow 4: more yen demand → further appreciation. An intervention box sits off to the side with a small label: “¥11.7tn did not reverse the trend.” The payoff: the tipping point is a positioning level, not a magic interest-rate number.
+- **Composition notes:** Put the crowded-short gauge at the top (**90,461 net shorts**). Arrow 1: yen appreciates. Arrow 2: yen-funded investors face mark-to-market losses. Arrow 3: forced buying of yen to close positions. Arrow 4: more yen demand → further appreciation. An intervention box sits off to the side with a small label: “¥11.7tn did not reverse the trend.” The payoff: the tipping point is a positioning level, not a magic interest-rate number.
 - **Sources:**
   - CFTC Commitments of Traders, positions as of 14 July 2026 — https://www.cftc.gov/dea/futures/financial_lf.htm
   - Caixin, 22 July 2026 — https://international.caixin.com/2026-07-22/102466972.html
@@ -80,7 +80,7 @@
   - General government gross debt: **248.7%** of GDP in 2025.
   - BoJ CPI projection for fiscal 2026: **2.5–3.0%**.
 - **Visualization type:** Balance-scale / seesaw diagram.
-- **Composition notes:** Left pan carries the hawkish arguments: wage growth (**+5.26%**), JGB yield (**2.755%**), and the BoJ’s fiscal 2026 CPI projection (**2.5–3.0%**). Right pan carries the constraints: debt (**248.7%** of GDP) and real wages (**−1.3%**). The fulcrum is the **1.0%** policy rate. The payoff: normalization is possible, but bounded.
+- **Composition notes:** Left pan carries the hawkish arguments: wage growth (**+5.26%**), JGB yield (**2.755%**), and the BoJ’s fiscal 2026 CPI projection (**2.5–3.0%**). Right pan carries the constraints: debt (**248.7%** of GDP) and real wages (**−1.3%**). The fulcrum is the **1.0%** policy rate. Payoff: normalization is possible, but bounded.
 - **Sources:**
   - ISVD, 5 May 2026 — https://isvd.or.jp/en/columns/2026-05-01-wage-hike-real-wage-paradox-2026
   - Ministry of Finance Japan, 2 July 2026 — https://www.mof.go.jp/english/policy/jgbs/auction/calendar/eresul/eresul20260702.htm

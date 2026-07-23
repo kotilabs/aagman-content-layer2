@@ -29,7 +29,7 @@ The risk is not the next rate hike. It is the mechanical feedback loop that can 
 
 Imagine a small-town bank that spent three decades offering the cheapest loans in the country. The rate was so low that people borrowed not because they needed to, but because the money was practically free. Locals bought rental properties. Neighbors borrowed to fund trading accounts. Speculators built strategies around the gap between this bank’s rate and what they could earn elsewhere. Then one morning the manager posted a notice: rates will keep rising, slowly but deliberately, until they reflect reality. No one knows which borrower will be forced to sell first. But in a town built on cheap leverage, the first forced seller rarely sells alone.
 
-A yen carry trade is a leveraged position that borrows cheap yen and invests in higher-yielding assets elsewhere. It works until the yen rises fast enough to force repayment.
+A yen carry trade borrows cheap yen and invests in higher-yielding assets elsewhere. It works until the yen rises fast enough to force repayment.
 
 ## Context
 
@@ -37,11 +37,11 @@ On 16 June 2026, the Bank of Japan raised its uncollateralized overnight call-ra
 
 The same week, the Federal Reserve held the federal funds target range at 3.50–3.75%, with the effective rate at 3.63% as of 21 July (Federal Reserve, 17 June 2026; FRED, 21 July 2026). The Fed–BoJ policy spread is now roughly 2.62%, with the market projecting it to compress to 1.38% within twelve months (CentralBank.watch, 23 July 2026). The yen has been the developed world’s cheapest funding currency for a generation.
 
-The signal is not a single rate level triggering a crash. It is that the interaction between Japanese normalization, the remaining rate differential, and outstanding carry positions has reached a zone where mechanical feedback can outrun policy intent.
+The signal is not a single rate level triggering a crash. It is the interaction between Japanese normalization, the remaining rate differential, and outstanding carry positions reaching a zone where mechanical feedback can outrun policy intent.
 
 ## Why is the yen still weak if the BoJ is hiking?
 
-Because the carry trade is a stock, not just a flow: even as the policy rate rises, a large pool of outstanding yen-funded positions keeps yen demand subdued until those positions are forced to close.
+The carry trade is a stock, not just a flow. Even as the policy rate rises, a large pool of outstanding yen-funded positions keeps yen demand subdued until those positions are forced to close.
 
 ## Mechanism
 
@@ -61,9 +61,9 @@ The yen is at a 40-year low against the dollar. USD/JPY breached 163 on 21 July 
 
 Leveraged positioning is crowded. CFTC data as of 14 July 2026 show leveraged funds net short 90,461 yen futures contracts (CFTC, 14 July 2026). A crowded short base can fuel a rapid unwind.
 
-Intervention has failed to change the trend. The April–May yen-buying operation was record-scale, yet the yen continued lower. That is consistent with a market that believes the interest-rate differential, not official jawboning, will determine the path.
+Intervention has failed to change the trend. The April–May yen-buying operation was record-scale, yet the yen continued lower. That is consistent with a market that believes the interest-rate differential, not official jawboning, will set the path.
 
-Inflation dynamics are mixed. Japan’s headline CPI was 1.5% year-on-year in May 2026, below the BoJ’s 2% target, but Tokyo core CPI rose to 1.6% in June from 1.3% in May, and Shuntō wage settlements averaged 5.26% for the third consecutive year above 5% (Trading Economics, 23 July 2026; MacroMicro, 26 June 2026; ISVD, 5 May 2026). Real wages fell 1.3% in 2025, but the wage-price foundation for continued hikes is visible.
+Inflation dynamics are mixed. Japan’s headline CPI was 1.5% year-on-year in May 2026, below the BoJ’s 2% target. Tokyo core CPI rose to 1.6% in June from 1.3% in May, and Shuntō wage settlements averaged 5.26% for the third consecutive year above 5% (Trading Economics, 23 July 2026; MacroMicro, 26 June 2026; ISVD, 5 May 2026). Real wages fell 1.3% in 2025, but the wage-price foundation for continued hikes is visible.
 
 | Metric | Value | Date / Period |
 |---|---|---|
@@ -77,6 +77,8 @@ Inflation dynamics are mixed. Japan’s headline CPI was 1.5% year-on-year in Ma
 
 
 ## Interpretation Spectrum
+
+Four readings are in tension. Picking one depends on whether you trust the central bank's pace, the market's positioning, the fiscal math, or the terms of trade.
 
 **Gradual, controlled normalization.** This is the base case held by most sell-side economists and the BoJ itself. The bank has moved in 25-basis-point steps, said financial conditions will remain accommodative, and tied further hikes to data. CPI is only around 1.5%, real wages are still falling, and the board contains both hawks and doves. The BoJ's April 2026 Outlook projects fiscal 2026 CPI at 2.5–3.0%, suggesting the bank expects underlying inflation to run above the current headline print. The weakness is that it assumes the BoJ can calibrate smoothly. If inflation or the yen force a faster move, the feedback loop can outrun the central bank.
 
