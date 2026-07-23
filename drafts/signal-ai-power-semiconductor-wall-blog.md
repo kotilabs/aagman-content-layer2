@@ -97,9 +97,19 @@ A near-term counterweight to the supercycle view is worth keeping in mind. The I
 
 Two episodes are worth keeping in mind, not because they predict the outcome, but because they show how these dynamics tend to play out.
 
-The telecom fiber and optical buildout of 1999–2000 saw massive capital deployment into physical infrastructure ahead of revenue certainty, with shortages in optical components, power systems, and specialty materials. Prices and lead times rose sharply, then the oversupply lasted for years. The structural point is that infrastructure buildouts can overshoot and create lasting supply-chain scarring even when final demand eventually absorbs the capacity.
+### The telecom fiber buildout, 1999–2000
 
-The pandemic semiconductor shortage of 2020–2022 is closer in time and more directly analogous. Mature-node automotive, industrial, and consumer chips faced acute shortages because capacity had been reallocated to high-margin electronics. Lead times stretched past 40 weeks, and allocation favored large customers. The lesson is that the most constrained nodes are often not the most advanced ones, but the mature nodes where investment lagged. Shortages in that part of the supply chain can last years, not quarters.
+In the late 1990s, the internet was becoming real enough that capitalists started pricing it as if it would double every year forever. Telecom carriers, dot-coms, and equipment vendors raised enormous sums and laid fiber-optic cable across oceans and continents. For a brief window, the components that made that buildout possible — optical switches, dense wavelength-division multiplexing gear, power systems, cooling, specialty materials — were in genuine shortage. Lead times stretched. Prices rose. Suppliers expanded capacity as if the demand curve had shifted permanently.
+
+Then the demand did not keep shifting. The cable was laid, but the traffic was not there to fill it. WorldCom and Global Crossing collapsed. Optical-component vendors that had ramped factories found themselves with years of excess inventory. The oversupply lasted into the middle of the decade. The structural point is not simply that bubbles burst. It is that physical infrastructure buildouts can overshoot revenue certainty by several years, and the supply-chain scarring — cancelled orders, bankrupt suppliers, underinvestment in the follow-on generation — can outlast the original boom. When the next wave of real demand arrived in the 2010s, some parts of the optical supply chain had to be rebuilt almost from scratch.
+
+For AI infrastructure today, the relevant question is not whether demand exists at all. It is whether the physical buildout is running ahead of the revenue that can pay for it, and whether the suppliers of the unglamorous enabling layer will be left with excess capacity if the pace of capex slows.
+
+### The pandemic semiconductor shortage, 2020–2022
+
+The shortage that followed COVID-19 is closer in time and more directly analogous. Automakers cut orders in early 2020, expecting demand to collapse. Consumer-electronics and data-center customers kept ordering. By the time car companies tried to reorder, mature-node foundry capacity had been reallocated to higher-margin chips for laptops, servers, and gaming consoles. Lead times for automotive microcontrollers stretched past 40 weeks. Carmakers idled plants. Used-car prices spiked. The shortage was not in the most advanced nodes; it was in the 28-nanometer-and-older processes, the 200-mm wafer fabs, the BCD processes that make power management and motor-control chips.
+
+The same allocation logic is visible now. AI servers are not just consuming GPUs; they are consuming the mature-node power components that every other industry also needs. TSMC and Samsung are scaling back 8-inch output even as AI demand rises. Infineon and STMicroelectronics are raising capex for power semiconductors, but new fab capacity takes years. The lesson is that the most constrained nodes are often not the ones on the leading-edge roadmap that get the headlines. They are the older, cheaper, more commoditized processes where investment lagged because nobody thought they were exciting. Once those nodes tighten, the shortage can last for years, not quarters, because expanding them is neither fast nor fashionable.
 
 ## Implications for Decision-Makers
 

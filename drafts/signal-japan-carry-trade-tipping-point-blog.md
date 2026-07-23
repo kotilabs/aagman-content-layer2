@@ -90,9 +90,21 @@ Four readings are in tension. Picking one depends on whether you trust the centr
 
 ## Historical Memory
 
-The most relevant analogue is August 2024. A small BoJ rate hike in July 2024, combined with weaker US data, triggered a rapid unwind of yen-funded positions. The Nikkei 225 fell 12.4%, the VIX spiked above 65 intraday, bitcoin dropped 24%, and the S&P 500 fell 3% (BIS Bulletin No. 90, 27 August 2024). The mechanism — yen shorts forced to cover, selling risk assets to raise yen — is directly relevant. The difference is that in 2024 the BoJ walked back its hawkish guidance to calm markets. In 2026 it is explicitly guiding for more hikes.
+### The August 2024 unwind
 
-History is used here for perspective, not prediction. The August 2024 episode proves the transmission channel is real; it does not tell us the timing or magnitude of the next unwind.
+The most relevant analogue is August 2024. In late July that year, the Bank of Japan raised its policy rate to 0.25% — a small move by historical standards, but a symbolic one after years of negative rates. At the same time, US data began to soften and markets started pricing a more aggressive Fed easing path. The combination was enough to trigger a rapid unwind of yen-funded positions.
+
+The mechanics were visible within days. The yen strengthened sharply. Investors who had borrowed cheap yen to buy higher-yielding assets elsewhere were forced to close those positions. To close a yen short, you buy yen. To buy yen, you sell whatever you bought with the borrowed money. The Nikkei 225 fell 12.4% in a matter of sessions. The VIX spiked above 65 intraday. Bitcoin dropped 24%. The S&P 500 fell 3%. The selling was not driven by a sudden collapse in US corporate fundamentals. It was driven by the mechanical need to repay yen.
+
+The crucial difference between then and now is the policy response. In 2024, the BoJ walked back its hawkish guidance to calm markets. Governor Ueda emphasized that the bank would not tighten aggressively while financial conditions were volatile. In 2026, the BoJ is explicitly guiding for more hikes. The transmission channel is the same. The central bank's tolerance for market stress appears different.
+
+### The 2008 carry-trade liquidation
+
+A second reference point is the global financial crisis of 2008. The yen carry trade was not the cause of the crisis, but it amplified the deleveraging. For years, investors had borrowed yen at negligible cost to fund positions in higher-yielding currencies and assets. When the crisis hit and risk appetite collapsed, those positions were unwound in a hurry. The yen appreciated against almost every major currency as leveraged positions were closed.
+
+The lesson is that carry-trade unwinds tend to be concentration events rather than gradual trends. They do not happen because every investor independently decides to sell. They happen because a subset of investors is forced to sell, and that selling creates the price movement that forces the next subset. The feedback loop is what makes the yen a risk-off currency even though Japan runs persistent current-account surpluses: in a crisis, the yen rises not because Japan looks good, but because leveraged positions denominated in yen have to be repaid.
+
+History is used here for perspective, not prediction. Both episodes prove the transmission channel is real. Neither tells us the timing or magnitude of the next unwind.
 
 ## Implications for Decision-Makers
 
