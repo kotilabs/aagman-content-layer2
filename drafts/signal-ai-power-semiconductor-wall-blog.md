@@ -103,7 +103,7 @@ The pandemic semiconductor shortage of 2020–2022 is closer in time and more di
 
 ## Implications for Decision-Makers
 
-The signal matters for how one reads the AI capital cycle more broadly. It also connects to [China's deflation trap](/china-deflation-trap-stimulus-without-demand-2025) — another case where supply-side investment is running ahead of the demand that is supposed to absorb it — and to the [yen carry trade](/japan-yen-carry-trade-tipping-point-2026), because both involve leverage and capital flows adjusting to structural shifts that markets are slow to price.
+The signal matters for how one reads the AI capital cycle more broadly. Supply-side investment is running ahead of the physical infrastructure that is supposed to support it, while leverage and capital flows are adjusting to structural shifts that markets are slow to price.
 
 - **Equities.** The companies that used to matter most are still large; the companies that matter next are the ones that can deliver electrons. Semiconductor exposure is bifurcating: demand inflections and capex increases are concentrated among suppliers tied to AI data-center power delivery, while general-purpose server, automotive, industrial, and consumer semiconductor suppliers face allocation pressure and longer lead times. The reallocation is sharpened by the fact that global 8-inch wafer foundry capacity is expected to contract in 2026, so AI demand is rising into a shrinking supply base rather than merely crowding a flat one. Data-center real estate and colocation providers benefit from tight capacity, but only if they can secure power.
 

@@ -100,7 +100,7 @@ Aagman's structural bias treats Japan as a structurally weak link among develope
 
 If the yen gaps higher, the selling tends to move in stages. The first sellers are the leveraged carry traders who have to close their yen borrowings. The second sellers are anyone who owns what they own — liquid winners, momentum positions, and high-beta assets that get sold to raise yen. Several asset classes sit in the path of this signal.
 
-The dynamics here also overlap with Aagman's work on the [global rate-cut cycle](/the-endgame-of-the-global-rate-cut-cycle) and [China's deflation trap](/china-deflation-trap-stimulus-without-demand-2025): in each case, the market is adjusting to a policy path that has already turned, even if prices have not fully caught up.
+The broader pattern is a market adjusting to a policy path that has already turned, even if prices have not fully caught up.
 
 The Japanese yen is the direct variable. A sustained BoJ hiking path plus any Fed easing narrows the differential and supports the yen. The risk is non-linearity: stability punctuated by sharp appreciation during deleveraging.
 

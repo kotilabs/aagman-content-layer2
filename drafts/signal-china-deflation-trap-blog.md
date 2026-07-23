@@ -97,7 +97,7 @@ China's own 1998–2002 deflation is the domestic precedent. Beijing responded w
 
 ## Implications for Decision-Makers
 
-This changes how you read Chinese macro data, and by extension the second-order effects on global markets. Readers tracking this alongside [Japan's carry-trade tipping point](/japan-yen-carry-trade-tipping-point-2026) and the [AI power-semiconductor wall](/ai-data-center-power-semiconductor-wall-2026) will notice a common thread: the binding constraint is usually not where the headline story sits. A 5% GDP print in China no longer implies healthy domestic demand. Flat CPI and falling PPI suggest monetary and fiscal easing is being absorbed by balance-sheet repair rather than translating into price pressure. The composition of Chinese growth now matters more than the headline.
+This changes how you read Chinese macro data, and by extension the second-order effects on global markets. The binding constraint is usually not where the headline story sits. A 5% GDP print in China no longer implies healthy domestic demand. Flat CPI and falling PPI suggest monetary and fiscal easing is being absorbed by balance-sheet repair rather than translating into price pressure. The composition of Chinese growth now matters more than the headline.
 
 The story also matters for global manufacturing and trade. A China that cannot absorb its own industrial output will keep exporting it. Record trade surpluses and surging steel and EV exports put margin pressure on manufacturers in ASEAN, India, Latin America, and Europe, raising the risk of additional tariffs or anti-dumping measures.
 
