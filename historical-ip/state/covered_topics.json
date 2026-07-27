@@ -1,0 +1,36 @@
+{
+  "version": "2026-07-25",
+  "note": "Stories already covered or approved conceptually. The signal generator reads this file and must not propose duplicates.",
+  "topics": [
+    {
+      "id": "assignat-revolutionary-france",
+      "title": "Paper Money, Land, and Revolution: The Assignat, 1789–1796",
+      "period": "1789–1796",
+      "asset": "Currency / government bonds backed by land",
+      "region": "France",
+      "status": "draft-complete",
+      "date_added": "2026-07-25",
+      "surfaces": ["blog", "thread", "carousel", "infographic"]
+    },
+    {
+      "id": "japanese-asset-bubble-1985-1990",
+      "title": "Dry Wood: The Japanese Bubble, 1985–1990",
+      "period": "1985–1990",
+      "asset": "Equities / real estate",
+      "region": "Japan",
+      "status": "tested-conceptually",
+      "date_added": "2026-07-25",
+      "surfaces": ["blog", "thread", "carousel", "infographic"]
+    },
+    {
+      "id": "weimar-hyperinflation-1921-1923",
+      "title": "When Money Became Wallpaper: The Weimar Hyperinflation, 1921–1923",
+      "period": "1921–1923",
+      "asset": "Currency (German Papiermark)",
+      "region": "Weimar Germany",
+      "status": "published-ready",
+      "date_added": "2026-07-25",
+      "surfaces": ["blog", "thread", "carousel", "infographic"]
+    }
+  ]
+}
