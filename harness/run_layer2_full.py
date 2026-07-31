@@ -578,6 +578,62 @@ def _parse_selection(path: Path) -> dict:
     return out
 
 
+_SCOUT_CHOICES = {
+    "signal_identifier": (
+        "Combined macro + realtime lens",
+        "Runs the original Layer 2 digest: macro/structural candidates plus "
+        "real-time market signals in one file."
+    ),
+    "macro_scout": (
+        "Macro / structural lens only",
+        "Weekly deep editorial candidates across macro, equities, commodities, "
+        "rates, credit, derivatives, AI×capital, and political economy."
+    ),
+    "india_news_scout": (
+        "India news lens",
+        "Daily/near-daily Indian markets, companies, sectors, and policy."
+    ),
+    "x_scout": (
+        "X home-feed lens",
+        "Scrolls your logged-in X home feed, expands relevant tweets, and "
+        "clusters them into story candidates."
+    ),
+    "reddit_scout": (
+        "Reddit lens",
+        "Clusters posts from r/IndianStockMarket, r/DalalStreetTalks, "
+        "r/IndianStocks, r/IndianStreetBets, r/MutualfundsIndia."
+    ),
+}
+
+
+def _parse_scout_selection(path: Path) -> str:
+    """Read the scout choice from a response file."""
+    text = path.read_text(encoding="utf-8").strip()
+    # YAML frontmatter.
+    if text.startswith("---"):
+        import yaml
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            fm = yaml.safe_load(parts[1]) or {}
+            scout = fm.get("scout", "")
+            if scout in _SCOUT_CHOICES:
+                return scout
+    # Simple key:value or bare command.
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if ":" in line:
+            k, v = line.split(":", 1)
+            if k.strip().lower() in ("scout", "command"):
+                scout = v.strip().strip('"\'')
+                if scout in _SCOUT_CHOICES:
+                    return scout
+        if line in _SCOUT_CHOICES:
+            return line
+    return ""
+
+
 def _write_ticket(state: dict, workdir: Path) -> Path:
     date = state["date"]
     signal_id = state["signal_id"]
@@ -816,6 +872,70 @@ def cmd_publish_approval(services: Services, workdir: Path, args) -> None:
 
 
 # --------------------------------------------------------------------------- #
+# start — pick a scout and begin the run
+# --------------------------------------------------------------------------- #
+def cmd_start(services: Services, workdir: Path, args) -> None:
+    """Show a startup menu so the operator picks which scout to run."""
+    state = load_state(workdir)
+    date = args.date or current_date(state)
+    state["date"] = date
+    save_state(workdir, state)
+
+    gate_name = f"scout_selection_{date}"
+    gdir = _gate_dir(workdir, gate_name)
+    response_file = gdir / "RESPONSE.md"
+
+    # If a scout is already chosen, run it.
+    if response_file.exists():
+        scout = _parse_scout_selection(response_file)
+        if not scout:
+            _clear_gate(workdir, gate_name)
+            raise SystemExit(
+                f"Could not parse scout selection from {response_file}. "
+                f"Clear the gate and re-run start."
+            )
+        print(f"Scout selected: {scout}")
+
+        handlers = {
+            "signal_identifier": cmd_signal_identifier,
+            "macro_scout": cmd_macro_scout,
+            "india_news_scout": cmd_india_news_scout,
+            "x_scout": cmd_x_scout,
+            "reddit_scout": cmd_reddit_scout,
+        }
+        handlers[scout](services, workdir, args)
+
+        # If the scout produced a digest, move on to signal selection.
+        available = _available_digest_sources(workdir, date)
+        if available:
+            print("\nScout complete. Moving to signal selection.")
+            cmd_select_signal(services, workdir, args)
+        return
+
+    # Build the menu gate.
+    body = (
+        f"# Scout Selection — {date}\n\n"
+        f"Pick which lens to run today. The harness will run that scout, "
+        f"then move to signal selection.\n\n"
+        f"## Available scouts\n\n"
+    )
+    for key, (title, desc) in _SCOUT_CHOICES.items():
+        body += f"### `{key}`\n- **{title}**\n- {desc}\n\n"
+    body += (
+        f"\n## How to respond\n\n"
+        f"Write `{gdir / 'RESPONSE.md'}` with:\n"
+        f"```yaml\n"
+        f"scout: macro_scout\n"
+        f"```\n\n"
+        f"Or just the command name on one line:\n"
+        f"```\n"
+        f"macro_scout\n"
+        f"```\n"
+    )
+    _request_gate(workdir, gate_name, body)
+
+
+# --------------------------------------------------------------------------- #
 # run_all — advance as far as possible
 # --------------------------------------------------------------------------- #
 def cmd_run_all(services: Services, workdir: Path, args) -> None:
@@ -826,8 +946,8 @@ def cmd_run_all(services: Services, workdir: Path, args) -> None:
     date = args.date or current_date(state)
     available = _available_digest_sources(workdir, date)
     if not available:
-        print("Step: signal_identifier")
-        cmd_signal_identifier(services, workdir, args)
+        print("No digest found. Run: python run_layer2_full.py start")
+        raise SystemExit(1)
 
     # 2. Selection.
     if "signal_id" not in state:
@@ -917,7 +1037,7 @@ def cmd_status(services: Services, workdir: Path, args) -> None:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser("run_layer2_full.py")
     ap.add_argument("command", choices=[
-        "signal_identifier", "macro_scout", "india_news_scout", "x_scout", "reddit_scout",
+        "start", "signal_identifier", "macro_scout", "india_news_scout", "x_scout", "reddit_scout",
         "select_signal", "research", "write", "review", "correct", "seo",
         "publish_approval", "run_all", "status",
     ])
@@ -945,6 +1065,7 @@ def main(argv=None) -> int:
     _ = build_config(services)
 
     handlers = {
+        "start": cmd_start,
         "signal_identifier": cmd_signal_identifier,
         "macro_scout": cmd_macro_scout,
         "india_news_scout": cmd_india_news_scout,
