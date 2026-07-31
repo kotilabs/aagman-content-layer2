@@ -1,0 +1,7 @@
+{
+  "base": 48000,
+  "p0": 73000,
+  "feature": 53000,
+  "create_samples": 0,
+  "_provenance": "Anchored on 480 merged PRs: median 294 / p75 721 changed lines (real). tokens = 30000 read + lines*40*1.5 retry. Size distribution + severity ratio (p0=p75) are REAL; the lines->tokens factor is an ESTIMATE \u2014 recalibrate when CREATE logs code_execution tokens to cost_log."
+}

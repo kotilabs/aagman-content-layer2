@@ -1,0 +1,42 @@
+[
+ {
+  "flag": "no-advice-disclaimer",
+  "rule": "Every money-facing agent output (portfolio health, rebalance, stress, research) MUST carry the SEBI not_investment_advice / advice_disclaimer via a single chokepoint. Portfolio handler:264-292 discarded it (grep=0 matches) while research renders it via formatResearchPack \u2014 BLOCKER. Fix: helpers/portfolio-disclaimer.ts on BOTH the deterministic health return AND the LLM-bypass rebalance/stress fallback."
+ },
+ {
+  "flag": "disclaimer-dropped-on-directives",
+  "rule": "The highest-risk output \u2014 rebalance/stress fallback emitting REDUCE/SWITCH/ADD directives (handler:310-357) \u2014 must not ship with zero boundary framing. Directive outputs need the disclaimer MORE than passive health reads, not less."
+ },
+ {
+  "flag": "llm-invented-numbers",
+  "rule": "Numbers shown to the user must be deterministically computed, never read from LLM JSON (parseWorkerReturn). Portfolio stress/rebalance numbers (recovery_days_estimate existed only in the prompt template; field shapes the deterministic tools never emit) were LLM-invented \u2014 the exact de-hallucination breach PR #1592 closed. Strip LLM-authored staleness/impact; compute in TS."
+ },
+ {
+  "flag": "no-provenance-data-as-of",
+  "rule": "Every data display must carry {data_as_of, is_stale}; default is_stale=TRUE on unknown (deriveStaleness, STALE_AFTER_DAYS=5). 'Data without an as-of is a UX bug' and a compliance gap on money-facing surfaces \u2014 a user cannot interpret trading data without temporal context."
+ },
+ {
+  "flag": "fail-open-valuation",
+  "rule": "Never coerce a missing/stale price to 0 or fall back to a guessed value (holdingValue||0, 0.75% expense-ratio guess, substring 'direct' for plan). Fail-loud GREY on unknown, not 0/GREEN \u2014 a synthetic BUY/SWITCH needs live price/sector/expense/cost-basis lookups, not silent defaults."
+ },
+ {
+  "flag": "whitebox-ra-exemption",
+  "rule": "Aagman's deterministic SIR = white-box algo (logic disclosed + replicable) \u21d2 exempt from SEBI Research-Analyst registration. Black-box (opaque/non-replicable) providers MUST register as RA + maintain a per-algo research report + re-register on any logic change. Preserve SIR determinism/disclosability to keep the exemption (SEBI circular SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2025/0000013, 4 Feb 2025; full applicability 1 Apr 2026)."
+ },
+ {
+  "flag": "ria-not-ra-framing",
+  "rule": "Aagman holds SEBI RIA registration INA000021951 (Investment Adviser), NOT a Research Analyst registration. The shipped line 'Aagman is not a SEBI-registered research analyst' (PulseView.tsx:216) is accurate \u2014 frame RIA as enabling compliant distribution, not advice; the consumer product stays research/decision-support, not buy/sell calls."
+ },
+ {
+  "flag": "audit-row-per-order-event",
+  "rule": "Every order lifecycle event (place/modify/cancel/reject/fill) must produce an append-only audit row for SEBI compliance. Synonym event names in an if/elif dispatcher silently drop audit rows (4 live SimpleOrder rejects \u2192 0 rows, PR #1527 #25). Canonical event vocabulary + flat-lookup dispatcher; SIR is append-only versioned for audit."
+ },
+ {
+  "flag": "no-return-performance-claim",
+  "rule": "Do not surface unverifiable return/performance claims. Research/audit numbers must trace to a data artifact (report JSON / DB row / git commit), never to Claude's own prose or a prompt template \u2014 'validated_params claimed WF 4/5 Sharpe 1.47' while saved reports showed gate1=false, test Sharpe ~0.83. If no source exists the claim is unverified \u2014 say so."
+ },
+ {
+  "flag": "cite-real-loss-stats",
+  "rule": "When citing F&O retail-loss context use the verified SEBI figures: 93% of F&O traders lost over FY22\u2013FY24, \u20b91.8 lakh crore aggregate (SEBI Sept 2024); ~1.13 crore unique individual F&O traders \u2014 NOT the stale '89% (2023)' or the '5 crore' figure that conflates demat accounts."
+ }
+]

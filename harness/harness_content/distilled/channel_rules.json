@@ -1,0 +1,55 @@
+{
+  "_source": "kotilabs/aagman-content-layer2 — voice/ overlays, prompts/, README content rules, and approved final/ output. Lengths are the repo's stated targets; where the repo gives a range it is preserved.",
+  "substack_blog": {
+    "unit": "long-form essay",
+    "length": "long-form; opening analogy fixed at 100-150 words; no hard word cap (quality/signal-driven, not quota)",
+    "structure": ["100-150w everyday opening analogy", "context", "mechanism", "signal/deviation", "interpretation spectrum (multiple labelled readings)", "historical/structural memory", "implications for decision-makers (incl. 'what this does NOT affect')", "open question"],
+    "hashtags": "n/a",
+    "sourcing": "full source table with # / source / title / date / URL; read full source before citing; charts label source, timeframe, units, nominal-vs-real",
+    "disclosure": "structural: no price targets, no buy/sell, explicit 'does not tell anyone what to buy or sell', open-question ending. Harness adds: explicit educational/not-advice line (see sebi_extras.md)",
+    "seo_aeo": "blog-only audit. Title/H1 honest no clickbait; meta description 150-160 chars stating tension/question, no false urgency; H2s phrased as reader/AI questions; direct answer in first 100 words; quotable 40-60 word paragraphs",
+    "ending": "open question / tension worth watching — never CTA or conclusion"
+  },
+  "x_thread": {
+    "unit": "post",
+    "length": "8-15 posts; each post under ~250 characters where possible",
+    "structure": ["Post 1 hook: name the shift not the topic, one sharp sentence", "body posts: one idea per post, one beat each", "mid-thread pivot: name thesis ('This isn't X. It's Y.')", "final post: open cognitive tension, no CTA"],
+    "numbering": "1/, 2/, 3/ …",
+    "hashtags": "0-1 max, or none",
+    "links": "no link in the first post",
+    "sourcing": "numbers specific and sourced inline; each post standalone-quotable (screenshot test)",
+    "disclosure": "structural (no tips/targets/promises); harness adds not-advice line on the thread's profile/pinned or final post per channel policy",
+    "ending": "unresolved tension — no 'follow for more', no CTA"
+  },
+  "linkedin_carousel": {
+    "unit": "slide",
+    "length": "promo 7-11 slides; standalone 8-12 slides",
+    "register": "slightly more formal than Instagram; headlines can be longer; named institutions and data callouts land well",
+    "per_slide": ["kicker (2-4 words)", "headline (the one signal sentence)", "body (1-3 lines)", "hero stat or quote with source", "design note (what the visual shows)", "speaker note (what the slide does in the argument)"],
+    "structure": "lead concrete then abstract; exactly one explicit pivot slide mid-deck ('This isn't X, it's Y'); vary slide weight (dense evidence slide earns a sparse one-liner)",
+    "hashtags": "none (repo carries no hashtags on carousels)",
+    "last_slide": "promo → link to Substack with one sentence on the open question; standalone → the open question, NO external link",
+    "sourcing": "numbers sourced inline on the hero-stat line",
+    "disclosure": "structural + harness not-advice line on the deck (e.g. final/back slide)",
+    "italics": "sparingly — max one conceptual word per slide; em dashes for pivots"
+  },
+  "instagram_carousel": {
+    "unit": "slide",
+    "length": "promo 7-11 slides; standalone 8-12 slides",
+    "register": "more visual rhythm; SHORTER headlines than LinkedIn; design notes matter more (image content, colour contrast, minimal text per slide)",
+    "per_slide": ["kicker", "headline (short)", "body (tight)", "hero stat with source", "design note (emphasised)", "speaker note"],
+    "structure": "same argument arc as LinkedIn; even more concise",
+    "hashtags": "none in repo practice",
+    "last_slide": "same as LinkedIn but even more concise; standalone → no link",
+    "disclosure": "structural + harness not-advice line",
+    "forbidden": "rhetorical questions mid-deck, 'Imagine if…', 'The future of X', exclamation marks, emoji, hype openers, engagement bait"
+  },
+  "infographic_concepts": {
+    "unit": "concept (ideation, not finished copy)",
+    "length": "surface the most interesting verified numbers + 3-5 specific concepts",
+    "per_concept": ["central insight", "data to include", "visualization type (waterfall/timeline/comparison/ratio/geography/etc.)", "composition notes", "source attribution for EVERY number"],
+    "mandatory_sections": ["'Verified interesting data' table with per-datapoint verdict", "'What to avoid' (drop weak/one-source/scary-standalone numbers)", "source-definition line where estimates differ by segment/date"],
+    "hashtags": "n/a",
+    "disclosure": "visual ideas must rest on verified numbers; caveat lines and 'used for perspective, not prediction' captions required; no fabricated data"
+  }
+}

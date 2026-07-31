@@ -1,0 +1,54 @@
+[
+  {
+    "pattern": "Buy/sell/should/recommend language or price targets — 'buy RELIANCE', 'accumulate below X', 'this could double', target/entry/exit levels (English AND Hindi/Hi-en: kharidiye, kharido, बेच, खरीद).",
+    "why": "Hard constraint across the whole layer: no stock tips, price targets, or return promises. Aagman is a SEBI RIA — money-facing advice on a public channel is a compliance breach. Product-side bar is zero-tolerance, multi-language (research-product-quality-bar memory). If a piece resembles advisory content, stop and reframe."
+  },
+  {
+    "pattern": "Guaranteed / promised returns or outcome claims — 'guaranteed returns', 'AI will beat the market', 'this will happen again', hindsight dressed as foresight.",
+    "why": "Aagman competes on judgment, not outcomes: 'a market interpreter, not a predictor.' Return promises and 'AI beats the market' framing are explicitly banned. History is for perspective only — never 'this will happen again.'"
+  },
+  {
+    "pattern": "Urgency bait — 'act now', 'don't miss', 'last chance', 'before it's too late', countdowns.",
+    "why": "No urgency words anywhere; the voice is calm when markets are volatile. Urgency manufactures the emotional pressure the brand explicitly refuses to trade on."
+  },
+  {
+    "pattern": "Hype adjectives and superlatives standing in for evidence — 'massive', 'huge', 'explosive', 'game-changing', 'unbelievable'.",
+    "why": "Named-and-banned in the base voice guide. Rule: no adjective where a number will do. Numbers carry the argument; adjectives signal you don't have the number."
+  },
+  {
+    "pattern": "Engagement bait and CTAs — 'Agree? 👇', 'Reply with your take', 'follow for more', 'like and share', rhetorical questions mid-deck, 'Imagine if…', 'The future of X'.",
+    "why": "Forbidden across carousel and thread overlays. Endings must be open cognitive tension, never a call to action. Finance-Twitter engagement mechanics erode the credibility the brand is built on."
+  },
+  {
+    "pattern": "Emoji, exclamation marks, meme language, snark, sarcasm, mockery, trader-shaming, or moral superiority.",
+    "why": "All explicitly forbidden. Allowed humor is narrow: dry irony and quiet recognition of human repetition — never snark or Finance-Twitter tone. Mockery and shaming break the 'writing for peers, never talk down' contract."
+  },
+  {
+    "pattern": "Collapsing an ambiguous signal into one confident narrative; performative certainty where markets offer none.",
+    "why": "The epistemic core: separate facts / mechanisms / interpretations / opinions, and present competing readings in tension ('probably parts of all four'). Consensus-aligned single-narrative macro content is the most common failure mode the markets reviewer exists to catch. Never imply certainty markets don't offer."
+  },
+  {
+    "pattern": "LLM-invented numbers, fabricated sources, or made-up verdict/fund names — any figure not traceable to the research artifact or a live verifiable source.",
+    "why": "No fabrication rule (content) reinforced by the product-side blocker: the portfolio-agent audit found LLM-emitted stress/rebalance numbers and fabricated qty/value shipped to users as 'deterministic' — a de-hallucination breach. Every number, quote, AMFI code, and Sharpe in any output must exist in the corpus/source. Fictional instrument → abstain, never invent."
+  },
+  {
+    "pattern": "Silently substituting a missing number with a default or proxy (e.g. cost basis shown as live value, 0 for a missing price, an assumed expense ratio) without flagging it.",
+    "why": "Fail-fast, no sentinel fallbacks. The portfolio audit's headline BLOCKERs were exactly this: missing price → 0, cost basis passed off as live value, unvalued holdings vanishing silently. In content this means never presenting a stale/estimated/derived figure as a hard current fact — label it (as the infographic 'source-definition line' and 'used for perspective, not prediction' captions do)."
+  },
+  {
+    "pattern": "Publishing customer-facing content with no advice-boundary framing at all — no 'what this does not affect', no not-advice/educational disclosure, no open-question ending.",
+    "why": "Portfolio audit BLOCKERs 1-2: money-facing output shipped with the SEBI disclaimer dropped entirely. For a SEBI RIA the boundary framing is mandatory, not optional. Content encodes it structurally (no buy/sell, 'does not tell anyone what to buy or sell', open question) AND — per harness policy — carries an explicit educational/not-advice disclosure line. See sebi_extras.md."
+  },
+  {
+    "pattern": "Anthropomorphizing markets, capital, or AI — 'the market wants', 'capital is scared', 'AI decided'.",
+    "why": "Explicitly banned. Markets move on positioning, liquidity, and structure — attributing intent hides the mechanism, which is the one thing the reader is here for. When narratives conflict with mechanics, mechanics win."
+  },
+  {
+    "pattern": "Transitional filler and abstraction stacking — 'Furthermore,', 'It's worth noting,', 'In today's world,', abstract-on-abstract sentences with no concrete anchor.",
+    "why": "Carousel/thread overlays: cut transitional phrases; lead with the concrete, follow with the abstract; one idea per unit; no stacking of abstractions. 'If removing a line improves seriousness, remove it.'"
+  },
+  {
+    "pattern": "Unlabelled promotion or bias — a house long-cycle view (India bull market, gold hedge, rate-cycle bottom) presented as established fact, or a promo dressed as neutral analysis.",
+    "why": "Declared biases are undercurrents, never forecasts, and must be labeled inline where they colour a reading (the blog 'Note on bias' convention). If data contradicts bias, data wins. Promotion must be openly labelled; illustrative framings are allowed only when openly labelled."
+  }
+]

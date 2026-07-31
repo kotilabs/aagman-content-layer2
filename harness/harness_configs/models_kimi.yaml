@@ -1,0 +1,22 @@
+# Single-model chains for Kimi Code bridge testing.
+# The model name is ignored by the bridge; single-item chains minimize the
+# number of interactive request/response round trips.
+
+defaults:
+  classification:    [kimi-code]
+  complex_planning:  [kimi-code]
+  content_gen:       [kimi-code]
+  cheap_local:       [kimi-code]
+  code_execution:    [kimi-code]
+
+panels:
+  judge_panel:       [kimi-code]
+  rca_panel:         [kimi-code]
+  compliance_panel:  [kimi-code]
+
+overrides:
+  content.create:    [kimi-code]
+  engineering.ideate: [kimi-code]
+
+pricing_per_1k:
+  kimi-code: 0.0

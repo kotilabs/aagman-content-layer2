@@ -1,0 +1,1032 @@
+[
+ {
+  "title": "Sector screener crashes with `e.toFixed is not a function`",
+  "snippet": "## Bug summary All **sector-based screener queries** crash with a frontend JavaScript error: ``` e.toFixed is not a function ``` This was found during the #2288 smoke-test batch while verifying #700. ## Reproduction steps Paste any of these",
+  "label": "screener"
+ },
+ {
+  "title": "Tier-2 remaining (4 LIVE): available-range-loop \u00b7 screener-unexpected-error \u00b7 screener-request-refused \u00b7 false-capability",
+  "snippet": "The 4 remaining **Tier-2 LIVE** classes from the prod-conversation reconciliation (`docs/analysis/prod-conversation-eval-findings-2026-07-02.md`, PR #2320). The two pure-function Tier-2 fixes shipped in **#2339** (corrupted-price + wrong-ro",
+  "label": "screener"
+ },
+ {
+  "title": "Screener/research referential follow-up denies the just-produced result set (\"no prior stocks referenced\") \u2192 clarify-loop for something on s",
+  "snippet": "## Plain English Right after the screener shows a user a concrete list of stocks, a natural follow-up that refers back to that list \u2014 \"what is *their* PE\", \"which one should I buy\", \"3-year ROE for *all above stocks*\", \"the *top balanced st",
+  "label": "screener"
+ },
+ {
+  "title": "[screener] \"Top holdings of <fund>\" fails \u2014 scanner agent misroutes around the working #2210 endpoint",
+  "snippet": "## Plain English Asking **\"Top holdings of ICICI Small Cap Fund\"** in chat fails with *\"could not be resolved to a valid AMFI mutual fund scheme code\"* \u2014 even though the fund exists and the resolver finds it fine. The **comparison** query f",
+  "label": "screener"
+ },
+ {
+  "title": "Screener library: expand from 6 hardcoded cards to 30-50 named screeners (Trendlyne-inspired)",
+  "snippet": "--- name: screener-library owner: ajit status: DRAFT created: 2026-06-28 target_ship: 2026-07-05 stream: screener shape: new-feature supersedes: n/a issue: #2124 --- # Screener Library \u2014 PRD # \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+  "label": "screener"
+ },
+ {
+  "title": "Screener results: always show contextual enrichment columns, not just queried columns",
+  "snippet": "## Problem `ScreenerResultsTable` derives its columns purely from whatever keys the backend returns in `indicatorSnapshots`. If the user asked \"show me stocks with RSI < 30\", they see RSI only \u2014 no market cap, PE, name, or sector context to",
+  "label": "screener"
+ },
+ {
+  "title": "Vernacular: tool-driven responses (backtest/screener/strategy clarifications) come back in English even when a vernacular language is select",
+  "snippet": "## Plain English \u2014 what's broken The multilingual (\"vernacular\") chat feature is **half-working**. If you pick a language (e.g. Hindi) and type in Hindi, the **free-form chat** replies in Hindi \u2014 but the moment you do a **real task** (backt",
+  "label": "screener"
+ },
+ {
+  "title": "Surface staleness for backfilled ownership deltas (follow-up from #1867)",
+  "snippet": "Deferred from PR #1867 (fill FII/DII/promoter deltas from latest non-NULL quarters). Non-blocking: - Backfilled deltas can be ~2 quarters stale, but `latest_derived_metrics` projects only `value` (not `period_end`) for delta columns, so a '",
+  "label": "screener"
+ },
+ {
+  "title": "Pulse/screener field-population UX (follow-ups from #1846)",
+  "snippet": "Deferred from PR #1846 (gate screener filters on unpopulated fields with 422). Non-blocking follow-ups raised in review: - Prune the agent's `screenFundamentalsTool` description so it no longer advertises gated fields (interest_coverage, de",
+  "label": "screener"
+ },
+ {
+  "title": "Fundamental dead-fields: ~24 cols 100% NULL on financial_results_screener + 34 registry fields silently ungated by queryBuilder (#1804 item ",
+  "snippet": "# Fundamental dead-fields: 18-24 columns silently NULL on `financial_results_screener` + 34 registry fields marked `populated:false` but queryBuilder doesn't gate on them (#1804 item #6) ## Plain English ### What's broken (the user-facing s",
+  "label": "screener"
+ },
+ {
+  "title": "SHS scraper: FII / DII / promoter percentages silently NULL for latest 2 quarters since 2025-12-31 (#1804 item #7)",
+  "snippet": "# SHS scraper: FII / DII / promoter percentages silently NULL for the latest 2 reporting quarters (#1804 item #7) ## Plain English ### What's broken (the user-facing symptom) Anyone using the fundamental screener with **ownership-change fil",
+  "label": "screener"
+ },
+ {
+  "title": "[screener] Master tracker \u2014 screener correctness + agent behaviour issues (rolling)",
+  "snippet": "## Purpose Single rolling index for all screener-related issues. New screener issues land as children of this tracker; this master tracks status across the screener surface end-to-end (NL \u2192 intent \u2192 screener engine \u2192 response \u2192 UI). Mirrors",
+  "label": "screener"
+ },
+ {
+  "title": "Screener audit: high-leverage UX/correctness findings + fix plan",
+  "snippet": "## Screener audit \u2014 high-leverage UX / correctness findings + fix plan @amit-kotidev \u2014 read-only sweep of the screener stack (agent/NL \u2192 supervisor handler \u2192 tool layer \u2192 Python engine \u2192 data loaders \u2192 frontend rendering) to surface the **b",
+  "label": "screener"
+ },
+ {
+  "title": "Screener HISTORICAL mode unusable on multi-symbol multi-month ranges \u2014 warmup_bars=0 + per-(symbol,date) loader (NL with date_range always F",
+  "snippet": "## Summary Screener `HISTORICAL` mode (triggered when an NL prompt includes a date range like *\"from 1 July 2024 to 31 December 2024\"*) is **structurally unusable** on multi-symbol multi-month windows. Two co-conspiring bugs in the historic",
+  "label": "screener"
+ },
+ {
+  "title": "Smoke-test results for #2288 (40+ backtesting fixes)",
+  "snippet": "# Backtesting Smoke Test Results \u2014 Issue #2288 **Date:** 2026-07-02 **Tester:** Aryan **Platform:** aagman.ai chat / staging **Result:** 24 PASS, 5 FAIL, 7 NEEDS VERIFICATION, 0 PARTIAL out of 36 tests _Note: All 36 prompts have now been re",
+  "label": "backtest"
+ },
+ {
+  "title": "Backtester has no intraday (5m) equity bars for historical windows \u2014 RELIANCE ORB backtest dead-ends (\"no market data\")",
+  "snippet": "## Plain English A user built a **5-minute intraday** opening-range-breakout backtest on **RELIANCE** for **Jan 1 \u2013 Mar 31 2025**, got the usual \"\u2705 Strategy complete!\" / \"\u2705 Risk check passed!\", and then \u2014 on **run backtest** \u2014 hit *\"Cannot ",
+  "label": "backtest"
+ },
+ {
+  "title": "Backtest declares readiness (\"Strategy complete\" / \"Risk check passed\") before any data-availability check \u2192 \"no market data\" dead-end + mis",
+  "snippet": "## Plain English A user builds a backtest over several turns, the assistant tells them **\"\u2705 Strategy complete!\"** and **\"\u2705 Risk check passed!\"**, and then \u2014 only when they hit **run backtest** \u2014 it dead-ends with *\"Cannot run backtest: no m",
+  "label": "backtest"
+ },
+ {
+  "title": "[backtest] NIFTY 500 (broad indices) backtest falsely blocked \"no market data\" \u2014 coverage keys on SIR venue not resolved exchange (data exis",
+  "snippet": "## Summary (plain English) Backtesting **NIFTY 500** (a valid, data-backed NSE index) fails at the pre-run market-data check with: > **Cannot run backtest: no market data available for NIFTY 500 in the requested period (2025-07-02 to 2026-0",
+  "label": "backtest"
+ },
+ {
+  "title": "feat(backtester): support FUTURES leg in the multi-leg options engine (futures + option strategies) \u2014 builds on #2296",
+  "snippet": "## Summary Building on #2296 (covered call \u2014 mixed **equity + option** legs), extend the multi-leg options backtest engine to support a **FUTURES leg**, so strategies that combine a futures leg with option leg(s) become possible. ## Backgro",
+  "label": "backtest"
+ },
+ {
+  "title": "Backtest failures show raw worker exception + internal job UUID in user chat \u2014 no friendly / category-mapped error (error-transparency gap)",
+  "snippet": "## Summary When a backtest job fails on the backend, the **raw worker exception is surfaced directly in the user's chat** \u2014 including the internal job UUID. Observed live 2026-07-01 in an **external** user's session (megh Desai): ``` Backte",
+  "label": "backtest"
+ },
+ {
+  "title": "Compiler emits POSITIVE offset for 6-month momentum lookback \u2192 lookahead-bias rejection (blocks the #1 strategy prompt)",
+  "snippet": "## Summary Backtests of the **6-month momentum** strategy (the single most common user prompt) fail at compile with a lookahead-bias rejection: ``` SIRCompilationError | where=strategy compiler | what=SIR compilation failed why=Rule 'r_mom_",
+  "label": "backtest"
+ },
+ {
+  "title": "Backtest execution fails \u2014 'Signal index mismatch for symbol INFY' (ValueError; signal/OHLCV index misalignment + SettingWithCopyWarning in ",
+  "snippet": "## Summary A backtest failed during **execution** (not compile/validation) with: ``` EXECUTION | where=backtest adapter | what=Backtest execution failed why=Signal index mismatch for symbol 'INFY' error_type: ValueError | error_code: SYSTEM",
+  "label": "backtest"
+ },
+ {
+  "title": "\ud83e\uddea Staging smoke test \u2014 40 already-fixed backtesting issues + today's shipped fixes (verify before close)",
+  "snippet": "## Purpose The 2026-07-01 backtesting triage (102 open issues, 6 agents) found **40 issues already fixed and shipped to `staging`** (code verified present on `origin/staging` + merged PRs). **Before closing them, run this staging smoke test",
+  "label": "backtest"
+ },
+ {
+  "title": "[backtest][engine] Multi-symbol intraday (5m) backtest dead-letters: 'signal index mismatch' when basket symbols have divergent per-symbol b",
+  "snippet": "### Surfaced by the #2278 prod dead-letter poll (2026-07-01, prod PG `jobs`, read-only) Two prod backtests dead-lettered with a per-symbol engine `ValueError`: - `job_2cfa8cf25c01` 11:43 UTC \u2014 `EXECUTION | where=backtest adapter | why=Signa",
+  "label": "backtest"
+ },
+ {
+  "title": "[routing] Strategy agent emits FIXED_QTY + stale lot sizes for NSE index/stock futures backtests (should emit FIXED_LOTS)",
+  "snippet": "### Follow-up carved out of PR #2266 (backtester FIXED_LOTS support) PR #2266 made the **backtester** correctly size NSE futures backtests via `FIXED_LOTS` (lots \u00d7 real `options_chain_daily_v2.lot_size` multiplier, fail-closed). But the **s",
+  "label": "backtest"
+ },
+ {
+  "title": "[Backtest] Multi-symbol backtests fail with signal index mismatch when bar timestamps are not aligned",
+  "snippet": "## Environment Production ## Issue Summary Multi-symbol intraday backtests fail during rule evaluation when two symbols in the universe do not have identical bar timestamp indices, even if both symbols have valid OHLCV data for the requeste",
+  "label": "backtest"
+ },
+ {
+  "title": "[Backtest] VWAP indicator missing explicit params contract for BACKTEST adapter",
+  "snippet": "## Environment Production ## Issue Summary Backtests that use the `VWAP` indicator fail during adapter validation with the error: ``` Backtest failed: Indicator type 'VWAP' is missing an explicit params contract for BACKTEST adapter ``` Thi",
+  "label": "backtest"
+ },
+ {
+  "title": "Backtest StrategyValidationError \u2014 VWAP indicator missing params contract for BACKTEST adapter (blocks any VWAP strategy)",
+  "snippet": "## Summary Backtests using the **VWAP** indicator fail validation at compile: ``` StrategyValidationError | where=strategy validation what=Execution plan validation failed why=Indicator type 'VWAP' is missing an explicit params contract for",
+  "label": "backtest"
+ },
+ {
+  "title": "feat(backtester): add Supertrend indicator (CHART + STRATEGY) \u2014 most-requested missing indicator",
+  "snippet": "## Gap **Supertrend** is absent from the backtester's `IndicatorType` enum (`backtester/packages/schemas/sir.py`) and has no runtime implementation. NLs requesting it return **NOT_SUPPORTED across both CHART and STRATEGY** (surfaced repeate",
+  "label": "chart"
+ },
+ {
+  "title": "[Charts] Mouse zoom/pan resets to default on every data refresh \u2014 chart re-inits on each option change (P0 UX)",
+  "snippet": "## Plain English On the price chart (`/charts`), if you **zoom or pan with the mouse, the chart snaps back to its default zoom after a moment** \u2014 so you can't hold a zoomed-in view. It's not random: the chart silently **rebuilds itself from",
+  "label": "chart"
+ },
+ {
+  "title": "[Analytics] POLICYBZR open-close chart shows OLDEST 100 sessions (stale, ends Nov 2025) \u2014 query-recency defect deferred by #2104",
+  "snippet": "## Plain English After #2104 fixed the subject-drift bug (#2102), the Policybazaar analytics answer now correctly stays on **POLICYBZR** (not NIFTY) and renders a proper chart \u2014 good. **But the data shown is wrong: it's the OLDEST ~100 sess",
+  "label": "chart"
+ },
+ {
+  "title": "[Options] Dark-theme audit \u2014 OI heatmap white slab, unlimited-risk Max Loss, mobile chain hides PUTS",
+  "snippet": "## \ud83d\udcca Progress \u2014 Options (dark theme) **5 / 21 resolved \u00b7 5 production-ready** \u2014 _updated 2026-06-28 (#2141 OPT-D-04 + #2164 OPT-D-07/08/13/14 \u2705 MERGED; OPT-D-03 \u26a0\ufe0f rework + OPT-D-15 held in #2161; OPT-D-22 new; #2121 OPT-D-18 held)_ Sibling",
+  "label": "chart"
+ },
+ {
+  "title": "[Charts] Light-theme audit \u2014 monochrome candles, washed-out volume/gridlines/navigator",
+  "snippet": "## \ud83d\udcca Progress \u2014 Chart (light theme) **2 / 5 resolved \u00b7 2 production-ready** \u2014 _updated 2026-06-28 (#2140 verified \u2705)_ Status: \ud83d\udd34 Open \u00b7 \ud83d\udfe1 In PR #N \u00b7 \ud83d\udfe2 Fixed (verified) \u00b7 \u26aa N/A \u00b7 Verdict (post-fix): \u2705 prod-ready \u00b7 \u26a0\ufe0f needs work \u00b7 \u274c not ready.",
+  "label": "chart"
+ },
+ {
+  "title": "Easy unlock: ScreenerRowPopover 'Open chart' button \u2014 wire symbol \u2192 Charts navigation (Reframe 3 NOT required)",
+  "snippet": "## Problem `ScreenerRowPopover` and `InstrumentQuoteMessage` both have action buttons disabled with a misleading comment: ```tsx // ScreenerRowPopover.tsx:162-179 <button type=\"button\" className={styles.actionBtn} disabled title=\"Disabled i",
+  "label": "chart"
+ },
+ {
+  "title": "Charts: add Fundamentals tab (PE, ROE, ROCE, etc.) \u2014 parity with Screener panel",
+  "snippet": "## Problem ChartsView has three tabs: `chart | settings | details`. The Screener already has a fundamentals data panel powered by `screener-field-labels.ts` (30+ equity field labels: ROE, ROCE, PE, PB, EPS, dividend yield, debt/equity, etc.",
+  "label": "chart"
+ },
+ {
+  "title": "[Charts] Desktop chart audit \u2014 see-through menus, broken Settings controls, axis/legibility gaps, remove Alerts",
+  "snippet": "## \ud83d\udcca Progress \u2014 Chart (dark theme) **25 / 40 resolved \u00b7 25 production-ready** \u2014 _updated 2026-06-28 (#2155 batch \u2705 merged; #2159 D-30/D-41 \u2705 merged; #2153 \u26a0\ufe0f manual + #2121 \u274c D-37 still held)_ Severity: 6 High \u00b7 13 Medium \u00b7 21 Low \u00b7 (+1 rem",
+  "label": "chart"
+ },
+ {
+  "title": "Options Charts unusable on mobile \u2014 charts collapse to a thin band + axis/annotation labels overlap/clip (Payoff, Vol Surface 2D/3D, Option ",
+  "snippet": "## Plain English \u2014 what's broken On **mobile**, the entire **Options Charts** feature (`/options-charts`) renders badly. Across all of its tabs, the chart **collapses into a thin band at the top, leaving most of the screen as empty black sp",
+  "label": "chart"
+ },
+ {
+  "title": "Charts: migrate price chart off ECharts to a financial-specific lib (hybrid) \u2014 Phase 1 Lightweight Charts spike",
+  "snippet": "## Plain English \u2014 what this is and why it matters Our `/charts` feature is built **entirely on Apache ECharts** (a general-purpose data-visualization library). ECharts is genuinely the *right* tool for our **options-analytics 3D** visuals ",
+  "label": "chart"
+ },
+ {
+  "title": "[Chart] Multiple UI/UX bugs and indicator parameter errors",
+  "snippet": "## Summary Multiple UI/UX and functional issues observed in the **Charts** section during testing. --- ## 1. Technical indicators fail with missing `timeperiod` parameter Clicking any of the following indicators throws an error toast: `Miss",
+  "label": "chart"
+ },
+ {
+  "title": "[charting] EMA-of-RSI shown as raw RSI \u2014 chart layer can't represent indicator-on-indicator (engine+SIR exonerated; was Aryan #1788 \u00a74.4 'ch",
+  "snippet": "## Summary A **chained** indicator \"EMA(10) of RSI(14)\" detects **zero** entry signals across Jan\u2013Sep 2024 and misses a clear Feb-6 cross-above-50 (the only winning trade, +\u20b916k); a Dec exit also diverges (Aagman's EMA-of-RSI crosses below ",
+  "label": "chart"
+ },
+ {
+  "title": "Chart clarification: consolidate the last un-consolidated clarification class (#1686 follow-up)",
+  "snippet": "## Summary Chart is the **last un-consolidated clarification class** from the #1686 conversation-state restructure. It was deliberately **deferred** from PR-B (it sits as `known-pending` in `clarification-reentry-coverage.test.ts`) because ",
+  "label": "chart"
+ },
+ {
+  "title": "Section 21 (Charting) \u2014 Bug Report",
+  "snippet": "**Date:** 2026-06-04 **Tester:** Aryan **Platform:** aagman.ai chat **Result:** 6 PASS, 3 FAIL, 1 PARTIAL out of 10 tests --- ## Summary Section 21 (Charting) is mostly functional for basic equity charts. Simple single-stock and multi-stock",
+  "label": "chart"
+ },
+ {
+  "title": "equity_eod_daily EOD ingest silently drops rows on id-PK collision (sequence desync) + resolve-symbol timeout \u2014 surfaced onboarding GROWW/Bi",
+  "snippet": "## Plain English When the brand-new **Groww / Billionbrains Garage** listing was onboarded (2026-07-01), the daily EOD ingest **silently dropped rows** for the whole `GROWW*` symbol family, and \u2014 at the same time \u2014 a user's research request",
+  "label": "data"
+ },
+ {
+  "title": "[MF][data] SBI Large Cap fund-score card reports 1Y return -0.4% \u2014 incorrect",
+  "snippet": "## Plain English The MF fund-score card (research agent, `score-mutual-fund`) shows **\"Returns: 3/10 \u2014 1Y: -0.4%\"** for SBI Bluechip / SBI Large Cap Fund. **The 1-year return is incorrect** \u2014 the fund's actual trailing 1Y return is material",
+  "label": "data"
+ },
+ {
+  "title": "Data prerequisite: ingest commodity futures historical depth for continuous stitching (MCX CRUDEOIL etc.)",
+  "snippet": "## Context Tracked as a prerequisite for the continuous futures backtesting feature (PR #2190). On staging CH as of 2026-06-29: - MCX CRUDEOIL futures: **6 contracts** (`CRUDEOIL 19-Aug-2026` \u2026 `18-Dec-2026`) \u2014 all far-dated 2026, **~4 bars",
+  "label": "data"
+ },
+ {
+  "title": "Data prerequisite: ingest NSE F&O index futures (NIFTY/BANKNIFTY dated contracts) into bars",
+  "snippet": "## Context Tracked as a prerequisite for the continuous futures backtesting feature (PR #2190). On staging CH as of 2026-06-29: - `venue=NSE, asset_class=FUTURE` \u2192 **659 symbols** (equity futures ingestion has started) - `symbol LIKE 'NIFTY",
+  "label": "data"
+ },
+ {
+  "title": "[research][data] Bank-specific fundamentals gap \u2014 NIM/NII/CASA/asset-quality not ingested (generic corporate schema)",
+  "snippet": "## Summary The Research agent cannot answer bank-specific fundamental questions (e.g. *\"What is the NIM of ICICI Bank?\"*) because **banking financials are not ingested** \u2014 the fundamentals pipeline captures a **generic non-financial corpora",
+  "label": "data"
+ },
+ {
+  "title": "Data hygiene: junk mixed-case INDEX dupes in bars/instruments (NIFTY 50) \u2014 cleanup + stop indices-populator re-creating Title-Case rows",
+  "snippet": "## Summary Mixed-case **duplicate INDEX symbols** are contaminating `marketdata.bars` and `aagman.instruments`: a canonical `NIFTY 50` (full history) coexists with a junk `Nifty 50` (1 bar), and the index itself is mis-tagged `EQUITY`. This",
+  "label": "data"
+ },
+ {
+  "title": "Analytics queries answered from LLM prose with NO tool call + subject drift to NIFTY 50 \u2014 fabricated market-data answers (silent activation ",
+  "snippet": "## Summary A new user's market-data/analytics questions about **Policybazaar (`POLICYBZR`)** were answered with **confident LLM prose and zero tool calls** \u2014 no market data was ever queried. Across 3 turns the agent (1) never invoked a data",
+  "label": "data"
+ },
+ {
+  "title": "[tracker] Data reliability & health \u2014 detect within a day + fix the broken writers",
+  "snippet": "> **Closure tracker.** Ties the scattered data tickets into two outcomes so there's one owner for \"is our data trustworthy?\" This sits **above** the monitoring epic #1962 (which is the automation arm) and adds the writer-reliability backlog",
+  "label": "data"
+ },
+ {
+  "title": "F&O EOD options data has no canonical table (bars OPTION vs options_chain_daily_v2 near-complementary)",
+  "snippet": "## Problem EOD F&O options data is written by **two independent paths** into two tables, and their coverage has been **near-complementary** \u2014 i.e. neither is reliably populated, and which one has data flips day to day: | date | `bars` EOD O",
+  "label": "data"
+ },
+ {
+  "title": "Daily data-health monitor: cross-DB gap / liveliness / cron audit \u2014 recheck inventory + finalise design",
+  "snippet": "## Goal A **daily data-health check** for the aagman-v2 data platform that detects: - **(a) Data gaps** \u2014 a table that should have advanced for the last trading day but didn't. - **(b) Ingestion / deployment liveliness** \u2014 intraday / daily ",
+  "label": "data"
+ },
+ {
+  "title": "PR #1713 intraday Greeks fix is DORMANT on staging+prod \u2014 needs `pulumi up` + backfill trigger",
+  "snippet": "# PR #1713 (intraday Greeks fix) is merged but DORMANT on staging and prod \u2014 needs `pulumi up` + manual backfill ## Plain English [PR #1713](https://github.com/kotilabs/aagman-v2/pull/1713) (`feat: intraday option Greeks/IV compute (backfil",
+  "label": "data"
+ },
+ {
+  "title": "Reference: all Prefect deployments + schedules (prod & staging)",
+  "snippet": "# All Prefect deployments + schedules \u2014 prod & staging reference ## Plain English Single-source reference for **every Prefect deployment** registered on prod and staging, with their cron schedules in both UTC and IST. Compiled 2026-06-18 16",
+  "label": "data"
+ },
+ {
+  "title": "Gap sweep 2026-06-18 16:09 IST \u2014 prod \u2194 staging data-plane snapshot",
+  "snippet": "# Gap sweep \u2014 side-by-side: prod vs staging (2026-06-18 16:09 IST) ## Plain English Today's afternoon gap sweep on the data plane \u2014 prod vs staging \u2014 captured right after market close. Snapshot of what's working, what's broken, and what's d",
+  "label": "data"
+ },
+ {
+  "title": "NL live quote: F&O coverage + route test (follow-ups from #1824)",
+  "snippet": "Deferred from PR #1824 (GET /quotes/live + get-live-quote NL tool). Non-blocking: - F&O / aliased symbols: the ticks lookup uses the raw symbol; F&O lives in fo_ticks (separate table) so the tool is equities-only today \u2014 either branch to fo",
+  "label": "data"
+ },
+ {
+  "title": "Options backtest dead-ends \"no options data for NIFTY 50 / NIFTY BANK\" \u2014 likely options-underlying key mismatch (index name vs derivative ti",
+  "snippet": "## Plain English A user tries to backtest **NIFTY** then **BANKNIFTY** options (the two most liquid instruments in India), and it dead-ends with *\"no options data available for NIFTY 50 / NIFTY BANK\"* across **three** different windows \u2014 in",
+  "label": "options"
+ },
+ {
+  "title": "[backtest][options] Bare 'NIFTY50' underlying not canonicalized to F&O ticker 'NIFTY' \u2192 silent 0-trade options backtests",
+  "snippet": "## Summary Any **options** backtest whose underlying resolves to the bare, no-space form **`NIFTY50`** silently returns **0 trades**, even though full NIFTY options data exists. `canonicalize_options_underlying()` maps the spaced spot form ",
+  "label": "options"
+ },
+ {
+  "title": "\ud83e\uddea [backtest] Harden the ENTIRE backtesting harness \u2014 {sub-area \u00d7 failure-mode} matrix across T0/T1/T2 (absorbs #2186)",
+  "snippet": "## Why this ticket Options backtesting is our **activation wedge** and simultaneously our **#1 source of prod failures** \u2014 it churned our first two engaged signups. Yet the golden suite stays green while real users hit the wall, because our",
+  "label": "options"
+ },
+ {
+  "title": "Options greeks: surface ts_utc for stale-minute labelling (F4 from #1829)",
+  "snippet": "Deferred (reviewer-accepted) from PR #1829. The intraday per-strike greeks endpoint returns the latest minute of the resolved date with no time bound, so a pre-open view can show yesterday's 15:29 greeks as if live. Return `ts_utc` in the /",
+  "label": "options"
+ },
+ {
+  "title": "compute-greeks-daily: silent fallback to hardcoded 6.5% RBI repo rate on table empty / DB unreachable",
+  "snippet": "## Summary The Greeks [REDACTED] lookup at `orchestrator/src/orchestrator/tasks/options/compute_greeks_daily.py:151-169` silently swallows all errors and reverts to a hardcoded `0.065` (6.5%) without logging or alerting: ```python def _get_",
+  "label": "options"
+ },
+ {
+  "title": "[market-data] Intraday options Greeks/IV never written on staging (option_greeks_1m / atm_iv_1m empty; 1-min bars healthy)",
+  "snippet": "## Summary On **staging**, intraday 1-minute options **capture is healthy**, but **Greeks and IV are never written** \u2014 `option_greeks_1m` and `atm_iv_1m` have **0 rows** (max ts = 1970 epoch = never written). This is **intraday-specific**: ",
+  "label": "options"
+ },
+ {
+  "title": "follow-up(#1386): observability for _refresh_stale_expiry no-op on exit_at_dte (Y1) + empty-calendar error counters (M2)",
+  "snippet": "Carry-forward items from the #1386 [REDACTED] review (Amit gated #1386's merge on this tracking issue being filed). ## Y1 \u2014 silent no-op on the `exit_at_dte` guard path (primary) `_refresh_stale_expiry` (`backtester/.../options_adapter.py:5",
+  "label": "options"
+ },
+ {
+  "title": "options backtest: opt-04 through opt-07 consolidated failures",
+  "snippet": "### summary options backtesting engine has three critical failure clusters across the latest test run: 1. **trade table leg aggregation** \u2014 straddle trades always roll ce+pe into a single row (qty 2), making individual leg p&l invisible. 2.",
+  "label": "options"
+ },
+ {
+  "title": "[OPT-07] BANKNIFTY weekly straddle produces 6 trades over 3 months with 19-26 day holds \u2014 weekly expiry not cycling correctly",
+  "snippet": "## Summary Prompt specified a weekly expiry BANKNIFTY short straddle with 50% profit exit. Strategy card shows CURRENT_WEEK correctly, but trade log reveals only 6 trades over 3 months with holds of 19-26 days \u2014 far exceeding weekly expiry ",
+  "label": "options"
+ },
+ {
+  "title": "[OPT-05] IV-based exit silently replaced with DTE exit \u2014 prompt's \"IV drops 20% from entry\" missing from strategy card and backtest",
+  "snippet": "## Summary Prompt specified an IV-based exit (\"Exit when IV drops 20% from entry\") for a long NIFTY straddle. The strategy confirmation card shows only a DTE exit, and the backtest engine executed every trade to 1 day before expiry. The IV-",
+  "label": "options"
+ },
+ {
+  "title": "[OPT-04] NIFTY straddle \"exit on Thursday\" ignored for ~20% of trades \u2014 strategy card omits exit condition",
+  "snippet": "## Summary OPT-04 straddle backtest with \"exit on Thursday\" instruction produces 10-day holds on ~20% of trades instead of the expected 3-day (Mon\u2192Thu same week) exit. Markets were open on the missed Thursdays (Jan 30, Feb 27). Strategy con",
+  "label": "options"
+ },
+ {
+  "title": "feat: Diagonal spread support (different strikes + different expiries)",
+  "snippet": "## Context The options strategy agent prompt lists diagonal spreads as NOT_SUPPORTED: \"Diagonal spreads (different strikes AND different expiries simultaneously on same leg pair \u2014 use CALENDAR_SPREAD for same-strike different-expiry only)\".",
+  "label": "options"
+ },
+ {
+  "title": "bug: atm_iv_daily duplicate rows with zeroed iv_rank \u2014 IV filter misfires (OPT-05)",
+  "snippet": "## Summary OPT-05: \"Buy NIFTY straddle when IV rank below 20\" \u2014 trades fire at mid/high IV. SIR is correct (`iv_rank_max: 20`). ## Root Cause `atm_iv_daily` has duplicate rows per (trade_date, underlying): - Row 1: `iv_rank_252d = 13.49` (c",
+  "label": "options"
+ },
+ {
+  "title": "VIX entry filter silently ignored in options backtest engine",
+  "snippet": "## Summary Options backtest engine parses `VIX &gt; 18` entry condition into the strategy card but does not enforce it during backtest execution. Trades are entered regardless of actual VIX level. Additionally, `CURRENT_WEEK` expiry produce",
+  "label": "options"
+ },
+ {
+  "title": "Strategy builder silently drops already-captured fields (entry/exit/timeframe) on clarification turns \u2014 LLM drift, needs deterministic backs",
+  "snippet": "## Plain English When a user builds a backtest strategy over several messages, the assistant sometimes **forgets a detail the user already gave** and asks for it again. Real prod conversation (`conv-857cb1344da6`): 1. **User:** \"Backtest a ",
+  "label": "routing"
+ },
+ {
+  "title": "[routing] Strategy agent asks for date confirmation instead of auto-resolving \"last 6 months\" (#2193 partial)",
+  "snippet": "## Plain English \"Backtest a 20/50 EMA crossover on RELIANCE **over the last 6 months**\" \u2014 the strategy agent asks a second round *\"what date range should be used?\"* instead of **auto-resolving** \"last 6 months.\" It DOES resolve to the corr",
+  "label": "routing"
+ },
+ {
+  "title": "Options NL agent: advertise 30m/1h intraday timeframes (rollup views exist, not reachable via NL)",
+  "snippet": "## Context PR #2192 (closes #2184) added query-time rollup views + routing for the **full intraday options set 5m/15m/30m/1h** across the backtest loader, options screener, and OHLCV chart. The data layer and Python routing for all four tim",
+  "label": "routing"
+ },
+ {
+  "title": "Go-live loop: deploy intent on a built strategy re-asks the full spec (classifier has no deterministic artifact-presence flag)",
+  "snippet": "## What happens (real UI bug, observed) Workspace `7c8603d2-7ba8-4b62-87de-1712b284164e` (LIVE, Hindi). User builds a GOLDPETAL (MCX) RSI strategy, then says **\"live karna hai\"** (Hinglish: 'I want to go live'). Instead of advancing to depl",
+  "label": "routing"
+ },
+ {
+  "title": "Pulse LLM classifier: id-cache + broaden symbol master before live (follow-up from #1874)",
+  "snippet": "Follow-up from PR #1874 (LLM classification layer, shipped behind PULSE_LLM_CLASSIFY=off). Before sustained `live`: - Wire an id-cache: skip rows already `llm_enriched_at` so a run only classifies new articles (avoids ~$66/mo full-batch hou",
+  "label": "routing"
+ },
+ {
+  "title": "Worker FAILED status dropped in non-strategy supervisor handlers (EMPTY_OUTPUT fake-success class)",
+  "snippet": "## Defect class The worker envelope parser (`tools/supervisor/helpers/worker-envelope.ts`) correctly maps a missing/loop-exhausted worker output to `status:'FAILED'` (`EMPTY_OUTPUT`) + logs + counts. But several supervisor **handlers do not",
+  "label": "routing"
+ },
+ {
+  "title": "Consolidate multi-turn state into `conversationContext` + dispatch-chokepoint wrapper (umbrella for #1665, #1666, #1669)",
+  "snippet": "## Goal > Get from **11 fields \u00d7 5 mechanisms** to **1 `conversationContext` \u00d7 1 mechanism**, without big-banging anything money-adjacent. This is the umbrella consolidation that closes the structural gap left by [#1666](https://github.com/",
+  "label": "routing"
+ },
+ {
+  "title": "Worker loop-exhaustion: add runtime stop-on-repeat (prevention half of Bug-B; deferred from #1668 \u2014 Mastra maxSteps overrides stopWhen)",
+  "snippet": "## Context PR #1668 made the loop-exhausted worker case **observable** \u2014 `parseWorkerReturn` now tags `failureKind` (EMPTY_OUTPUT / MALFORMED_OUTPUT), logs a warn, and increments `supervisor_worker_envelope_parse_failures_total`. That is th",
+  "label": "routing"
+ },
+ {
+  "title": "Corporate-filings classifier: replace keyword Rule 1.5 with semantic classifier (durable F1 fix)",
+  "snippet": "## Context F1 (the live NSE feed classifying ZERO transcripts) was unblocked with a **keyword co-occurrence rule** (Rule 1.5, commit `f39eb098c` on PR #1457). That's an interim floor. The operator's stated preference is a **semantic classif",
+  "label": "routing"
+ },
+ {
+  "title": "RFC: intent-classifier v2.1 package placement approach (Phase 3 Step 3.1)",
+  "snippet": "Need your opinion before kicking off Phase 3 of the intent-classifier v2.1 work \u2014 specifically the **structural decision** for how the standalone package gets installed into aagman-v2. **Background:** - Phase 1+2 built `intent-classifier` a",
+  "label": "routing"
+ },
+ {
+  "title": "PRD: Intent Classifier v2.1 \u2014 review + sign-off (Ajit + Anshuman)",
+  "snippet": "## PRD **File:** [`docs/prd/platform/intent-classifier-v2.1.md`](https://github.com/kotilabs/aagman-v2/blob/feat/instrument-resolver/docs/prd/platform/intent-classifier-v2.1.md) **Brief:** [`docs/briefs/intent-classifier-v2.1-phase-2b-brief",
+  "label": "routing"
+ },
+ {
+  "title": "Architecture: narrow quickClassify to unambiguous-only, let LLM handle domain overlap",
+  "snippet": "## Context Issue #1130 audited all 8 regex fixes we shipped to the intent classifier. 5 of 8 are negative guards preventing false positives in `quickClassify`. Each fix adds complexity that makes the next bug harder to diagnose. ## The Prob",
+  "label": "routing"
+ },
+ {
+  "title": "Audit: all regex-based routing/classification fixes \u2014 patterns, NLs, domains",
+  "snippet": "## Purpose Comprehensive audit of all regex fixes applied to intent classification, domain routing, and compilation patterns. For review \u2014 to identify patterns that may need LLM-level fixes vs regex-level fixes, and to track the growing com",
+  "label": "routing"
+ },
+ {
+  "title": "bug: Override 4 'lots?' regex catches equity '1 lot' \u2192 misroutes to OPTIONS_STRATEGY",
+  "snippet": "## Summary NL-03: \"Backtest NIFTY \u2014 buy when MACD histogram... **1 lot**, starting capital 10 lakhs\" gets routed to OPTIONS_STRATEGY instead of STRATEGY. ## Root Cause `intent-overrides.ts:31` \u2014 `OPTIONS_KEYWORDS` includes `lots?\\b` which m",
+  "label": "routing"
+ },
+ {
+  "title": "[UX] Cross-domain chat queries silently blocked by F-DOM anchor lock \u2014 no user feedback",
+  "snippet": "## Summary Users cannot chain queries across surfaces in the same chat session \u2014 e.g. run a screener and then request a chart or market analysis on the result, or switch from strategy building to a research query. The session is **silently*",
+  "label": "platform"
+ },
+ {
+  "title": "Aagman Forum Posts",
+  "snippet": "# Aagman Forum Posts - v7 --- ## POST 1: TradingQnA **Title:** We built a full-stack quant platform for Indian markets: backtesting, screening, research, execution. No code. --- I've been trading since 2003. Prop desks, then fintech (ETMone",
+  "label": "platform"
+ },
+ {
+  "title": "UX: polish the MF fund-score card \u2014 empty () placeholders, raw scheme name, no as-of date, flat dimensions",
+  "snippet": "## Plain English When a user asks *\"is &lt;fund&gt; worth investing\"*, the research agent's **MF fund-score card** (`score-mutual-fund`) renders **unpolished** \u2014 empty parentheses where a badge/verdict should be, the **raw AMFI scheme name*",
+  "label": "platform"
+ },
+ {
+  "title": "Research/Analytics agent tool executions failing \u2014 resolveSymbolTool + query-clickhouse 'Failed tool execution' (new, on the value-deliverin",
+  "snippet": "## Summary The prod log sweep (24h, 2026-06-30\u219207-01) surfaced **agent tool-execution failures on the research / analytics path** \u2014 the non-backtest surface that's actually delivering value for users like Mridul Agarwal (Axis MF): | When (U",
+  "label": "platform"
+ },
+ {
+  "title": "Symbol resolution bug: \"NIFTY 250\" matches NIFTY option contracts instead of NIFTY 250 index",
+  "snippet": "Consolidated into #2260. Screenshot and details moved there.",
+  "label": "platform"
+ },
+ {
+  "title": "\u23f8\ufe0f Pause autonomous loop \u2014 release in progress",
+  "snippet": "## \u23f8\ufe0f Autonomous loop PAUSED **Reason:** Prod release 2026-06-30 in progress \u2014 UAT\u2192main promotion (#2243) + release notes (#2244), and Ajit is landing the follow-up batch (#2242 / #2245 / #2248 / #2235 / #2233 / #2232). Holding the loop so ",
+  "label": "platform"
+ },
+ {
+  "title": "\ud83d\udccb Release Notes \u2014 Prod 2026-06-30 \u00b7 options canon \u00b7 MF resolver \u00b7 intraday rollups \u00b7 IST dates (13 PRs)",
+  "snippet": "# \ud83d\udccb Release Notes \u2014 Production \u00b7 2026-06-30 > **Status:** 13-PR batch validated on staging (smoke #2236) + promoted to UAT (#2241). **Promoting to prod via #2243 (OPEN \u2014 final gate).** \u26a0\ufe0f **Send the user-facing comms below only AFTER #2243 ",
+  "label": "platform"
+ },
+ {
+  "title": "Issue: Surface WhatsApp Community Link Post-Onboarding for Early Users",
+  "snippet": "### Context We currently have a WhatsApp community for early users to get faster support and for us to gather quicker feedback. However, the link to this community is not prominently surfaced to users after they complete onboarding or while",
+  "label": "platform"
+ },
+ {
+  "title": "Staging verification results: PRs #2163, #2182, #2185, #2190, #2192, #2193, #2202, #2207, #2210, #2211, #2214, #2220",
+  "snippet": "**Date:** 2026-06-30 **Tester:** Aryan **Platform:** aagman.ai chat backtest on **staging** **Result:** 8 PASS, 2 PARTIAL/SUSPICIOUS, 4 BLOCKED/FAIL out of 14 tests --- ## Summary The core canonicalization fixes for options spot names \u2192 F&O",
+  "label": "platform"
+ },
+ {
+  "title": "QA Report: 2026-06-30-011721-prod-pr-regression-smoke-c32369",
+  "snippet": "**Date:** 2026-06-29 **Tester:** Aryan **Platform:** https://app.aagman.ai chat backtest **Result:** 1 PASS, 12 FAIL out of 13 tests --- ## Summary 1 test(s) passed and produced valid report cards. 12 test(s) failed \u2014 see per-test analysis ",
+  "label": "platform"
+ },
+ {
+  "title": "Feed this to agent and ask to do RCA for failures.",
+  "snippet": "Who showed up \u2014 and a notable VIP - Sonam Srivastava \u2014 this is the founder of Wright Research (the wrightresearch.in signup from this morning). A well-known quant/PMS founder. She ran a momentum backtest on CRUDEOILM, then \"use reliance ins",
+  "label": "platform"
+ },
+ {
+  "title": "[market-data] MF resolver hardening follow-ups (stopword-style names, extra-token retry, word-boundary, GIN index)",
+  "snippet": "## Summary Non-blocking hardening for the MF name resolver (`resolveMfNameToCode` in `market-data/.../mf-screener.ts`), split out of the #2210 review so that PR stays focused. The headline mis-resolution + IDCW/Bonus + normalization-symmetr",
+  "label": "platform"
+ },
+ {
+  "title": "Analytics issues",
+  "snippet": "<img width=\"720\" height=\"1600\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/c399ba4d-ad58-4447-bd7a-881d8b0148db\" /> <img width=\"720\" height=\"1600\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/6f0c60f5-0428-4e4",
+  "label": "platform"
+ },
+ {
+  "title": "\ud83e\udd16 Autonomous Issue Tracker (canonical board \u2014 maintained by tracker-manager)",
+  "snippet": "# \ud83e\udd16 Autonomous Issue Tracker (canonical board) _Rendered view maintained by the tracker-manager. **Source of truth = the issues + labels themselves.** Last cycle: 2026-06-29 (4th)._ **Loop status:** \ud83d\udfe2 RUNNING (no `pause-autonomous`). **WIP:",
+  "label": "platform"
+ },
+ {
+  "title": "GTM: Investor cold outreach experiment \u2014 12 email variations + warm-up send plan",
+  "snippet": "## Context Cold outreach to a list of mutual fund / casual equity investors. Accounts opened as far back as 2017\u20132018 \u2014 old-timers who value trust over novelty. Goal: drive them to the Aagman investor landing page and get them to try the pl",
+  "label": "compliance"
+ },
+ {
+  "title": "Onboarding consent capture + legal pages (T&C / Risk Disclosure / Privacy) \u2014 SEBI-RIA compliance",
+  "snippet": "cc @amit-kotidev Tracking issue for the **account onboarding consent** flow \u2014 the gate where a user affirmatively accepts the legal documents at signup, plus the standalone legal pages that render them. This is **separate from #1801** (whic",
+  "label": "compliance"
+ },
+ {
+  "title": "Execution adversarial review v2 (post-#1685): 9 new BLOCKERs + no carry/keep contract \u2014 reconciliation / orphan / order-types",
+  "snippet": "## Execution adversarial review v2 \u2014 post-#1685 remediation Follow-up to the #1685 52-finding review. This pass adversarially re-reviewed the **post-remediation** branch `fix/exec-simpleorder-exit-pnl-breaker` @ `3a04c00a6` to find bugs tha",
+  "label": "compliance"
+ },
+ {
+  "title": "[Tracker] Staging data-gaps \u2014 consolidated remediation (2026-06-12 deep sweep): verified status + feature-dependency fix triage",
+  "snippet": "## Consolidated staging data-gap remediation tracker **Deep sweep 2026-06-12** \u2014 verified live against the staging Prefect API (60 deployments), staging Postgres `aagman` (92 tables) + ClickHouse `marketdata`, and a full GitHub issue/PR rec",
+  "label": "compliance"
+ },
+ {
+  "title": "Sweep: user-facing error messages + SEBI-RIA disclaimer (Reg. No. INA000021951) \u2014 99 findings, remediation plan",
+  "snippet": "cc @amit-kotidev Read-only sweep of **staging** (`c58c5b8b6`) for the two goals you set: - **(a)** appropriate user-facing **error messages** on every use case, and - **(b)** a **SEBI-RIA disclaimer / note** wherever advisory output is surf",
+  "label": "compliance"
+ },
+ {
+  "title": "Live-trading frontend correctness triage: 18 verified findings (Live Portfolio renders wrong counts vs executor DB)",
+  "snippet": "## Summary Read-only **data- & logic-correctness triage of the live-trading frontend**, run against a live exec session on 2026-06-09 (6 live workspaces / 14 deployments / 10 real MOFSL fills, executor account `897d0bd0`). 7 surfaces audite",
+  "label": "compliance"
+ },
+ {
+  "title": "Process: adversarial-by-default workflow for features, bugfixes & triage (learnings from the execution review)",
+  "snippet": "## Why this issue A 252-agent adversarial review of the execution system (#1685) surfaced **52 real code-level bugs**. A forensic retrospective then showed **47 of the 52 traced to a PR we had already merged** \u2014 **25** the PR was in-scope-t",
+  "label": "compliance"
+ },
+ {
+  "title": "Execution system adversarial review \u2014 52 findings (6 BLOCKER fixed in #1679, 32 HIGH + 14 MEDIUM open)",
+  "snippet": "@amit-kotidev \u2014 full adversarial review of the execution system, posted inline for tracking. The **6 BLOCKERs** are already fixed (TDD) in PR #1679. The **32 HIGH + 14 MEDIUM** below remain open for triage. _File paths normalized to repo-re",
+  "label": "compliance"
+ },
+ {
+  "title": "RELAY transport not wired for Zerodha/Angel/Dhan/Groww \u2014 orders bypass relay, supervisor gate is cosmetic for 4 of 5 brokers (SEBI)",
+  "snippet": "## Summary The executor's supervisor enforces `connection_mode = \"RELAY\"` at spawn (rejecting `DIRECT` with the message *\"DIRECT mode is disabled per SEBI guidelines \u2014 must be RELAY\"*, `supervisor.py:2935`). However, only **MOFSL** actually",
+  "label": "compliance"
+ },
+ {
+  "title": "Architecture: 3-tier supervisor triage + compound-chain orchestrator (closes the cross-domain query gap)",
+  "snippet": "## Context Aagman's current request flow is a hard funnel: ``` user \u2192 orchestrator \u2192 supervisor.tool \u2192 intent-classifier \u2192 handler-registry \u2192 ONE domain handler \u2192 worker agent(s) \u2192 tools ``` Every user turn is assumed to be **single-domain*",
+  "label": "compliance"
+ },
+ {
+  "title": "INFY RSI divergence backtest produces materially different entry prices and inverted P&L vs independent calculation",
+  "snippet": "## Summary Platform backtest for RSI divergence strategy on INFY from Jan 2023 to Dec 2024 produces 4 trades with entry prices \u20b980-120 higher than independently calculated from Yahoo Finance INFY.NS data. Trade 4, which should be a +\u20b965 win",
+  "label": "compliance"
+ },
+ {
+  "title": "PRD: Force RELAY-only order placement (SEBI compliance)",
+  "snippet": "Tracker issue for [`prd/relay-only-mode.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-only-mode.md). **Stream:** Relay **Summary:** SEBI guidelines prohibit Aagman-cloud-originated write API calls to MOFSL from non-whitelis",
+  "label": "compliance"
+ },
+ {
+  "title": "PRD: `aagman-relay-desktop` GUI Variant",
+  "snippet": "Tracker issue for [`prd/relay-agent-desktop.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-agent-desktop.md). **Stream:** Relay **Summary:** Today the relay agent is a single headless Python binary at `executor/relay/` that ",
+  "label": "compliance"
+ },
+ {
+  "title": "\ud83d\udccb Testing framework \u2014 T0 / T1 / T2 tiers, PR-gating flow & harness coverage matrix",
+  "snippet": "As we open the beta gate gradually and ship fast fixes, we need a **robust, shared test harness** so things don't break as we move fast. This ticket codifies the agreed model: the three test tiers (**T0 / T1 / T2**), where each runs, the **",
+  "label": "docs"
+ },
+ {
+  "title": "GTM Experiments \u2014 Phase 1 & Phase 2 Documentation",
+  "snippet": "# Aagman GTM \u2014 Experiment Log **Phase 1:** We roll Aagman out to the waitlist for the first time. Track what they do for 5 trading days. See where they drop off. Fix what breaks. Prove broker connections happen. No paid ads. No public launc",
+  "label": "docs"
+ },
+ {
+  "title": "Strategy Lab<>Aagman PRD",
+  "snippet": "# PRD: Strategy Lab \u2192 Aagman Integration (v1) **Status:** Draft for review **Authors:** Ajit (research lab), Claude (assistant) **Reviewers:** Amit, Anshuman **Date:** 2026-05-10 **Repos:** `ajitk2003/aagman-strategy-lab` (`research-lab-v1`",
+  "label": "docs"
+ },
+ {
+  "title": "GTM: ET Money experimentation exploration \u2014 messaging for MF + casual equity investor persona",
+  "snippet": "## Context We want to explore how Aagman can speak to a large, underserved persona: the **mutual fund investor / casual equity buyer / full-time-job side-hustle investor**. This is someone who wants to grow wealth but does not actively trad",
+  "label": "frontend"
+ },
+ {
+  "title": "UI/Auth: Phone number selector is hard-coded to India (+91); block international numbers until global OTP flow is ready",
+  "snippet": "We cannot allow international folks onto the platform right now because the phone-number country code is fixed to India (`+91`). ![Phone number input showing India +91 selector](https://raw.githubusercontent.com/iamaryansinha-kl/aagman-issu",
+  "label": "frontend"
+ },
+ {
+  "title": "Routing pipeline test taxonomy (12 tiers A\u2013L) \u2014 conversation-UX regression suite",
+  "snippet": "## What this is (plain English) We've mapped **every way a user message can be routed or mishandled** in the chat pipeline into a structured set of test categories \u2014 **12 tiers, ~60 sub-categories**. This issue tracks generating + verifying",
+  "label": "frontend"
+ },
+ {
+  "title": "Tear Down of UI/UX",
+  "snippet": "[Teardown - ajit kumar.docx](https://github.com/user-attachments/files/29374183/Teardown.-.ajit.kumar.docx)",
+  "label": "frontend"
+ },
+ {
+  "title": "Frontend review: integration-2026-06-24 light-mode UI issues",
+  "snippet": "# Aagman v2 Frontend Review **Branch reviewed:** `integration-2026-06-24` **Preview URL:** https://frontend-eta-mocha-42.vercel.app **Review date:** 2026-06-24 **Focus:** Light mode / UI eye testing --- ## Desktop Issues ### 1. Modal: \"Get ",
+  "label": "frontend"
+ },
+ {
+  "title": "Onboarding collateral: NL prompt library for deploying live equity + option strategies",
+  "snippet": "## What Onboarding collateral: a curated library of natural-language **prompts for deploying live equity and option strategies**. Intended for the first-run / onboarding flow so a new user can copy-paste a working prompt and see a live stra",
+  "label": "frontend"
+ },
+ {
+  "title": "Aagman UI Testing \u2014 Bug & Issue Log",
+  "snippet": "# Aagman UI Testing \u2014 Bug & Issue Log **Date:** 2026-06-21 **Tester:** Aryan Sinha **Platform:** Web (Desktop) --- ## UI-01: Sidebar Expands Unnecessarily for Empty-State Nav Items | Field | Detail | |-------|--------| | **Screen** | Left N",
+  "label": "frontend"
+ },
+ {
+  "title": "Options MODIFY: deterministic SL/TP apply (parity with equity)",
+  "snippet": "Follow-up to #1988 [REDACTED] re-entry). **Today:** for the OPTIONS_STRATEGY twin, #1988 fixes the *routing* (a [REDACTED] SL/TP answer no longer flips to a fresh options build), but the options MODIFY path (options-strategy.handler.ts:~125",
+  "label": "frontend"
+ },
+ {
+  "title": "Marketing landing \u2192 product login wiring + login UI redesign (constellation)",
+  "snippet": "## Context We have a marketing landing built at `aagman-landing-six.vercel.app` (canonical source in `marketing/landing-page/`, PR #1903) and an existing product login at `app.aagman.ai/login` (the \"Your AI Trading Co-Pilot\" + brown stock-e",
+  "label": "frontend"
+ },
+ {
+  "title": "[Pulse] Content quality, categorization, and UI issues",
+  "snippet": "## Summary Multiple content-quality, categorization, and UI issues observed across the **Aagman Pulse** section. --- ## 1. Latest tab: opinion pieces and low-signal regulatory items mixed with news The Latest feed surfaces items that are no",
+  "label": "frontend"
+ },
+ {
+  "title": "a11y(modals): focus-trap + autofocus + focus-restore on in-app modals (F-MAJOR-4 from #1599)",
+  "snippet": "## Background Surfaced from PR #1599 stringent review (F-MAJOR-4). The new `BrokerSetupModal` + `BrokerReauthModal` (chat-input broker-state integration) ship without focus-trap, autofocus, or focus-restore on close. The reviewer correctly ",
+  "label": "frontend"
+ },
+ {
+  "title": "Pulse mood: build pillars 6-10 (Event Sensitivity, Institutional Flow, Options Temp, Time-of-Day, Global Context)",
+  "snippet": "## Context Aagman Pulse PRD ([`docs/prd/intelligence/aagman-pulse-prd.md`](docs/prd/intelligence/aagman-pulse-prd.md) \u00a72) specifies **10 mood pillars**. Only **5 are implemented** today; the live mood card (verified via PR #1468 NL routing)",
+  "label": "frontend"
+ },
+ {
+  "title": "Section 2 (Equity Short) \u2014 Bug Report",
+  "snippet": "**Date:** 2026-05-21 **Tester:** Aryan **Platform:** aagman.ai chat backtest **Result:** 2 PASS, 2 SUSPICIOUS out of 4 tests --- ## Summary Short strategies generally parse correctly and execute when conditions are met. The triple-condition",
+  "label": "frontend"
+ },
+ {
+  "title": "Section 3 (Equity Special Exits) \u2014 Bug Report",
+  "snippet": "**Date:** 2026-05-21 **Tester:** Aryan **Platform:** aagman.ai chat backtest **Result:** 3 PASS, 3 SUSPICIOUS, 1 SUSPECTED BUG out of 7 tests --- ## Summary Special exit types show mixed results. Points-based exits (3.4) and time stops (3.3",
+  "label": "frontend"
+ },
+ {
+  "title": "Zerodha Kite Connect Personal vs Connect API \u2014 implicit market-data dependency limits usable order types",
+  "snippet": "# Zerodha Kite Connect Personal vs Connect API \u2014 Impact on Aagman Order Types **Date:** 2026-06-30 **Author:** Aagman agent analysis **Status:** Code-reviewed, not runtime-tested against a live Personal API app --- ## 1. What Zerodha actual",
+  "label": "infra"
+ },
+ {
+  "title": "backend: \"brief hiccup\" chat failures = undici keep-alive reuse of a server-closed OpenAI socket (UND_ERR_SOCKET) \u2014 transport-layer, not #19",
+  "snippet": "## Summary In local dev, chat/build turns intermittently fail with the user-facing message: > \"I wasn't able to finish that just now \u2014 that's usually a brief hiccup on my side. Please send it again.\" The supervisor returns `EMPTY_OUTPUT`. R",
+  "label": "infra"
+ },
+ {
+  "title": "Staging: #1895 live-feed resolver inert \u2014 merged Pulumi config never applied (CI deploy doesn't `pulumi up` aagman-app)",
+  "snippet": "## Summary PR #1895 (liquid-universe live-feed subscription resolver, closes #1749) is **merged** (`b3c5a1de3`) and the new `market-data` image **is deployed** to staging (CI \"Deploy to staging\" green). But the resolver is **inert on the ru",
+  "label": "infra"
+ },
+ {
+  "title": "mood_history is 4 weeks stale \u2014 compute-mood-history cron registered but producing no rows",
+  "snippet": "## TL;DR The `compute-mood-history` cron is registered but no new `mood_history` rows have landed for ~4 weeks. `curl http://localhost:3000/pulse/mood` returns a real 5-pillar `MarketMood` shape, but the pillar `description` carries trade_d",
+  "label": "infra"
+ },
+ {
+  "title": "Golden test smoke tier is not a PR gate \u2014 needs CI-reachable stack + [REDACTED] to promote",
+  "snippet": "## Summary The golden test suite (`testing/golden/`, branch `golden-test-framework`) is fully built \u2014 runners, 4 validation judges, 12 cases, and a CI workflow \u2014 but **its merge-blocking `smoke` tier is not actually wired as a PR gate**. To",
+  "label": "infra"
+ },
+ {
+  "title": "Day 0: Lab Data Surfacing for Consumer Launch (ROADMAP)",
+  "snippet": "# PRD: Day 0 \u2014 Lab Data Surfacing for Consumer Launch **Status:** Draft for review **Authors:** Ajit (research lab), Claude (assistant) **Reviewers:** Amit, Anshuman **Date:** 2026-05-14 **Target:** End of May 2026 consumer launch **Repos:*",
+  "label": "infra"
+ },
+ {
+  "title": "ci: backend lint/typecheck/unit-tests don't run for PRs against pre-staging-release",
+  "snippet": "## Summary `.github/workflows/ci.yml` only triggers on PRs to `main`, `staging`, and `uat` \u2014 NOT `pre-staging-release`. Backend lint, typecheck, unit tests, and most other suites do not run in CI on PRs targeting `pre-staging-release`. Only",
+  "label": "infra"
+ },
+ {
+  "title": "Execution deployment: LIVE mode ignored + PAPER crash on Nautilus reconciliation",
+  "snippet": "## Symptom User says \"buy 2 shares of Adani port, 20rs stop loss and 100rs profit target. live mode\" \u2014 expects LIVE order to MOFSL. Instead: 1. Deployment created as PAPER (not LIVE) 2. PAPER deployment crashes immediately on startup (Nauti",
+  "label": "infra"
+ },
+ {
+  "title": "Gateway Drizzle meta snapshots drifted (missing 0014\u20130017) \u2192 drizzle-kit generate produces broken migrations",
+  "snippet": "## Problem The gateway's `gateway/migrations/meta/` snapshot files jump **`0013_snapshot.json \u2192 0017_snapshot.json`** \u2014 the snapshots for migrations **0014, 0015, 0016, 0017** were never committed. Effect: `pnpm --filter gateway db:generate",
+  "label": "feature"
+ },
+ {
+  "title": "[PRD] AI Response Feedback Loop",
+  "snippet": "### \ud83d\udcc4 PRD file path [`docs/prd/platform/ai-response-feedback-loop.md`](https://github.com/kotilabs/aagman-v2/blob/main/docs/prd/platform/ai-response-feedback-loop.md) ### Owner @amit-kotidev ### Stream agents ### Target ship date 2026-07-21",
+  "label": "feature"
+ },
+ {
+  "title": "Productionize #1391 \u2014 Shareable Answer Infrastructure: consumer-path rollout (PRD)",
+  "snippet": "# Productionize #1391 \u2014 Shareable Answer Infrastructure: consumer-path rollout (PRD) Tracking issue for taking **#1391 (Shareable Answer Infrastructure)** from `staging` (`[skip-deploy]`, never prod-exercised) to a safe production rollout o",
+  "label": "feature"
+ },
+ {
+  "title": "[ALR] Alert module \u2014 pure price/indicator alerts not supported, system only compiles tradeable strategies",
+  "snippet": "## Summary All 3 alert scenarios tested. The system does not support notification-only alerts. Every alert request is treated as a strategy compilation attempt and rejected when the user clarifies they only want a notification, not a tradea",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Instrument Resolver \u2014 review + sign-off (Ajit + Anshuman)",
+  "snippet": "## PRD **File:** [`docs/prd/instrument-resolver.md`](https://github.com/kotilabs/aagman-v2/blob/feat/instrument-resolver/docs/prd/instrument-resolver.md) **Status:** v3 (as-built) \u2014 shipping on `feat/instrument-resolver` / PR #1004. **Linea",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Aagman Support Dashboard (Grafana)",
+  "snippet": "Tracker issue for [`prd/support-dashboard-prd.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/support-dashboard-prd.md). **Stream:** Platform **Summary:** When users report production issues (failed backtests, stuck jobs, ambiguous",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Structured Logging Correlation (`thread_id` / `user_id`)",
+  "snippet": "Tracker issue for [`prd/structured-logging-correlation.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/structured-logging-correlation.md). **Stream:** Platform **Summary:** When a beta tester reports an issue (\"my backtest is stuck",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: PRD Review: Magical Relay Agent UX",
+  "snippet": "Tracker issue for [`prd/review-magical-relay-agent.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/review-magical-relay-agent.md). **Stream:** Relay **Summary:** **Reviewer:** Shaurya **Date:** 2026-04-03 **Document:** `prd/magical",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Relay Resilience \u2014 PR #503 Review Remediation",
+  "snippet": "Tracker issue for [`prd/relay-resilience-review-remediation.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-resilience-review-remediation.md). **Stream:** Relay **Summary:** PR #503 lands the PRD faithfully but a set of revie",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Relay public distribution (extension + desktop)",
+  "snippet": "Tracker issue for [`prd/relay-public-distribution.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-public-distribution.md). **Stream:** Relay **Summary:** Both relay clients ship via GitHub Releases on this monorepo today: Lif",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Relay-path P0 hardening \u2014 review follow-up",
+  "snippet": "Tracker issue for [`prd/relay-path-p0-review-followup.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-path-p0-review-followup.md). **Stream:** Relay **Summary:** PR #498 (merged commit `a8947d67`) shipped the relay-path P0 bu",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Relay-path P0 hardening \u2014 implementation plan",
+  "snippet": "Tracker issue for [`prd/relay-path-p0-hardening.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-path-p0-hardening.md). **Stream:** Relay **Summary:** Bundles GitHub issues #491 and #492 into one coordinated release on the exe",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Relay Path Hardening \u2014 Port to Streams Direction",
+  "snippet": "Tracker issue for [`prd/relay-path-hardening-port.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-path-hardening-port.md). **Stream:** Relay **Summary:** Two behaviours from staging's pub/sub hardening are architecture-neutra",
+  "label": "feature"
+ },
+ {
+  "title": "PRD: Chrome Extension Relay + WebSocket Transport",
+  "snippet": "Tracker issue for [`prd/relay-extension.md`](https://github.com/kotilabs/aagman-v2/blob/main/prd/relay-extension.md). **Stream:** Relay **Summary:** The current relay fleet runs as a Python binary (`executor/relay/`) connecting to the Execu",
+  "label": "feature"
+ },
+ {
+  "title": "[executor][money-path] Options live-deploy builds leg contracts from un-canonicalized SIR underlying \u2014 spot name would mis-key the LIVE orde",
+  "snippet": "## Plain English PR #2214 fixes the **backtester** so an options strategy whose underlying is a spot name (`'NIFTY 50'`) gets canonicalized to the F&O ticker (`'NIFTY'`) before the expiry/option-chain lookups. While reviewing it, we found t",
+  "label": "execution"
+ },
+ {
+  "title": "BROKER_CLIENT_UNRESOLVED \u2014 reconcile pass skipped 2 stuck SENT orders (ITC.NSE) on STOPPED live deployment; owner Amit Kumar",
+  "snippet": "## Summary During the executor's order-reconciliation pass, a **`BROKER_CLIENT_UNRESOLVED`** error fired: the broker client was unavailable, so **2 order rows were skipped** and \"their `executor_orders` status cannot be reconciled against t",
+  "label": "execution"
+ },
+ {
+  "title": "ORPHAN_POSITION_UNRESOLVED \u2014 stopped LIVE deployment left OPEN YESBANK position (post-stop sweep failed); owner Amit Kumar",
+  "snippet": "## Summary The executor is firing a recurring **`ORPHAN_POSITION_UNRESOLVED`** alert: a **STOPPED LIVE deployment** was left with an **OPEN position the executor cannot prove is closed** \u2014 the post-stop position sweep \"likely failed at the ",
+  "label": "execution"
+ },
+ {
+  "title": "B2B Broker Pitch System \u2014 v1.0 delivery",
+  "snippet": "## B2B Broker Pitch System \u2014 v1.0 All artifacts written to `b2b_pipeline/broker_pitch/`. System is ready for per-broker customisation. --- ## Artifacts | Component | File | |---|---| | Core Value Memo | `b2b_pipeline/broker_pitch/components",
+  "label": "execution"
+ },
+ {
+  "title": "EXEC-SO-3: SIMPLE_ORDER emits a duplicate .NSE-suffixed entry order (Zerodha stuck-SENT / MOFSL phantom-flat) \u2014 shared exec-client",
+  "snippet": "## What's wrong (plain English) A single-leg SIMPLE_ORDER market entry emits a **duplicate entry order** ~1 second after the real one \u2014 same side/qty, a *different* broker order id, and **not** a bracket leg (bracket legs are SELL). The dup",
+  "label": "execution"
+ },
+ {
+  "title": "SIMPLE_ORDER reliability: 9-issue RCA sweep \u2014 absolute TP silently dropped (PROD), partial-fill naked position, %-on-MARKET throw",
+  "snippet": "## Plain English The one-shot **SIMPLE_ORDER** path \u2014 e.g. *\"buy 2 YESBANK at market, SL Rs 23 and TP Rs 27\"* \u2014 is unreliable, while the rule-based (AagmanSIR) path runs fine. A full RCA sweep of the **entire** SIMPLE_ORDER pipeline (NL \u2192 c",
+  "label": "execution"
+ },
+ {
+  "title": "SIMPLE_ORDER: percent SL/TP on a MARKET entry can't attach ('re-state as absolute') \u2014 gap left by #2038",
+  "snippet": "## What's broken (plain English) When a user places a **simple market order with a percent-based stop-loss/target** \u2014 e.g. *\"buy 2 YESBANK at market, SL 0.5%, TP 1%\"* \u2014 the protection **fails to attach** and the user is told: > \"You request",
+  "label": "execution"
+ },
+ {
+  "title": "B2B Pitch Deck \u2014 Brokers (MOFSL-type)",
+  "snippet": "# Aagman \u2014 For Brokers *Research infrastructure for your options book. Built by Koti Labs Private Limited.* --- ## Slide 1 \u2014 The cohort that pays you the most is the one you lose fastest **Your highest-brokerage retail traders are also your",
+  "label": "execution"
+ },
+ {
+  "title": "\ud83d\udd34 PROD LIVE: re-activation blocked by ownership gate \u2014 orphan ITC short (tag aag_e5305) left by prior deployment's teardown (OE-13/#579 recu",
+  "snippet": "## What happened (plain English) On **PROD**, re-arming a LIVE ITC deployment was blocked with a hard error popup: > Could not activate deployment: Broker shows executor-tagged positions that do not belong to any active deployment: Cannot s",
+  "label": "execution"
+ },
+ {
+  "title": "MOFSL NSE scrip sync recurring: LIVE deploys fail \"no MOFSL providerSymbol\" \u2014 no auth-gated/scheduled sync since #1961",
+  "snippet": "## Symptom (recurring) LIVE deploys of MOFSL NSE cash equities intermittently dead-end at spawn with: ``` Cannot spawn LIVE deployment <id>: IDEA.NSE exists in market-data but has no MOFSL providerSymbol. Run the MOFSL scrip master sync bef",
+  "label": "execution"
+ },
+ {
+  "title": "P0: every LIVE deployment fails to boot on prod \u2014 instrument-spec fetch pulls the entire 177k-row /symbols universe and times out at 5s",
+  "snippet": "## Plain English On **prod**, every live strategy deployment fails to start. Before it can trade, the executor needs two basic facts about the chosen stock (tick size + lot size). To get them for **one** symbol it asks market-data for the *",
+  "label": "execution"
+ },
+ {
+  "title": "Zerodha LIVE MCX execution readiness \u2014 sweep-orphan blocker (B2+B3) + live results + ranked work",
+  "snippet": "## Zerodha LIVE MCX execution \u2014 production-readiness campaign **Date:** 2026-06-19/20 (MCX evening session, live) \u00b7 **Broker + tick feed:** Zerodha (Kite Connect) \u00b7 **Account:** ZP8898 \u00b7 **Method:** two-track \u2014 (A) static 8-dimension produc",
+  "label": "execution"
+ },
+ {
+  "title": "fix(executor): AngelOne adapter import-time fail-fast (ANGELONE_API_BASE_URL) crashes ALL prod deployments regardless of broker",
+  "snippet": "## Summary (plain English) A missing config setting for a broker **nobody is using** (AngelOne) **crashes every strategy deployment on prod**, regardless of which broker the strategy actually trades. The first two live deployments on prod (",
+  "label": "execution"
+ },
+ {
+  "title": "[epic] Production data-plane monitoring for beta launch",
+  "snippet": "# Production data-plane monitoring for beta launch \u2014 epic ## Plain English Today's audit (2026-06-18) found **5 silent-failure modes that had run for days-to-months without anyone noticing** \u2014 most notably the 80-day stale Greeks pipeline, ",
+  "label": "execution"
+ },
+ {
+  "title": "PRD: Conversation handler \u2194 handbook grounding \u2014 accurate capabilities & live data-coverage answers",
+  "snippet": "# PRD: Conversation handler \u2194 handbook grounding \u2014 accurate capabilities & live data-coverage answers **Author:** Ajit Kumar **Date:** 2026-06-13 **Status:** Proposed **Reviewers:** @amit-kotidev --- ## 1. One-liner Make the conversation ag",
+  "label": "agent"
+ },
+ {
+  "title": "Streaming decision-record: 'stream the answer' is two problems (#1533 reasoning vs #1194 prose) + #1177 is a safety trap for structured doma",
+  "snippet": "## TL;DR (for @amit-kotidev) I audited the **stream-vs-generate consumer experience** end-to-end (frontend \u2192 gateway \u2192 orchestrator \u2192 supervisor \u2192 11 handlers). Two findings worth a decision before anyone picks up #1533 / #1177 / #1194: 1. ",
+  "label": "agent"
+ },
+ {
+  "title": "feat(conversation-agent): handbook-backed FAQ tool for product capabilities, limits & data coverage",
+  "snippet": "## Problem The conversation agent (`backend/src/mastra/agents/aagman-conversation-agent.ts`) handles general Q&A / help, but it has **no grounded source** for questions about what Aagman can do, its limitations, and its data coverage. Today",
+  "label": "agent"
+ },
+ {
+  "title": "Platform: Handler Streaming Standardization (HSS) \u2014 migrate all handlers to agent.stream()",
+  "snippet": "## Problem Today only **strategy.handler.ts** uses streaming (\\`agent.stream()\\` with bespoke partial-JSON parse loop at \\`strategy.handler.ts:570-630\\`, emitting \\`writer.write({type:'reasoning'|'questions'|'parsed_fields'})\\` events progr",
+  "label": "agent"
+ },
+ {
+  "title": "Stateless-agent handler hardening: status-gating + multi-turn context carry-forward",
+  "snippet": "## Summary Generalize the multi-turn context + status-gating hardening (shipped for the **research** handler in PR #1473) to the remaining stateless-agent supervisor handlers. Each domain needs a *different subset* of capabilities \u2014 see the",
+  "label": "agent"
+ },
+ {
+  "title": "Orchestrator semantic recall scoped to 'resource' (= userId) \u2014 cross-workspace + cross-type chat pollution",
+  "snippet": "## Symptom Supervisor agent's replies pull in semantically-similar messages from **every workspace the user has ever opened**, regardless of workspace type. Concrete pollution scenarios: - Workspace A (live-agent, BANKNIFTY): MOFSL returns ",
+  "label": "agent"
+ },
+ {
+  "title": "[REDACTED] CTA copy is inconsistent (\"say yes\" vs \"run risk checks\")",
+  "snippet": "## Summary The CTA that tells the user how to advance the strategy workflow is inconsistent between the structured card and the plain-text reply. - Structured card: `Say 'run risk checks' to advance \u2014 or 'modify'` - Reply-builder text: `Rea",
+  "label": "agent"
+ },
+ {
+  "title": "Strategy agent prompt \u2014 conversation UX gaps (clarification wall, defaults contradiction, risky-input tone)",
+  "snippet": "## Context A conversation-UX review of the strategy agent system prompt (`backend/src/mastra/agents/aagman-strategy-agent.ts`, v1.2.1) surfaced several UX gaps. The agent prompt is **not directly user-facing** \u2014 it emits a `WORKER_RETURN` J",
+  "label": "agent"
+ },
+ {
+  "title": "ReAct loop for Tier 0 read-only orchestrator; deterministic supervisor for state-write + money-path (sub-issue of #1252)",
+  "snippet": "## Context Follow-up to #1252 (3-tier supervisor triage + compound-chain orchestrator). That issue lays out the architectural shape; this one zooms in on the **specific question of which loop pattern (ReAct vs deterministic) applies where**",
+  "label": "agent"
+ },
+ {
+  "title": "Phase B \u2014 Move user preferences to supervisor layer (orchestrator-token-loop follow-up)",
+  "snippet": "## Context Phase A of the orchestrator token-loop fix (PR #1192, issue #1175) disabled `workingMemory` on the orchestrator agent to stop Mastra from auto-injecting `updateWorkingMemory` as a tool. That fix closed the structural loop + empty",
+  "label": "agent"
+ },
+ {
+  "title": "Options strategy handler missing requestContext on both generate calls",
+  "snippet": "**Related:** #1175 (codebase scan) ## Problem \\`options-strategy.handler.ts\\` lines 127 and 243 omit \\`requestContext\\` from \\`.generate()\\` calls: \\`\\`\\`typescript const response = await (getAgent('optionsStrategyAgent') as AgentLike).gene",
+  "label": "agent"
+ },
+ {
+  "title": "Strategy handler streaming calls missing maxSteps \u2014 falls back to unknown defaults",
+  "snippet": "**Related:** #1175 (codebase scan) ## Problem \\`strategy.handler.ts\\` lines 362 and 1005 call \\`.stream()\\` without specifying \\`maxSteps\\`: \\`\\`\\`typescript const strategyStream = await (getAgent('strategyAgent') as AgentLike).stream( JSON",
+  "label": "agent"
+ },
+ {
+  "title": "analytics/portfolio handlers use maxSteps: 12 with no justification",
+  "snippet": "**Related:** #1175 (codebase scan) ## Problem `analytics.handler.ts:59` and `portfolio.handler.ts:164` set `maxSteps: 12` \u2014 the highest values across all handlers. No comment explains why 12 is needed instead of the standard 8-10. These han",
+  "label": "agent"
+ },
+ {
+  "title": "Strategy clarification re-entry makes redundant full agent call \u2014 double token cost",
+  "snippet": "**Related:** #1175 (codebase scan) ## Problem `strategy.handler.ts` calls the strategy agent twice during clarification flows: 1. **Line ~179**: Fresh strategy request \u2192 `strategyAgent.generate()` (full LLM call with system prompt + SIR spe",
+  "label": "agent"
+ },
+ {
+  "title": "observability: backend request-timeout cut (420s) emits no metric/log \u2014 on-call sees symptom, not cause",
+  "snippet": "Follow-up from @amit-kotidev's review note \u26aa3 on #1827. ## Gap `backend/src/mastra/index.ts` raises the server request timeout to **420s** (was 300s) so the structured worker envelope can reach the gateway before the SSE is cut. But when a ",
+  "label": "chore"
+ },
+ {
+  "title": "portfolio: migrate rebalance-check + portfolio-health tool onto the unified health engine (follow-up to #1614)",
+  "snippet": "Follow-up from @amit-kotidev's #1614 review (\u26aa dual-engine tracking). #1614 ships the Arch-C cutover: the **gateway** now assembles data and the single **health engine** (`backend/src/mastra/tools/portfolio/health-engine.ts`) scores it \u2014 el",
+  "label": "chore"
+ },
+ {
+  "title": "Phase 1: Controlled Beta + Partnership Play \u2014 Execution Tracker",
+  "snippet": "## Phase 1: Controlled Beta ### Scope - **Cohort:** Everyone. Waitlist + personal network. No cap. - **Brokers:** Dhan, Angel One, Groww, MOFSL, Zerodha. All live. - **Filters:** None. No broker gate, no VC block, no competitor block. - **D",
+  "label": "chore"
+ },
+ {
+  "title": "GTM Phase 2 - Operator Checklist (WIP)",
+  "snippet": "# Phase 2: Ignite + Provoke \u2014 Operator Checklist *First public surface. 150 beta users get access. FinTwit goes live. Challenge paper-trade gate.* --- ## Product & Engineering ### Onboarding Fix-Cycle (Active Monitoring) - [ ] Drop-off moni",
+  "label": "chore"
+ },
+ {
+  "title": "GTM Phase 1 \u2014 Operator Checklist (WIP)",
+  "snippet": "# GTM Phase 1 \u2014 Operator Checklist *Everything that must be true before a single external user touches the product.* --- ## Engineering Coordination (Verify & QA) ### Onboarding & Product Flow - [ ] Signup flow tested end-to-end: waitlist c",
+  "label": "chore"
+ },
+ {
+  "title": "razorpay integration \u2014 final two blockers before go-live",
+  "snippet": "## razorpay integration \u2014 test account provision needed for final go-live **status** - [x] razorpay account cleared to accept payments - [x] bank account linked - [x] kyc completed - [x] payment gateway configured - [x] cancellation & refun",
+  "label": "chore"
+ },
+ {
+  "title": "db-mirror toolkit: post-pull gaps (migrations, gateway-tables, CH parallel-import race)",
+  "snippet": "## Context The `scripts/migration/db-copy/db-mirror-*` toolkit (PR #1136) is a great workflow improvement and is now my default for testing PRs against staging-snapshot data without touching staging itself. After multiple full pulls + servi",
+  "label": "chore"
+ },
+ {
+  "title": "arch: symbol resolution has 10 hops + 3 hardcoded alias maps + 2 network round-trips for what should be a 1-hop deterministic lookup",
+  "snippet": "## Summary Resolving a single user-input symbol (e.g. `NIFTY`) for an options strategy traverses **10 distinct layers**, makes **2 network round-trips** (Backend\u2194market-data, Backend\u2194ClickHouse), consults **3 hardcoded alias maps that must ",
+  "label": "chore"
+ },
+ {
+  "title": "Frontend mood widgets crash on coverage-less /pulse/mood (version skew) \u2014 same hazard as #1710",
+  "snippet": "**Paired FUP to PR #1710 (reviewer F2).** #1710 fixed the *backend* `getMarketMoodContext` crash when a pre-#1631 market-data server omits `coverage`. The **frontend has the identical hazard** on a separate code path. ## Where Both read `mo",
+  "label": "bug"
+ },
+ {
+  "title": "Portfolio Account Statement Upload \u2014 PDF Text Extraction Failure",
+  "snippet": "**Date:** 2026-05-16 **Tester:** Aryan **Platform:** aagman.ai portfolio agent **Severity:** Critical \u2014 blocks all portfolio statement uploads --- ## Summary Uploading a PDF account statement to the portfolio agent fails with a backend infr",
+  "label": "bug"
+ },
+ {
+  "title": "[PH-04] Portfolio entry analysis rejected as \"investment advice\" \u2014 agent cannot compute correlation/diversification impact without buy/sell ",
+  "snippet": "## Summary Prompt asked for a portfolio impact analysis (\"Should I add TATAMOTORS to my portfolio? Current: 5L RELIANCE, 5L TCS, 5L INFY.\"). The agent rejected it as investment advice, conflating impact analysis with buy/sell recommendation",
+  "label": "bug"
+ },
+ {
+  "title": "RES] Research module \u2014 incorrect share price displayed in fundamental analysis packs",
+  "snippet": "## Summary Research queries for individual stocks return fundamental analysis packs with **incorrect share prices**. Both English and Hinglish prompts affected. The research content (score, dimensions, scenarios) may render, but the underly",
+  "label": "bug"
+ },
+ {
+  "title": "\ud83d\uded1 LIVE cutover gates \u2014 pre-LIVE audit findings that must close before enabling LIVE trading",
+  "snippet": "## Why this exists PR #1619 (multi-broker relay write-seam + recon) is **green to merge** \u2014 all 6 \ud83d\udd34 NEW regressions it introduced are closed at HEAD \\`e3c11013f\\`. But the pre-LIVE audit run on 2026-06-03 (issues #1621-#1632) surfaced **pre",
+  "label": "security"
+ },
+ {
+  "title": "follow-up(#1391): share carry-forwards \u2014 artifacts JSONB leak channel (N-2), silent SSR catch (N-3), extract generic throttle primitive (N-4",
+  "snippet": "Carry-forward items from the #1391 stringent v3 + [REDACTED] reviews (all explicitly non-blocking for #1391). ## N-2 \u2014 `Type.Unknown()` JSONB leak channel `share.schemas.ts` (`artifacts` in `CreateShareBody` + `ShareResponse`, `utm` in `Log",
+  "label": "security"
+ },
+ {
+  "title": "auth/gateway: ADMIN grant flow audit, gateway\u2192executor proxy untested, X-User-ID trust model",
+  "snippet": "# Auth / gateway follow-ups from 2026-05-20 LIVE MOFSL bring-up (Parent: #1237.) ## 1. ADMIN grant flow via UI vs DB insert To make `/activate` work today I had to insert into `executor_account_access_grants` directly with role `ADMIN`. The",
+  "label": "security"
+ },
+ {
+  "title": "Security: Systemic BOLA \u2014 gateway missing workspace-membership check on /workspaces/:id/executor/*",
+  "snippet": "## Summary The gateway's executor plugin registers `authGuard` (JWT validation) as the **only** preHandler on `/workspaces/:id/executor/*`. It never verifies that `request.userId` is a member of the workspace `:id` in the URL. Any authentic",
+  "label": "security"
+ },
+ {
+  "title": "Security: Stored XSS via JSON-LD script breakout in /pulse SEO pages",
+  "snippet": "## Summary The `/pulse` and `/pulse/<slug>` SEO pages embed RSS-sourced `title` and `summary` into a `<script type=\\\"application/ld+json\\\">` block via raw `JSON.stringify` inside `dangerouslySetInnerHTML`. `JSON.stringify` does not escape `",
+  "label": "security"
+ },
+ {
+  "title": "Security: BOLA/IDOR in executor deployment-groups \u2014 cross-tenant SIR exfiltration",
+  "snippet": "## Summary The executor's deployment-groups API performs no workspace authorization on by-id routes. Any authenticated tenant who learns a victim's `group_id` can read the victim's full strategy IR (`sir_json`), and for empty groups can mut",
+  "label": "security"
+ },
+ {
+  "title": "Security: BOLA/IDOR in gateway gems endpoints \u2014 cross-tenant read/write/delete",
+  "snippet": "## Summary The gems API in the gateway authenticates the caller (`authGuard`) but never authorizes the target resource. Any logged-in user who learns another user's `gemId` or `instrumentId` (UUIDs leak via shared links, browser history, lo",
+  "label": "security"
+ },
+ {
+  "title": "Portfolio CAS Upload \u2014 pdftotext ENOENT still blocking all PDF uploads (repro 2026-06-04)",
+  "snippet": "**Date:** 2026-06-04 **Tester:** Aryan **Platform:** aagman.ai portfolio agent **Severity:** Critical \u2014 blocks all portfolio statement uploads --- ## Summary Portfolio CAS (Consolidated Account Statement) upload remains completely broken. W",
+  "label": "test"
+ },
+ {
+  "title": "Section 23 (Portfolio Health) \u2014 Bug Report",
+  "snippet": "**Date:** 2026-06-04 **Tester:** Aryan **Platform:** aagman.ai chat **Result:** 2 PASS, 4 FAIL, 1 SUSPICIOUS, 1 N/A out of 8 tests --- ## Summary Section 23 (Portfolio Health) is partially functional. Simple equity-only portfolios (PH-02, P",
+  "label": "test"
+ },
+ {
+  "title": "Section 6 (Options De-restricted) \u2014 Bug Report",
+  "snippet": "**Date:** 2026-05-21 **Tester:** Aryan **Platform:** aagman.ai chat backtest **Result:** 4 PASS, 2 SUSPICIOUS out of 6 tests --- ## Summary Options de-restricted features generally parse correctly and execute when conditions are met. Arithm",
+  "label": "test"
+ },
+ {
+  "title": "test: E2E NL test catalog \u2014 paste-ready prompts for Aagman UAT",
+  "snippet": "# E2E Natural Language Test Catalog Paste-ready prompts for manual UAT in Aagman chat. Organized by category. After each prompt, click through: **strategy card \u2192 Run Risk Checks \u2192 Run Backtest** (or wait for screener results). --- ## 1. Equ",
+  "label": "test"
+ },
+ {
+  "title": "frontend test: MessageBubble.test.tsx 18/18 tests fail on staging \u2014 timestamp regex out of sync with renderer",
+  "snippet": "## Summary `frontend/src/components/MessageBubble/MessageBubble.test.tsx` is fully red on `staging` (verified at `81ca6eee` and `7332b21b`): **18/18 tests fail.** Worktree diff against my branch confirmed file-identical, so this is **not** ",
+  "label": "test"
+ },
+ {
+  "title": "e2e: mobile-responsive.spec.ts:112 \"chat input remains visible when focused on mobile\" fails on staging",
+  "snippet": "## Summary `e2e/mobile-responsive.spec.ts:112` \u2014 *Mobile Responsive @ui \u203a Chat input keyboard behavior (#4) \u203a chat input remains visible when focused on mobile* \u2014 fails on `staging` (verified at `561f9548`, and at `cc1c7c73` before that). I",
+  "label": "test"
+ },
+ {
+  "title": "Trade log inverts P&L sign for credit spread exits at \u20b90",
+  "snippet": "## Summary Backtest trade log displays negative P&L for trades where the exit value is \u20b90. For a bull put spread (credit spread), exiting at \u20b90 means the spread expired worthless = maximum profit (full credit retained). The platform instead",
+  "label": "test"
+ },
+ {
+  "title": "Options strategy card mislabels bear call spread as BULL_CALL_SPREAD",
+  "snippet": "## Summary Options backtest strategy card mislabels bear call spread as `BULL_CALL_SPREAD`. Legs are `SELL ATM` / `BUY OTM` (credit spread) but card displays debit spread name. `DIRECTIONAL_SHORT` suffix is correct. ## Repro Steps 1. Prompt",
+  "label": "test"
+ },
+ {
+  "title": "trade log timestamp formatting: daily bars show \"24:00\" instead of date-only or \"00:00\"",
+  "snippet": "## summary in the individual trades table for equity backtests, daily timeframe entries/exits display timestamps as \"24:00\" alongside the date. for daily bars, time component should either be omitted entirely or shown as \"00:00\" \u2014 \"24:00\" i",
+  "label": "test"
+ }
+]

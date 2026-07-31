@@ -1,0 +1,74 @@
+[
+ {
+  "symptom": "`risk_blocked` / `strategy_blocked` in output (agent returned non-READY), or any 'rule 6.x' reasoning (e.g. rule 6.1.1 LIVE-without-SL block, rule 6.2.1 maxDD>20% warning)",
+  "layer": "typescript",
+  "entry_file": "backend/src/mastra/utils/risk-calculations.ts",
+  "evidence": "CANONICAL LAW \u2014 docs/risk/Risk-README.md: 'All risk calculations happen in TypeScript (risk-calculations.ts) and are pre-computed by the Supervisor Tool before being passed to the Risk Agent (LLM). The Risk Agent has no tools and performs no calculations.' Rule numbers live in aagman-risk-agent.ts prompt (6.1.1/6.2.1). Never chase a risk-block into Python."
+ },
+ {
+  "symptom": "Backtest period dates wrong / result fields mutated / LLM-hallucination guard needed before frontend",
+  "layer": "typescript-backend",
+  "entry_file": "backend result-assembly (NOT gateway)",
+  "evidence": "WRONG-LAYER NEGATIVE: gateway response-transformer reached into bt.raw.output.artifacts.backtest_result.summary to extract dates + mutate model output \u2014 violates 'Gateway = auth+routing+proxy only'. Fix belongs in backend result assembly, not gateway. (PR #270-era gateway business-logic objection; #270 predates the fetched 500-PR window \u2014 sourced from feedback_gateway_no_business_logic.)"
+ },
+ {
+  "symptom": "Impossible percentage displayed (IV Rank 4125%, win-rate 0.667 shown raw)",
+  "layer": "scale-convention",
+  "entry_file": "the producing service boundary (Pct suffix TS / _pct Python)",
+  "evidence": "AGENTS.md Percentage Convention: all pct fields are 0-100 scale at service boundaries. Scale bug = double \u00d7100 or 0-1-vs-0-100 mismatch. Cross-check displayed value against source DB (atm_iv_daily.iv_rank_252d) before assuming a UI bug."
+ },
+ {
+  "symptom": "ClickHouse insert/query error on a DateTime64 param, or T/Z ISO string rejected",
+  "layer": "clickhouse-boundary",
+  "entry_file": "the CH client conversion helper",
+  "evidence": "AGENTS.md: domain objects use ISO-8601 UTC; convert to 'YYYY-MM-DD HH:MM:SS.mmm' for CH. Never pass ISO with T/Z directly to DateTime64. Use 127.0.0.1 not localhost (macOS IPv6)."
+ },
+ {
+  "symptom": "Postgres migration fails to load / import-vs-exports error",
+  "layer": "esm-cjs-boundary",
+  "entry_file": "the migration .cjs file",
+  "evidence": "AGENTS.md ESM vs CJS: all runtime is ESM (type:module) but node-pg-migrate migrations MUST be .cjs with exports.up/down. Never mix import syntax with module.exports."
+ },
+ {
+  "symptom": "Wrong F&O / commodity order quantity (lot_size=1) on the live path",
+  "layer": "python-executor",
+  "entry_file": "executor LIVE-path env resolver / broker exec_client",
+  "evidence": "CLAUDE.md Safety-Critical: LIVE-path env vars (MARKET_DATA_BASE_URL, INTERNAL_API_KEY, broker REST base URLs) must raise when unset \u2014 a localhost fallback \u2192 connection-refused \u2192 silent lot_size=1 cache. Validate before the broad try/except."
+ },
+ {
+  "symptom": "Live SimpleOrder/reject produced 0 audit rows (compliance gap)",
+  "layer": "python-executor-dispatcher",
+  "entry_file": "supervisor.py audit event dispatcher",
+  "evidence": "CLAUDE.md: event-name synonyms (order_rejected vs broker_order_rejected) in an if/elif cascade left the SimpleOrder branch unreachable \u2192 0 SEBI audit rows for 4 live rejects (PR #1527 #25/B1). Dispatcher must be a flat lookup dict."
+ },
+ {
+  "symptom": "Order rejected 'Incorrect Tick Size' / un-snapped price reached broker",
+  "layer": "python-executor",
+  "entry_file": "broker exec_client _snap_to_tick + adapter tick-unit resolution",
+  "evidence": "PR #1527: bare except swallowed the snap failure \u2192 un-snapped price. Also Dhan M2: instrument-master TICK_SIZE in paise (100=\u20b91) read as rupees ticks 100\u00d7 large. Narrow the except; verify tick/lot units vs a live known instrument."
+ },
+ {
+  "symptom": "OPTIONS_SCREENER E2E all fail with 'market-data did not return results'",
+  "layer": "typescript-supervisor",
+  "entry_file": "supervisor validateScreenerReturn()",
+  "evidence": "validateScreenerReturn requires research_pack.symbols[] but OPTIONS_SCREENER returns research_pack.results[] \u2014 validation written for technical/fundamental screeners wasn't updated for the options shape. Update validation + agent output contract together."
+ },
+ {
+  "symptom": "Equity/conditional NL query mis-routed to wrong domain agent",
+  "layer": "typescript-router-v2",
+  "entry_file": "backend/src/mastra/intent-classifier-v2/ (domains/*.ts + triggers.ts)",
+  "evidence": "v2 semantic router is the LIVE path (via adapters/intent-classifier-adapter.ts:classifyWithV2 at aagman-supervisor-tool.ts:374). Legacy shared/intent-classifier.ts is retired. Routing fixes are prompt/domain-definition/trigger work validated against the real LLM, not the legacy regex file."
+ },
+ {
+  "symptom": "LLM output JSON parse fails on trailing commas / comments / truncation",
+  "layer": "typescript-parser",
+  "entry_file": "supervisor/helpers/worker-envelope.ts (tolerantParse / jsonc-parser)",
+  "evidence": "CLAUDE.md Agent Safety: all LLM output parsing must use jsonc-parser via tolerantParse, never raw JSON.parse. Regex comment-stripping corrupts URLs/formulas inside strings."
+ },
+ {
+  "symptom": "Real-money action (LIVE deploy / promote-to-live) executed without confirmation",
+  "layer": "typescript-gates",
+  "entry_file": "supervisor/gates/confirmation-gates.ts",
+  "evidence": "CLAUDE.md: money-moving actions use a two-turn confirmation \u2014 Turn1 stash + NEEDS_CLARIFICATION, Turn2 exact-affirmation with 5-min TTL. Never bypass with SKIP_* in production."
+ }
+]

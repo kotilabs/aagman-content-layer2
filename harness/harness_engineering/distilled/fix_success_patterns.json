@@ -1,0 +1,187 @@
+[
+ {
+  "approach": "[skip-deploy] feat(market-data): liquid-universe live-feed subscription resolver (#1749)",
+  "merged_first_try": false,
+  "pr": 1895
+ },
+ {
+  "approach": "fix(pulse): content-quality filters, category refiner, dedup + instrument-mapper (#1860) [skip-deploy]",
+  "merged_first_try": false,
+  "pr": 1874
+ },
+ {
+  "approach": "fix(market-data): fill interest_coverage/total_income/tax_expense as generated columns (#1825)",
+  "merged_first_try": false,
+  "pr": 1870
+ },
+ {
+  "approach": "fix(market-data): mf_holdings \u2014 clamp Excel-serial date false-positives + filter latest month + cleanup migration (#1804)",
+  "merged_first_try": false,
+  "pr": 1819
+ },
+ {
+  "approach": "fix(screener): #1794 golden-suite reliability \u2014 sector sub-level resolution, router top-N, harness scoring [skip-deploy]",
+  "merged_first_try": false,
+  "pr": 1814
+ },
+ {
+  "approach": "[skip-deploy]fix(orchestrator): broaden screener universe + fail-loud mood task (#1804 items 5/8/9)",
+  "merged_first_try": false,
+  "pr": 1808
+ },
+ {
+  "approach": "fix(backtester): allocation baskets rebalance to target + summary echoes capital (#1800)",
+  "merged_first_try": false,
+  "pr": 1802
+ },
+ {
+  "approach": "fix(execution): recombine original order on clarification re-entry (money-path scoped)",
+  "merged_first_try": false,
+  "pr": 1669
+ },
+ {
+  "approach": "fix(options): reject dropped option legs (count-blind validator)",
+  "merged_first_try": false,
+  "pr": 1667
+ },
+ {
+  "approach": "docs(skills): approve-issue \u2014 operator Definition-of-Ready gate before `approved` [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2319
+ },
+ {
+  "approach": "Phase C: promote judge-flagged conversations \u2192 convux fixture candidates (prod-conversation eval)",
+  "merged_first_try": true,
+  "pr": 2306
+ },
+ {
+  "approach": "Phase B: reference-free quality judge over harvested conversations (prod-conversation eval)",
+  "merged_first_try": true,
+  "pr": 2305
+ },
+ {
+  "approach": "Phase A: harvest real multi-turn conversations from prod (prod-conversation eval)",
+  "merged_first_try": true,
+  "pr": 2302
+ },
+ {
+  "approach": "docs(process): bind reviewers to read-only worktree discipline + clarify stringent never runs tests [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2297
+ },
+ {
+  "approach": "docs(process): Step 0 authorization gate \u2014 block unassigned PRs [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2279
+ },
+ {
+  "approach": "docs(loops): build-review-pr \u2014 autonomous phase-wise build loop (loops/build-review-pr/)",
+  "merged_first_try": true,
+  "pr": 2270
+ },
+ {
+  "approach": "Phase C: implicit rephrase-as-\ud83d\udc4e signal (#2252)",
+  "merged_first_try": true,
+  "pr": 2265
+ },
+ {
+  "approach": "Phase B: promote \ud83d\udc4e \u2192 routing-harness case + promote CLI (#2252)",
+  "merged_first_try": true,
+  "pr": 2264
+ },
+ {
+  "approach": "Phase A: AI Response Feedback \u2014 capture + live \ud83d\udc4d/\ud83d\udc4e widget (#2252)",
+  "merged_first_try": true,
+  "pr": 2257
+ },
+ {
+  "approach": "fix(backtester,options): screener epoch-stale guard + intraday underlying-spot fallback [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2254
+ },
+ {
+  "approach": "fix(market-data): route futures bars to canonical bars table + backfill",
+  "merged_first_try": true,
+  "pr": 2253
+ },
+ {
+  "approach": "fix(testing): harness normalizeSirForBacktester drifted \u2014 restore warmup_bars derivation [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2247
+ },
+ {
+  "approach": "Promote uat \u2192 main (PROD) 2026-06-30 \u2014 13 PRs: options canon \u00b7 MF resolver \u00b7 rollups \u00b7 IST dates",
+  "merged_first_try": true,
+  "pr": 2243
+ },
+ {
+  "approach": "fix(agents): route MF fund-name lookups to the working tool (#2238) [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2242
+ },
+ {
+  "approach": "Promote staging \u2192 uat 2026-06-30 (13 PRs: options canon \u00b7 MF resolver \u00b7 rollups \u00b7 IST dates)",
+  "merged_first_try": true,
+  "pr": 2241
+ },
+ {
+  "approach": "docs: autonomous issue-resolution loop (sentinel \u2192 tracker-manager \u2192 workers)",
+  "merged_first_try": true,
+  "pr": 2229
+ },
+ {
+  "approach": "fix(backtester): canonicalize options underlying before loader calls (#2204) [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2220
+ },
+ {
+  "approach": "fix(orchestrator): fail fast on missing DATABASE_URL in get_risk_free_rate (#1812) [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2218
+ },
+ {
+  "approach": "fix(backtest): canonicalize options underlying to F&O ticker in the backtester (#2204/#2206 \u2014 #2182 sister-site) [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2214
+ },
+ {
+  "approach": "feat(research-agent): MF holdings comparison \u2014 compare underlying stocks of fund A vs B (#2208) [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2211
+ },
+ {
+  "approach": "fix(market-data): MF resolver token-AND match \u2014 stop silent mis-resolution [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2210
+ },
+ {
+  "approach": "fix(backtest): resolve options/futures underlying to F&O ticker \u2014 stop forwarding derivative asset_class to resolver (#2183)",
+  "merged_first_try": true,
+  "pr": 2207
+ },
+ {
+  "approach": "fix(agents): inject current IST date into allocation-strategy, charting + analytics agents [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2202
+ },
+ {
+  "approach": "fix(strategy-agent): inject current IST date so relative date phrases resolve to the correct year [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2193
+ },
+ {
+  "approach": "fix(options): roll up intraday options chain/greeks/IV to 5m/15m/30m/1h (#2184)",
+  "merged_first_try": true,
+  "pr": 2192
+ },
+ {
+  "approach": "feat: continuous NSE equity futures backtesting (NIFTY_CONTINUOUS) [skip-deploy]",
+  "merged_first_try": true,
+  "pr": 2190
+ },
+ {
+  "approach": "test(backtest): #2186 test-strategy overhaul \u2014 real-user prompt corpus (item 1)",
+  "merged_first_try": true,
+  "pr": 2189
+ }
+]

@@ -1,0 +1,977 @@
+"""run_layer2_full.py — full content-layer2 orchestrator.
+
+Implements the complete Layer 2 workflow from signal identifier through final
+approval, using the Kimi Code bridge for every LLM call and file-based human
+gates. The runner is resumable: run it repeatedly and it advances to the next
+pending gate or LLM request.
+
+Subcommands:
+    signal_identifier  Generate (or resume) the daily signal digest.
+    select_signal      Present digest candidates and wait for operator pick.
+    research           Run the research agent for the selected ticket.
+    write              Fan out writers for the selected surfaces.
+    review             Run the markets reviewer on all produced drafts.
+    correct            Apply reviewer feedback (up to 2 correction loops).
+    seo                Run SEO/AEO audit + final blog corrections.
+    publish_approval   Wait for final approval, then move surfaces to final/.
+    run_all            Advance through the whole pipeline as far as possible.
+    status             Show current state.
+
+Human gates use files in layer2_full_run/gates/:
+    PENDING.md   what the operator/assistant needs to decide
+    RESPONSE.md  operator selection/notes (for select_signal)
+    APPROVED     marker file for approvals
+    REJECTED     marker file for rejections
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+import time
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO))
+
+from harness_core.agent_memory import AgentMemory
+from harness_core.agent_base import Verdict
+from harness_core.budget import BudgetGuard
+from harness_core.kill_switch import KillSwitch
+from harness_core.llm_router import LLMRouter
+from harness_core.run import Services, load_env
+from harness_core.state import WorkItemStore
+from harness_core.telegram import Telegram
+from harness_configs.kimi_code_bridge import (
+    AwaitingResponseError,
+    make_kimi_code_bridge,
+)
+from harness_configs.layer2_full_config import build_config, SURFACES
+from harness_configs.x_scout_agent_config import XScoutConfig
+from harness_configs.reddit_scout_agent_config import RedditScoutConfig
+from harness_agents.x_scout_agent import XScoutAgent
+from harness_agents.reddit_scout_agent import RedditScoutAgent
+from harness_content.layer2_full_agents import (
+    Layer2Corrector,
+    Layer2FinalCorrector,
+    Layer2MarketsReviewerFull,
+    Layer2PublisherFull,
+    Layer2ResearchAgentFull,
+    Layer2SEOAuditor,
+    Layer2SignalIdentifier,
+    Layer2Writer,
+    parse_digest_candidates,
+    write_all_surfaces,
+)
+from harness_content.seed_layer2 import seed_all
+from harness_content.judges import Layer2ContentJudge
+
+WORKDIR_NAME = "layer2_full_run"
+DEFAULT_SURFACES = SURFACES
+MAX_CORRECTION_LOOPS = 2
+
+
+# --------------------------------------------------------------------------- #
+# Gate helpers
+# --------------------------------------------------------------------------- #
+class GatePending(Exception):
+    """Raised when a human gate needs operator input."""
+
+
+class GateRejected(Exception):
+    """Raised when a human gate was rejected."""
+
+
+def _gate_dir(workdir: Path, gate_name: str) -> Path:
+    d = workdir / "gates" / gate_name
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _request_gate(workdir: Path, gate_name: str, body: str) -> None:
+    gdir = _gate_dir(workdir, gate_name)
+    (gdir / "PENDING.md").write_text(body, encoding="utf-8")
+    (gdir / "REQUESTED").write_text(str(time.time()), encoding="utf-8")
+    raise GatePending(f"Gate '{gate_name}' pending. See {gdir / 'PENDING.md'}")
+
+
+def _check_approval_gate(workdir: Path, gate_name: str) -> bool:
+    gdir = _gate_dir(workdir, gate_name)
+    if (gdir / "APPROVED").exists():
+        return True
+    if (gdir / "REJECTED").exists():
+        raise GateRejected(f"Gate '{gate_name}' was rejected.")
+    return False
+
+
+def _gate_body(workdir: Path, gate_name: str) -> str:
+    gdir = _gate_dir(workdir, gate_name)
+    path = gdir / "PENDING.md"
+    return path.read_text(encoding="utf-8") if path.exists() else ""
+
+
+def _clear_gate(workdir: Path, gate_name: str) -> None:
+    gdir = _gate_dir(workdir, gate_name)
+    for name in ("PENDING.md", "RESPONSE.md", "REQUESTED", "APPROVED", "REJECTED"):
+        (gdir / name).unlink(missing_ok=True)
+
+
+def _read_text(path: Path) -> str:
+    try:
+        return path.read_text(encoding="utf-8").strip()
+    except (OSError, TypeError):
+        return ""
+
+
+# --------------------------------------------------------------------------- #
+# Scout → digest helpers
+# --------------------------------------------------------------------------- #
+def _digest_path_for_source(workdir: Path, date: str, source: str) -> Path:
+    """Map a scout source name to its digest file path."""
+    signals_dir = workdir / "signals"
+    mapping = {
+        "default": f"{date}-digest.md",
+        "combined": f"{date}-digest.md",
+        "macro": f"{date}-macro-digest.md",
+        "india_news": f"{date}-india-news-digest.md",
+        "x": f"{date}-x-digest.md",
+        "reddit": f"{date}-reddit-digest.md",
+    }
+    return signals_dir / mapping.get(source, f"{date}-{source}-digest.md")
+
+
+def _available_digest_sources(workdir: Path, date: str) -> dict[str, Path]:
+    """Return all digest files that exist for a date, keyed by source name."""
+    sources = ["combined", "macro", "india_news", "x", "reddit"]
+    found = {}
+    for src in sources:
+        path = _digest_path_for_source(workdir, date, src)
+        if path.exists():
+            found[src] = path
+    return found
+
+
+def _clusters_to_digest(source: str, clusters_text: str, date: str) -> str:
+    """Convert X/Reddit cluster markdown into a digest the parser can read."""
+    lines = [
+        f"# Aagman Layer 2 Signal Digest — {source.upper()} — {date}",
+        "",
+        f"> Clustered signals from the {source} scout.",
+        "",
+        "---",
+        "",
+        "## Real-time Market Lens",
+        "",
+    ]
+
+    # Match headings that look like cluster titles.
+    heading_re = re.compile(r"^(#{2,4})\s*(?:\d+\.?\s*|Cluster\s*\d+[:\-]?\s*)?(.*?)$", re.MULTILINE)
+    summary_re = re.compile(r"[-*]\s*\*\*Summary:\*\*\s*(.+)", re.IGNORECASE)
+
+    sections = []
+    headings = list(heading_re.finditer(clusters_text))
+    for i, m in enumerate(headings):
+        level, title = m.group(1), m.group(2).strip()
+        if not title or title.lower() in ("clusters", "new posts clusters", "hot posts clusters"):
+            continue
+        if "other / noise" in title.lower() or title.lower().startswith("other"):
+            continue
+        start = m.end()
+        end = headings[i + 1].start() if i + 1 < len(headings) else len(clusters_text)
+        block = clusters_text[start:end]
+        summary = ""
+        for sm in summary_re.finditer(block):
+            summary = sm.group(1).strip()
+            break
+        sections.append((title, summary, block.strip()))
+
+    if not sections:
+        # Fallback: dump the whole thing as a single candidate.
+        sections.append((f"{source.title()} feed summary", "Clustered feed activity.", clusters_text))
+
+    for idx, (title, summary, block) in enumerate(sections, 1):
+        lines.append(f"### Signal: {title}")
+        lines.append("")
+        lines.append(f"- **Source:** {source}")
+        lines.append(f"- **Why this matters now:** {summary or '(see cluster below)'}")
+        lines.append("")
+        lines.append("**Raw cluster:**")
+        lines.append("")
+        lines.append(block)
+        lines.append("")
+
+    lines.extend([
+        "---",
+        "",
+        "## Operator notes",
+        "",
+        "- Review the clusters above.",
+        "- Pick one signal and the surfaces to produce.",
+        f"- Write selection to `state/tickets/{date}-<signal-id>.md`.",
+    ])
+
+    return "\n".join(lines)
+
+
+def _record_outcome(workdir: Path, services: Services, outcome: str,
+                    notes: str = "") -> None:
+    """Store a feedback lesson from a terminal outcome in the content memory."""
+    if not services or not getattr(services, "memory_factory", None):
+        return
+    state = load_state(workdir)
+    signal_id = state.get("signal_id", "unknown")
+    title = state.get("signal_title", signal_id)
+    surfaces = state.get("surfaces", [])
+    ticket_path = Path(state.get("ticket_path", "") or "")
+    ticket_notes = ""
+    if ticket_path.exists():
+        # Capture any operator notes added under the Signal brief section.
+        ticket_text = _read_text(ticket_path)
+        if "## Signal brief" in ticket_text:
+            parts = ticket_text.split("## Signal brief", 1)
+            tail = parts[1]
+            # Stop at next heading.
+            next_heading = tail.find("\n## ")
+            if next_heading != -1:
+                tail = tail[:next_heading]
+            ticket_notes = tail.strip().replace("(Copied from digest. Add operator notes here.)", "").strip()
+
+    lesson = (
+        f"outcome={outcome} | signal={signal_id} | title={title} | "
+        f"surfaces={','.join(surfaces)}"
+    )
+    if notes:
+        lesson += f" | notes={notes}"
+    if ticket_notes:
+        lesson += f" | ticket_notes={ticket_notes}"
+
+    mem = services.memory_factory("content", "publish")
+    mem.add(lesson, id=f"content.publish.{signal_id}.{outcome}", tags=outcome)
+    print(f"Recorded lesson: content.publish.{signal_id}.{outcome}")
+
+
+# --------------------------------------------------------------------------- #
+# Services
+# --------------------------------------------------------------------------- #
+def build_services(workdir: Path, env: dict | None = None) -> Services:
+    env = dict(env or {})
+    cost_log = str(workdir / "logs" / "cost_log.jsonl")
+    mem_db = str(workdir / "data" / "memory.db")
+    telegram = Telegram(env.get("TELEGRAM_BOT_TOKEN"), env.get("TELEGRAM_CHAT_ID"))
+    budget = BudgetGuard(float(env.get("DAILY_BUDGET_USD", "5.00")), cost_log,
+                         notifier=telegram.notifier(),
+                         paused_path=str(workdir / "PAUSED"))
+
+    request_dir = workdir / "gates" / "llm_requests"
+    response_dir = workdir / "gates" / "llm_responses"
+    bridge = make_kimi_code_bridge(request_dir, response_dir, poll_interval=2.0)
+
+    router = LLMRouter(
+        models_yaml_path=str(REPO / "harness_configs" / "models_kimi.yaml"),
+        completion_fn=bridge,
+        cost_log_path=cost_log,
+        budget=budget,
+    )
+    # Kimi Code is the runtime; override pricing to zero.
+    router.pricing = {m: 0.0 for m in router.pricing}
+
+    store = WorkItemStore(str(workdir / "data" / "state.db"))
+    kill = KillSwitch(str(workdir / "KILL"), pid_path=str(workdir / "PID"))
+    memory_factory = lambda domain, step: AgentMemory(domain, step, db_path=mem_db)
+
+    return Services(
+        router=router, store=store, budget=budget, kill=kill, telegram=telegram,
+        memory_factory=memory_factory, env=env, workdir=str(workdir),
+        dry_run=False,
+    )
+
+
+def ensure_workdir(workdir: Path) -> None:
+    for sub in ("signals", "state/tickets", "research", "drafts", "reviews",
+                "final", "logs", "data", "gates/llm_requests",
+                "gates/llm_responses"):
+        (workdir / sub).mkdir(parents=True, exist_ok=True)
+
+
+# --------------------------------------------------------------------------- #
+# State persistence
+# --------------------------------------------------------------------------- #
+def state_path(workdir: Path) -> Path:
+    return workdir / "data" / "layer2_full_state.json"
+
+
+def load_state(workdir: Path) -> dict:
+    path = state_path(workdir)
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    return {}
+
+
+def save_state(workdir: Path, state: dict) -> None:
+    state_path(workdir).write_text(json.dumps(state, indent=2), encoding="utf-8")
+
+
+def current_date(state: dict) -> str:
+    from datetime import date
+    return state.get("date") or date.today().isoformat()
+
+
+# --------------------------------------------------------------------------- #
+# Workflow steps
+# --------------------------------------------------------------------------- #
+def cmd_signal_identifier(services: Services, workdir: Path, args) -> None:
+    """Generate the daily signal digest (macro + realtime)."""
+    state = load_state(workdir)
+    date = args.date or current_date(state)
+    state["date"] = date
+    save_state(workdir, state)
+
+    digest_path = workdir / "signals" / f"{date}-digest.md"
+    if args.force:
+        digest_path.unlink(missing_ok=True)
+        for cache in workdir.glob(f"signals/.{date}-*-response.md"):
+            cache.unlink(missing_ok=True)
+    elif digest_path.exists():
+        print(f"Digest already exists: {digest_path}")
+        return
+
+    identifier = Layer2SignalIdentifier(services.router, workdir)
+    try:
+        digest_path = identifier.run(date=date)
+        print(f"Wrote digest: {digest_path}")
+        # Clear any stale selection gate for this date.
+        _clear_gate(workdir, f"signal_selection_{date}")
+    except AwaitingResponseError as e:
+        print(f"\nAwaiting LLM response for {e.req_id}")
+        print(f"Request file:  {e.req_file}")
+        print(f"Response file: {e.resp_file}")
+        print("\nRead the request, provide a response, and re-run this command.")
+        raise SystemExit(0)
+
+
+def cmd_macro_scout(services: Services, workdir: Path, args) -> None:
+    """Generate the macro signal digest only."""
+    from harness_content.scouts import MacroSignalScout
+    state = load_state(workdir)
+    date = args.date or current_date(state)
+    state["date"] = date
+    save_state(workdir, state)
+
+    scout = MacroSignalScout(
+        services.router, workdir,
+        memory_factory=services.memory_factory if services else None,
+    )
+    digest_path = scout.digest_path(date)
+    if args.force:
+        digest_path.unlink(missing_ok=True)
+        cache = workdir / "signals" / f".{date}-macro-response.md"
+        cache.unlink(missing_ok=True)
+    elif digest_path.exists():
+        print(f"Macro digest already exists: {digest_path}")
+        return
+
+    try:
+        digest_path = scout.run(date)
+        print(f"Wrote macro digest: {digest_path}")
+        _clear_gate(workdir, f"signal_selection_{date}")
+    except AwaitingResponseError as e:
+        print(f"\nAwaiting LLM response for {e.req_id}")
+        print(f"Request file:  {e.req_file}")
+        print(f"Response file: {e.resp_file}")
+        print("\nRead the request, provide a response, and re-run this command.")
+        raise SystemExit(0)
+
+
+def cmd_india_news_scout(services: Services, workdir: Path, args) -> None:
+    """Generate the India news signal digest only."""
+    from harness_content.scouts import IndiaNewsScout
+    state = load_state(workdir)
+    date = args.date or current_date(state)
+    state["date"] = date
+    save_state(workdir, state)
+
+    scout = IndiaNewsScout(
+        services.router, workdir,
+        memory_factory=services.memory_factory if services else None,
+    )
+    digest_path = scout.digest_path(date)
+    if args.force:
+        digest_path.unlink(missing_ok=True)
+        cache = workdir / "signals" / f".{date}-india_news-response.md"
+        cache.unlink(missing_ok=True)
+    elif digest_path.exists():
+        print(f"India news digest already exists: {digest_path}")
+        return
+
+    try:
+        digest_path = scout.run(date)
+        print(f"Wrote India news digest: {digest_path}")
+        _clear_gate(workdir, f"signal_selection_{date}")
+    except AwaitingResponseError as e:
+        print(f"\nAwaiting LLM response for {e.req_id}")
+        print(f"Request file:  {e.req_file}")
+        print(f"Response file: {e.resp_file}")
+        print("\nRead the request, provide a response, and re-run this command.")
+        raise SystemExit(0)
+
+
+def cmd_x_scout(services: Services, workdir: Path, args) -> None:
+    """Run the X home-feed scout and write a digest of clustered candidates."""
+    state = load_state(workdir)
+    date = args.date or current_date(state)
+    state["date"] = date
+    save_state(workdir, state)
+
+    digest_path = _digest_path_for_source(workdir, date, "x")
+    if args.force:
+        digest_path.unlink(missing_ok=True)
+
+    if digest_path.exists():
+        print(f"X digest already exists: {digest_path}")
+        return
+
+    config = XScoutConfig.default()
+    agent = XScoutAgent(config)
+    try:
+        cluster_file = agent.run(dt=date)
+    except Exception as exc:
+        raise SystemExit(f"X scout failed: {exc}") from exc
+
+    clusters_text = cluster_file.read_text(encoding="utf-8") if cluster_file.exists() else ""
+    digest = _clusters_to_digest("x", clusters_text, date)
+    digest_path.parent.mkdir(parents=True, exist_ok=True)
+    digest_path.write_text(digest, encoding="utf-8")
+    print(f"Wrote X digest: {digest_path}")
+    _clear_gate(workdir, f"signal_selection_{date}")
+
+
+def cmd_reddit_scout(services: Services, workdir: Path, args) -> None:
+    """Run the Reddit scout and write a digest of clustered candidates."""
+    state = load_state(workdir)
+    date = args.date or current_date(state)
+    state["date"] = date
+    save_state(workdir, state)
+
+    digest_path = _digest_path_for_source(workdir, date, "reddit")
+    if args.force:
+        digest_path.unlink(missing_ok=True)
+
+    if digest_path.exists():
+        print(f"Reddit digest already exists: {digest_path}")
+        return
+
+    config = RedditScoutConfig.default()
+    agent = RedditScoutAgent(config)
+    try:
+        cluster_file = agent.run(dt=date)
+    except Exception as exc:
+        raise SystemExit(f"Reddit scout failed: {exc}") from exc
+
+    clusters_text = cluster_file.read_text(encoding="utf-8") if cluster_file.exists() else ""
+    digest = _clusters_to_digest("reddit", clusters_text, date)
+    digest_path.parent.mkdir(parents=True, exist_ok=True)
+    digest_path.write_text(digest, encoding="utf-8")
+    print(f"Wrote Reddit digest: {digest_path}")
+    _clear_gate(workdir, f"signal_selection_{date}")
+
+
+def cmd_select_signal(services: Services, workdir: Path, args) -> dict:
+    """Present digest candidates and wait for operator selection."""
+    state = load_state(workdir)
+    date = args.date or current_date(state)
+
+    available = _available_digest_sources(workdir, date)
+    if not available:
+        raise SystemExit(
+            f"No digest found for {date}. Run one of:\n"
+            f"  python run_layer2_full.py signal_identifier\n"
+            f"  python run_layer2_full.py macro_scout\n"
+            f"  python run_layer2_full.py india_news_scout\n"
+            f"  python run_layer2_full.py x_scout\n"
+            f"  python run_layer2_full.py reddit_scout"
+        )
+
+    gate_name = f"signal_selection_{date}"
+    gdir = _gate_dir(workdir, gate_name)
+
+    # Already selected?
+    response_file = gdir / "RESPONSE.md"
+    if response_file.exists():
+        selection = _parse_selection(response_file)
+        source = selection.get("digest_source", "combined")
+        digest_path = _digest_path_for_source(workdir, date, source)
+        state["digest_source"] = source
+        state["signal_id"] = selection["signal_id"]
+        state["signal_title"] = selection.get("title", selection["signal_id"])
+        state["surfaces"] = selection.get("surfaces", DEFAULT_SURFACES)
+        state["ticket_path"] = str(
+            workdir / "state" / "tickets" / f"{date}-{selection['signal_id']}.md"
+        )
+        save_state(workdir, state)
+        _write_ticket(state, workdir)
+        print(f"Selection accepted: {selection['signal_id']} (from {source})")
+        print(f"Digest: {digest_path}")
+        print(f"Ticket: {state['ticket_path']}")
+        _clear_gate(workdir, gate_name)
+        return selection
+
+    # Build pending file from all available digests.
+    body = f"# Signal Selection — {date}\n\n"
+    body += "## Available digests\n\n"
+    for src, path in available.items():
+        body += f"- `{src}` → `{path}`\n"
+    body += "\nPick one digest_source in your response.\n\n"
+
+    all_candidates: list[tuple[str, list]] = []
+    for src, path in available.items():
+        candidates = parse_digest_candidates(path)
+        if not candidates:
+            continue
+        body += f"## Candidates from `{src}`\n\n"
+        for i, c in enumerate(candidates, 1):
+            body += (
+                f"### {src}-{i}. {c.title}\n"
+                f"- **id:** `{c.id}`\n"
+                f"- **lens:** {c.lens}\n"
+                f"- **why now:** {c.why_now or '(see digest)'}\n\n"
+            )
+        all_candidates.append((src, candidates))
+
+    if not all_candidates:
+        raise SystemExit(f"No candidates found in any digest for {date}.")
+
+    body += (
+        f"\n## How to respond\n\n"
+        f"Write `{gdir / 'RESPONSE.md'}` with:\n"
+        f"```yaml\n"
+        f"digest_source: <one of: {', '.join(available.keys())}>\n"
+        f"signal_id: <id from the chosen digest>\n"
+        f"title: <signal title>\n"
+        f"surfaces: [{', '.join(DEFAULT_SURFACES)}]\n"
+        f"```\n"
+    )
+    _request_gate(workdir, gate_name, body)
+    return {}  # never reached
+
+
+def _parse_selection(path: Path) -> dict:
+    text = path.read_text(encoding="utf-8")
+    # Try YAML frontmatter first.
+    if text.strip().startswith("---"):
+        import yaml
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            return yaml.safe_load(parts[1]) or {}
+    # Fallback: simple key:value.
+    out = {}
+    for line in text.splitlines():
+        if ":" in line:
+            k, v = line.split(":", 1)
+            k = k.strip()
+            v = v.strip()
+            if k in ("surfaces",):
+                out[k] = [s.strip() for s in v.strip("[]").split(",") if s.strip()]
+            else:
+                out[k] = v
+    return out
+
+
+def _write_ticket(state: dict, workdir: Path) -> Path:
+    date = state["date"]
+    signal_id = state["signal_id"]
+    title = state.get("signal_title", signal_id)
+    surfaces = state.get("surfaces", DEFAULT_SURFACES)
+    digest_source = state.get("digest_source", "combined")
+    ticket_path = workdir / "state" / "tickets" / f"{date}-{signal_id}.md"
+    ticket_path.parent.mkdir(parents=True, exist_ok=True)
+    body = (
+        f"---\n"
+        f"signal_id: {signal_id}\n"
+        f"title: {title}\n"
+        f"date: {date}\n"
+        f"surfaces: [{', '.join(surfaces)}]\n"
+        f"digest_source: {digest_source}\n"
+        f"---\n\n"
+        f"# Ticket: {title}\n\n"
+        f"Selected surfaces: {', '.join(surfaces)}\n\n"
+        f"Scout source: `{digest_source}`\n\n"
+        f"## Signal brief\n\n"
+        f"(Copied from digest. Add operator notes here.)\n\n"
+        f"## Sources\n\n"
+        f"- (add source pointers)\n"
+    )
+    ticket_path.write_text(body, encoding="utf-8")
+    return ticket_path
+
+
+def cmd_research(services: Services, workdir: Path, args) -> Path:
+    """Run the research agent for the selected ticket."""
+    state = load_state(workdir)
+    if "ticket_path" not in state:
+        raise SystemExit("No ticket selected. Run select_signal first.")
+
+    gate_name = "research_approval"
+    if _check_approval_gate(workdir, gate_name):
+        print("Research approved.")
+        _clear_gate(workdir, gate_name)
+        return Path(state["ticket_path"])
+
+    signal_id = state["signal_id"]
+    research_file = workdir / "research" / f"signal-{signal_id}.md"
+    if research_file.exists() and not args.force:
+        body = _gate_body(workdir, gate_name) or f"Research exists: {research_file}"
+    else:
+        researcher = Layer2ResearchAgentFull(
+            services.router, workdir,
+            memory_factory=services.memory_factory if services else None,
+        )
+        research_file = researcher.run(state["ticket_path"])
+        body = (
+            f"# Research Approval\n\n"
+            f"Signal: {state.get('signal_title', signal_id)}\n"
+            f"File: `{research_file}`\n\n"
+            f"Review the research artifact. If it is ready, create:\n"
+            f"`{workdir / 'gates' / gate_name / 'APPROVED'}`\n\n"
+            f"To reject, create:\n"
+            f"`{workdir / 'gates' / gate_name / 'REJECTED'}`\n"
+        )
+
+    _request_gate(workdir, gate_name, body)
+    return research_file  # never reached
+
+
+def cmd_write(services: Services, workdir: Path, args) -> list[Path]:
+    """Fan out writers for selected surfaces."""
+    state = load_state(workdir)
+    signal_id = state["signal_id"]
+    surfaces = state.get("surfaces", DEFAULT_SURFACES)
+
+    writer = Layer2Writer(
+        services.router, workdir,
+        memory_factory=services.memory_factory if services else None,
+    )
+    mode = "standalone" if "blog" not in surfaces else "promo"
+
+    # Skip if drafts already exist and --force is not set.
+    existing_paths = [
+        workdir / "drafts" / f"signal-{signal_id}-{_surface_file(s)}"
+        for s in surfaces
+    ]
+    if all(p.exists() for p in existing_paths) and not args.force:
+        print("Drafts already exist. Skipping write. Use --force to regenerate.")
+        return existing_paths
+
+    # Run in parallel for speed.
+    paths = write_all_surfaces(writer, signal_id, surfaces, mode=mode)
+    for p in paths:
+        print(f"Wrote draft: {p}")
+    return paths
+
+
+def cmd_review(services: Services, workdir: Path, args) -> None:
+    """Run the content judge on all produced drafts."""
+    state = load_state(workdir)
+    signal_id = state["signal_id"]
+    surfaces = state.get("surfaces", DEFAULT_SURFACES)
+
+    judge = Layer2ContentJudge(
+        services.router, workdir,
+        memory_factory=services.memory_factory if services else None,
+    )
+    review_file = judge.review_path(signal_id)
+    if review_file.exists() and not args.force:
+        print(f"Review file already exists: {review_file}")
+        return
+    verdict = judge.run(signal_id, surfaces)
+    print(f"Content judge: {verdict.verdict}")
+    print(f"Review file: {verdict.meta['review_file']}")
+    if verdict.issues:
+        print(f"Surfaces with blockers: {', '.join(verdict.issues)}")
+
+
+def cmd_correct(services: Services, workdir: Path, args) -> None:
+    """Apply judge feedback to surfaces with blockers."""
+    state = load_state(workdir)
+    signal_id = state["signal_id"]
+    surfaces = state.get("surfaces", DEFAULT_SURFACES)
+
+    judge = Layer2ContentJudge(
+        services.router, workdir,
+        memory_factory=services.memory_factory if services else None,
+    )
+    verdict = judge.run(signal_id, surfaces)
+    if verdict.verdict == "pass":
+        print("No blockers. Ready for SEO.")
+        return
+
+    corrector = Layer2Corrector(Layer2Writer(
+        services.router, workdir,
+        memory_factory=services.memory_factory if services else None,
+    ))
+    loop_key = f"correction_loops_{signal_id}"
+    loops = state.get(loop_key, 0)
+    if loops >= MAX_CORRECTION_LOOPS:
+        print(f"Max correction loops ({MAX_CORRECTION_LOOPS}) reached. "
+              f"Remaining blockers: {verdict.issues}")
+        return
+
+    review_path = judge.review_path(signal_id)
+    for surface in verdict.issues:
+        print(f"Correcting {surface}...")
+        corrector.correct(signal_id, surface, review_path)
+
+    state[loop_key] = loops + 1
+    save_state(workdir, state)
+    print(f"Correction loop {loops + 1} complete. Re-run review to check.")
+
+
+def cmd_seo(services: Services, workdir: Path, args) -> None:
+    """Run SEO/AEO audit on blog and apply fixes."""
+    state = load_state(workdir)
+    signal_id = state["signal_id"]
+
+    if "blog" not in state.get("surfaces", DEFAULT_SURFACES):
+        print("No blog surface. Skipping SEO.")
+        return
+
+    gate_name = "seo_approval"
+    if _check_approval_gate(workdir, gate_name):
+        print("SEO audit approved.")
+        _clear_gate(workdir, gate_name)
+        return
+
+    auditor = Layer2SEOAuditor(services.router, workdir)
+    audit_file = auditor.audit_path(signal_id)
+    final_blog = workdir / "drafts" / f"signal-{signal_id}-blog.md"
+    if audit_file.exists() and final_blog.exists() and not args.force:
+        print(f"SEO audit and corrected blog already exist. Skipping SEO.")
+    else:
+        audit_file = auditor.run(signal_id)
+        print(f"SEO audit: {audit_file}")
+
+        final_corrector = Layer2FinalCorrector(services.router, workdir)
+        final_corrector.run(signal_id)
+        print(f"Applied SEO fixes to blog draft.")
+
+    body = (
+        f"# SEO/AEO Approval\n\n"
+        f"Signal: {state.get('signal_title', signal_id)}\n"
+        f"Audit: `{audit_file}`\n"
+        f"Corrected blog: `{workdir / 'drafts' / f'signal-{signal_id}-blog.md'}`\n\n"
+        f"Approve by creating:\n"
+        f"`{workdir / 'gates' / gate_name / 'APPROVED'}`\n"
+    )
+    _request_gate(workdir, gate_name, body)
+
+
+def _surface_file(surface: str) -> str:
+    from harness_content.layer2_full_agents import _SURFACE_FILE
+    return _SURFACE_FILE[surface]
+
+
+def cmd_publish_approval(services: Services, workdir: Path, args) -> None:
+    """Wait for final approval, then publish approved surfaces."""
+    state = load_state(workdir)
+    signal_id = state["signal_id"]
+    surfaces = state.get("surfaces", DEFAULT_SURFACES)
+
+    gate_name = "publish_approval"
+    gate_dir = _gate_dir(workdir, gate_name)
+    rejected_file = gate_dir / "REJECTED"
+    approved_file = gate_dir / "APPROVED"
+
+    if rejected_file.exists():
+        notes = _read_text(rejected_file)
+        _record_outcome(workdir, services, "rejected", notes=notes)
+        raise GateRejected(f"Gate '{gate_name}' was rejected.")
+
+    if approved_file.exists():
+        notes = _read_text(approved_file)
+        publisher = Layer2PublisherFull(workdir)
+        copied = publisher.publish(signal_id, surfaces)
+        print(f"Published {len(copied)} surfaces to final/:")
+        for p in copied:
+            print(f"  {p}")
+        _record_outcome(workdir, services, "published", notes=notes)
+        _clear_gate(workdir, gate_name)
+        return
+
+    # Build summary of all surfaces for the operator.
+    body = f"# Final Publish Approval\n\nSignal: {state.get('signal_title', signal_id)}\n\n"
+    body += "## Surfaces ready\n\n"
+    for surface in surfaces:
+        path = workdir / "drafts" / f"signal-{signal_id}-{_surface_file(surface)}"
+        exists = path.exists()
+        body += f"- {'[x]' if exists else '[ ]'} {surface}: `{path}`\n"
+    body += (
+        f"\nReview all surfaces and the markets review.\n"
+        f"Approve by creating:\n"
+        f"`{workdir / 'gates' / gate_name / 'APPROVED'}`\n\n"
+        f"Reject by creating:\n"
+        f"`{workdir / 'gates' / gate_name / 'REJECTED'}`\n"
+    )
+    _request_gate(workdir, gate_name, body)
+
+
+# --------------------------------------------------------------------------- #
+# run_all — advance as far as possible
+# --------------------------------------------------------------------------- #
+def cmd_run_all(services: Services, workdir: Path, args) -> None:
+    """Run the pipeline until a gate or LLM request blocks."""
+    state = load_state(workdir)
+
+    # 1. Digest — any available source satisfies this step.
+    date = args.date or current_date(state)
+    available = _available_digest_sources(workdir, date)
+    if not available:
+        print("Step: signal_identifier")
+        cmd_signal_identifier(services, workdir, args)
+
+    # 2. Selection.
+    if "signal_id" not in state:
+        print("Step: select_signal")
+        cmd_select_signal(services, workdir, args)
+        state = load_state(workdir)
+
+    # 3. Research.
+    signal_id = state["signal_id"]
+    surfaces = state.get("surfaces", DEFAULT_SURFACES)
+    research_file = workdir / "research" / f"signal-{signal_id}.md"
+    gate_name = "research_approval"
+    try:
+        research_approved = research_file.exists() and _check_approval_gate(workdir, gate_name)
+    except GateRejected:
+        raise
+    if not research_approved:
+        print("Step: research")
+        cmd_research(services, workdir, args)
+
+    # 4. Write.
+    print("Step: write")
+    cmd_write(services, workdir, args)
+
+    # 5. Review + correction loop.
+    judge = Layer2ContentJudge(
+        services.router, workdir,
+        memory_factory=services.memory_factory if services else None,
+    )
+    review_file = judge.review_path(signal_id)
+    if review_file.exists() and not args.force:
+        print("Step: review (existing review file found, skipping)")
+        verdict = Verdict(verdict="pass", issues=[], score=1.0,
+                          meta={"review_file": str(review_file),
+                                "blocker_surfaces": [],
+                                "review_text": review_file.read_text(encoding="utf-8")})
+    else:
+        print("Step: review")
+        verdict = judge.run(signal_id, surfaces)
+    while verdict.verdict != "pass":
+        loop_key = f"correction_loops_{signal_id}"
+        if state.get(loop_key, 0) >= MAX_CORRECTION_LOOPS:
+            print("Step: correction limit reached")
+            break
+        print("Step: correct")
+        cmd_correct(services, workdir, args)
+        state = load_state(workdir)
+        print("Step: review")
+        verdict = judge.run(signal_id, surfaces)
+
+    # 6. SEO (blog only).
+    if "blog" in surfaces:
+        print("Step: seo")
+        try:
+            cmd_seo(services, workdir, args)
+        except GatePending:
+            raise
+
+    # 7. Publish approval.
+    print("Step: publish_approval")
+    cmd_publish_approval(services, workdir, args)
+
+    print("\nPipeline complete for this signal.")
+
+
+def cmd_status(services: Services, workdir: Path, args) -> None:
+    """Print current state."""
+    state = load_state(workdir)
+    print("Layer 2 Full Run State")
+    print("-" * 40)
+    for k, v in sorted(state.items()):
+        print(f"{k}: {v}")
+    print("-" * 40)
+    digest = workdir / "signals" / f"{current_date(state)}-digest.md"
+    print(f"Digest exists: {digest.exists()}")
+    if "signal_id" in state:
+        sid = state["signal_id"]
+        print(f"Research exists: {(workdir / 'research' / f'signal-{sid}.md').exists()}")
+        for s in state.get("surfaces", DEFAULT_SURFACES):
+            print(f"Draft {s} exists: "
+                  f"{(workdir / 'drafts' / f'signal-{sid}-{_surface_file(s)}').exists()}")
+
+
+# --------------------------------------------------------------------------- #
+# CLI
+# --------------------------------------------------------------------------- #
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser("run_layer2_full.py")
+    ap.add_argument("command", choices=[
+        "signal_identifier", "macro_scout", "india_news_scout", "x_scout", "reddit_scout",
+        "select_signal", "research", "write", "review", "correct", "seo",
+        "publish_approval", "run_all", "status",
+    ])
+    ap.add_argument("--date", default=None,
+                    help="Digest/ticket date override (YYYY-MM-DD).")
+    ap.add_argument("--force", action="store_true",
+                    help="Re-run even if output already exists.")
+    args = ap.parse_args(argv)
+
+    env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)
+    workdir = REPO / WORKDIR_NAME
+    ensure_workdir(workdir)
+
+    # Seed memory once.
+    mem_db = workdir / "data" / "memory.db"
+    if not mem_db.exists() or args.force:
+        seed_counts = seed_all(db_path=str(mem_db))
+        print("Seeded Layer 2 memory:")
+        for ns, n in seed_counts.items():
+            print(f"  {ns}: {n} lessons")
+
+    services = build_services(workdir, env)
+
+    # Build config so Services wiring is exercised.
+    _ = build_config(services)
+
+    handlers = {
+        "signal_identifier": cmd_signal_identifier,
+        "macro_scout": cmd_macro_scout,
+        "india_news_scout": cmd_india_news_scout,
+        "x_scout": cmd_x_scout,
+        "reddit_scout": cmd_reddit_scout,
+        "select_signal": cmd_select_signal,
+        "research": cmd_research,
+        "write": cmd_write,
+        "review": cmd_review,
+        "correct": cmd_correct,
+        "seo": cmd_seo,
+        "publish_approval": cmd_publish_approval,
+        "run_all": cmd_run_all,
+        "status": cmd_status,
+    }
+
+    try:
+        handlers[args.command](services, workdir, args)
+    except GatePending as e:
+        print(f"\n{e}")
+        return 0
+    except GateRejected as e:
+        print(f"\nRejected: {e}")
+        return 1
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

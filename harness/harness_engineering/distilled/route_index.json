@@ -1,0 +1,674 @@
+[
+ {
+  "pr": 2257,
+  "issue_number": 2252,
+  "issue_text": "[PRD] AI Response Feedback Loop ### \ud83d\udcc4 PRD file path\n\n[`docs/prd/platform/ai-response-feedback-loop.md`](https://github.com/kotilabs/aagman-v2/blob/main/docs/prd/platform/ai-response-feedback-loop.md)\n\n### Owner\n\n@amit-ko",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/MessageBubble/FeedbackControl.tsx"
+ },
+ {
+  "pr": 2242,
+  "issue_number": 2238,
+  "issue_text": "[screener] \"Top holdings of <fund>\" fails \u2014 scanner agent misroutes around the working #2210 endpoint ## Plain English\nAsking **\"Top holdings of ICICI Small Cap Fund\"** in chat fails with *\"could not be resolved to a val",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/agents/aagman-market-scanner-agent.ts"
+ },
+ {
+  "pr": 2214,
+  "issue_number": 2204,
+  "issue_text": "[backtest][options] Weekly options backtests fail \u2014 expiry-calendar resolver gets spot name, not F&O ticker (#2182 sister-site) **Source:** staging QA #2197 (prompts 1, 2, 4) \u2014 found while testing #2182.\n\n## Symptom\nWeek",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/options_compiler.py"
+ },
+ {
+  "pr": 2218,
+  "issue_number": 1812,
+  "issue_text": "compute-greeks-daily: silent fallback to hardcoded 6.5% RBI repo rate on table empty / DB unreachable ## Summary\n\nThe Greeks risk-free-rate lookup at `orchestrator/src/orchestrator/tasks/options/compute_greeks_daily.py:1",
+  "area": "orchestrator/src",
+  "entry_file": "orchestrator/src/orchestrator/tasks/options/black_scholes.py"
+ },
+ {
+  "pr": 2211,
+  "issue_number": 2208,
+  "issue_text": "Analytics issues <img width=\"720\" height=\"1600\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/c399ba4d-ad58-4447-bd7a-881d8b0148db\" />\n<img width=\"720\" height=\"1600\" alt=\"Image\" src=\"https://github.com/user",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/agents/aagman-research-agent.ts"
+ },
+ {
+  "pr": 2207,
+  "issue_number": 2183,
+  "issue_text": "[backtest] Resolver returns index SPOT name (NIFTY 50) for intent=BACKTEST_OPTIONS \u2014 reconcile root cause (#2182 follow-up) ## Summary\n\nPR #2182 fixed the options \"no data\" wall by mapping the index **spot name \u2192 F&O tic",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/supervisor/handlers/strategy.handler.ts"
+ },
+ {
+  "pr": 2192,
+  "issue_number": 2184,
+  "issue_text": "[backtest][options] Intraday options at 5m/15m silently run at 1-minute \u2014 loader ignores requested timeframe (no options rollup) ## Summary (plain English)\n\nA user who backtests an **options** strategy at **5-minute** (o",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/charts/options_ohlcv_chart.py"
+ },
+ {
+  "pr": 2182,
+  "issue_number": 2179,
+  "issue_text": "0 of 26 external backtest workspaces produce a result \u2014 3 stacked data gaps (#2101 spot casing + NO options data + intraday/ETF/futures coverage) ## Summary\n\nOf **26 external strategy/backtest workspaces** (core team exc",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/supervisor/handlers/options-strategy.handler.ts"
+ },
+ {
+  "pr": 2164,
+  "issue_number": 2135,
+  "issue_text": "[Options] Dark-theme audit \u2014 OI heatmap white slab, unlimited-risk Max Loss, mobile chain hides PUTS ## \ud83d\udcca Progress \u2014 Options (dark theme)\n\n**5 / 21 resolved \u00b7 5 production-ready** \u2014 _updated 2026-06-28 (#2141 OPT-D-04 + ",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/Charts/OIHeatmapEChart.tsx"
+ },
+ {
+  "pr": 2127,
+  "issue_number": 2113,
+  "issue_text": "[Charts] Desktop chart audit \u2014 see-through menus, broken Settings controls, axis/legibility gaps, remove Alerts ## \ud83d\udcca Progress \u2014 Chart (dark theme)\n\n**25 / 40 resolved \u00b7 25 production-ready** \u2014 _updated 2026-06-28 (#2155 ",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/Charts/AlertToolbarDropdown.tsx"
+ },
+ {
+  "pr": 2138,
+  "issue_number": 2101,
+  "issue_text": "Backtest fails on NIFTY 50 ('no market data') \u2014 symbol case-resolution picks sparse duplicate `Nifty 50` over canonical `NIFTY 50` (activation killer) ## Summary\n\nA new user's NIFTY 50 backtest fails with **\"no market da",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/routes/inventory.ts"
+ },
+ {
+  "pr": 2136,
+  "issue_number": 2118,
+  "issue_text": "Context threading: 6 handlers missing L2/L3 carryforward \u2014 follow-up questions lose prior result set ## Problem\n\nAmit built a complete L0-L5 carryforward architecture (`backend/src/mastra/tools/supervisor/helpers/carryfo",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/agents/aagman-analytics-agent.ts"
+ },
+ {
+  "pr": 2129,
+  "issue_number": 2085,
+  "issue_text": "Vernacular: tool-driven responses (backtest/screener/strategy clarifications) come back in English even when a vernacular language is selected ## Plain English \u2014 what's broken\n\nThe multilingual (\"vernacular\") chat featur",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/aagman-supervisor-tool.ts"
+ },
+ {
+  "pr": 2104,
+  "issue_number": 2102,
+  "issue_text": "Analytics queries answered from LLM prose with NO tool call + subject drift to NIFTY 50 \u2014 fabricated market-data answers (silent activation failure) ## Summary\n\nA new user's market-data/analytics questions about **Policy",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/supervisor/handlers/analytics.handler.ts"
+ },
+ {
+  "pr": 2034,
+  "issue_number": 1794,
+  "issue_text": "[screener] Master tracker \u2014 screener correctness + agent behaviour issues (rolling) ## Purpose\n\nSingle rolling index for all screener-related issues. New screener issues land as children of this tracker; this master trac",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/backtest_compiler.py"
+ },
+ {
+  "pr": 2038,
+  "issue_number": 2035,
+  "issue_text": "SIMPLE_ORDER bracket flow: % SL/TP can't attach on conditional orders + absolute-price re-state dead-ends (#1991 site execution.handler.ts:797) ## Plain English\n\nPlacing a **conditional buy order with a percentage bracke",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/supervisor/handlers/execution.handler.ts"
+ },
+ {
+  "pr": 2029,
+  "issue_number": 2028,
+  "issue_text": "P0: every LIVE deployment fails to boot on prod \u2014 instrument-spec fetch pulls the entire 177k-row /symbols universe and times out at 5s ## Plain English\nOn **prod**, every live strategy deployment fails to start. Before ",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/broker/common/instrument_provider.py"
+ },
+ {
+  "pr": 2011,
+  "issue_number": 1998,
+  "issue_text": "Backtesting -> Production Testing # Aagman Production Test Log\n\n**Date:** 2026-06-21  \n**Tester:** Aryan  \n**Platform:** app.aagman.ai (production)  \n\n---\n\n## 1. Test 1.1 \u2014 Long EMA crossover on RELIANCE backtest crashes",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/AgentMessages/InlinePerformanceCard/InlinePerformanceCard.tsx"
+ },
+ {
+  "pr": 1977,
+  "issue_number": 1976,
+  "issue_text": "fix(executor): AngelOne adapter import-time fail-fast (ANGELONE_API_BASE_URL) crashes ALL prod deployments regardless of broker ## Summary (plain English)\n\nA missing config setting for a broker **nobody is using** (Angel",
+  "area": "deploy/app",
+  "entry_file": "deploy/app/Pulumi.prod.yaml"
+ },
+ {
+  "pr": 1960,
+  "issue_number": 1959,
+  "issue_text": "live-feed silent-death recurs on staging \u2014 CH client socket-hangup at 09:24 IST; PR #1943 not present in deployed binary (sibling of #1932) ## Plain English\n\nStaging's live-feed silently stops writing to ClickHouse (and ",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/cli/live-feed.ts"
+ },
+ {
+  "pr": 1934,
+  "issue_number": 1859,
+  "issue_text": "[Chart] Multiple UI/UX bugs and indicator parameter errors ## Summary\nMultiple UI/UX and functional issues observed in the **Charts** section during testing.\n\n---\n\n## 1. Technical indicators fail with missing `timeperiod",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/Charts/DepthBookPanel.tsx"
+ },
+ {
+  "pr": 1895,
+  "issue_number": 1749,
+  "issue_text": "live-feed: `ShardedTickSource` priority comparator is evicting ALL NSE equity from Zerodha subscription (P0) ## Summary\n\n**The live-feed `ShardedTickSource` priority comparator is evicting the entire NSE equity universe*",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/cli/live-feed.ts"
+ },
+ {
+  "pr": 1874,
+  "issue_number": 1860,
+  "issue_text": "[Pulse] Content quality, categorization, and UI issues ## Summary\nMultiple content-quality, categorization, and UI issues observed across the **Aagman Pulse** section.\n\n---\n\n## 1. Latest tab: opinion pieces and low-signa",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/pulse/category-refiner.ts"
+ },
+ {
+  "pr": 1869,
+  "issue_number": 1861,
+  "issue_text": "[Events] Incorrect dates, mislabeled events, and missing category filters ## Summary\nVerification of the **Upcoming Events** calendar against official market/economic calendars shows multiple incorrect dates, mislabeled ",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/observability/prometheus.ts"
+ },
+ {
+  "pr": 1867,
+  "issue_number": 1822,
+  "issue_text": "SHS scraper: FII / DII / promoter percentages silently NULL for latest 2 quarters since 2025-12-31 (#1804 item #7) # SHS scraper: FII / DII / promoter percentages silently NULL for the latest 2 reporting quarters (#1804 ",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/etl/compute-derived-metrics.ts"
+ },
+ {
+  "pr": 1846,
+  "issue_number": 1825,
+  "issue_text": "Fundamental dead-fields: ~24 cols 100% NULL on financial_results_screener + 34 registry fields silently ungated by queryBuilder (#1804 item #6) # Fundamental dead-fields: 18-24 columns silently NULL on `financial_results",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/routes/screener.ts"
+ },
+ {
+  "pr": 1827,
+  "issue_number": 1638,
+  "issue_text": "Section 11 (Screener \u2014 Hybrid) \u2014 Bug Report **Date:** 2026-06-04\n**Tester:** Aryan\n**Platform:** aagman.ai chat\n**Result:** 0 PASS, 7 FAIL, 2 SUSPICIOUS out of 9 tests\n\n---\n\n## Summary\n\nSection 11 (Screener \u2014 Hybrid) is ",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/agents/aagman-market-scanner-agent.ts"
+ },
+ {
+  "pr": 1819,
+  "issue_number": 1804,
+  "issue_text": "[Tracker] Staging data-gaps \u2014 consolidated remediation (2026-06-12 deep sweep): verified status + feature-dependency fix triage ## Consolidated staging data-gap remediation tracker\n\n**Deep sweep 2026-06-12** \u2014 verified l",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/migrations/20260612140000_clean_mf_holdings_future_dates.cjs"
+ },
+ {
+  "pr": 1817,
+  "issue_number": 1797,
+  "issue_text": "[backtest] direction=BOTH is reversal-only \u2014 need directional long/short (long-on-A / short-on-B) carrying BOTH (Aryan #1788 \u00a73.7) ## Summary\n\nA strategy requested as **\"long and short\"** runs **long-only** in the backte",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/backtest_compiler.py"
+ },
+ {
+  "pr": 1805,
+  "issue_number": 1798,
+  "issue_text": "[backtest] Intra-bar SL pre-empts next-bar rule/cover exits \u2014 signal exits never fire on adverse bars (Aryan #1788 \u00a74.8) ## Summary\n\nA user-defined exit/cover rule can **never fire** when a stop-loss is set and the bar m",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/runtime/backtest_adapter.py"
+ },
+ {
+  "pr": 1802,
+  "issue_number": 1800,
+  "issue_text": "[backtest][portfolio] PORT-02/03: fixed-weight baskets never rebalance + market-cap=price-proxy + capital shows \u20b910L (Aryan #1788 \u00a719) Grounded code-level RCA (on `staging`) of the open **PORTFOLIO** items from @iamaryan",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/runtime/allocation_adapter.py"
+ },
+ {
+  "pr": 1774,
+  "issue_number": 1739,
+  "issue_text": "Screener HISTORICAL mode unusable on multi-symbol multi-month ranges \u2014 warmup_bars=0 + per-(symbol,date) loader (NL with date_range always FAILS) ## Summary\n\nScreener `HISTORICAL` mode (triggered when an NL prompt includ",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/runtime/screener_adapter.py"
+ },
+ {
+  "pr": 1733,
+  "issue_number": 1672,
+  "issue_text": "\ud83d\udccb Post-smoke deep analysis tracker \u2014 18 areas across money-path / SIR / lifecycle / FE / PnL / UI-correctness (2026-06-05 LIVE smoke) ## Context\n\nAfter the 2026-06-05 LIVE real-broker smoke on `test/local-real-broker-smo",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/reconciliation/metrics.py"
+ },
+ {
+  "pr": 1735,
+  "issue_number": 1727,
+  "issue_text": "[live][safety] Kill-switch broken: account/workspace scope crashes 500 (UUID bug) + deployment-scope deadlocks open positions ## Summary\nLive MOFSL testing (2026-06-09, consumer path) found the kill-switch \u2014 the last-res",
+  "area": "executor/apps",
+  "entry_file": "executor/apps/api/repository.py"
+ },
+ {
+  "pr": 1716,
+  "issue_number": 1685,
+  "issue_text": "Execution system adversarial review \u2014 52 findings (6 BLOCKER fixed in #1679, 32 HIGH + 14 MEDIUM open) @amit-kotidev \u2014 full adversarial review of the execution system, posted inline for tracking.\n\nThe **6 BLOCKERs** are ",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/nautilus_sir/multi_leg_coordinator.py"
+ },
+ {
+  "pr": 1699,
+  "issue_number": 54,
+  "issue_text": "[Sprint 2] EMA has no warmup NaN enforcement -- inconsistent with SMA/RSI **`ema.py:40-41`**\n\nSMA uses `min_periods=period` (NaN for first `period-1` bars). RSI uses `min_periods=period`. EMA has **no** `min_periods` -- ",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/broker/common/nautilus_data_client.py"
+ },
+ {
+  "pr": 1693,
+  "issue_number": 1686,
+  "issue_text": "Consolidate multi-turn state into `conversationContext` + dispatch-chokepoint wrapper (umbrella for #1665, #1666, #1669) ## Goal\n\n> Get from **11 fields \u00d7 5 mechanisms** to **1 `conversationContext` \u00d7 1 mechanism**, with",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/supervisor/handlers/options-strategy.handler.ts"
+ },
+ {
+  "pr": 1673,
+  "issue_number": 1664,
+  "issue_text": "\ud83d\udd34 Backtest \u2194 LIVE Nautilus parity \u2014 single SIR contract, dual runtime adapter, parity harness ## Summary\n\nToday's SIR contract is interpreted by two separate engines that **silently diverge**:\n\n- **Backtester** (`backtes",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/nautilus_sir/compiler.py"
+ },
+ {
+  "pr": 1680,
+  "issue_number": 1661,
+  "issue_text": "\ud83d\udd34 Agent emits SIR with invalid 'prev_close' field \u2014 strategy silently never fires entry ## Summary\n\nThe strategy-creation agent emits SIRs with a non-existent rule operand:\n\n```json\n{\n  \"type\": \"PRICE_CONDITION\",\n  \"when",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/nautilus_sir/compiler.py"
+ },
+ {
+  "pr": 1676,
+  "issue_number": 1665,
+  "issue_text": "\ud83d\udd34 Execution Agent missing memory config \u2014 repeated mid-stream LLM aborts on simple-order flow (LIVE-money path broken) ## Summary\n\n**Every** simple-order LIVE chat request (\"buy 1 share of ITC at market price\") fails 100",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/shared/llm-transient-retry.ts"
+ },
+ {
+  "pr": 1653,
+  "issue_number": 1331,
+  "issue_text": "Section 11 (Screener Hybrid \u2014 Fundamental + Technical) \u2014 Bug Report **Date:** 2026-05-20  \n**Tester:** Aryan  \n**Platform:** aagman.ai  screener  \n**Result:** 7 FAIL, 2 SUSPICIOUS out of 9 tests\n\n---\n\n### Summary\n\nThe sc",
+  "area": "market-data/screener_in",
+  "entry_file": "market-data/screener_in/screener-scraper-pro/src/helper.ts"
+ },
+ {
+  "pr": 1609,
+  "issue_number": 1367,
+  "issue_text": "Corporate-action / split adjustment for `bars` OHLCV (un-adjusted prices) ## Problem\n\nThe ClickHouse `bars` table holds provider-raw NSE bhavcopy OHLCV \u2014 **un-split-adjusted**. NSE bhavcopy carries no adjustment factor. ",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/nse/corporateActionParser.ts"
+ },
+ {
+  "pr": 1509,
+  "issue_number": 954,
+  "issue_text": "[live-trading] UI doesn't show emulated SL/TP bracket orders to users \u2014 silent risk ## Severity: P1 \u2014 silent risk\n\nWhen a LIVE deployment activates with `stop_loss` / `take_profit` configured, the executor creates **EMUL",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/types/live-strategy.ts"
+ },
+ {
+  "pr": 1505,
+  "issue_number": 1452,
+  "issue_text": "instruments.provider is last-writer-wins (vestigial column) \u2014 drop the write OR drop the column ## Finding\n\nThe `provider` column on the Postgres \\`instruments\\` table is **functionally dead** but is being written by eve",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/instrument-repository.ts"
+ },
+ {
+  "pr": 1502,
+  "issue_number": 1313,
+  "issue_text": "Commodity (MCX) live execution through MOFSL blocked \u2014 instruments not in instruments table, no MCX scrip codes ## Summary\n\nCommodity (MCX) live execution through MOFSL **cannot work end-to-end**. The code wiring is inta",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/scripts/sync-mofsl-mcx-scripcodes.ts"
+ },
+ {
+  "pr": 1501,
+  "issue_number": 1356,
+  "issue_text": "\ud83d\udd25 [market-data] MOFSL 1m bar never closes for quiet symbols \u2014 add minute-boundary force-close timer # Add minute-boundary force-close timer to MOFSL 1m bar aggregation\n\nSpun out of #1355 (premortem, severity-ranked top 8",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/broker/mofsl/MofslWebSocketFeed.ts"
+ },
+ {
+  "pr": 1499,
+  "issue_number": 1496,
+  "issue_text": "P0: Supervisor does not detect crashed strategy child (orphan reaper broken) \u2014 LIVE deployments left ACTIVE with un-managed positions **P0 \u2014 production blocker.** A crashed LIVE strategy child (SIGKILL, OOM, segfault, pa",
+  "area": "executor/apps",
+  "entry_file": "executor/apps/api/migrations/20260526230000_add_child_crashed_audit_event_type.sql"
+ },
+ {
+  "pr": 1498,
+  "issue_number": 1494,
+  "issue_text": "SimpleOrderStrategy + ExecutionAlgoStrategy: 3 strategy/supervisor write-contract bugs (dup position, silent bracket drop, missing position rows) 3 distinct strategy/supervisor contract bugs surfaced by the 2026-05-26 li",
+  "area": "executor/apps",
+  "entry_file": "executor/apps/api/repository.py"
+ },
+ {
+  "pr": 1487,
+  "issue_number": 1481,
+  "issue_text": "Relay readiness is a single signal \u2014 HTTP heartbeat fires while WS cmd channel is dead \u2192 silent half-online state ## Problem (observed in 2026-05-26 live-deployment test session)\n\nThe relay-online signal is a lie. Today'",
+  "area": "relay-extension/src",
+  "entry_file": "relay-extension/src/sw/badge.ts"
+ },
+ {
+  "pr": 1387,
+  "issue_number": 749,
+  "issue_text": "CHART-04: Vol surface request fails with \"No chain data found after applying expiry_filter\" ## summary\n\nVolatility surface request for `CHART-04` (NIFTY vol surface, current month expiry) fails with a data layer error. t",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/charts/oi_heatmap.py"
+ },
+ {
+  "pr": 1386,
+  "issue_number": 1217,
+  "issue_text": "[OPT-07] BANKNIFTY weekly straddle produces 6 trades over 3 months with 19-26 day holds \u2014 weekly expiry not cycling correctly ## Summary\n\nPrompt specified a weekly expiry BANKNIFTY short straddle with 50% profit exit. St",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/runtime/options_adapter.py"
+ },
+ {
+  "pr": 1374,
+  "issue_number": 1104,
+  "issue_text": "Engine rejects time-shifted price references (previous day) in entry and exit rules ## Summary\nStrategy parser correctly interprets \"gaps down more than 2% at open from previous day close\" and \"recovers to fill the gap (",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/backtest_compiler.py"
+ },
+ {
+  "pr": 1373,
+  "issue_number": 1098,
+  "issue_text": "Options strategy card mislabels bear call spread as BULL_CALL_SPREAD ## Summary\nOptions backtest strategy card mislabels bear call spread as `BULL_CALL_SPREAD`. Legs are `SELL ATM` / `BUY OTM` (credit spread) but card di",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/shared/sir-canonicalizer.ts"
+ },
+ {
+  "pr": 1108,
+  "issue_number": 1102,
+  "issue_text": "Golden cross backtest on RELIANCE returns zero trades despite independent data showing valid signals ## Summary\nPlatform backtest for golden cross strategy (50-day SMA crosses above 200-day SMA) on RELIANCE from Jan 2022",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/aagman_e2b/parquet_prestage.py"
+ },
+ {
+  "pr": 1369,
+  "issue_number": 1028,
+  "issue_text": "Security: Systemic BOLA \u2014 gateway missing workspace-membership check on /workspaces/:id/executor/* ## Summary\n\nThe gateway's executor plugin registers `authGuard` (JWT validation) as the **only** preHandler on `/workspac",
+  "area": "gateway/src",
+  "entry_file": "gateway/src/executor/executor.plugin.ts"
+ },
+ {
+  "pr": 1368,
+  "issue_number": 1025,
+  "issue_text": "Security: Stored XSS via JSON-LD script breakout in /pulse SEO pages ## Summary\n\nThe `/pulse` and `/pulse/<slug>` SEO pages embed RSS-sourced `title` and `summary` into a `<script type=\\\"application/ld+json\\\">` block via",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/views/pulse/ArticleJsonLd.tsx"
+ },
+ {
+  "pr": 1366,
+  "issue_number": 1361,
+  "issue_text": "Critical UI Issue: Backtest trade log shows single consolidated row with invalid `24:00` timestamp \u2014 entry and exit are not separated ## Summary\nThe Recent Trades table in backtest results renders each position as a sing",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/AgentMessages/InlinePerformanceCard/InlinePerformanceCard.tsx"
+ },
+ {
+  "pr": 1341,
+  "issue_number": 1326,
+  "issue_text": "Section 6 (Options De-restricted) \u2014 4/6 tests failing ## Section 6 (Options De-restricted) \u2014 4/6 tests failing\n\n**Date:** 2026-05-20  \n**Tester:** Aryan  \n**Platform:** aagman.ai \n**Verification Source:** NIFTY 50 OHLCV ",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/options_compiler.py"
+ },
+ {
+  "pr": 1340,
+  "issue_number": 1328,
+  "issue_text": "Section 7 (Allocation / Portfolio De-restricted) \u2014 5/7 tests failing, 2 blocked **Date:** 2026-05-20  \n**Tester:** Aryan  \n**Platform:** aagman.ai\n**Severity:** Critical \u2014 the portfolio backtest engine is fundamentally b",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/AgentMessages/FinalSummaryMessage/FinalSummaryMessage.tsx"
+ },
+ {
+  "pr": 1339,
+  "issue_number": 1324,
+  "issue_text": "Section 4 (Equity De-restricted) \u2014 5/9 tests failing ## Section 4 (Equity De-restricted) \u2014 5/9 tests failing\n\n**Date:** 2026-05-20  \n**Tester:** Aryan  \n**Platform:** aagman.ai chat backtest  \n**Verification Source:** in",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/shared/worker-normalizer.ts"
+ },
+ {
+  "pr": 1338,
+  "issue_number": 1329,
+  "issue_text": "Section 3 (Equity Special Exits) \u2014 Test Report **Date:** 2026-05-20  \n**Tester:** Aryan  \n**Platform:** aagman.ai chat backtest  \n**Result:** 1 FAIL, 1 SUSPICIOUS, 5 PASS (with caveats) out of 7 tests\n\n---\n\n### Summary\n\n",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/shared/worker-normalizer.ts"
+ },
+ {
+  "pr": 1337,
+  "issue_number": 1306,
+  "issue_text": "fix(frontend): markdown-hybrid renderer drops screener.matches table (final_summary) ## Symptom\n\nUser runs a screener prompt (e.g. *\"Show me stocks with PE below 15, ROE above 20%\"*). Chat shows the agent's text reply (*",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/AgentMessages/AgentMessageRenderer.tsx"
+ },
+ {
+  "pr": 1336,
+  "issue_number": 1318,
+  "issue_text": "Ref: PR 1211 \"Backtest TCS with entry when ROE > 18 AND debt_to_equity < 0.5 AND promoter_pct > 50 AND fii_delta_4q > 0, daily, 2024-01-01 to 2024-12-31, exit after 60 days\"\n\nPreparing a daily backtest for TCS with funda",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/agents/aagman-options-strategy-agent.ts"
+ },
+ {
+  "pr": 1327,
+  "issue_number": 1325,
+  "issue_text": "Relay agent \u2014 UI/UX visibility gaps (relay status invisible outside Settings) ## Why this matters\n\nThe relay agent is the bridge between Aagman and the broker. When relay is OFFLINE or unpaired, two server-side gates rej",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/RelayStatusChip/RelayStatusChip.tsx"
+ },
+ {
+  "pr": 1317,
+  "issue_number": 1316,
+  "issue_text": "fix(backend): chart-tools.ts reads wrong env var (BACKTESTER_URL vs BACKTESTER_BASE_URL) \u2014 every chart prompt fails on staging ## Symptom\n\nUser runs a chart prompt on staging (e.g. *\"HDFCBANK chart with EMA 20, EMA 50, M",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/chart-tools.ts"
+ },
+ {
+  "pr": 1312,
+  "issue_number": 1311,
+  "issue_text": "Staging execution testing: instrument resolution dead + LIVE activation 400 message swallowed ## Summary\n\nTwo distinct failures hit during staging execution testing (2026-05-19). Both root-caused against the staging Post",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/agents/aagman-execution-agent.ts"
+ },
+ {
+  "pr": 1308,
+  "issue_number": 895,
+  "issue_text": "port-07 \u2014 bank nifty universe resolution fails, backtest crashes **port-07 \u2014 bank nifty universe resolution fails, backtest crashes**\n\n**prompt:** \"rotate top 3 bank nifty stocks by momentum, monthly. 5 lakh. jan 2025 to",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/shared/session-store.ts"
+ },
+ {
+  "pr": 1304,
+  "issue_number": 1198,
+  "issue_text": "Architectural data gaps surfaced by feature-coverage audit \u2014 5 missing/orphan writers on staging ## Summary\n\nFeature-keyed data coverage audit on 2026-05-14 surfaced **5 distinct data gaps on staging that are architectur",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/scripts/sync-mf-flows.ts"
+ },
+ {
+  "pr": 1268,
+  "issue_number": 1266,
+  "issue_text": "Backtest strategy reaches READY without a date range \u2014 required field is prompt-only, not enforced ## Summary\n\nA `BACKTEST_ONLY` strategy reaches **\"Strategy complete! Ready to run risk checks\"** with **no `backtest.date",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/supervisor/handlers/options-strategy.handler.ts"
+ },
+ {
+  "pr": 1259,
+  "issue_number": 1238,
+  "issue_text": "test: E2E NL test catalog \u2014 paste-ready prompts for Aagman UAT # E2E Natural Language Test Catalog\n\nPaste-ready prompts for manual UAT in Aagman chat. Organized by category.\nAfter each prompt, click through: **strategy c",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/agents/aagman-strategy-agent.ts"
+ },
+ {
+  "pr": 1257,
+  "issue_number": 1219,
+  "issue_text": "Agent data-viz upgrade \u2014 comparison cards + DataAnswerWrapper The agent's structured data responses (PE/PB/ROE comparisons, screener stat blocks, options-Greeks comparisons, etc.) are currently rendered as plain charts d",
+  "area": "frontend/src",
+  "entry_file": "frontend/src/components/AgentMessages/AgentMessageRenderer.tsx"
+ },
+ {
+  "pr": 1250,
+  "issue_number": 976,
+  "issue_text": "backtest execution failure: breakout strategy generates 0 trades despite valid signals in price data ## summary\nthe equity backtest engine correctly parses a 20-day high breakout strategy (entry: close crosses above 20-d",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/backtest_compiler.py"
+ },
+ {
+  "pr": 1241,
+  "issue_number": 1214,
+  "issue_text": "[OPT-04] NIFTY straddle \"exit on Thursday\" ignored for ~20% of trades \u2014 strategy card omits exit condition ## Summary\n\nOPT-04 straddle backtest with \"exit on Thursday\" instruction produces 10-day holds on ~20% of trades ",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/options_compiler.py"
+ },
+ {
+  "pr": 1211,
+  "issue_number": 1204,
+  "issue_text": "Multi-table FundamentalRef rules trigger LATERAL row multiplication (cross product) \u2014 non-deterministic ffill values ## Summary\n\nIn **timeseries mode** (the path activated by FundamentalRef-bearing SIRs), `queryBuilder.t",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/storage/fundamental_loader.py"
+ },
+ {
+  "pr": 1191,
+  "issue_number": 1189,
+  "issue_text": "bug: scrape-screener fails \u2014 case mismatch between flow default and index_constituents ## Summary\n\n`scrape-screener` Prefect flow fails with 422 on staging because of a case-sensitive index name mismatch.\n\n## Error\n\n```\n",
+  "area": "orchestrator/src",
+  "entry_file": "orchestrator/src/orchestrator/flows/seed_reference_data.py"
+ },
+ {
+  "pr": 1166,
+  "issue_number": 1149,
+  "issue_text": "Staging data quality: F&O canonical INDEX rows missing + spaced sisters mislabeled as EQUITY ## Summary\n\nSurfaced while running the instrument-resolver NL harness against a fresh staging\u2192local PG mirror (PR #1136's `db-m",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/migrations/20260512120000_seed_index_instruments.cjs"
+ },
+ {
+  "pr": 1156,
+  "issue_number": 1141,
+  "issue_text": "feat: Unified Condition Format \u2014 converge screener + strategy to one rule_groups format ## Summary\n\nConverge the screener's flat `signals` format and the strategy's `rule_groups` format into one condition format that all",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/compiler/shared_compiler_utils.py"
+ },
+ {
+  "pr": 1122,
+  "issue_number": 1120,
+  "issue_text": "bug: atm_iv_daily duplicate rows with zeroed iv_rank \u2014 IV filter misfires (OPT-05) ## Summary\nOPT-05: \"Buy NIFTY straddle when IV rank below 20\" \u2014 trades fire at mid/high IV. SIR is correct (`iv_rank_max: 20`).\n\n## Root ",
+  "area": "orchestrator/src",
+  "entry_file": "orchestrator/src/orchestrator/tasks/options/compute_greeks_daily.py"
+ },
+ {
+  "pr": 1008,
+  "issue_number": 994,
+  "issue_text": "options backtesting module: 8 bugs across signal detection, ui, stop-loss, and dte exit logic ## summary\ncomprehensive testing of the options backtest engine (nifty + banknifty) revealed 8 distinct issues ranging from p1",
+  "area": "backtester/packages",
+  "entry_file": "backtester/packages/engine/runtime/options_adapter.py"
+ },
+ {
+  "pr": 1005,
+  "issue_number": 995,
+  "issue_text": "options backtesting: parsing, ui, and dte exit bugs in straddle strategies (opt-04, opt-05, opt-08) ## summary\ntesting of straddle and error-handling strategies revealed 3 bugs and 1 pass across opt-04, opt-05, and opt-0",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/shared/intent-classifier.ts"
+ },
+ {
+  "pr": 965,
+  "issue_number": 961,
+  "issue_text": "_ensure_expiry_type_dict has hardcoded ClickHouse credentials in DDL \u2014 fails on staging with AUTHENTICATION_FAILED ## Severity\n\n**P0 \u2014 surfaced after #958 fix shipped.** With PR #959 merged, the `derive_expiry_calendar` ",
+  "area": "orchestrator/src",
+  "entry_file": "orchestrator/src/orchestrator/tasks/options/derive_expiry_calendar.py"
+ },
+ {
+  "pr": 959,
+  "issue_number": 958,
+  "issue_text": "daily-options-pipeline: derive_expiry_calendar (async @task) called sync \u2014 silent no-op, expiry_calendar never populated ## Severity\n\n**P0 \u2014 silent data-correctness failure on every \\`daily-options-pipeline\\` run.**\n\n\\`d",
+  "area": "orchestrator/src",
+  "entry_file": "orchestrator/src/orchestrator/flows/daily_options_pipeline.py"
+ },
+ {
+  "pr": 943,
+  "issue_number": 940,
+  "issue_text": "Execution deployment: LIVE mode ignored + PAPER crash on Nautilus reconciliation ## Symptom\n\nUser says \"buy 2 shares of Adani port, 20rs stop loss and 100rs profit target. live mode\" \u2014 expects LIVE order to MOFSL. Instea",
+  "area": "executor/apps",
+  "entry_file": "executor/apps/api/supervisor.py"
+ },
+ {
+  "pr": 935,
+  "issue_number": 888,
+  "issue_text": "orchestrator: load_config FileNotFoundError on staging \u2014 every cron-scheduled flow broken ## Severity\n\n**P0 / launch blocker for staging Prefect.** Every cron-scheduled flow on staging is failing with `FileNotFoundError`",
+  "area": "orchestrator/src",
+  "entry_file": "orchestrator/src/orchestrator/config.py"
+ },
+ {
+  "pr": 923,
+  "issue_number": 918,
+  "issue_text": "/mf/holdings/sync-mfdata: script path is off-by-one (\"../../..\" should be \"../..\") \u2014 every run 502s with ERR_MODULE_NOT_FOUND ## Severity\n\n**P0** \u2014 every \\`sync-mf-holdings-mfdata-monthly\\` run on staging fails in <6 sec",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/routes/mf.ts"
+ },
+ {
+  "pr": 922,
+  "issue_number": 899,
+  "issue_text": "mf-01 \u2014 mutual fund sip backtest fails at risk check with incorrect capital display ## summary\nsip backtest for \"\u20b910,000 monthly in sbi bluechip fund, jan 2022 to dec 2024\" renders confirmation card but **capital shows \u20b9",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/shared/intent-classifier.ts"
+ },
+ {
+  "pr": 920,
+  "issue_number": 916,
+  "issue_text": "/mf/nav-daily/sync writes DateTime64 format to a Date column \u2014 every insert fails with parse error, 0 rows in mf_nav_history ## Severity\n\n**P0** \u2014 every \\`sync-mf-nav-daily\\` run produces 0 rows in \\`mf_nav_history\\` des",
+  "area": "market-data/apps",
+  "entry_file": "market-data/apps/api/src/routes/mf.ts"
+ },
+ {
+  "pr": 902,
+  "issue_number": 871,
+  "issue_text": "[ana-01] nifty weekday returns \u2014 chart data wrong vs google finance data, friday bar not rendered **test case:** ana-01 \u2014 weekday returns analysis\n\n**prompt submitted**\n&gt; show me average daily returns by weekday for n",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/analytics-tools.ts"
+ },
+ {
+  "pr": 891,
+  "issue_number": 859,
+  "issue_text": "Research: portfolio stress test runs but returns no outcome/results to user ## Issue\n\nUser asks: **\"Stress test my portfolio against a COVID-like crash: 5L RELIANCE, 3L HDFCBANK, 2L ICICI Bank.\"**\n\nAgent response:\n> Pars",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/supervisor/handlers/portfolio.handler.ts"
+ },
+ {
+  "pr": 793,
+  "issue_number": 790,
+  "issue_text": "\ud83d\udea8 relay-extension sends parsed-JSON body; gateway+executor schemas require string \u2192 all relay responses fail with 400 (silent LIVE order outcomes) ## TL;DR\n\nEvery LIVE order's response from MOFSL is **dropped on the floo",
+  "area": "relay-extension/manifest",
+  "entry_file": "relay-extension/manifest/manifest.local.json"
+ },
+ {
+  "pr": 653,
+  "issue_number": 652,
+  "issue_text": "\ud83d\udd34 PR #632/#633 regressions \u2014 SL/TP brackets not reaching MOFSL + ownership classifier halts on terminated-session debris ## Summary\n\nLive testing on staging today (2026-04-24 13:30-13:55 IST) against the branch after PR ",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/broker/mofsl/exec_client.py"
+ },
+ {
+  "pr": 550,
+  "issue_number": 531,
+  "issue_text": "[P0] Reconciliation loop \u2014 detect MOFSL-vs-DB divergence (orphan fills) ## Summary\n\nThe platform has no mechanism to detect divergence between MOFSL's broker-side truth and the executor's internal order/position state. T",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/broker/common/types.py"
+ },
+ {
+  "pr": 547,
+  "issue_number": 530,
+  "issue_text": "[P0] XDEL Redis stream entries on deployment stop \u2014 prevent stale-command replay storm ## Summary\n\nRedis stream `relay:cmd:{relay_id}` retains unacknowledged commands after a deployment is stopped. On the next relay reco",
+  "area": "executor/apps",
+  "entry_file": "executor/apps/api/protocols.py"
+ },
+ {
+  "pr": 459,
+  "issue_number": 453,
+  "issue_text": "Extended-hours testing: minimal-impact plan to enable MCX/commodity deployments ## Goal\n\nEquity market closes at 15:30 IST, which heavily constrains how long we can test live deployments each day. MOFSL already supports ",
+  "area": "executor/packages",
+  "entry_file": "executor/packages/broker/common/indian_venue.py"
+ },
+ {
+  "pr": 447,
+  "issue_number": 446,
+  "issue_text": "[P0][staging] Activate-gate rejects LIVE deployments with 'Relay agent must be online' despite ONLINE relay ## Summary\n\nOn staging (`api.staging.v2.aagman.ai`), `POST /workspaces/:id/executor/deployments/:id/activate` re",
+  "area": "executor/apps",
+  "entry_file": "executor/apps/api/protocols.py"
+ },
+ {
+  "pr": 436,
+  "issue_number": 435,
+  "issue_text": "BUG: Mastra agent sends wrong workspace ID to executor \u2014 live deploy always 403 ## Bug\n\nLive deployment via chat always fails with **403 WORKSPACE_NOT_LIVE** even after workspace is promoted to `live`.\n\n## Root Cause\n\nTh",
+  "area": "backend/src",
+  "entry_file": "backend/src/mastra/tools/backtester-tools.ts"
+ }
+]

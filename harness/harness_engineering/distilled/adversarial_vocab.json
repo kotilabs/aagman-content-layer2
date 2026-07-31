@@ -1,0 +1,158 @@
+[
+ {
+  "pattern": "amit-review-#1866",
+  "objection": "Three findings below \u2014 one is a **ship-blocker** (boot-time module-not-found). Verdict: **REQUEST CHANGES** until \ud83d\udd34-1 is resolved."
+ },
+ {
+  "pattern": "amit-review-#1829",
+  "objection": "\ud83d\udd34 F1 \u2014 NULL Greek silently becomes 0 (AP-7, Fallback Pessimism)"
+ },
+ {
+  "pattern": "amit-review-#1829",
+  "objection": "\ud83d\udd34 F2 \u2014 Tests assert SQL string shape, not value correctness (AP-15)"
+ },
+ {
+  "pattern": "amit-review-#1901",
+  "objection": "\ud83d\udd34 P1 \u2014 `liveFeedTruncateOnCapExceeded: \"1\"` is a prod safety-bypass (was \ud83d\udfe1; ESCALATED).** Walked ground truth in `deploy/app/Pulumi.prod.yaml`:"
+ },
+ {
+  "pattern": "amit-review-#1668",
+  "objection": "Consumer breaks** \u2014 exact call sites that no longer fire correctly post-fix:"
+ },
+ {
+  "pattern": "amit-review-#1820",
+  "objection": "But they will silently diverge** the next time the F&O complex adds an index. Two ways to harden:"
+ },
+ {
+  "pattern": "amit-review-#1928",
+  "objection": "Cross-cutting safety \u2014 no money-path bypass"
+ },
+ {
+  "pattern": "amit-review-#1719",
+  "objection": "Verdict:** \ud83d\udd34 **BLOCK \u2014 superseded + asymmetric"
+ },
+ {
+  "pattern": "amit-review-#1899",
+  "objection": "Ask:** track as a follow-up issue; not a merge blocker. Cite CLAUDE.md \u00a7\"Single-broker fix \u2192 mirror-on-every-sibling check\" \u2014 same shape."
+ },
+ {
+  "pattern": "silent-fallback-default",
+  "objection": "Never silently substitute a default for required context (workspace_id, tenant, auth, venue, side, api_key). Fail fast / raise \u2014 silent fallbacks are invisible bugs. A localhost/empty-string env default reaches connection-refused then a wrong lot_size=1 quantity."
+ },
+ {
+  "pattern": "gateway-business-logic",
+  "objection": "Gateway is auth + routing + proxy ONLY. Any date-extraction, result mutation, LLM-hallucination guard, or data transformation in the gateway is a boundary violation \u2014 move it to backend result-assembly."
+ },
+ {
+  "pattern": "bare-except-money-path",
+  "objection": "Bare `except Exception:` on order place/modify/cancel/sweep/reconcile/margin/price-snap silently undoes the surrounding fix (e.g. _snap_to_tick shipped un-snapped prices). Use an explicit exception list + logger.warning + labelled Prometheus counter."
+ },
+ {
+  "pattern": "substring-error-matching",
+  "objection": "`if \"some text\" in str(exc)` is fragile. Use typed exceptions per error category \u2014 a 401 (AUTH_EXPIRED) is fundamentally different from empty data; broker read methods must raise typed BrokerReadError on 4xx/5xx, return [] only on 2xx-unparseable."
+ },
+ {
+  "pattern": "skip-flag-not-env-gated",
+  "objection": "Test/debug bypass flags (SKIP_LIVE_GATE, SKIP_MARGIN_CHECK, BYPASS_*) must default-deny \u2014 honour only when ENV in an explicit allowlist {test,dev,development}. A bare `ENV != production` admits staging + unset ENV; emit a loud alert log AND increment a labelled counter on every bypass."
+ },
+ {
+  "pattern": "killswitch-scope-leak",
+  "objection": "Never clear a broader-scope safety flag as a side-effect of a narrower action. Activating one deployment must not lift account/workspace kill-switch \u2014 same-scope, audited actions only."
+ },
+ {
+  "pattern": "ttl-not-clamped",
+  "objection": "A derived/child credential (access token from auth token) must clamp TTL to min(own, parent) and persist to DB. A 4h access token over a 1h auth token causes AUTH_EXPIRED storms."
+ },
+ {
+  "pattern": "unconstrained-llm-input",
+  "objection": "Every free-form string interpolated into an LLM prompt (lang, tone, persona, symbol) is a prompt-injection vector \u2014 constrain to an enum/allowlist at the boundary. `?lang=ignore all previous instructions` is the exploit."
+ },
+ {
+  "pattern": "mixed-concern-pr",
+  "objection": "A 75-file / 9500-line PR mixing NLP + E2E infra + frontend + executor + ETL is unreviewable \u2014 'most changes irrelevant to the problems the PR tackles'. Split atomic by concern (pre-prod: bundle one coherent concern; post-prod: one-PR-per-concern)."
+ },
+ {
+  "pattern": "build-artifacts-in-pr",
+  "objection": "Never commit .venv/.gstack/test-results/screenshots/node_modules/dist/__pycache__/.env. Never `git add -A`/`git add .` \u2014 add files by name; verify `git diff --stat` is scope-only before PR."
+ },
+ {
+  "pattern": "unused-dependency",
+  "objection": "Every new package.json/pyproject dependency must be grep-proven as actually imported before commit (franc added to gateway, never imported = 200KB dead weight + supply-chain surface)."
+ },
+ {
+  "pattern": "empty-test-stub",
+  "objection": "No `pass` bodies, no `expect(true).toBe(true)`, no auto-xfail conftest hooks converting import failures to expected-pass. Unimplemented tests use explicit skip(reason). 60-passed/40-xfail that tests nothing is false coverage."
+ },
+ {
+  "pattern": "presence-only-assertion",
+  "objection": "'A number is present' is not a test. Cross-validate every displayed metric against the source DB row + expected transform. Scale bugs (0-1 vs 0-100, double \u00d7100 \u2192 4125% IV Rank) are the most common correctness defect."
+ },
+ {
+  "pattern": "no-data-testid",
+  "objection": "Every new data component (card/metric/count/status) must ship data-testid; tests assert via locator, never document.body.textContent keyword search \u2014 LLM-generated prose always contains the keyword and masks a broken card."
+ },
+ {
+  "pattern": "silent-data-loss",
+  "objection": "When dedup/filtering drops records, log a warning with instrument/period/reason. Options bhavcopy ran 425 days with numeric underlying IDs instead of NIFTY because only row-counts were checked \u2014 verify field VALUES not just counts."
+ },
+ {
+  "pattern": "desugar-silent-drop",
+  "objection": "A schema/desugar change that silently drops a value (is_percent_of dropping the 3% threshold) is worse than the loud Pydantic rejection it replaced. Trace the full LLM\u2192compiler\u2192evaluator flow; a loud failure beats a silent wrong result."
+ },
+ {
+  "pattern": "preexisting-excuse",
+  "objection": "'Pre-existing issue' / 'probably stale DB' / 'LLM non-determinism, can't repro' are banned labels. If we touched the area we own the full E2E flow; every bug has a deterministic code-path RCA \u2014 find where working vs failing flows diverge."
+ },
+ {
+  "pattern": "mock-on-mock-green",
+  "objection": "A green that exists only because every dependency is mocked does NOT qualify a PR \u2014 validate on REAL data (real LLM not LLM_PROVIDER=mock, real CH, real backtester, real consumer path). Adding mocks to green a hanging test is the inverse of fixing it."
+ },
+ {
+  "pattern": "shortcut-test-path",
+  "objection": "A direct KiteConnect.place_order() from a dev box is not a live test \u2014 it skips executor/relay/persistence/pre-trade-gate; its IP-reject is a wrong-path artifact, not a prod signal. Drive the real user\u2192backend\u2192executor\u2192relay\u2192broker path."
+ },
+ {
+  "pattern": "rca-without-proof",
+  "objection": "Never claim RCA/bug without deterministic proof ('MOFSL token expires 15min' was actually 17h TTL + single-session invalidation). Reproduce red-on-revert before fixing; label unconfirmed as Hypothesis; re-verify a candidate blocker with 2 independent agents."
+ },
+ {
+  "pattern": "file-dont-fix",
+  "objection": "Default is FIX (rca\u2192fix\u2192test\u2192verify\u2192PR), not file a tracking issue. 'Source isn't in this checkout' was false after one narrow grep \u2014 search hard for the raise-site; 'big/risky' means fix carefully, not punt."
+ },
+ {
+  "pattern": "no-real-data-validation-in-body",
+  "objection": "Every user-facing PR must carry the smoke NL(s) in the body and have run them on the real chat\u2192agent path against real staging data \u2014 an absent/un-run NL is a retroactive do-not-merge. Don't cite an infra blocker (OpenAI quota, 'no data') without testing the real path first."
+ },
+ {
+  "pattern": "frontend-logic-only-review",
+  "objection": "A logic/code read cannot catch runtime-interaction bugs \u2014 inline ref={el=>el.focus()} stealing focus every render, useEffect deps with fresh-identity objects re-subscribing, controlled-input reset on a 3s feed reconnect. Review against the parent's re-render cadence."
+ },
+ {
+  "pattern": "format-check-skipped",
+  "objection": "Frontend CI gates on prettier `format:check` as a distinct job \u2014 lint+typecheck+unit passing does NOT cover it. Run the service's full check (pnpm --filter <svc> run check) before push or eat a force-push round-trip."
+ },
+ {
+  "pattern": "registry-dispatch-partial",
+  "objection": "Second-provider refactors fail as 'dispatch landed in some sites but not others'. Prove with an opposite-value MockProvider automated walker test across every dispatch surface (picker, callback parse, spawn, sweep, reconcile) \u2014 a grep can't prove the runtime reads the registry."
+ },
+ {
+  "pattern": "fallback-to-default-misroute",
+  "objection": "Every value-dispatch (provider\u00d7venue, venue\u00d7asset_class) must whitelist the full canonical set AND raise on unknown \u2014 a `?: NFO` fallback silently mis-routes BFO/NCDEX/MCX legs to NSE. Add a test asserting unknown values raise."
+ },
+ {
+  "pattern": "event-name-synonym",
+  "objection": "Synonym event names across handler classes (order_rejected vs broker_order_rejected) produce 0 audit rows (SEBI gap) when the dispatcher is an if/elif cascade \u2014 dispatcher must be a flat lookup dict, canonical vocabulary enforced."
+ },
+ {
+  "pattern": "timeout-skipped",
+  "objection": "A timeout is a bug to investigate (O(n\u00b2) perf, missing data, broken flow, missing chart type), never a test to skip or a limit to bump. Distinguish TIMEOUT from FAIL; flag HIGH severity."
+ },
+ {
+  "pattern": "debug-writes-on-live-path",
+  "objection": "open('/tmp/..','a'), print(), ad-hoc CSV dumps, and NEW-XX DEBUG info-level lines must be removed before merge \u2014 /tmp is ephemeral/unwritable in hardened targets and fires every order. Ship diagnostics via logger.debug gated on <FEATURE>_DEBUG."
+ },
+ {
+  "pattern": "no-verify-bypass",
+  "objection": "Never use --no-verify or --no-gpg-sign. A failing pre-commit hook is a root cause to fix, not to skip; force-push amend to remove a --no-verify commit is a review ask."
+ }
+]

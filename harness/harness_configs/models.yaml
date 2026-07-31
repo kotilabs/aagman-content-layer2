@@ -1,0 +1,35 @@
+# harness_configs/models.yaml
+# task_type: ordered fallback chain (primary first)
+# Change a model for the whole harness by editing ONE line.
+
+defaults:
+  classification:    [claude-haiku-4-5-20251001, gpt-4o-mini, gemini-flash]
+  complex_planning:  [claude-sonnet-4-6, gpt-4o, gemini-1.5-pro]
+  content_gen:       [claude-sonnet-4-6, gpt-4o, gemini-1.5-pro]
+  cheap_local:       [ollama/qwen2.5, claude-haiku-4-5-20251001]
+  code_execution:    [claude-code]         # subprocess, special-cased
+
+panels:
+  judge_panel:       [claude-sonnet-4-6, claude-opus-4-8]
+  rca_panel:         [claude-sonnet-4-6, gpt-4o]
+  compliance_panel:  [claude-sonnet-4-6, claude-opus-4-8]
+
+# Per-domain / per-step OVERRIDES (optional). Falls back to defaults
+# if absent. This is how content CREATE can use a video model while
+# engineering CREATE uses Claude Code — without touching code.
+overrides:
+  content.create:    [claude-sonnet-4-6, gpt-4o]   # Phase 2: swap to video model here
+  engineering.ideate: [claude-opus-4-8, claude-sonnet-4-6]  # deepest distillation → strongest
+
+pricing_per_1k:        # for budget guard cost estimates
+  # RULE: every model appearing in ANY chain above MUST have a
+  # pricing entry — the router refuses to start otherwise.
+  claude-haiku-4-5-20251001: 0.001
+  claude-sonnet-4-6:         0.015
+  claude-opus-4-8:           0.075
+  gpt-4o:                    0.030
+  gpt-4o-mini:               0.0015
+  gemini-1.5-pro:            0.007
+  gemini-flash:              0.00035
+  ollama/qwen2.5:            0.0
+  claude-code:               0.0    # subscription, tracked as $0

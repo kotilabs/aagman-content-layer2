@@ -1,0 +1,22 @@
+# demo_models.yaml — all tasks routed to Kimi (VISION_API_KEY) for the demo run.
+# Model string is openai/kimi-for-coding because the Kimi coding endpoint is
+# OpenAI-compatible.
+
+defaults:
+  classification:    [openai/kimi-for-coding]
+  complex_planning:  [openai/kimi-for-coding]
+  content_gen:       [openai/kimi-for-coding]
+  cheap_local:       [openai/kimi-for-coding]
+  code_execution:    [openai/kimi-for-coding]
+
+panels:
+  judge_panel:       [openai/kimi-for-coding]
+  rca_panel:         [openai/kimi-for-coding]
+  compliance_panel:  [openai/kimi-for-coding]
+
+overrides:
+  content.create:    [openai/kimi-for-coding]
+  engineering.ideate: [openai/kimi-for-coding]
+
+pricing_per_1k:
+  openai/kimi-for-coding: 0.005

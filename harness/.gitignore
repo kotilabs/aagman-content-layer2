@@ -1,0 +1,41 @@
+# ── Secrets — ZERO TOLERANCE (we have had a leak incident) ──
+.env
+*.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+
+# ── Python ──
+venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.mypy_cache/
+
+# ── Harness runtime state / artifacts (crash-safe local state) ──
+logs/
+data/
+state.db
+*.db
+gates/
+inbox/
+outbox/
+PID
+KILL
+PAUSED
+layer2_demo_run/
+layer2_full_run/
+reddit_run/
+x_run/
+screenshots/
+
+# ── OS / editor ──
+.DS_Store
+.idea/
+.vscode/
+
+
+# embedding cache — regenerable, ~1.5MB of vectors
+harness_engineering/distilled/embed_cache.json

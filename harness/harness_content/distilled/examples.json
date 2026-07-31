@@ -1,0 +1,77 @@
+[
+  {
+    "channel": "thread",
+    "example": "1/ The global monetary anchor fractured in mid-June. The Fed, ECB and RBA no longer agree on what comes next.",
+    "note": "Hook post: names the SHIFT, not the topic. One sharp declarative sentence, no rhetorical question, no 'imagine if', no link. Screenshot-quotable on its own. Source: final/signal-central-bank-divergence-rbi-thread.md."
+  },
+  {
+    "channel": "thread",
+    "example": "8/ This isn't a central bank waiting for the Fed. It's an attempt to separate domestic rate-setting from external-sector management.",
+    "note": "The mid-thread PIVOT post: names the thesis explicitly in the 'This isn't X. It's Y.' form. Source: final/signal-central-bank-divergence-rbi-thread.md."
+  },
+  {
+    "channel": "thread",
+    "example": "15/ The divergence is real. Whether capital-account engineering can replace rate defence under pressure is the experiment to watch.",
+    "note": "Closing post: open cognitive tension, an unresolved variable to watch. No CTA, no 'follow for more', no price target. Source: final/signal-central-bank-divergence-rbi-thread.md."
+  },
+  {
+    "channel": "linkedin_carousel",
+    "example": "Slide 1 — Kicker: Volatility, compressed | Headline: India VIX has fallen below 13 before the risks have gone away. | Body: The gauge fell to an intraday low of 12.76 on 25 June. Over the preceding month, from late-May levels near 17-18, it had dropped roughly 35%. The move came while foreign selling, an RBI growth downgrade and an interim Middle East truce were all still unresolved. | Hero stat: India VIX intraday low 12.76 on 25 Jun 2026; 52-week range 8.86-28.91 — HDFC SKY; DealPlexus",
+    "note": "Standalone LinkedIn hook slide. Concrete number first, sourced inline; kicker (2-4 words) above a single screenshot-quotable headline; names the tension (calm priced while macro unresolved). Source: final/signal-india-vix-compression-carousel-linkedin.md."
+  },
+  {
+    "channel": "linkedin_carousel",
+    "example": "Slide 6 — Pivot | Kicker: Reframe | Headline: This is not risk dissipating. It is risk being *priced away*. | Body: Option buyers are paying less for protection because realised volatility has stayed low, not because the macro backdrop has become benign. The Nifty reclaimed 24,000 while foreign selling continued.",
+    "note": "The one explicit pivot slide, mid-deck. 'This isn't X, it's Y' construction; exactly one italicised conceptual word ('priced away'). Source: final/signal-india-vix-compression-carousel-linkedin.md."
+  },
+  {
+    "channel": "linkedin_carousel",
+    "example": "Slide 10 — Open question | Kicker: What remains | Headline: The question is whether domestic flows are masking a market that is under-hedged for the next 60 days. | Body: The US-Iran negotiation window runs through mid-August. If the deal frays before foreign money returns, the VIX below 13 will look less like a verdict and more like a *position*. | Hero stat: US-Iran interim deal includes a 60-day negotiation extension from 15 Jun 2026 — Angel One",
+    "note": "Closing slide leaves the argument hanging on the key uncertainty. No CTA, no link on a standalone deck. Source: final/signal-india-vix-compression-carousel-linkedin.md."
+  },
+  {
+    "channel": "instagram_carousel",
+    "example": "Slide 6 — Pivot | Kicker: The real story | Headline: The oil unwind helped. The *persistence* looks like a flow story. | Hero stat: DII net buying: +₹5,747.75 Cr on 25 Jun alone (Kotak Neo / Trendlyne) | Design note: Bold typographic pivot — 'Oil helped.' on the top half, 'Flows explain the persistence.' on the bottom. Maximum contrast, no charts.",
+    "note": "Instagram runs shorter headlines and leans harder on the design note (what the visual shows, contrast). Still carries a sourced hero stat. Source: final/signal-india-vix-compression-carousel-instagram.md."
+  },
+  {
+    "channel": "instagram_carousel",
+    "example": "Slide 3 — Kicker: Oil relief | Headline: The US-Iran interim deal took the Hormuz risk premium out of the oil market. | Body: Brent fell from near $100 in May to $72.4 by 25 June... The EIA still assumes Hormuz is 'effectively closed' near term, with Brent averaging $105/b in June-July — so the risk premium could return quickly if the interim deal frays.",
+    "note": "Names a mechanism (risk premium) and immediately holds the counter-evidence in tension (EIA still assumes closure) rather than collapsing to one story. Source: final/signal-india-vix-compression-carousel-instagram.md."
+  },
+  {
+    "channel": "substack_blog",
+    "example": "Imagine a family that has always followed the same monthly budget rule... one month, three of the siblings announce different plans... The youngest child, watching all of this, does not change his own allowance at all. Instead, he calls relatives abroad, opens a separate account, and asks the household to redirect some money that was already coming in. He is managing the outside pressure without rewriting his internal budget. That is more or less what happened in global central banking in mid-June 2026.",
+    "note": "Mandatory 100-150 word everyday opening analogy, 'explaining over coffee' register, BEFORE any structural analysis. Encodes the whole RBI-capital-account thesis in a household metaphor. Source: final/signal-central-bank-divergence-rbi-blog.md."
+  },
+  {
+    "channel": "substack_blog",
+    "example": "Reading one: India is preserving optionality while developed-market central banks are trapped in harder trade-offs... The risk to this reading is that Q3 FY27 inflation is projected at 5.9%, only ten basis points below the 6% upper tolerance band. Reading two: The RBI is behind the curve; capital-account tools are no substitute for rate defence if the dollar keeps rising... Which reading is right? Probably parts of all four.",
+    "note": "Interpretation-spectrum section: four labelled readings, each with its own 'the risk to this reading is…' counter. Refuses to collapse into a single narrative. This is the epistemic signature of the voice. Source: final/signal-central-bank-divergence-rbi-blog.md."
+  },
+  {
+    "channel": "substack_blog",
+    "example": "*Note on bias: Aagman's structural view is that India is in a long-term domestic-demand-driven bull market. That undercurrent makes the optionality reading intuitively appealing, but it is not evidence. Data can still contradict it.*",
+    "note": "The declared-bias label convention: when a structural house view colours a reading, flag it inline as bias, not fact. Do this every time bias touches the argument. Source: final/signal-central-bank-divergence-rbi-blog.md."
+  },
+  {
+    "channel": "substack_blog",
+    "example": "What this does not affect. It does not provide a reason to change a long-term asset allocation based on a single policy week. It does not tell anyone what to buy or sell. It does not resolve whether the Fed will actually hike... Those remain open.",
+    "note": "The 'what this does NOT affect' section — how the blog voice draws the advice boundary structurally: explicitly disclaims buy/sell guidance and names what stays unresolved, immediately before the open-question ending. Source: final/signal-central-bank-divergence-rbi-blog.md."
+  },
+  {
+    "channel": "substack_blog",
+    "example": "So the question is not whether the RBI made the right call on 5 June. The question is: how long can a central bank manage its external account through the capital account before domestic inflation forces it to pick a side? That is the tension worth watching.",
+    "note": "Blog ending: a structural question that does not demand action, reframing away from a verdict. 'The tension worth watching' is the house closing register. Source: final/signal-central-bank-divergence-rbi-blog.md."
+  },
+  {
+    "channel": "infographic",
+    "example": "Concept 1 — The Great Absorption. Central insight: In Jan-May 2026 domestic institutions bought ~₹3.75 lakh crore of Indian equities while foreign investors sold ~₹3.18 lakh crore. Visualization: Waterfall — FII supply (down bar) → DII absorption (up bar) → residual net domestic demand. Composition: add a source-definition line ('Kotak Neo estimate; NSDL/broker estimates differ by segment and date') and two caveat lines. Sources: Kotak Neo 9 Jun 2026; Moneycontrol 5 May 2026.",
+    "note": "Infographic ideation = concept + exact data + visualization type + composition + source attribution for every number. Note the mandatory source-definition and caveat lines that keep a striking chart honest. Source: final/signal-dii-wall-fii-exodus-infographic-concepts.md."
+  },
+  {
+    "channel": "infographic",
+    "example": "What to avoid: FII outflow as a standalone scary number. ₹3.18 lakh crore is dramatic, but without the DII absorption figure it tells the reader only that foreigners are selling — a story already everywhere in financial media. / Presenting any single FII outflow estimate as the official figure — always include a source-definition line.",
+    "note": "Every infographic set ends with a 'What to avoid' section: refuses lazy-consensus scary-number framing and refuses to launder one broker estimate as the official figure. Source: final/signal-dii-wall-fii-exodus-infographic-concepts.md."
+  }
+]
