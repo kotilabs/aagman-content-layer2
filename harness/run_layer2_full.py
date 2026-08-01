@@ -14,6 +14,8 @@ Subcommands:
     correct            Apply reviewer feedback (up to 2 correction loops).
     seo                Run SEO/AEO audit + final blog corrections.
     publish_approval   Wait for final approval, then move surfaces to final/.
+    analytics          Collect social/Substack metrics and run the analytics report (interactive by default).
+    chat_analytics     Start a REPL to ask natural-language questions about analytics data (interactive by default).
     run_all            Advance through the whole pipeline as far as possible.
     status             Show current state.
 
@@ -76,6 +78,60 @@ from harness_content.judges import Layer2ContentJudge
 WORKDIR_NAME = "layer2_full_run"
 DEFAULT_SURFACES = SURFACES
 MAX_CORRECTION_LOOPS = 2
+
+
+# --------------------------------------------------------------------------- #
+# Interactive prompt helpers
+# --------------------------------------------------------------------------- #
+def _is_interactive(args) -> bool:
+    """True if stdin is a TTY and the operator did not request non-interactive mode."""
+    return sys.stdin.isatty() and not getattr(args, "non_interactive", False)
+
+
+def _prompt_choice(question: str, choices: list[tuple[str, str]], default_idx: int = 0) -> int:
+    """Ask the user to pick one option by number. Returns the chosen index."""
+    print(f"\n{question}")
+    for i, (key, desc) in enumerate(choices, 1):
+        print(f"  [{i}] {key}: {desc}")
+    default_num = default_idx + 1
+    while True:
+        raw = input(f"Choose (1-{len(choices)}) [{default_num}]: ").strip()
+        if not raw:
+            return default_idx
+        try:
+            num = int(raw)
+        except ValueError:
+            print("Please enter a number.")
+            continue
+        if 1 <= num <= len(choices):
+            return num - 1
+        print(f"Please choose between 1 and {len(choices)}.")
+
+
+def _prompt_input(question: str, default: str = "") -> str:
+    """Ask for free text input with an optional default."""
+    suffix = f" [{default}]" if default else ""
+    while True:
+        raw = input(f"{question}{suffix}: ").strip()
+        if raw:
+            return raw
+        if default:
+            return default
+        print("A value is required.")
+
+
+def _prompt_yes_no(question: str, default: bool = False) -> bool:
+    """Ask a yes/no question."""
+    suffix = " [Y/n]" if default else " [y/N]"
+    while True:
+        raw = input(f"{question}{suffix}: ").strip().lower()
+        if not raw:
+            return default
+        if raw in ("y", "yes"):
+            return True
+        if raw in ("n", "no"):
+            return False
+        print("Please answer yes or no.")
 
 
 # --------------------------------------------------------------------------- #
@@ -901,6 +957,76 @@ def cmd_publish_approval(services: Services, workdir: Path, args) -> None:
 # --------------------------------------------------------------------------- #
 # analytics — Buffer collection + LLM analysis
 # --------------------------------------------------------------------------- #
+def _run_ga4_smoke_test(env: dict[str, str]) -> bool:
+    """Run the GA4 MCP smoke test and return True if it connected."""
+    import subprocess as sp
+    repo = Path(__file__).resolve().parent
+    python = sys.executable
+    test_script = repo / "harness" / "test_ga_mcp.py"
+    if not test_script.exists():
+        print("GA4 test script not found; skipping smoke test.")
+        return False
+    env_override = {**os.environ, **env}
+    print("\nRunning GA4 MCP smoke test...")
+    result = sp.run([python, str(test_script)], env=env_override, capture_output=True, text=True)
+    print(result.stdout)
+    if result.returncode != 0:
+        print(result.stderr, file=sys.stderr)
+        return False
+    return True
+
+
+def _configure_analytics_interactive(env: dict[str, str], args) -> dict:
+    """Ask the operator which data sources to include and return a config dict."""
+    print("\n=== Analytics Agent — data source selection ===")
+    print("The agent will always pull Buffer social data if BUFFER_MCP_TOKEN is set.")
+
+    choices = [
+        ("Buffer only", "LinkedIn, X, Instagram, Facebook from Buffer"),
+        ("Buffer + Substack CSV", "Merge a Substack posts-export CSV"),
+        ("Buffer + GA4 (test)", "Also run the Google Analytics 4 connection smoke test"),
+        ("All of the above", "Buffer + Substack CSV + GA4 test"),
+    ]
+    idx = _prompt_choice("What do you want to include in this analytics run?", choices, default_idx=0)
+    include_substack = idx in (1, 3)
+    include_ga4 = idx in (2, 3)
+
+    substack_csv_path = None
+    substack_csv_mapping = None
+    if include_substack:
+        default_csv = env.get("SUBSTACK_CSV_PATH", "")
+        substack_csv_path = _prompt_input("Path to Substack posts export CSV", default=default_csv)
+        default_map = env.get("SUBSTACK_CSV_MAPPING", "")
+        raw_map = input(f"Path to JSON column-mapping file (optional){f' [{default_map}]' if default_map else ''}: ").strip()
+        substack_csv_mapping = raw_map or default_map or None
+
+    if include_ga4:
+        print("\n--- GA4 credentials (required for the smoke test) ---")
+        default_creds = env.get("GOOGLE_APPLICATION_CREDENTIALS", "")
+        default_project = env.get("GOOGLE_CLOUD_PROJECT", "")
+        default_property = env.get("GA_PROPERTY_ID", "")
+        creds = _prompt_input("Path to service-account JSON key", default=default_creds)
+        project = _prompt_input("GCP project ID", default=default_project)
+        prop = _prompt_input("GA4 property ID (numeric)", default=default_property)
+        env["GOOGLE_APPLICATION_CREDENTIALS"] = creds
+        env["GOOGLE_CLOUD_PROJECT"] = project
+        env["GA_PROPERTY_ID"] = prop
+
+    default_lookback = str(getattr(args, "analytics_days", 30))
+    lookback_days = int(_prompt_input("Lookback window in days", default=default_lookback))
+
+    default_describe = getattr(args, "describe_assets", False)
+    describe_assets = _prompt_yes_no("Describe post images with a vision model? Requires OPENAI_API_KEY.", default=default_describe)
+
+    return {
+        "lookback_days": lookback_days,
+        "describe_assets": describe_assets,
+        "substack_csv_path": substack_csv_path,
+        "substack_csv_mapping": substack_csv_mapping,
+        "include_ga4": include_ga4,
+    }
+
+
 def cmd_analytics(services: Services, workdir: Path, args) -> None:
     """Collect Buffer metrics and run the analytics analysis prompt."""
     env = services.env if services else dict(os.environ)
@@ -910,14 +1036,33 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
             "BUFFER_MCP_TOKEN not set. Add it to .env to use the analytics agent."
         )
 
-    lookback_days = getattr(args, "analytics_days", 30)
-    describe_assets = getattr(args, "describe_assets", False)
+    interactive = _is_interactive(args)
+    if interactive:
+        config = _configure_analytics_interactive(env, args)
+    else:
+        config = {
+            "lookback_days": getattr(args, "analytics_days", 30),
+            "describe_assets": getattr(args, "describe_assets", False),
+            "substack_csv_path": getattr(args, "substack_csv", None) or env.get("SUBSTACK_CSV_PATH"),
+            "substack_csv_mapping": getattr(args, "substack_csv_mapping", None) or env.get("SUBSTACK_CSV_MAPPING"),
+            "include_ga4": False,
+        }
+
+    lookback_days = config["lookback_days"]
+    describe_assets = config["describe_assets"]
+    substack_csv_path = config["substack_csv_path"]
+    substack_csv_mapping = config["substack_csv_mapping"]
     organization_id = env.get("BUFFER_ORGANIZATION_ID") or None
     channel_ids = None
     if env.get("BUFFER_CHANNEL_IDS"):
         channel_ids = [c.strip() for c in env["BUFFER_CHANNEL_IDS"].split(",") if c.strip()]
-    substack_csv_path = getattr(args, "substack_csv", None) or env.get("SUBSTACK_CSV_PATH")
-    substack_csv_mapping = getattr(args, "substack_csv_mapping", None) or env.get("SUBSTACK_CSV_MAPPING")
+
+    if config.get("include_ga4"):
+        ga_ok = _run_ga4_smoke_test(env)
+        if ga_ok:
+            print("GA4 smoke test succeeded. Note: GA4 data is not yet merged into the normalized analytics report.")
+        else:
+            print("GA4 smoke test failed or was skipped. Continuing with Buffer/Substack data only.")
 
     with BufferMCPClient(token) as client:
         collector = AnalyticsCollector(
@@ -953,6 +1098,40 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
 # --------------------------------------------------------------------------- #
 # chat_analytics — conversational interface over collected metrics
 # --------------------------------------------------------------------------- #
+def _list_metrics_files(workdir: Path) -> list[Path]:
+    return sorted(workdir.glob("analytics/*-buffer-metrics.json"))
+
+
+def _configure_chat_analytics_interactive(workdir: Path, args) -> Path | None:
+    """Ask whether to use existing metrics or collect fresh data. Returns metrics path or None."""
+    print("\n=== Analytics Chat — load data ===")
+    metrics_files = _list_metrics_files(workdir)
+
+    choices = [
+        ("Use latest collected metrics", "Start chat with the most recent metrics file"),
+        ("Pick an earlier metrics file", "Choose from previously collected files"),
+        ("Collect fresh data now", "Run the analytics collector first, then start chat"),
+    ]
+    idx = _prompt_choice("What do you want to do?", choices, default_idx=0)
+
+    if idx == 0:
+        if not metrics_files:
+            print("No metrics files found. I will collect fresh data first.")
+            return None
+        return metrics_files[-1]
+
+    if idx == 1:
+        if not metrics_files:
+            print("No metrics files found. I will collect fresh data first.")
+            return None
+        file_choices = [(str(i + 1), f.name) for i, f in enumerate(metrics_files)]
+        file_idx = _prompt_choice("Which metrics file?", file_choices, default_idx=len(file_choices) - 1)
+        return metrics_files[file_idx]
+
+    # idx == 2: collect fresh data first.
+    return None
+
+
 def cmd_chat_analytics(services: Services, workdir: Path, args) -> None:
     """Start a REPL to ask natural-language questions about analytics data."""
     import subprocess
@@ -962,8 +1141,28 @@ def cmd_chat_analytics(services: Services, workdir: Path, args) -> None:
     if not chat_script.exists():
         raise SystemExit(f"chat_analytics.py not found at {chat_script}")
 
+    interactive = _is_interactive(args)
+    metrics_path: Path | None = None
+
+    if interactive:
+        metrics_path = _configure_chat_analytics_interactive(workdir, args)
+        if metrics_path is None:
+            print("\nCollecting fresh data first...")
+            cmd_analytics(services, workdir, args)
+            metrics_files = _list_metrics_files(workdir)
+            if not metrics_files:
+                raise SystemExit("Analytics collection did not produce a metrics file.")
+            metrics_path = metrics_files[-1]
+            print(f"Fresh metrics collected: {metrics_path}\n")
+    else:
+        # Non-interactive: use latest file or a path passed via args if we later add one.
+        pass
+
     python = sys.executable
-    subprocess.run([python, str(chat_script)], check=False)
+    cmd = [python, str(chat_script)]
+    if metrics_path:
+        cmd.extend(["--metrics-path", str(metrics_path)])
+    subprocess.run(cmd, check=False)
 
 
 # --------------------------------------------------------------------------- #
@@ -1148,6 +1347,8 @@ def main(argv=None) -> int:
                     help="Path to a Substack posts export CSV to merge into analytics (or set SUBSTACK_CSV_PATH in .env).")
     ap.add_argument("--substack-csv-mapping", default=None,
                     help="Path to a JSON file mapping canonical metadata fields to CSV column names (or set SUBSTACK_CSV_MAPPING in .env).")
+    ap.add_argument("--non-interactive", action="store_true",
+                    help="Skip interactive prompts for analytics and chat_analytics; use CLI flags and .env values only.")
     args = ap.parse_args(argv)
 
     env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)

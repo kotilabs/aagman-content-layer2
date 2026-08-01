@@ -2,6 +2,7 @@
 
 Usage:
     ./harness/venv/bin/python harness/chat_analytics.py
+    ./harness/venv/bin/python harness/chat_analytics.py --metrics-path layer2_full_run/analytics/2026-08-01-buffer-metrics.json
 
 The script loads the latest normalized metrics file and starts a REPL where you
 can ask questions about the data in natural language. Examples:
@@ -16,6 +17,7 @@ Type `exit` or `quit` to leave.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import sys
@@ -107,11 +109,23 @@ def _format_history_for_prompt(history: list[dict[str, str]]) -> str:
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser("chat_analytics.py")
+    ap.add_argument("--metrics-path", default=None,
+                    help="Path to a normalized metrics JSON file (defaults to the latest file).")
+    ap.add_argument("--non-interactive", action="store_true",
+                    help="Skip interactive prompts and use defaults.")
+    args = ap.parse_args()
+
     repo = Path(__file__).resolve().parent
     env = _load_env(repo)
     workdir = repo / "layer2_full_run"
 
-    metrics_path = _latest_metrics(workdir)
+    if args.metrics_path:
+        metrics_path = Path(args.metrics_path).expanduser().resolve()
+        if not metrics_path.exists():
+            raise SystemExit(f"Metrics file not found: {metrics_path}")
+    else:
+        metrics_path = _latest_metrics(workdir)
     print(f"Loaded metrics: {metrics_path}")
 
     data = json.loads(metrics_path.read_text(encoding="utf-8"))

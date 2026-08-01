@@ -149,10 +149,23 @@ GA_PROPERTY_ID=
 
 CLI invocation:
 
+Interactive (default in a TTY):
+
 ```bash
-python harness/run_layer2_full.py analytics --analytics-days 30
-python harness/run_layer2_full.py analytics --substack-csv /path/to/substack.csv
-python harness/run_layer2_full.py analytics --describe-assets
+python harness/run_layer2_full.py analytics
+# prompts for: data sources, Substack CSV path, GA4 test, lookback days, vision descriptions
+
+python harness/run_layer2_full.py chat_analytics
+# prompts for: use latest metrics, pick a file, or collect fresh data first
+```
+
+Non-interactive / automation:
+
+```bash
+python harness/run_layer2_full.py analytics --non-interactive --analytics-days 30
+python harness/run_layer2_full.py analytics --non-interactive --substack-csv /path/to/substack.csv
+python harness/run_layer2_full.py analytics --non-interactive --describe-assets
+python harness/run_layer2_full.py chat_analytics --non-interactive
 ```
 
 ---
