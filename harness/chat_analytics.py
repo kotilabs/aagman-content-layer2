@@ -108,12 +108,33 @@ def _format_history_for_prompt(history: list[dict[str, str]]) -> str:
     return "\n".join(lines)
 
 
+def _direct_completion(prompt: str, model: str, api_key: str) -> str:
+    """Call a model directly via litellm, bypassing the file-based bridge."""
+    try:
+        import litellm
+    except ImportError as e:
+        raise RuntimeError("litellm is required for --direct-llm. Install: ./harness/venv/bin/pip install litellm") from e
+
+    response = litellm.completion(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        api_key=api_key,
+        temperature=0.7,
+        max_tokens=2000,
+    )
+    return response["choices"][0]["message"]["content"]
+
+
 def main() -> None:
     ap = argparse.ArgumentParser("chat_analytics.py")
     ap.add_argument("--metrics-path", default=None,
                     help="Path to a normalized metrics JSON file (defaults to the latest file).")
     ap.add_argument("--non-interactive", action="store_true",
                     help="Skip interactive prompts and use defaults.")
+    ap.add_argument("--direct-llm", action="store_true",
+                    help="Use OpenAI directly for answers instead of the file-based bridge (requires OPENAI_API_KEY).")
+    ap.add_argument("--openai-api-key", default=None,
+                    help="OpenAI API key for --direct-llm (or set OPENAI_API_KEY in .env).")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent
@@ -139,12 +160,17 @@ def main() -> None:
     # will truncate; the summary at the top gives the assistant a fallback.
     data_json = json.dumps(data, indent=2, default=str)
 
-    # Import harness services lazily so the script can be inspected without the venv.
-    sys.path.insert(0, str(repo / "harness"))
-    from run_layer2_full import build_services
+    direct_model = "gpt-4o" if args.direct_llm else None
+    openai_api_key = args.openai_api_key or env.get("OPENAI_API_KEY")
 
-    services = build_services(workdir, env)
-    router = services.router
+    router = None
+    if not direct_model:
+        from run_layer2_full import build_services
+        services = build_services(workdir, env)
+        router = services.router
+        print("Using file-based LLM bridge. Each answer will wait for a response file.")
+    else:
+        print("Using direct LLM (gpt-4o). Answers will return immediately.")
 
     print("\nAnalytics chat ready. Ask questions about the data.")
     print("Type 'exit' or 'quit' to leave.\n")
@@ -175,8 +201,14 @@ def main() -> None:
         )
 
         try:
-            res = router.complete("complex_planning", prompt, domain="content", step="analytics_chat")
-            answer = res.get("text", "").strip()
+            if direct_model:
+                if not openai_api_key:
+                    raise RuntimeError("OPENAI_API_KEY not set. Add it to harness/.env or pass --openai-api-key.")
+                answer = _direct_completion(prompt, direct_model, openai_api_key).strip()
+            else:
+                assert router is not None
+                res = router.complete("complex_planning", prompt, domain="content", step="analytics_chat")
+                answer = res.get("text", "").strip()
         except Exception as e:
             answer = f"Error calling router: {e}"
 

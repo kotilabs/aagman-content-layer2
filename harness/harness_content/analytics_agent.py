@@ -739,7 +739,9 @@ class AnalyticsAnalyzer:
 
     def __init__(self, router, workdir: str | Path,
                  prompt_path: str | Path | None = None,
-                 memory_factory: Callable | None = None):
+                 memory_factory: Callable | None = None,
+                 direct_model: str | None = None,
+                 openai_api_key: str | None = None):
         self.router = router
         self.workdir = Path(workdir)
         self.prompt_path = (
@@ -748,6 +750,8 @@ class AnalyticsAnalyzer:
             else self.workdir.parent / "harness_content" / "prompts" / "analytics_agent.md"
         )
         self.memory_factory = memory_factory
+        self.direct_model = direct_model
+        self.openai_api_key = openai_api_key
 
     def _read_prompt(self) -> str:
         if self.prompt_path.exists():
@@ -841,14 +845,40 @@ class AnalyticsAnalyzer:
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         prompt = self._build_prompt(metrics_path)
-        res = self.router.complete(
-            "complex_planning",
-            prompt,
-            domain="content",
-            step="analytics",
-        )
-        output_path.write_text(res.get("text", ""), encoding="utf-8")
+        if self.direct_model:
+            text = self._direct_completion(prompt)
+        else:
+            res = self.router.complete(
+                "complex_planning",
+                prompt,
+                domain="content",
+                step="analytics",
+            )
+            text = res.get("text", "")
+        output_path.write_text(text, encoding="utf-8")
         return output_path
+
+    def _direct_completion(self, prompt: str) -> str:
+        """Call a model directly via litellm, bypassing the file-based bridge."""
+        try:
+            import litellm
+        except ImportError as e:
+            raise RuntimeError("litellm is required for --direct-llm. Install: ./harness/venv/bin/pip install litellm") from e
+
+        model = self.direct_model or "gpt-4o"
+        api_key = self.openai_api_key or os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            raise RuntimeError("OPENAI_API_KEY not set. Add it to harness/.env or pass --openai-api-key.")
+
+        print(f"Calling {model} directly via litellm...")
+        response = litellm.completion(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            api_key=api_key,
+            temperature=0.7,
+            max_tokens=4000,
+        )
+        return response["choices"][0]["message"]["content"]
 
     def _latest_metrics(self) -> Path:
         candidates = sorted(self.workdir.glob("analytics/*-buffer-metrics.json"))

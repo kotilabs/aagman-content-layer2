@@ -149,14 +149,22 @@ GA_PROPERTY_ID=
 
 CLI invocation:
 
-Interactive (default in a TTY):
+Interactive (default — use `--non-interactive` to skip):
 
 ```bash
 python harness/run_layer2_full.py analytics
-# prompts for: data sources, Substack CSV path, GA4 test, lookback days, vision descriptions
+# prompts for: data sources, Substack CSV path, GA4 test, lookback days,
+#              vision descriptions, and direct-LLM vs file-bridge analysis
 
 python harness/run_layer2_full.py chat_analytics
 # prompts for: use latest metrics, pick a file, or collect fresh data first
+```
+
+Use OpenAI directly for instant analysis (requires `OPENAI_API_KEY`):
+
+```bash
+python harness/run_layer2_full.py analytics --direct-llm
+python harness/run_layer2_full.py chat_analytics --direct-llm
 ```
 
 Non-interactive / automation:
@@ -165,7 +173,8 @@ Non-interactive / automation:
 python harness/run_layer2_full.py analytics --non-interactive --analytics-days 30
 python harness/run_layer2_full.py analytics --non-interactive --substack-csv /path/to/substack.csv
 python harness/run_layer2_full.py analytics --non-interactive --describe-assets
-python harness/run_layer2_full.py chat_analytics --non-interactive
+python harness/run_layer2_full.py analytics --non-interactive --direct-llm
+python harness/run_layer2_full.py chat_analytics --non-interactive --direct-llm
 ```
 
 ---
@@ -182,6 +191,7 @@ python harness/run_layer2_full.py chat_analytics --non-interactive
 | LLM-generated analysis report | ✅ Live | Markdown output |
 | Memory recall of past lessons | ✅ Live | Avoids contradicting stored lessons |
 | Conversational analytics | ✅ Live | REPL over latest metrics; natural-language Q&A |
+| Direct LLM mode | ✅ Live | Bypass file bridge with `--direct-llm` (OpenAI) for instant analysis |
 | GA4 MCP connection | 🧪 Test harness | `harness/test_ga_mcp.py` ready |
 | Experiment knowledge base | 📋 Planned | Queryable KB of experiments and results |
 | Autonomous experiment agent | 📋 Planned | Posts variants, observes, writes lessons |

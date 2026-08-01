@@ -84,8 +84,12 @@ MAX_CORRECTION_LOOPS = 2
 # Interactive prompt helpers
 # --------------------------------------------------------------------------- #
 def _is_interactive(args) -> bool:
-    """True if stdin is a TTY and the operator did not request non-interactive mode."""
-    return sys.stdin.isatty() and not getattr(args, "non_interactive", False)
+    """True unless the operator explicitly requested non-interactive mode.
+
+    We default to interactive because analytics is an operator-driven action.
+    Use --non-interactive for CI/automation.
+    """
+    return not getattr(args, "non_interactive", False)
 
 
 def _prompt_choice(question: str, choices: list[tuple[str, str]], default_idx: int = 0) -> int:
@@ -1018,12 +1022,16 @@ def _configure_analytics_interactive(env: dict[str, str], args) -> dict:
     default_describe = getattr(args, "describe_assets", False)
     describe_assets = _prompt_yes_no("Describe post images with a vision model? Requires OPENAI_API_KEY.", default=default_describe)
 
+    default_direct = getattr(args, "direct_llm", False)
+    direct_llm = _prompt_yes_no("Use direct LLM (OpenAI) for the analysis instead of the file bridge? Faster, but uses API credits.", default=default_direct)
+
     return {
         "lookback_days": lookback_days,
         "describe_assets": describe_assets,
         "substack_csv_path": substack_csv_path,
         "substack_csv_mapping": substack_csv_mapping,
         "include_ga4": include_ga4,
+        "direct_llm": direct_llm,
     }
 
 
@@ -1046,6 +1054,7 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
             "substack_csv_path": getattr(args, "substack_csv", None) or env.get("SUBSTACK_CSV_PATH"),
             "substack_csv_mapping": getattr(args, "substack_csv_mapping", None) or env.get("SUBSTACK_CSV_MAPPING"),
             "include_ga4": False,
+            "direct_llm": getattr(args, "direct_llm", False),
         }
 
     lookback_days = config["lookback_days"]
@@ -1090,6 +1099,8 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
         services.router,
         workdir,
         memory_factory=services.memory_factory if services else None,
+        direct_model=("gpt-4o" if config.get("direct_llm") else None),
+        openai_api_key=env.get("OPENAI_API_KEY"),
     )
     analysis_path = analyzer.run(norm_path)
     print(f"Analysis report:          {analysis_path}")
@@ -1162,6 +1173,10 @@ def cmd_chat_analytics(services: Services, workdir: Path, args) -> None:
     cmd = [python, str(chat_script)]
     if metrics_path:
         cmd.extend(["--metrics-path", str(metrics_path)])
+    if getattr(args, "direct_llm", False):
+        cmd.append("--direct-llm")
+    if getattr(args, "openai_api_key", None):
+        cmd.extend(["--openai-api-key", args.openai_api_key])
     subprocess.run(cmd, check=False)
 
 
@@ -1348,7 +1363,11 @@ def main(argv=None) -> int:
     ap.add_argument("--substack-csv-mapping", default=None,
                     help="Path to a JSON file mapping canonical metadata fields to CSV column names (or set SUBSTACK_CSV_MAPPING in .env).")
     ap.add_argument("--non-interactive", action="store_true",
-                    help="Skip interactive prompts for analytics and chat_analytics; use CLI flags and .env values only.")
+                    help="Skip interactive prompts for analytics and chat_analytics; use CLI flags and .env values only. Default is interactive.")
+    ap.add_argument("--direct-llm", action="store_true",
+                    help="Use OpenAI directly for the analytics analysis instead of the file-based bridge (requires OPENAI_API_KEY).")
+    ap.add_argument("--openai-api-key", default=None,
+                    help="OpenAI API key for --direct-llm (or set OPENAI_API_KEY in .env).")
     args = ap.parse_args(argv)
 
     env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)
