@@ -168,6 +168,7 @@ python harness/run_layer2_full.py analytics --describe-assets
 | Cross-surface normalization | ✅ Live | Single schema |
 | LLM-generated analysis report | ✅ Live | Markdown output |
 | Memory recall of past lessons | ✅ Live | Avoids contradicting stored lessons |
+| Conversational analytics | ✅ Live | REPL over latest metrics; natural-language Q&A |
 | GA4 MCP connection | 🧪 Test harness | `harness/test_ga_mcp.py` ready |
 | Experiment knowledge base | 📋 Planned | Queryable KB of experiments and results |
 | Autonomous experiment agent | 📋 Planned | Posts variants, observes, writes lessons |

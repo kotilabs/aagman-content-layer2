@@ -951,6 +951,22 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
 
 
 # --------------------------------------------------------------------------- #
+# chat_analytics — conversational interface over collected metrics
+# --------------------------------------------------------------------------- #
+def cmd_chat_analytics(services: Services, workdir: Path, args) -> None:
+    """Start a REPL to ask natural-language questions about analytics data."""
+    import subprocess
+    import sys
+
+    chat_script = Path(__file__).resolve().parent / "chat_analytics.py"
+    if not chat_script.exists():
+        raise SystemExit(f"chat_analytics.py not found at {chat_script}")
+
+    python = sys.executable
+    subprocess.run([python, str(chat_script)], check=False)
+
+
+# --------------------------------------------------------------------------- #
 # start — pick a scout and begin the run
 # --------------------------------------------------------------------------- #
 def cmd_start(services: Services, workdir: Path, args) -> None:
@@ -1118,7 +1134,7 @@ def main(argv=None) -> int:
     ap.add_argument("command", choices=[
         "start", "signal_identifier", "macro_scout", "india_news_scout", "x_scout", "reddit_scout",
         "select_signal", "research", "write", "review", "correct", "seo",
-        "publish_approval", "analytics", "run_all", "status",
+        "publish_approval", "analytics", "chat_analytics", "run_all", "status",
     ])
     ap.add_argument("--date", default=None,
                     help="Digest/ticket date override (YYYY-MM-DD).")
@@ -1166,6 +1182,7 @@ def main(argv=None) -> int:
         "seo": cmd_seo,
         "publish_approval": cmd_publish_approval,
         "analytics": cmd_analytics,
+        "chat_analytics": cmd_chat_analytics,
         "run_all": cmd_run_all,
         "status": cmd_status,
     }
