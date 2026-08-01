@@ -108,17 +108,35 @@ def _format_history_for_prompt(history: list[dict[str, str]]) -> str:
     return "\n".join(lines)
 
 
-def _direct_completion(prompt: str, model: str, api_key: str) -> str:
-    """Call a model directly via litellm, bypassing the file-based bridge."""
+def _direct_completion(prompt: str, model: str, env: dict[str, str]) -> str:
+    """Call a model directly via litellm, bypassing the file-based bridge.
+
+    Defaults to Kimi because the harness already runs inside the Kimi stack.
+    """
     try:
         import litellm
     except ImportError as e:
         raise RuntimeError("litellm is required for --direct-llm. Install: ./harness/venv/bin/pip install litellm") from e
 
+    api_key = (
+        env.get("VISION_API_KEY")
+        or env.get("OPENAI_API_KEY")
+    )
+    api_base = (
+        env.get("VISION_BASE_URL")
+        or env.get("OPENAI_API_BASE")
+        or "https://api.kimi.com/coding/v1"
+    )
+    if not api_key:
+        raise RuntimeError(
+            "No API key found for direct LLM. Set VISION_API_KEY or OPENAI_API_KEY in harness/.env."
+        )
+
     response = litellm.completion(
         model=model,
         messages=[{"role": "user", "content": prompt}],
         api_key=api_key,
+        api_base=api_base,
         temperature=0.7,
         max_tokens=2000,
     )
@@ -132,9 +150,11 @@ def main() -> None:
     ap.add_argument("--non-interactive", action="store_true",
                     help="Skip interactive prompts and use defaults.")
     ap.add_argument("--direct-llm", action="store_true",
-                    help="Use OpenAI directly for answers instead of the file-based bridge (requires OPENAI_API_KEY).")
+                    help="Use Kimi directly for answers instead of the file-based bridge (requires VISION_API_KEY or OPENAI_API_KEY).")
     ap.add_argument("--openai-api-key", default=None,
-                    help="OpenAI API key for --direct-llm (or set OPENAI_API_KEY in .env).")
+                    help="API key for --direct-llm (or set VISION_API_KEY / OPENAI_API_KEY in .env).")
+    ap.add_argument("--question", default=None,
+                    help="Ask a single question and exit (non-interactive one-shot mode).")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent
@@ -160,22 +180,49 @@ def main() -> None:
     # will truncate; the summary at the top gives the assistant a fallback.
     data_json = json.dumps(data, indent=2, default=str)
 
-    direct_model = "gpt-4o" if args.direct_llm else None
-    openai_api_key = args.openai_api_key or env.get("OPENAI_API_KEY")
+    direct_model = "openai/kimi-for-coding" if args.direct_llm else None
 
     router = None
     if not direct_model:
         from run_layer2_full import build_services
         services = build_services(workdir, env)
         router = services.router
-        print("Using file-based LLM bridge. Each answer will wait for a response file.")
+        if not args.question:
+            print("Using file-based LLM bridge. Each answer will wait for a response file.")
     else:
-        print("Using direct LLM (gpt-4o). Answers will return immediately.")
+        if not args.question:
+            print("Using direct Kimi LLM. Answers will return immediately.")
+
+    history: list[dict[str, str]] = []
+
+    def _answer(question: str) -> str:
+        prompt = (
+            "You are having a conversation about a content analytics dataset.\n\n"
+            + system_prompt
+            + "\n\n--- DATASET ---\n\n```json\n" + data_json + "\n```\n"
+            + "\n\n--- CONVERSATION HISTORY ---\n" + _format_history_for_prompt(history)
+            + "\n\nUser: " + question
+            + "\n\nAssistant:"
+        )
+        if direct_model:
+            return _direct_completion(prompt, direct_model, env).strip()
+        assert router is not None
+        res = router.complete("complex_planning", prompt, domain="content", step="analytics_chat")
+        return res.get("text", "").strip()
+
+    if args.question:
+        if not direct_model:
+            raise SystemExit(
+                "--question requires --direct-llm because the file bridge is interactive.\n"
+                "Run: ./harness/venv/bin/python harness/chat_analytics.py --direct-llm --question \"your question\""
+            )
+        print(f"Q: {args.question}")
+        answer = _answer(args.question)
+        print(f"A: {answer}")
+        return
 
     print("\nAnalytics chat ready. Ask questions about the data.")
     print("Type 'exit' or 'quit' to leave.\n")
-
-    history: list[dict[str, str]] = []
 
     while True:
         try:
@@ -189,26 +236,8 @@ def main() -> None:
             print("Goodbye.")
             break
 
-        messages = _build_messages(system_prompt, data_json, history, question)
-        # Flatten messages into a single prompt for the router, which expects a prompt string.
-        prompt = (
-            "You are having a conversation about a content analytics dataset.\n\n"
-            + system_prompt
-            + "\n\n--- DATASET ---\n\n```json\n" + data_json + "\n```\n"
-            + "\n\n--- CONVERSATION HISTORY ---\n" + _format_history_for_prompt(history)
-            + "\n\nUser: " + question
-            + "\n\nAssistant:"
-        )
-
         try:
-            if direct_model:
-                if not openai_api_key:
-                    raise RuntimeError("OPENAI_API_KEY not set. Add it to harness/.env or pass --openai-api-key.")
-                answer = _direct_completion(prompt, direct_model, openai_api_key).strip()
-            else:
-                assert router is not None
-                res = router.complete("complex_planning", prompt, domain="content", step="analytics_chat")
-                answer = res.get("text", "").strip()
+            answer = _answer(question)
         except Exception as e:
             answer = f"Error calling router: {e}"
 

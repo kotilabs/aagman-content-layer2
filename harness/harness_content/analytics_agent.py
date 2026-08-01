@@ -859,22 +859,39 @@ class AnalyticsAnalyzer:
         return output_path
 
     def _direct_completion(self, prompt: str) -> str:
-        """Call a model directly via litellm, bypassing the file-based bridge."""
+        """Call a model directly via litellm, bypassing the file-based bridge.
+
+        Defaults to Kimi because the harness already runs inside the Kimi stack.
+        Uses VISION_API_KEY / VISION_BASE_URL if available, otherwise falls back
+        to OPENAI_API_KEY for any OpenAI-compatible endpoint.
+        """
         try:
             import litellm
         except ImportError as e:
             raise RuntimeError("litellm is required for --direct-llm. Install: ./harness/venv/bin/pip install litellm") from e
 
-        model = self.direct_model or "gpt-4o"
-        api_key = self.openai_api_key or os.environ.get("OPENAI_API_KEY")
+        model = self.direct_model or "openai/kimi-for-coding"
+        api_key = (
+            os.environ.get("VISION_API_KEY")
+            or self.openai_api_key
+            or os.environ.get("OPENAI_API_KEY")
+        )
+        api_base = (
+            os.environ.get("VISION_BASE_URL")
+            or os.environ.get("OPENAI_API_BASE")
+            or "https://api.kimi.com/coding/v1"
+        )
         if not api_key:
-            raise RuntimeError("OPENAI_API_KEY not set. Add it to harness/.env or pass --openai-api-key.")
+            raise RuntimeError(
+                "No API key found for direct LLM. Set VISION_API_KEY or OPENAI_API_KEY in harness/.env."
+            )
 
-        print(f"Calling {model} directly via litellm...")
+        print(f"Calling {model} directly via litellm (api_base={api_base})...")
         response = litellm.completion(
             model=model,
             messages=[{"role": "user", "content": prompt}],
             api_key=api_key,
+            api_base=api_base,
             temperature=0.7,
             max_tokens=4000,
         )

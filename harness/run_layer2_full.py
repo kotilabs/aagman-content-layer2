@@ -1193,6 +1193,8 @@ def cmd_chat_analytics(services: Services, workdir: Path, args) -> None:
         cmd.append("--direct-llm")
     if getattr(args, "openai_api_key", None):
         cmd.extend(["--openai-api-key", args.openai_api_key])
+    if getattr(args, "question", None):
+        cmd.extend(["--question", args.question])
     subprocess.run(cmd, check=False)
 
 
@@ -1384,6 +1386,8 @@ def main(argv=None) -> int:
                     help="Use Kimi directly for the analytics analysis instead of the file-based bridge (requires VISION_API_KEY or OPENAI_API_KEY).")
     ap.add_argument("--openai-api-key", default=None,
                     help="API key for --direct-llm (or set VISION_API_KEY / OPENAI_API_KEY in .env).")
+    ap.add_argument("--question", default=None,
+                    help="Single question mode for chat_analytics. Requires --direct-llm.")
     args = ap.parse_args(argv)
 
     env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)
