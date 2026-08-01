@@ -65,6 +65,11 @@ from harness_content.layer2_full_agents import (
     parse_digest_candidates,
     write_all_surfaces,
 )
+from harness_content.analytics_agent import (
+    AnalyticsAnalyzer,
+    AnalyticsCollector,
+    BufferMCPClient,
+)
 from harness_content.seed_layer2 import seed_all
 from harness_content.judges import Layer2ContentJudge
 
@@ -506,6 +511,7 @@ def cmd_select_signal(services: Services, workdir: Path, args) -> dict:
         state["signal_id"] = selection["signal_id"]
         state["signal_title"] = selection.get("title", selection["signal_id"])
         state["surfaces"] = selection.get("surfaces", DEFAULT_SURFACES)
+        state["operator_notes"] = selection.get("operator_notes", "")
         state["ticket_path"] = str(
             workdir / "state" / "tickets" / f"{date}-{selection['signal_id']}.md"
         )
@@ -546,11 +552,17 @@ def cmd_select_signal(services: Services, workdir: Path, args) -> dict:
         f"\n## How to respond\n\n"
         f"Write `{gdir / 'RESPONSE.md'}` with:\n"
         f"```yaml\n"
+        f"---\n"
         f"digest_source: <one of: {', '.join(available.keys())}>\n"
         f"signal_id: <id from the chosen digest>\n"
         f"title: <signal title>\n"
         f"surfaces: [{', '.join(DEFAULT_SURFACES)}]\n"
-        f"```\n"
+        f"operator_notes: |\n"
+        f"  <your angle, context, or questions for the research agent>\n"
+        f"---\n"
+        f"```\n\n"
+        f"The `operator_notes` field is optional but strongly recommended for India news, X, and Reddit signals. "
+        f"It tells the research agent what angle to pursue.\n"
     )
     _request_gate(workdir, gate_name, body)
     return {}  # never reached
@@ -640,8 +652,16 @@ def _write_ticket(state: dict, workdir: Path) -> Path:
     title = state.get("signal_title", signal_id)
     surfaces = state.get("surfaces", DEFAULT_SURFACES)
     digest_source = state.get("digest_source", "combined")
+    operator_notes = state.get("operator_notes", "")
     ticket_path = workdir / "state" / "tickets" / f"{date}-{signal_id}.md"
     ticket_path.parent.mkdir(parents=True, exist_ok=True)
+
+    notes_fm = f"operator_notes: |\n{_indent_block(operator_notes, 2)}\n" if operator_notes else "operator_notes: \"\"\n"
+    notes_body = (
+        f"## Operator notes\n\n{operator_notes}\n\n" if operator_notes
+        else "## Operator notes\n\n(Add angle, context, or questions here.)\n\n"
+    )
+
     body = (
         f"---\n"
         f"signal_id: {signal_id}\n"
@@ -649,17 +669,24 @@ def _write_ticket(state: dict, workdir: Path) -> Path:
         f"date: {date}\n"
         f"surfaces: [{', '.join(surfaces)}]\n"
         f"digest_source: {digest_source}\n"
+        f"{notes_fm}"
         f"---\n\n"
         f"# Ticket: {title}\n\n"
         f"Selected surfaces: {', '.join(surfaces)}\n\n"
         f"Scout source: `{digest_source}`\n\n"
         f"## Signal brief\n\n"
-        f"(Copied from digest. Add operator notes here.)\n\n"
+        f"(Copied from digest. The research agent will also read the operator notes below.)\n\n"
+        f"{notes_body}"
         f"## Sources\n\n"
         f"- (add source pointers)\n"
     )
     ticket_path.write_text(body, encoding="utf-8")
     return ticket_path
+
+
+def _indent_block(text: str, spaces: int) -> str:
+    prefix = " " * spaces
+    return "\n".join(prefix + line for line in text.splitlines())
 
 
 def cmd_research(services: Services, workdir: Path, args) -> Path:
@@ -872,6 +899,52 @@ def cmd_publish_approval(services: Services, workdir: Path, args) -> None:
 
 
 # --------------------------------------------------------------------------- #
+# analytics — Buffer collection + LLM analysis
+# --------------------------------------------------------------------------- #
+def cmd_analytics(services: Services, workdir: Path, args) -> None:
+    """Collect Buffer metrics and run the analytics analysis prompt."""
+    env = services.env if services else dict(os.environ)
+    token = env.get("BUFFER_MCP_TOKEN", "")
+    if not token:
+        raise SystemExit(
+            "BUFFER_MCP_TOKEN not set. Add it to .env to use the analytics agent."
+        )
+
+    lookback_days = getattr(args, "analytics_days", 30)
+    describe_assets = getattr(args, "describe_assets", False)
+    organization_id = env.get("BUFFER_ORGANIZATION_ID") or None
+    channel_ids = None
+    if env.get("BUFFER_CHANNEL_IDS"):
+        channel_ids = [c.strip() for c in env["BUFFER_CHANNEL_IDS"].split(",") if c.strip()]
+
+    with BufferMCPClient(token) as client:
+        collector = AnalyticsCollector(
+            client,
+            workdir,
+            download_assets=True,
+            describe_assets=describe_assets,
+            openai_api_key=env.get("OPENAI_API_KEY"),
+        )
+        raw_path, norm_path = collector.run(
+            organization_id=organization_id,
+            channel_ids=channel_ids,
+            lookback_days=lookback_days,
+        )
+    print(f"Collected Buffer metrics: {norm_path}")
+    print(f"Raw Buffer response:      {raw_path}")
+    if describe_assets:
+        print("Asset descriptions generated (or attempted; see metrics file).")
+
+    analyzer = AnalyticsAnalyzer(
+        services.router,
+        workdir,
+        memory_factory=services.memory_factory if services else None,
+    )
+    analysis_path = analyzer.run(norm_path)
+    print(f"Analysis report:          {analysis_path}")
+
+
+# --------------------------------------------------------------------------- #
 # start — pick a scout and begin the run
 # --------------------------------------------------------------------------- #
 def cmd_start(services: Services, workdir: Path, args) -> None:
@@ -1039,12 +1112,16 @@ def main(argv=None) -> int:
     ap.add_argument("command", choices=[
         "start", "signal_identifier", "macro_scout", "india_news_scout", "x_scout", "reddit_scout",
         "select_signal", "research", "write", "review", "correct", "seo",
-        "publish_approval", "run_all", "status",
+        "publish_approval", "analytics", "run_all", "status",
     ])
     ap.add_argument("--date", default=None,
                     help="Digest/ticket date override (YYYY-MM-DD).")
     ap.add_argument("--force", action="store_true",
                     help="Re-run even if output already exists.")
+    ap.add_argument("--analytics-days", type=int, default=30,
+                    help="Lookback window in days for the analytics agent (default: 30).")
+    ap.add_argument("--describe-assets", action="store_true",
+                    help="Download post images and describe them with a vision model (requires OPENAI_API_KEY).")
     args = ap.parse_args(argv)
 
     env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)
@@ -1078,6 +1155,7 @@ def main(argv=None) -> int:
         "correct": cmd_correct,
         "seo": cmd_seo,
         "publish_approval": cmd_publish_approval,
+        "analytics": cmd_analytics,
         "run_all": cmd_run_all,
         "status": cmd_status,
     }

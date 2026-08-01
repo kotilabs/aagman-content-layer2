@@ -17,6 +17,7 @@ You are not trying to prove anything. You are looking for correlations, not caus
    - `publish_date`
    - `topic_bucket` (India macro, global macro, policy, earnings, etc.)
    - `creative_description` (what the visual/text looked like)
+   - `asset_descriptions`: a list of one-sentence descriptions of any attached image/video assets (e.g., "bar chart comparing ECB, Fed, RBA policy rates with bold headline"). Use these to compare creative formats, not to invent metrics.
    - `metrics`: impressions, clicks, likes, comments, reposts, shares, saves, engagement_rate, open_rate, etc.
    - `link_in_post` (yes/no), `link_location` (body / first comment)
    - `screenshot_path` (if available)

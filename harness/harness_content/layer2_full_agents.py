@@ -196,7 +196,9 @@ class Layer2ResearchAgentFull:
         signal_id = ticket["signal_id"]
         signal_title = ticket.get("title", signal_id)
         brief = ticket.get("brief", "")
+        operator_notes = ticket.get("operator_notes", "")
         sources = ticket.get("sources", [])
+        digest_source = ticket.get("digest_source", "default")
 
         research_dir = self.workdir / "research"
         research_dir.mkdir(parents=True, exist_ok=True)
@@ -207,23 +209,48 @@ class Layer2ResearchAgentFull:
             sources_block = "SOURCE POINTERS FROM TICKET:\n" + "\n".join(
                 f"- {s}" for s in sources) + "\n\n"
 
+        notes_block = ""
+        if operator_notes:
+            notes_block = (
+                "OPERATOR NOTES (use these as the editorial direction):\n"
+                f"{operator_notes}\n\n"
+            )
+
         lessons = self._recall_lessons(brief)
         lessons_block = f"LESSONS FROM PAST CYCLES:\n{lessons}\n\n" if lessons else ""
 
+        prompt_file = self._research_prompt_for_source(digest_source)
+
         prompt = (
-            f"{_read_prompt('research_agent.md')}\n\n"
+            f"{_read_prompt(prompt_file)}\n\n"
             f"---\n\n"
+            f"DIGEST SOURCE: {digest_source}\n"
             f"SIGNAL ID: {signal_id}\n"
             f"SIGNAL TITLE: {signal_title}\n\n"
             f"SIGNAL BRIEF:\n{brief}\n\n"
+            f"{notes_block}"
             f"{sources_block}"
             f"{lessons_block}"
             f"Write the full research artifact to `research/signal-{signal_id}.md`."
         )
-        res = self.router.complete("complex_planning", prompt,
-                                   domain="content", step="ideate")
+        res = self.router.complete(
+            "complex_planning", prompt,
+            domain="content", step="ideate",
+            request_id=f"research-{signal_id}")
         research_file.write_text(res["text"].strip(), encoding="utf-8")
         return research_file
+
+    @staticmethod
+    def _research_prompt_for_source(digest_source: str) -> str:
+        mapping = {
+            "india_news": "research_agent_india_news.md",
+            "x": "research_agent_x.md",
+            "reddit": "research_agent_reddit.md",
+            "macro": "research_agent.md",
+            "combined": "research_agent.md",
+            "default": "research_agent.md",
+        }
+        return mapping.get(digest_source, "research_agent.md")
 
     def _recall_lessons(self, query: str) -> str:
         if not self.memory_factory:
@@ -328,8 +355,10 @@ class Layer2Writer:
             f"{lessons_block}"
             f"Write the {label} now."
         )
-        res = self.router.complete("content_gen", prompt,
-                                   domain="content", step="create")
+        res = self.router.complete(
+            "content_gen", prompt,
+            domain="content", step="create",
+            request_id=f"write-{surface}-{signal_id}")
         body = res["text"].strip()
         disclosure = _disclosure()
         if surface in ("blog", "thread", "carousel_linkedin", "carousel_instagram"):
@@ -370,8 +399,10 @@ class Layer2Writer:
             f"educational-only framing, brand voice, and mandatory disclosure. "
             f"Update the draft in place."
         )
-        res = self.router.complete("content_gen", prompt,
-                                   domain="content", step="create")
+        res = self.router.complete(
+            "content_gen", prompt,
+            domain="content", step="create",
+            request_id=f"revise-{surface}-{signal_id}")
         new_body = res["text"].strip()
         disclosure = _disclosure()
         if surface in ("blog", "thread", "carousel_linkedin", "carousel_instagram"):
