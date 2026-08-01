@@ -93,13 +93,18 @@ def _is_interactive(args) -> bool:
 
 
 def _prompt_choice(question: str, choices: list[tuple[str, str]], default_idx: int = 0) -> int:
-    """Ask the user to pick one option by number. Returns the chosen index."""
+    """Ask the user to pick one option by number. Returns the chosen index.
+    Uses the default if input is not available (e.g., piped/non-TTY execution)."""
     print(f"\n{question}")
     for i, (key, desc) in enumerate(choices, 1):
         print(f"  [{i}] {key}: {desc}")
     default_num = default_idx + 1
     while True:
-        raw = input(f"Choose (1-{len(choices)}) [{default_num}]: ").strip()
+        try:
+            raw = input(f"Choose (1-{len(choices)}) [{default_num}]: ").strip()
+        except EOFError:
+            print(f"Using default [{default_num}].")
+            return default_idx
         if not raw:
             return default_idx
         try:
@@ -113,10 +118,17 @@ def _prompt_choice(question: str, choices: list[tuple[str, str]], default_idx: i
 
 
 def _prompt_input(question: str, default: str = "") -> str:
-    """Ask for free text input with an optional default."""
+    """Ask for free text input with an optional default.
+    Uses the default if input is not available."""
     suffix = f" [{default}]" if default else ""
     while True:
-        raw = input(f"{question}{suffix}: ").strip()
+        try:
+            raw = input(f"{question}{suffix}: ").strip()
+        except EOFError:
+            if default:
+                print(f"Using default '{default}'.")
+                return default
+            raise
         if raw:
             return raw
         if default:
@@ -125,10 +137,14 @@ def _prompt_input(question: str, default: str = "") -> str:
 
 
 def _prompt_yes_no(question: str, default: bool = False) -> bool:
-    """Ask a yes/no question."""
+    """Ask a yes/no question. Uses the default if input is not available."""
     suffix = " [Y/n]" if default else " [y/N]"
     while True:
-        raw = input(f"{question}{suffix}: ").strip().lower()
+        try:
+            raw = input(f"{question}{suffix}: ").strip().lower()
+        except EOFError:
+            print("Using default '{}'.", format("yes" if default else "no"))
+            return default
         if not raw:
             return default
         if raw in ("y", "yes"):
@@ -1023,7 +1039,7 @@ def _configure_analytics_interactive(env: dict[str, str], args) -> dict:
     describe_assets = _prompt_yes_no("Describe post images with a vision model? Requires OPENAI_API_KEY.", default=default_describe)
 
     default_direct = getattr(args, "direct_llm", False)
-    direct_llm = _prompt_yes_no("Use direct LLM (OpenAI) for the analysis instead of the file bridge? Faster, but uses API credits.", default=default_direct)
+    direct_llm = _prompt_yes_no("Use direct Kimi LLM for the analysis instead of the file bridge? Faster, but uses API credits.", default=default_direct)
 
     return {
         "lookback_days": lookback_days,
@@ -1099,8 +1115,8 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
         services.router,
         workdir,
         memory_factory=services.memory_factory if services else None,
-        direct_model=("gpt-4o" if config.get("direct_llm") else None),
-        openai_api_key=env.get("OPENAI_API_KEY"),
+        direct_model=("openai/kimi-for-coding" if config.get("direct_llm") else None),
+        openai_api_key=env.get("VISION_API_KEY") or env.get("OPENAI_API_KEY"),
     )
     analysis_path = analyzer.run(norm_path)
     print(f"Analysis report:          {analysis_path}")
@@ -1365,9 +1381,9 @@ def main(argv=None) -> int:
     ap.add_argument("--non-interactive", action="store_true",
                     help="Skip interactive prompts for analytics and chat_analytics; use CLI flags and .env values only. Default is interactive.")
     ap.add_argument("--direct-llm", action="store_true",
-                    help="Use OpenAI directly for the analytics analysis instead of the file-based bridge (requires OPENAI_API_KEY).")
+                    help="Use Kimi directly for the analytics analysis instead of the file-based bridge (requires VISION_API_KEY or OPENAI_API_KEY).")
     ap.add_argument("--openai-api-key", default=None,
-                    help="OpenAI API key for --direct-llm (or set OPENAI_API_KEY in .env).")
+                    help="API key for --direct-llm (or set VISION_API_KEY / OPENAI_API_KEY in .env).")
     args = ap.parse_args(argv)
 
     env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)
