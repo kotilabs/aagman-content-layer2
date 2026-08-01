@@ -15,7 +15,6 @@ Subcommands:
     seo                Run SEO/AEO audit + final blog corrections.
     publish_approval   Wait for final approval, then move surfaces to final/.
     analytics          Collect social/Substack metrics and run the analytics report (interactive by default).
-    chat_analytics     Start a REPL to ask natural-language questions about analytics data (interactive by default).
     run_all            Advance through the whole pipeline as far as possible.
     status             Show current state.
 
@@ -1123,82 +1122,6 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
 
 
 # --------------------------------------------------------------------------- #
-# chat_analytics — conversational interface over collected metrics
-# --------------------------------------------------------------------------- #
-def _list_metrics_files(workdir: Path) -> list[Path]:
-    return sorted(workdir.glob("analytics/*-buffer-metrics.json"))
-
-
-def _configure_chat_analytics_interactive(workdir: Path, args) -> Path | None:
-    """Ask whether to use existing metrics or collect fresh data. Returns metrics path or None."""
-    print("\n=== Analytics Chat — load data ===")
-    metrics_files = _list_metrics_files(workdir)
-
-    choices = [
-        ("Use latest collected metrics", "Start chat with the most recent metrics file"),
-        ("Pick an earlier metrics file", "Choose from previously collected files"),
-        ("Collect fresh data now", "Run the analytics collector first, then start chat"),
-    ]
-    idx = _prompt_choice("What do you want to do?", choices, default_idx=0)
-
-    if idx == 0:
-        if not metrics_files:
-            print("No metrics files found. I will collect fresh data first.")
-            return None
-        return metrics_files[-1]
-
-    if idx == 1:
-        if not metrics_files:
-            print("No metrics files found. I will collect fresh data first.")
-            return None
-        file_choices = [(str(i + 1), f.name) for i, f in enumerate(metrics_files)]
-        file_idx = _prompt_choice("Which metrics file?", file_choices, default_idx=len(file_choices) - 1)
-        return metrics_files[file_idx]
-
-    # idx == 2: collect fresh data first.
-    return None
-
-
-def cmd_chat_analytics(services: Services, workdir: Path, args) -> None:
-    """Start a REPL to ask natural-language questions about analytics data."""
-    import subprocess
-    import sys
-
-    chat_script = Path(__file__).resolve().parent / "chat_analytics.py"
-    if not chat_script.exists():
-        raise SystemExit(f"chat_analytics.py not found at {chat_script}")
-
-    interactive = _is_interactive(args)
-    metrics_path: Path | None = None
-
-    if interactive:
-        metrics_path = _configure_chat_analytics_interactive(workdir, args)
-        if metrics_path is None:
-            print("\nCollecting fresh data first...")
-            cmd_analytics(services, workdir, args)
-            metrics_files = _list_metrics_files(workdir)
-            if not metrics_files:
-                raise SystemExit("Analytics collection did not produce a metrics file.")
-            metrics_path = metrics_files[-1]
-            print(f"Fresh metrics collected: {metrics_path}\n")
-    else:
-        # Non-interactive: use latest file or a path passed via args if we later add one.
-        pass
-
-    python = sys.executable
-    cmd = [python, str(chat_script)]
-    if metrics_path:
-        cmd.extend(["--metrics-path", str(metrics_path)])
-    if getattr(args, "direct_llm", False):
-        cmd.append("--direct-llm")
-    if getattr(args, "openai_api_key", None):
-        cmd.extend(["--openai-api-key", args.openai_api_key])
-    if getattr(args, "question", None):
-        cmd.extend(["--question", args.question])
-    subprocess.run(cmd, check=False)
-
-
-# --------------------------------------------------------------------------- #
 # start — pick a scout and begin the run
 # --------------------------------------------------------------------------- #
 def cmd_start(services: Services, workdir: Path, args) -> None:
@@ -1366,7 +1289,7 @@ def main(argv=None) -> int:
     ap.add_argument("command", choices=[
         "start", "signal_identifier", "macro_scout", "india_news_scout", "x_scout", "reddit_scout",
         "select_signal", "research", "write", "review", "correct", "seo",
-        "publish_approval", "analytics", "chat_analytics", "run_all", "status",
+        "publish_approval", "analytics", "run_all", "status",
     ])
     ap.add_argument("--date", default=None,
                     help="Digest/ticket date override (YYYY-MM-DD).")
@@ -1381,13 +1304,11 @@ def main(argv=None) -> int:
     ap.add_argument("--substack-csv-mapping", default=None,
                     help="Path to a JSON file mapping canonical metadata fields to CSV column names (or set SUBSTACK_CSV_MAPPING in .env).")
     ap.add_argument("--non-interactive", action="store_true",
-                    help="Skip interactive prompts for analytics and chat_analytics; use CLI flags and .env values only. Default is interactive.")
+                    help="Skip interactive prompts for analytics; use CLI flags and .env values only. Default is interactive.")
     ap.add_argument("--direct-llm", action="store_true",
                     help="Use Kimi directly for the analytics analysis instead of the file-based bridge (requires VISION_API_KEY or OPENAI_API_KEY).")
     ap.add_argument("--openai-api-key", default=None,
                     help="API key for --direct-llm (or set VISION_API_KEY / OPENAI_API_KEY in .env).")
-    ap.add_argument("--question", default=None,
-                    help="Single question mode for chat_analytics. Requires --direct-llm.")
     args = ap.parse_args(argv)
 
     env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)
@@ -1422,7 +1343,6 @@ def main(argv=None) -> int:
         "seo": cmd_seo,
         "publish_approval": cmd_publish_approval,
         "analytics": cmd_analytics,
-        "chat_analytics": cmd_chat_analytics,
         "run_all": cmd_run_all,
         "status": cmd_status,
     }
