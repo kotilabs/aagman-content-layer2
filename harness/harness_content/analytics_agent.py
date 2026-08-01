@@ -39,32 +39,37 @@ _METRIC_ALIASES = {
     "postCount": "post_count",
 }
 
-# Flexible column-name aliases for Substack export CSVs. Keys are lower-cased;
-# the first matching column in the CSV is used.
-_SUBSTACK_COLUMN_ALIASES = {
-    "id": ["post_id", "id", "post_uuid"],
+# Metadata column aliases for Substack export CSVs. These locate the small set
+# of fields we need to build a NormalizedPost. Any numeric column that is not
+# used for metadata is treated as a metric automatically, so the collector does
+# not need to know every possible Substack export schema up front.
+_SUBSTACK_METADATA_ALIASES = {
+    "id": ["post_id", "id", "post_uuid", "post uuid"],
     "title": ["title", "post_title"],
     "subtitle": ["subtitle", "post_subtitle"],
     "published_at": ["published_at", "post_date", "publish_date", "date", "sent_at"],
     "text": ["body", "content", "post_body", "text"],
-    "word_count": ["word_count", "words"],
     "url": ["url", "post_url", "permalink", "link"],
-    # Reach / delivery
-    "email_deliveries": ["email_deliveries", "deliveries", "delivered", "recipients"],
-    "email_opens": ["email_opens", "opens"],
-    "email_open_rate": ["email_open_rate", "open_rate", "open_pct"],
-    "email_clicks": ["email_clicks", "clicks"],
-    "email_click_rate": ["email_click_rate", "click_rate", "click_pct"],
-    "email_unsubscribes": ["email_unsubscribes", "unsubscribes"],
-    # Surface engagement
+}
+
+# Optional metric renaming: if a CSV uses one of these column names, it will be
+# stored under the canonical key in addition to (not instead of) the original
+# column name. This lets downstream prompts refer to common names like
+# email_deliveries while still preserving the raw CSV field names.
+_SUBSTACK_METRIC_ALIASES = {
+    "email_deliveries": ["email_deliveries", "email deliveries", "deliveries", "delivered", "recipients"],
+    "email_opens": ["email_opens", "email opens", "opens"],
+    "email_open_rate": ["email_open_rate", "email open rate", "open_rate", "open rate", "open_pct"],
+    "email_clicks": ["email_clicks", "email clicks", "clicks"],
+    "email_click_rate": ["email_click_rate", "email click rate", "click_rate", "click rate", "click_pct"],
+    "email_unsubscribes": ["email_unsubscribes", "email unsubscribes", "unsubscribes"],
     "likes": ["likes", "reactions", "applause", "hearts"],
     "comments": ["comments", "comment_count"],
     "shares": ["shares", "share_count"],
-    # Audience
-    "free_subscribers": ["free_subscribers", "free_subs"],
-    "paid_subscribers": ["paid_subscribers", "paid_subs"],
-    "new_free_subscribers": ["new_free_subscribers", "new_free_subs"],
-    "new_paid_subscribers": ["new_paid_subscribers", "new_paid_subs"],
+    "free_subscribers": ["free_subscribers", "free subs", "free_subs"],
+    "paid_subscribers": ["paid_subscribers", "paid subs", "paid_subs"],
+    "new_free_subscribers": ["new_free_subscribers", "new free subscribers", "new free subs", "new free", "new_free_subs"],
+    "new_paid_subscribers": ["new_paid_subscribers", "new paid subscribers", "new paid subs", "new paid", "new_paid_subs"],
 }
 
 _TOPIC_KEYWORDS = {
@@ -268,16 +273,40 @@ class NormalizedPost:
 # --------------------------------------------------------------------------- #
 # Substack CSV ingestion
 # --------------------------------------------------------------------------- #
-def _resolve_csv_columns(header: list[str]) -> dict[str, str | None]:
-    """Map canonical field names to the first matching CSV column name."""
-    lower_header = [h.strip().lower() for h in header]
+def _parse_numeric(raw: str) -> int | float | None:
+    """Parse a numeric CSV value. Accepts integers, floats, and percentages."""
+    if raw is None:
+        return None
+    clean = str(raw).replace(",", "").replace("%", "").strip()
+    if clean == "":
+        return None
+    try:
+        return int(clean) if "." not in clean else float(clean)
+    except ValueError:
+        return None
+
+
+def _normalize_col(name: str) -> str:
+    return name.strip().lower().replace(" ", "").replace("_", "").replace("-", "")
+
+
+def _resolve_metadata_columns(header: list[str],
+                               explicit: dict[str, str] | None = None) -> dict[str, str | None]:
+    """Map canonical metadata fields to CSV columns, with optional override."""
+    norm_header = {_normalize_col(h): h for h in header}
     mapping: dict[str, str | None] = {}
-    for canonical, aliases in _SUBSTACK_COLUMN_ALIASES.items():
+    for canonical, aliases in _SUBSTACK_METADATA_ALIASES.items():
         matched: str | None = None
-        for alias in aliases:
-            if alias in lower_header:
-                matched = header[lower_header.index(alias)]
-                break
+        # Explicit mapping takes precedence.
+        if explicit and canonical in explicit:
+            candidate = explicit[canonical]
+            matched = candidate if candidate in header else norm_header.get(_normalize_col(candidate))
+        if not matched:
+            for alias in aliases:
+                norm_alias = _normalize_col(alias)
+                if norm_alias in norm_header:
+                    matched = norm_header[norm_alias]
+                    break
         mapping[canonical] = matched
     return mapping
 
@@ -293,16 +322,26 @@ def _substack_creative_description(word_count: int | None) -> str:
 
 
 class SubstackCSVCollector:
-    """Read a Substack posts export CSV and normalize rows to NormalizedPost.
+    """Read a Substack posts-export CSV and normalize rows to NormalizedPost.
 
-    Substack export column names vary by plan and export type; this class uses
-    `_SUBSTACK_COLUMN_ALIASES` to tolerate common variants. Any metric columns
-    that match are copied into the normalized `metrics` dict under canonical
-    names.
+    This collector is intentionally field-agnostic:
+
+    * It only needs to locate a few metadata columns (id, title, subtitle,
+      published_at, text/body, url). Common aliases are auto-detected.
+    * Every other numeric column in the CSV is ingested as a metric, preserving
+      its original column name. This lets the same code handle multiple
+      Substack export formats without hard-coding every possible field.
+    * An optional explicit mapping can override metadata columns or rename
+      metrics. Pass a dict like {"title": "Post Title", "published_at": "Date"}.
+
+    The raw row is also kept in `NormalizedPost.raw` so the analyst can see the
+    exact source values if needed.
     """
 
-    def __init__(self, csv_path: str | Path):
+    def __init__(self, csv_path: str | Path,
+                 mapping: dict[str, str] | None = None):
         self.csv_path = Path(csv_path)
+        self.mapping = mapping or {}
 
     def read(self) -> list[NormalizedPost]:
         if not self.csv_path.exists():
@@ -312,7 +351,20 @@ class SubstackCSVCollector:
         if not rows:
             return []
 
-        cols = _resolve_csv_columns(list(rows[0].keys()))
+        header = list(rows[0].keys())
+        cols = _resolve_metadata_columns(header, self.mapping)
+        metadata_cols = {c for c in cols.values() if c}
+
+        # Pre-compute metric aliases: original column -> canonical name.
+        norm_header = {_normalize_col(h): h for h in header}
+        metric_aliases: dict[str, str] = {}
+        for canonical, aliases in _SUBSTACK_METRIC_ALIASES.items():
+            for alias in aliases:
+                norm_alias = _normalize_col(alias)
+                if norm_alias in norm_header:
+                    metric_aliases[norm_header[norm_alias]] = canonical
+                    break
+
         posts: list[NormalizedPost] = []
         for idx, row in enumerate(rows):
             title = (row.get(cols["title"]) or "").strip()
@@ -322,28 +374,26 @@ class SubstackCSVCollector:
             published = (row.get(cols["published_at"]) or "").strip()
 
             # Build a stable id if the export does not provide one.
-            raw_id = (row.get(cols["id"]) or "").strip()
+            raw_id = (row.get(cols["id"]) or "").strip() if cols["id"] else ""
             post_id = raw_id or _safe_id(f"{published}-{title}") or f"substack-{idx}"
 
-            # Metrics: every canonical key whose column exists and is numeric.
+            # Metrics: every numeric column that is not metadata. We preserve the
+            # original column name and also store a canonical alias when known.
             metrics: dict[str, Any] = {}
-            for canonical, col_name in cols.items():
-                if not col_name or canonical in ("id", "title", "subtitle", "published_at", "text", "url"):
+            word_count: int | None = None
+            for col_name in header:
+                if col_name in metadata_cols:
                     continue
                 raw_val = row.get(col_name, "").strip()
-                if raw_val == "":
+                parsed = _parse_numeric(raw_val)
+                if parsed is None:
                     continue
-                # Accept integers, floats, and percentages like "12.3%".
-                clean = raw_val.replace(",", "").replace("%", "").strip()
-                try:
-                    if "." in clean:
-                        metrics[canonical] = float(clean)
-                    else:
-                        metrics[canonical] = int(clean)
-                except ValueError:
-                    metrics[canonical] = raw_val
+                metrics[col_name] = parsed
+                if col_name in metric_aliases:
+                    metrics[metric_aliases[col_name]] = parsed
+                if _normalize_col(col_name) in ("wordcount", "words"):
+                    word_count = int(parsed)
 
-            word_count = metrics.get("word_count")
             link_in_post, link_location = _has_link(text)
 
             posts.append(NormalizedPost(
@@ -353,9 +403,7 @@ class SubstackCSVCollector:
                 surface_label="Substack",
                 publish_date=published[:10] if published else "",
                 topic_bucket=_topic_bucket(text),
-                creative_description=_substack_creative_description(
-                    int(word_count) if isinstance(word_count, (int, float)) else None
-                ),
+                creative_description=_substack_creative_description(word_count),
                 text=text,
                 link_in_post=link_in_post,
                 link_location=link_location,
@@ -481,13 +529,16 @@ class AnalyticsCollector:
     """Fetch Buffer data and normalize it for the analytics prompt.
 
     Substack long-form analytics can be merged in via a CSV export; set
-    `substack_csv_path` to the path of the Substack posts export.
+    `substack_csv_path` to the path of the Substack posts export. An optional
+    `substack_csv_mapping` (dict or path to a JSON file) can override metadata
+    column names or rename metrics for that specific CSV.
     """
 
     def __init__(self, client: BufferMCPClient, workdir: str | Path,
                  download_assets: bool = True, describe_assets: bool = False,
                  openai_api_key: str | None = None,
-                 substack_csv_path: str | Path | None = None):
+                 substack_csv_path: str | Path | None = None,
+                 substack_csv_mapping: dict[str, str] | str | Path | None = None):
         self.client = client
         self.workdir = Path(workdir)
         self.analytics_dir = self.workdir / "analytics"
@@ -495,12 +546,24 @@ class AnalyticsCollector:
         self.download_assets = download_assets
         self.describe_assets = describe_assets
         self.substack_csv_path = substack_csv_path
+        self.substack_csv_mapping = self._load_mapping(substack_csv_mapping)
         self._describer: CreativeDescriber | None = None
         if download_assets:
             assets_dir = self.analytics_dir / "assets" / _today()
             self._describer = CreativeDescriber(
                 assets_dir, api_key=openai_api_key, model="gpt-4o"
             )
+
+    @staticmethod
+    def _load_mapping(mapping: dict[str, str] | str | Path | None) -> dict[str, str]:
+        if mapping is None:
+            return {}
+        if isinstance(mapping, dict):
+            return mapping
+        path = Path(mapping)
+        if not path.exists():
+            raise FileNotFoundError(f"Substack CSV mapping file not found: {path}")
+        return json.loads(path.read_text(encoding="utf-8"))
 
     def fetch_account(self) -> dict:
         return self.client.call_tool("get_account", {})
@@ -610,7 +673,9 @@ class AnalyticsCollector:
         # Merge Substack CSV export if provided.
         substack_posts: list[NormalizedPost] = []
         if self.substack_csv_path:
-            substack_posts = SubstackCSVCollector(self.substack_csv_path).read()
+            substack_posts = SubstackCSVCollector(
+                self.substack_csv_path, mapping=self.substack_csv_mapping
+            ).read()
             normalized.extend(substack_posts)
 
         today = _today()
@@ -840,11 +905,15 @@ def run_analytics_pipeline(
     organization_id: str | None = None,
     channel_ids: list[str] | None = None,
     substack_csv_path: str | Path | None = None,
+    substack_csv_mapping: dict[str, str] | str | Path | None = None,
 ) -> tuple[Path, Path | None]:
     """One-shot collection; analysis only if a router is provided."""
     with BufferMCPClient(token) as client:
         collector = AnalyticsCollector(
-            client, workdir, substack_csv_path=substack_csv_path
+            client,
+            workdir,
+            substack_csv_path=substack_csv_path,
+            substack_csv_mapping=substack_csv_mapping,
         )
         raw_path, norm_path = collector.run(
             organization_id=organization_id,
@@ -882,8 +951,14 @@ if __name__ == "__main__":
 
     workdir = repo / "layer2_full_run"
     substack_csv = env.get("SUBSTACK_CSV_PATH")
+    substack_mapping = env.get("SUBSTACK_CSV_MAPPING")
     with BufferMCPClient(token) as client:
-        collector = AnalyticsCollector(client, workdir, substack_csv_path=substack_csv)
+        collector = AnalyticsCollector(
+            client,
+            workdir,
+            substack_csv_path=substack_csv,
+            substack_csv_mapping=substack_mapping,
+        )
         raw, norm = collector.run(lookback_days=30)
     print(f"Raw posts:      {raw}")
     print(f"Normalized:     {norm}")

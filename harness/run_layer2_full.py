@@ -917,6 +917,7 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
     if env.get("BUFFER_CHANNEL_IDS"):
         channel_ids = [c.strip() for c in env["BUFFER_CHANNEL_IDS"].split(",") if c.strip()]
     substack_csv_path = getattr(args, "substack_csv", None) or env.get("SUBSTACK_CSV_PATH")
+    substack_csv_mapping = getattr(args, "substack_csv_mapping", None) or env.get("SUBSTACK_CSV_MAPPING")
 
     with BufferMCPClient(token) as client:
         collector = AnalyticsCollector(
@@ -926,6 +927,7 @@ def cmd_analytics(services: Services, workdir: Path, args) -> None:
             describe_assets=describe_assets,
             openai_api_key=env.get("OPENAI_API_KEY"),
             substack_csv_path=substack_csv_path,
+            substack_csv_mapping=substack_csv_mapping,
         )
         raw_path, norm_path = collector.run(
             organization_id=organization_id,
@@ -1128,6 +1130,8 @@ def main(argv=None) -> int:
                     help="Download post images and describe them with a vision model (requires OPENAI_API_KEY).")
     ap.add_argument("--substack-csv", default=None,
                     help="Path to a Substack posts export CSV to merge into analytics (or set SUBSTACK_CSV_PATH in .env).")
+    ap.add_argument("--substack-csv-mapping", default=None,
+                    help="Path to a JSON file mapping canonical metadata fields to CSV column names (or set SUBSTACK_CSV_MAPPING in .env).")
     args = ap.parse_args(argv)
 
     env = load_env(str(REPO / ".env")) if (REPO / ".env").exists() else dict(os.environ)

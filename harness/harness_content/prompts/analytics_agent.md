@@ -19,7 +19,7 @@ You are not trying to prove anything. You are looking for correlations, not caus
    - `creative_description` (what the visual/text looked like)
    - `asset_descriptions`: a list of one-sentence descriptions of any attached image/video assets (e.g., "bar chart comparing ECB, Fed, RBA policy rates with bold headline"). Use these to compare creative formats, not to invent metrics.
    - `metrics`: impressions, clicks, likes, comments, reposts, shares, saves, engagement_rate, open_rate, etc.
-     - **Substack newsletters** use email-centric metrics: `email_deliveries`, `email_opens`, `email_open_rate`, `email_clicks`, `email_click_rate`, `email_unsubscribes`, plus `likes`, `comments`, `shares`, and subscriber deltas (`free_subscribers`, `paid_subscribers`, `new_free_subscribers`, `new_paid_subscribers`).
+     - **Substack newsletters** use email-centric metrics. Common canonical names include `email_deliveries`, `email_opens`, `email_open_rate`, `email_clicks`, `email_click_rate`, `email_unsubscribes`, plus `likes`, `comments`, `shares`, and subscriber deltas (`free_subscribers`, `paid_subscribers`, `new_free_subscribers`, `new_paid_subscribers`). The collector also preserves the original CSV column names, so additional Substack data points (e.g., `referrals`, `web_views`, `ios_views`) may appear verbatim in the metrics dict — use whatever is present, do not assume a fixed schema.
    - `link_in_post` (yes/no), `link_location` (body / first comment)
    - `screenshot_path` (if available)
 5. **Historical averages** (if available): baseline impressions/engagement per surface.
