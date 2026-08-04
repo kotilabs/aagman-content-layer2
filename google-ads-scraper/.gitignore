@@ -12,6 +12,12 @@ venv/
 output/
 diagnostic_*.html
 diagnostic_*.png
+debug_*.py
+debug_*.json
+debug_*.html
+debug_*.png
+test_*.py
+test_*.json
 
 # OS
 .DS_Store
