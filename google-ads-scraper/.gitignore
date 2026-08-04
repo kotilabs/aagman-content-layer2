@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Environment / secrets
+.env
+
+# Runtime outputs
+output/
+diagnostic_*.html
+diagnostic_*.png
+
+# OS
+.DS_Store
