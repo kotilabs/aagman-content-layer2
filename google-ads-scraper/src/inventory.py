@@ -4,11 +4,18 @@ from __future__ import annotations
 import json
 import logging
 from pathlib import Path
+from typing import Protocol
 
-from .kimi_client import KimiClient
 from .models import ScrapeResult
 
 logger = logging.getLogger(__name__)
+
+
+class ImageDescriber(Protocol):
+    """Anything that can describe an image URL."""
+
+    def describe_image(self, image_url: str) -> str | None:
+        ...
 
 
 def write_inventory(result: ScrapeResult, output_dir: Path) -> Path:
@@ -22,7 +29,7 @@ def write_inventory(result: ScrapeResult, output_dir: Path) -> Path:
     return path
 
 
-def enrich_image_descriptions(result: ScrapeResult, client: KimiClient) -> None:
+def enrich_image_descriptions(result: ScrapeResult, client: ImageDescriber) -> None:
     """Call the vision model for every image ad that has an image_url."""
     image_ads = [ad for ad in result.ads if ad.format == "image" and ad.image_url]
     if not image_ads:

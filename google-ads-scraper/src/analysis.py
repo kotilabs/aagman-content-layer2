@@ -35,6 +35,9 @@ def build_inventory_text(result: ScrapeResult) -> str:
                 lines.append(f"  Display URL: {ad.copy.display_url}")
         if ad.image_url:
             lines.append(f"  Image URL: {ad.image_url}")
+        if ad.image_description:
+            desc = ad.image_description.replace('\n', ' ')
+            lines.append(f"  Image description: {desc}")
         if ad.first_seen or ad.last_seen:
             lines.append(f"  Dates: {ad.first_seen or '?'} -> {ad.last_seen or '?'}")
         lines.append("")

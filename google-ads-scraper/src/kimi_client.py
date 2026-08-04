@@ -44,7 +44,7 @@ class KimiClient:
             "Content-Type": "application/json",
         }
 
-    def _chat(self, messages: list[dict[str, object]], temperature: float = 0.3) -> str | None:
+    def _chat(self, messages: list[dict[str, object]], temperature: float = 1.0) -> str | None:
         """Send a chat completion request with simple exponential backoff."""
         url = f"{self.base_url}/chat/completions"
         payload = {
@@ -62,7 +62,10 @@ class KimiClient:
                     time.sleep(sleep_seconds)
                     continue
                 if response.status_code == 400:
-                    logger.warning("Kimi returned 400 (vision/format not supported); skipping retries.")
+                    logger.warning(
+                        "Kimi returned 400; skipping retries. Response: %s",
+                        response.text[:200],
+                    )
                     return None
                 response.raise_for_status()
                 data = response.json()
@@ -123,4 +126,4 @@ class KimiClient:
                 ),
             },
         ]
-        return self._chat(messages, temperature=0.5)
+        return self._chat(messages, temperature=1.0)

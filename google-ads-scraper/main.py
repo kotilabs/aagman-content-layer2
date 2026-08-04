@@ -15,6 +15,7 @@ load_dotenv()
 from src.config import Config
 from src.exceptions import ScrapeBlockedError, ScrapeTimeoutError
 from src.kimi_client import KimiClient
+from src.openrouter_client import OpenRouterClient
 from src.scraper import Scraper
 from src.stats import write_stats
 from src.analysis import write_analysis
@@ -103,6 +104,16 @@ def main() -> int:
 
     logger.info("Scraped %s ads for %r.", len(result.ads), result.domain)
 
+    # Cheap vision descriptions via OpenRouter (e.g., Gemini 2.5 Flash-Lite).
+    if config.openrouter_api_key:
+        try:
+            vision_client = OpenRouterClient(config)
+            enrich_image_descriptions(result, vision_client)
+        except Exception as exc:
+            logger.exception("Failed to enrich image descriptions: %s", exc)
+    else:
+        logger.info("OPENROUTER_API_KEY not set; skipping image descriptions.")
+
     try:
         write_inventory(result, output_dir)
     except Exception as exc:
@@ -115,10 +126,10 @@ def main() -> int:
         logger.exception("Failed to write stats: %s", exc)
         return 1
 
+    # Marketing analysis via Kimi (text-only on the aggregated inventory).
     try:
-        client = KimiClient(config)
-        enrich_image_descriptions(result, client)
-        write_analysis(result, client, output_dir)
+        analysis_client = KimiClient(config)
+        write_analysis(result, analysis_client, output_dir)
     except Exception as exc:
         logger.exception("Failed to generate analysis: %s", exc)
         return 1
