@@ -1,0 +1,132 @@
+{
+  "campaign": "Aagman Waitlist Spike — Google Ads Test #1",
+  "objective": "Drive a measurable spike in waitlist signups via the first Google Ads test, leading with proof-and-execution positioning (idea → backtest → approval-gated deployment) that neither competitor occupies.",
+  "audience": "Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate competitor set — ICP is unconfirmed in the brief; if the primary audience is long-term investors, variant prioritization must be redone and the investor angle promoted to lead)",
+  "success_metric": "Waitlist signup volume vs. current baseline — AMBIGUOUS: no numeric target, CPL ceiling, or timeframe is defined, and no baseline waitlist number exists to measure the 'spike' against. Recommend setting a signup target and max cost-per-signup before launch.",
+  "variants": {
+    "v1": {
+      "variant_id": "v1",
+      "angle": "Plain words to backtest — no code",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Backtest Ideas Without Code",
+            "Type Your Idea, Get Proof",
+            "No Python. No Excel. Just Test",
+            "Type in Hindi or English",
+            "Idea to Backtest in Minutes",
+            "NSE-Empanelled Algo Provider",
+            "You Approve Every Live Trade",
+            "Capital Stays at Your Broker",
+            "Bol Ke Banao, Test Karo",
+            "Strategies Likho, Code Nahi",
+            "Backtest > Paper > Live",
+            "Plain Words In, Reports Out",
+            "See Proof Before You Risk",
+            "Test Before You Trade Live",
+            "Type Your Idea Now"
+          ],
+          "descriptions": [
+            "Type your strategy in plain words, get a full backtest report — no Python, no Excel.",
+            "SEBI-registered IA, NSE-empanelled. Test ideas on real data before risking a rupee.",
+            "Hindi, English, Hinglish — type in the language you think in. Idea in, evidence out.",
+            "Backtest first, go live only with your approval. Capital stays at your own broker."
+          ]
+        }
+      }
+    },
+    "v2": {
+      "variant_id": "v2",
+      "angle": "You brief, they work, you approve — capital never leaves your broker",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "You Approve Every Trade",
+            "Capital Stays at Your Broker",
+            "Nothing Deploys Without You",
+            "Backtest Before You Risk",
+            "Approve Your First Trade",
+            "Describe It, Test It, Approve",
+            "Backtest → Paper → Live",
+            "No Autonomous Bots. Ever.",
+            "Stop Anytime. You Control.",
+            "SEBI-Registered IA",
+            "NSE-Empanelled Algo Provider",
+            "Multi-Broker Execution",
+            "Type Strategy in Hindi Too",
+            "Aap Approve Karo, Tabhi Chale",
+            "Test It Before Real Money"
+          ],
+          "descriptions": [
+            "You brief it, AI agents build and backtest it. Nothing goes live without your approval.",
+            "Capital stays at your existing broker. SEBI-registered IA, NSE-empanelled algo provider.",
+            "Not a tip service, not an autonomous bot. You approve every step from backtest to live.",
+            "Skeptical of trading bots? See the backtest first, then approve each trade yourself."
+          ]
+        }
+      }
+    },
+    "v3": {
+      "variant_id": "v3",
+      "angle": "Multi-leg options, up to 4 legs in sync, from one sentence",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "4 Legs. One Sentence.",
+            "Straddles in One Sentence",
+            "Iron Condors, No Coding",
+            "Build a Strangle in Seconds",
+            "Describe Your 4-Leg Strategy",
+            "Up to 4 Legs in Sync",
+            "Type It. Test It. Trade It.",
+            "Backtest Before You Risk",
+            "SEBI-Registered. NSE Algo.",
+            "Capital Stays at Your Broker",
+            "You Approve Every Trade",
+            "Bol Ke Banao Condor",
+            "One Line. Four Legs. Live.",
+            "F&O Strategies, No Excel",
+            "Describe Your Strategy"
+          ],
+          "descriptions": [
+            "Describe your straddle, strangle, or iron condor in one sentence — up to 4 legs in sync.",
+            "Backtest the full 4-leg strategy on real market data before you risk a single rupee.",
+            "Capital stays at your broker. You approve every step before a single leg goes live.",
+            "Type in English, Hindi, or Hinglish. No Python, no Excel — just your trading words."
+          ]
+        }
+      }
+    },
+    "v4": {
+      "variant_id": "v4",
+      "angle": "Institutional execution, actually shipped — TWAP/VWAP live today",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "TWAP & VWAP, Live Today",
+            "TWAP/VWAP Live for Retail",
+            "See the Algos Live",
+            "Slice Big Orders Like a Pro",
+            "Hide Your Size From the Market",
+            "MIT, LIT, MTL Order Types",
+            "Desk-Grade Algos, No Desk",
+            "Your Broker Stays. Algos Join.",
+            "You Approve Every Live Order",
+            "Backtest First, Deploy After",
+            "Execution Algos, Not Hype",
+            "Bade Order? Algo Se Karo",
+            "NSE-Empanelled Algo Provider",
+            "No Code. Just Live Algos.",
+            "Stop Chasing. Start Slicing."
+          ],
+          "descriptions": [
+            "TWAP and VWAP algos, live today — slice large orders like an institutional desk.",
+            "MIT, LIT, MTL — the advanced order types your broker app makes you dig for.",
+            "SEBI-registered IA, NSE-empanelled algo provider. Capital stays at your broker.",
+            "Backtest your idea first, deploy with your approval. Every live order needs your yes."
+          ]
+        }
+      }
+    }
+  }
+}
