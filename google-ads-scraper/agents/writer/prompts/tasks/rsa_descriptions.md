@@ -10,10 +10,14 @@ A description is not a tagline. It is the supporting line that appears beneath t
 3. Add something the headline does not already say — never just restate the headline.
 
 Each description should do ONE of these jobs distinctly:
-- DESCRIBE THE MECHANIC: how the product delivers the promise in plain language.
+- DESCRIBE THE MECHANIC: how Aagman delivers the promise in plain language. Position Aagman as the agent/team that does the work.
 - ADD TRUST/PROOF: SEBI registration, NSE empanelment, capital staying at broker, user approval gate.
-- STATE A CONCRETE FUNCTIONALITY: a specific feature the user can use (backtest, 4-leg options, TWAP/VWAP, etc.).
-- REMOVE FRICTION OR ADD CLARITY: answer the silent objection a stranger would have.
+- STATE A CONCRETE FUNCTIONALITY: a specific feature the user can use (backtest, 4-leg options, TWAP/VWAP, etc.) and what Aagman does with it.
+- REMOVE FRICTION OR ADD CLARITY: answer the silent objection a stranger would have and make clear Aagman is the solution.
+
+POSITIONING RULE:
+- Do not write generic feature descriptions like "Backtesting is useful." Frame Aagman as the actor: "Aagman backtests your idea...", "Aagman builds your 4-leg strategy...", "Aagman runs TWAP/VWAP execution...".
+- The description should make a stranger understand what Aagman does for them, not just what trading is.
 
 PAIRING RULES:
 - Before finalising each description, mentally place it under the strongest headline. If it feels redundant or confusing, rewrite it.
