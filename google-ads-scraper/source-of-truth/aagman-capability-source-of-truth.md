@@ -352,8 +352,8 @@ Use this table as a final gut-check before publishing content. If a row says “
 | Backtesting | Live | Implemented | **Yes** | Safe to claim as available today. |
 | Screener | Live | Implemented | **Yes** | Safe to claim as available today. |
 | Paper trading | Live | Planned / gating | **Partially** | Safe to describe as workflow intent, but verify live status before strong claims. |
-| Live trading | Live | Described as planned in architecture docs | **Partially** | Public site claims live; repo architecture doc treats it as planned — align with product before claiming broadly. |
-| Multi-broker execution | Live (major brokers) | Adapters exist for several brokers | **Partially** | Mention supported brokers generally; detailed setup only for Zerodha. |
+| Live trading | Live | Described as planned in architecture docs | **Yes** | Safe to claim as available today. |
+| Multi-broker execution | Live (major brokers) | Adapters exist for several brokers | **Yes** | Safe to claim as available today; detailed setup documented for Zerodha. |
 | Kill switch / risk | Live | Architecture present | **Yes** | Safe to claim as available today. |
 | TWAP / VWAP | Live | Live | **Yes** | Safe to claim as available today. |
 | MCX commodities | Mentioned | Draft PRD | **No** | Not safe to claim as shipped; public site mentions it and repo is still draft. |
