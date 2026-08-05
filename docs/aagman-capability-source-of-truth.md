@@ -342,21 +342,25 @@ Use these as the building blocks for blogs, LinkedIn posts, ads, and landing-pag
 
 ---
 
-## 16. Capability Status Summary
+## 16. What Is Safe to Claim
 
-| Area | Public Site Status | Repo Status | Content Guidance |
-|---|---|---|---|
-| Natural-language strategy creation | Live | Implemented | Safe to claim. |
-| Backtesting | Live | Implemented | Safe to claim. |
-| Screener | Live | Implemented | Safe to claim. |
-| Paper trading | Live | Planned / gating | Safe to describe as part of workflow. |
-| Live trading | Live | Described as planned in architecture docs | Use the public wording; avoid “already shipped everywhere” unless verified. |
-| Multi-broker execution | Live (major brokers) | Adapters exist for several brokers | Mention supported brokers generally; detailed setup only for Zerodha. |
-| Kill switch / risk | Live | Architecture present | Safe to claim. |
-| MCX commodities | Mentioned | Draft PRD | Frame as expanding/coming unless confirmed. |
-| Live Portfolio Dashboard | Not public | Draft PRD | Do not claim publicly. |
-| TWAP / VWAP | Live | Live | Safe to claim. |
-| Iceberg / POV | Coming next | Coming next | Safe to claim as roadmap. |
+Use this table as a final gut-check before publishing content. If a row says “Not safe to claim,” do not present it as shipped or currently available.
+
+| Area | Public Site Status | Repo Status | Safe to Claim? | Content Guidance |
+|---|---|---|---|---|
+| Natural-language strategy creation | Live | Implemented | **Yes** | Safe to claim as available today. |
+| Backtesting | Live | Implemented | **Yes** | Safe to claim as available today. |
+| Screener | Live | Implemented | **Yes** | Safe to claim as available today. |
+| Paper trading | Live | Planned / gating | **Partially** | Safe to describe as workflow intent, but verify live status before strong claims. |
+| Live trading | Live | Described as planned in architecture docs | **Partially** | Public site claims live; repo architecture doc treats it as planned — align with product before claiming broadly. |
+| Multi-broker execution | Live (major brokers) | Adapters exist for several brokers | **Partially** | Mention supported brokers generally; detailed setup only for Zerodha. |
+| Kill switch / risk | Live | Architecture present | **Yes** | Safe to claim as available today. |
+| TWAP / VWAP | Live | Live | **Yes** | Safe to claim as available today. |
+| MCX commodities | Mentioned | Draft PRD | **No** | Not safe to claim as shipped; public site mentions it and repo is still draft. |
+| Live Portfolio Dashboard | Not public | Draft PRD | **No** | Not safe to claim publicly; repo PRD only. |
+| Portfolio health score & tax insights | Coming soon | Not public | **No** | Not safe to claim as shipped; public `/invest` page says coming soon. |
+| Curated holdings-based news feed | Coming soon | Not public | **No** | Not safe to claim as shipped; public `/invest` page says coming soon. |
+| Iceberg / POV | Coming next | Coming next | **No** | Not safe to claim as live; public site says coming next. |
 
 ---
 
