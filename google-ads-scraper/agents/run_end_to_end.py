@@ -2,6 +2,7 @@
 """CLI entry point to run Strategist then Writer back-to-back."""
 from __future__ import annotations
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -14,8 +15,16 @@ from agents.writer.writer import Writer  # noqa: E402
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Run Strategist then Writer")
+    parser.add_argument(
+        "--input",
+        dest="input_text",
+        help="Freeform campaign brief for the strategist. If omitted, interactive mode is used.",
+    )
+    args = parser.parse_args()
+
     strategist = Strategist(root=ROOT)
-    strategy_path, brief_path = strategist.run()
+    strategy_path, brief_path = strategist.run(args.input_text)
 
     print("\n" + "=" * 60)
     print("Running writer against the generated brief...")

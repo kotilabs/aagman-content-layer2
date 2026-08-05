@@ -119,6 +119,56 @@ def load_safe_claims_for_variant(claim_refs: list[str], root: Path | str | None 
     return "\n".join(relevant)
 
 
+def load_competitive_intel_summary(root: Path | str | None = None) -> str:
+    """Read the latest competitor analysis.md files under reports/ and return a short markdown summary.
+
+    Only analysis.md files are used (not the raw ad-copy dumps). For each competitor,
+    the most recent dated folder is chosen.
+    """
+    if root is None:
+        root = Path(__file__).resolve().parents[2]  # google-ads-scraper/
+    reports_dir = Path(root) / "reports"
+    if not reports_dir.exists():
+        return "_No competitor reports found._"
+
+    summaries: list[str] = []
+    for competitor_dir in sorted(reports_dir.iterdir()):
+        if not competitor_dir.is_dir():
+            continue
+        name = competitor_dir.name
+        latest_analysis: str | None = None
+        for date_dir in sorted(competitor_dir.iterdir(), reverse=True):
+            if not date_dir.is_dir():
+                continue
+            analysis_file = date_dir / "analysis.md"
+            if analysis_file.exists():
+                latest_analysis = analysis_file.read_text(encoding="utf-8")
+                break
+        if not latest_analysis:
+            continue
+
+        snapshot_match = re.search(r"\*\*Snapshot:\*\*\s*(.+?)(?:\n\n|\n---|$)", latest_analysis, re.DOTALL)
+        bottom_match = re.search(r"\*\*Bottom line:\*\*\s*(.+)", latest_analysis)
+        snapshot = snapshot_match.group(1).strip() if snapshot_match else ""
+        bottom = bottom_match.group(1).strip() if bottom_match else ""
+
+        parts = [f"## Competitor: {name}", ""]
+        if snapshot:
+            parts.append(f"**Snapshot:** {snapshot}")
+            parts.append("")
+        if bottom:
+            parts.append(f"**Bottom line:** {bottom}")
+        if not snapshot and not bottom:
+            snippet = latest_analysis[:800].strip()
+            parts.append(snippet)
+
+        summaries.append("\n".join(parts))
+
+    if not summaries:
+        return "_No competitor analysis files found._"
+    return "\n\n".join(summaries)
+
+
 def build_writer_context(variant: dict, root: Path | str | None = None) -> str:
     """Build a minimal context block for the writer from one variant's claim_refs."""
     synopsis = load_product_synopsis(root)

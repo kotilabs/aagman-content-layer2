@@ -7,8 +7,9 @@ from pathlib import Path
 
 import yaml
 
-from ..shared.context_loader import build_writer_context
+from ..shared.context_loader import build_writer_context, load_competitive_intel_summary
 from ..shared.llm import AdsLLM
+from .prompt_builder import PromptBuilder
 from .validators import validate_copy_pack, ValidationError
 
 
@@ -33,6 +34,7 @@ class Writer:
     def __init__(self, root: Path | str | None = None, llm: AdsLLM | None = None):
         self.root = Path(root) if root else Path(__file__).resolve().parents[2]
         self.llm = llm or AdsLLM()
+        self.prompt_builder = PromptBuilder(root=self.root)
         # Smaller calls should return quickly; cap per-call wall time so a full
         # 15-variant brief can finish in a reasonable window.
         self.llm.client.REQUEST_TIMEOUT = 60
@@ -45,39 +47,15 @@ class Writer:
         with path.open("r", encoding="utf-8") as fh:
             return yaml.safe_load(fh)
 
-    def _system_prompt(self) -> str:
-        return (
-            "You are a senior direct-response copywriter for Indian fintech ads. "
-            "You write ad copy that is punchy, specific, and format-perfect.\n\n"
-            "RULES:\n"
-            "1. Use only the claims and facts provided in the brief. Do not invent features.\n"
-            "2. Do NOT copy competitor wording verbatim; use their style only as reference.\n"
-            "3. Strictly obey character limits for each format.\n"
-            "4. Headlines must vary in angle: some feature the hook, some the offer, some the CTA.\n"
-            "5. Output ONLY the requested list format. No markdown fences, no commentary, no JSON.\n"
-            "6. English and Hinglish variants are allowed."
-        )
+    def _competitive_intel(self, brief: dict) -> str | None:
+        """Return competitor intel only when the brief does not already supply it."""
+        if brief.get("competitive_intel"):
+            return None
+        return load_competitive_intel_summary(self.root)
 
-    def _variant_context(self, brief: dict, variant: dict) -> str:
-        """Shared context block used by every small-format call."""
-        writer_context = build_writer_context(variant, self.root)
-        return (
-            "CAMPAIGN:\n"
-            f"- Campaign: {brief.get('campaign', '')}\n"
-            f"- Objective: {brief.get('objective', '')}\n"
-            f"- Success metric: {brief.get('success_metric', '')}\n\n"
-            "THIS VARIANT:\n"
-            f"- ID: {variant.get('id', '')}\n"
-            f"- Angle: {variant.get('angle', '')}\n"
-            f"- Persona: {variant.get('persona', '')}\n"
-            f"- Hook direction: {variant.get('hook_direction', '')}\n"
-            f"- CTA: {variant.get('cta', '')}\n\n"
-            f"{writer_context}"
-        )
-
-    def _call_llm(self, user_prompt: str) -> str:
+    def _call_llm(self, system_prompt: str, user_prompt: str) -> str:
         """Make a single LLM call and return cleaned text."""
-        raw = self.llm.chat(self._system_prompt(), user_prompt)
+        raw = self.llm.chat(system_prompt, user_prompt)
         # Strip common accidental wrappers.
         raw = re.sub(r"^```(?:json|text)?\s*|\s*```$", "", raw, flags=re.MULTILINE).strip()
         return raw
@@ -105,17 +83,17 @@ class Writer:
         """Generate exactly 15 Google RSA headlines in one small LLM call."""
         max_chars = FORMATS_SPEC["google_rsa"]["headlines"]["max_chars"]
         count = FORMATS_SPEC["google_rsa"]["headlines"]["count"]
-        user_prompt = (
-            f"{self._variant_context(brief, variant)}\n\n"
-            f"TASK: Generate exactly {count} Google RSA headlines for this variant.\n"
-            f"- Each headline must be {max_chars} characters or fewer INCLUDING spaces and punctuation.\n"
-            "- Vary the angle: some feature the hook, some the offer, some the CTA.\n"
-            "- Return ONLY a numbered list, one headline per line.\n"
-            "- No extra commentary, no JSON, no markdown code blocks.\n\n"
-            f"1.\n2.\n...\n{count}."
+        system_prompt = self.prompt_builder.build_system_prompt()
+        user_prompt = self.prompt_builder.build_user_prompt(
+            brief,
+            variant,
+            "rsa_headlines",
+            competitive_intel=self._competitive_intel(brief),
+            count=count,
+            max_chars=max_chars,
         )
         for attempt in range(max_retries + 1):
-            raw = self._call_llm(user_prompt)
+            raw = self._call_llm(system_prompt, user_prompt)
             items = self._parse_numbered_list(raw, expected_count=count)
             if len(items) == count and all(len(item) <= max_chars for item in items):
                 return items
@@ -131,17 +109,17 @@ class Writer:
         """Generate exactly 4 Google RSA descriptions in one small LLM call."""
         max_chars = FORMATS_SPEC["google_rsa"]["descriptions"]["max_chars"]
         count = FORMATS_SPEC["google_rsa"]["descriptions"]["count"]
-        user_prompt = (
-            f"{self._variant_context(brief, variant)}\n\n"
-            f"TASK: Generate exactly {count} Google RSA descriptions for this variant.\n"
-            f"- Each description must be {max_chars} characters or fewer INCLUDING spaces and punctuation.\n"
-            "- Expand on the hook/offer/CTA; do not repeat headlines verbatim.\n"
-            "- Return ONLY a numbered list, one description per line.\n"
-            "- No extra commentary, no JSON, no markdown code blocks.\n\n"
-            f"1.\n2.\n3.\n4."
+        system_prompt = self.prompt_builder.build_system_prompt()
+        user_prompt = self.prompt_builder.build_user_prompt(
+            brief,
+            variant,
+            "rsa_descriptions",
+            competitive_intel=self._competitive_intel(brief),
+            count=count,
+            max_chars=max_chars,
         )
         for attempt in range(max_retries + 1):
-            raw = self._call_llm(user_prompt)
+            raw = self._call_llm(system_prompt, user_prompt)
             items = self._parse_numbered_list(raw, expected_count=count)
             if len(items) == count and all(len(item) <= max_chars for item in items):
                 return items
@@ -156,18 +134,16 @@ class Writer:
     def _generate_linkedin(self, brief: dict, variant: dict, max_retries: int = 2) -> dict[str, str]:
         """Generate LinkedIn sponsored content in one small LLM call."""
         max_chars = FORMATS_SPEC["linkedin"]["headline"]["max_chars"]
-        user_prompt = (
-            f"{self._variant_context(brief, variant)}\n\n"
-            "TASK: Generate LinkedIn sponsored content for this variant.\n"
-            f"- The headline must be {max_chars} characters or fewer INCLUDING spaces and punctuation.\n"
-            "- Return ONLY a numbered list with these three items:\n"
-            "1. Intro: <one short paragraph that opens the post>\n"
-            "2. Headline: <ad headline>\n"
-            "3. Description: <supporting description>\n"
-            "- No extra commentary, no JSON, no markdown code blocks."
+        system_prompt = self.prompt_builder.build_system_prompt()
+        user_prompt = self.prompt_builder.build_user_prompt(
+            brief,
+            variant,
+            "linkedin",
+            competitive_intel=self._competitive_intel(brief),
+            max_chars=max_chars,
         )
         for attempt in range(max_retries + 1):
-            raw = self._call_llm(user_prompt)
+            raw = self._call_llm(system_prompt, user_prompt)
             items = self._parse_numbered_list(raw, expected_count=3)
 
             # If parsing failed, try to extract explicit labels.
