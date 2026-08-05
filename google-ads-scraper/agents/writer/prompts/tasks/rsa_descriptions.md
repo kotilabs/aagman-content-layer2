@@ -25,6 +25,18 @@ PAIRING RULES:
 - Avoid one-line fragments like "Free in beta." or "Join today." Descriptions should be full, readable sentences.
 - Do not repeat the exact wording of the CTA or hook_direction; translate them into user benefit.
 
+CLARITY RULE:
+- Subheadlines must be crystal clear. A stranger who has never heard of Aagman should understand exactly what is being offered after one read.
+- Avoid clever-but-vague phrases. Prefer direct, plain language.
+- Each description should contain: WHO does it (Aagman), WHAT the user does (brief/describe/type), and WHAT the outcome is (backtest/live trade/etc.).
+- If a description sounds like it could mean multiple things, rewrite it until it means only one thing.
+
+BAD (unclear): "Your AI team builds, backtests, and waits for your go."  
+GOOD (clear): "Tell Aagman your idea in plain words. It builds and backtests the strategy, then waits for your approval before live trading."
+
+BAD (unclear): "Built for Indian markets: equities, indices, F&O."  
+GOOD (clear): "Aagman works across NSE equities, indices, and F&O — built for Indian traders, not a generic global tool."
+
 TRUST LINES (use naturally, do not force all of them):
 - "SEBI-registered IA, NSE-empanelled algo provider."
 - "Capital stays at your broker; you approve every step."
