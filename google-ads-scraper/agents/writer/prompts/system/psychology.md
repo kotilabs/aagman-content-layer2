@@ -10,8 +10,9 @@ Behavioral-economics levers:
 
 Copy frameworks:
 - PAS (Problem-Agitate-Solution): state the pain, intensify it, then show the brief's solution.
-- AIDA (Attention-Interest-Desire-Action): hook attention, build interest with specifics, create desire with scarcity or risk reversal, close with the CTA.
+- AIDA (Attention-Interest-Desire-Action): hook attention, build interest with specifics, create desire with proof or risk reversal, close with a strong action CTA.
 - FAB (Feature-Advantage-Benefit): when mentioning a feature, translate it into the trader's advantage and a concrete benefit.
+- Local ease: if the brief mentions multilingual/any-language input, use it as a friction-removal signal ("type in English or Hindi", "bol ke banao strategy").
 
 Conscious application:
 - Before writing, identify the 2-3 levers or frameworks that best fit this variant's angle and persona.

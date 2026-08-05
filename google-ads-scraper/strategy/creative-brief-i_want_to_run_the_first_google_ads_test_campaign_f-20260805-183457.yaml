@@ -1,50 +1,29 @@
-campaign: "Aagman Waitlist Spike \u2014 Google Ads Test #1"
-objective: "Drive a measurable spike in waitlist signups via the first Google Ads\
-  \ test, leading with proof-and-execution positioning (idea \u2192 backtest \u2192\
-  \ approval-gated deployment) that neither competitor occupies."
-audience: "Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate\
-  \ competitor set \u2014 ICP is unconfirmed in the brief; if the primary audience\
-  \ is long-term investors, variant prioritization must be redone and the investor\
-  \ angle promoted to lead)"
-success_metric: "Waitlist signup volume vs. current baseline \u2014 AMBIGUOUS: no\
-  \ numeric target, CPL ceiling, or timeframe is defined, and no baseline waitlist\
-  \ number exists to measure the 'spike' against. Recommend setting a signup target\
-  \ and max cost-per-signup before launch."
-competitive_intel: "The category is saturated with 'AI second opinion' positioning\
-  \ (Draconic, ~90% of inventory), screener-led SEO harvesting (Tradomate), and generic\
-  \ 'free signup' friction hooks \u2014 entering these head-on means paying auction\
-  \ premiums for undifferentiated copy. Ownable gaps with verified capabilities: proof-first\
-  \ workflow (backtest \u2192 paper \u2192 live), institutional execution actually\
-  \ shipped (TWAP/VWAP, MIT/LIT/MTL, 4-leg multi-leg options), approval-gated execution\
-  \ with capital staying at the user's broker, and verifiable SEBI IA + NSE Whitebox\
-  \ empanelment credentials no competitor can claim. The universal conversion layer\
-  \ is 'free in beta, no credit card, early users lock legacy rates forever' \u2014\
-  \ a concrete urgency hook that undercuts Tradomate's \u20B9249/month push."
+campaign: "Aagman Waitlist Spike — Google Ads Test #1"
+objective: "Drive a measurable spike in waitlist signups via the first Google Ads test, leading with proof-and-execution positioning (idea → backtest → approval-gated deployment) that neither competitor occupies."
+audience: "Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate competitor set — ICP is unconfirmed in the brief; if the primary audience is long-term investors, variant prioritization must be redone and the investor angle promoted to lead)"
+success_metric: "Waitlist signup volume vs. current baseline — AMBIGUOUS: no numeric target, CPL ceiling, or timeframe is defined, and no baseline waitlist number exists to measure the 'spike' against. Recommend setting a signup target and max cost-per-signup before launch."
+competitive_intel: "The category is saturated with 'AI second opinion' positioning (Draconic, ~90% of inventory), screener-led SEO harvesting (Tradomate), and generic 'free signup' friction hooks — entering these head-on means paying auction premiums for undifferentiated copy. Ownable gaps with verified capabilities: proof-first workflow (backtest → paper → live), institutional execution actually shipped (TWAP/VWAP, MIT/LIT/MTL, 4-leg multi-leg options), approval-gated execution with capital staying at the user's broker, and verifiable SEBI IA + NSE Whitebox empanelment credentials no competitor can claim."
+cross_variant_proof_lines:
+  - "SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider"
+  - "Type your idea in English, Hindi, Hinglish, or the language you think in"
 variants:
 - id: v1
-  angle: "Plain words to backtest \u2014 no code"
-  persona: Active Indian retail trader with strategy ideas but no Python/Excel quant
-    skills (implied ICP, unconfirmed)
-  hook_direction: "Lead with the category-creating mechanic: type a trading idea in\
-    \ plain words, get a backtest report \u2014 no Python, no Excel, no code. Target\
-    \ 'backtest trading strategy India' Search intent; position Aagman as the only\
-    \ tool that takes an idea to evidence, not just analysis."
-  cta: "Join the waitlist"
+  angle: "Plain words to backtest — no code"
+  persona: Active Indian retail trader with strategy ideas but no Python/Excel quant skills (implied ICP, unconfirmed)
+  hook_direction: "Lead with the category-creating mechanic: type a trading idea in plain words, get a backtest report — no Python, no Excel, no code. Target 'backtest trading strategy India' Search intent; position Aagman as the only tool that takes an idea to evidence, not just analysis. Mention that the user can type in the language they think in."
+  cta: "Type your idea"
   claim_refs:
   - Section 1 (natural-language workspace)
   - Section 6.1 (prompt grammar)
-  - "Section 16 \u2014 Backtesting row (Yes)"
+  - Section 11 (multi-language support)
+  - "Section 16 — Backtesting row (Yes)"
   formats:
   - google_rsa
 - id: v2
-  angle: "You brief, they work, you approve \u2014 capital never leaves your broker"
-  persona: Active Indian retail trader skeptical of 'AI trading bot' claims and signal-tip
-    scams (implied ICP, unconfirmed)
-  hook_direction: "Own the positive version of the trust barrier Draconic spends most\
-    \ of its copy denying: every action is approval-gated, nothing deploys autonomously,\
-    \ funds stay at the user's existing broker. Never imply autonomous execution \u2014\
-    \ every execution claim must carry the approval gate."
-  cta: "Join the waitlist"
+  angle: "You brief, they work, you approve — capital never leaves your broker"
+  persona: Active Indian retail trader skeptical of 'AI trading bot' claims and signal-tip scams (implied ICP, unconfirmed)
+  hook_direction: "Own the positive version of the trust barrier Draconic spends most of its copy denying: every action is approval-gated, nothing deploys autonomously, funds stay at the user's existing broker. Never imply autonomous execution — every execution claim must carry the approval gate."
+  cta: "Approve your first trade"
   claim_refs:
   - Section 1 (core promise; what it is not)
   - Section 7.3 (approval-gated execution)
@@ -53,50 +32,23 @@ variants:
   formats:
   - google_rsa
 - id: v3
-  angle: Multi-leg options, up to 4 legs in sync, from one sentence
-  persona: Active F&O trader fluent in straddles, strangles, and iron condors (implied
-    ICP core segment, unconfirmed)
-  hook_direction: "Speak the F&O core audience's jargon-dense language with a capability\
-    \ nobody else claims: build and execute multi-leg options strategies \u2014 straddles,\
-    \ strangles, iron condors \u2014 up to 4 legs in sync, described in one plain\
-    \ sentence. Concreteness ('4 legs in sync') carries credibility in a 30-character\
-    \ headline."
-  cta: "Join the waitlist"
+  angle: "Multi-leg options, up to 4 legs in sync, from one sentence"
+  persona: Active F&O trader fluent in straddles, strangles, and iron condors (implied ICP core segment, unconfirmed)
+  hook_direction: "Speak the F&O core audience's jargon-dense language with a capability nobody else claims: build and execute multi-leg options strategies — straddles, strangles, iron condors — up to 4 legs in sync, described in one plain sentence. Concreteness ('4 legs in sync') carries credibility in a 30-character headline."
+  cta: "Describe your strategy"
   claim_refs:
-  - "Section 7.1 (options execution \u2014 multi-leg up to 4 legs in sync)"
+  - "Section 7.1 (options execution — multi-leg up to 4 legs in sync)"
   - Section 5 (F&O coverage)
   formats:
   - google_rsa
 - id: v4
-  angle: "Institutional execution, actually shipped \u2014 TWAP/VWAP live today"
-  persona: Active Indian retail trader who wants institutional-grade execution without
-    an institutional desk (implied ICP, unconfirmed)
-  hook_direction: "Claim functionally what Draconic only gestures at emotionally ('think\
-    \ like an FII desk'): TWAP and VWAP execution algos live today, plus MIT/LIT/MTL\
-    \ order types as a sibling ad group under the same 'institutional execution for\
-    \ retail' theme. Do NOT mention Iceberg or POV \u2014 those are 'coming next'\
-    \ and not claimable."
-  cta: "Join the waitlist"
+  angle: "Institutional execution, actually shipped — TWAP/VWAP live today"
+  persona: Active Indian retail trader who wants institutional-grade execution without an institutional desk (implied ICP, unconfirmed)
+  hook_direction: "Claim functionally what Draconic only gestures at emotionally ('think like an FII desk'): TWAP and VWAP execution algos live today, plus MIT/LIT/MTL order types as a sibling ad group under the same 'institutional execution for retail' theme. Do NOT mention Iceberg or POV — those are 'coming next' and not claimable."
+  cta: "See the algos live"
   claim_refs:
-  - "Section 7.1 (execution algorithms \u2014 TWAP/VWAP live; MIT/LIT/MTL)"
+  - "Section 7.1 (execution algorithms — TWAP/VWAP live; MIT/LIT/MTL)"
   - Section 7.2 (retail broker comparison)
-  - "Section 16 \u2014 TWAP/VWAP row (Yes)"
+  - "Section 16 — TWAP/VWAP row (Yes)"
   formats:
   - google_rsa
-- id: v5
-  angle: "Verifiable regulatory credentials \u2014 SEBI IA + NSE-empanelled Whitebox"
-  persona: Trust-sensitive Indian trader evaluating any new fintech tool with 'is
-    this legit?' as the first question (implied ICP, unconfirmed)
-  hook_direction: "Deploy as the trust layer across all ad groups (sitelinks and description\
-    \ lines), not a standalone lead: SEBI-registered Investment Adviser (INA000021951)\
-    \ and NSE-empanelled Whitebox algo provider. Verifiable registration numbers beat\
-    \ 'trust us' framing and are structurally hard to copy \u2014 a competitor would\
-    \ need the registrations, not the words."
-  cta: "Join the waitlist"
-  claim_refs:
-  - "Section 9.2 (regulatory & compliance claims \u2014 INA000021951; NSE Circular\
-    \ Ref. 40/2026)"
-  - Content pillar 5
-  formats:
-  - google_rsa
-  - google_sitelinks

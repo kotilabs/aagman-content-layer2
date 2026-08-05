@@ -61,6 +61,7 @@ class PromptBuilder:
             product_synopsis=self._product_synopsis(variant),
             safe_claims=self._safe_claims(variant),
             competitive_intel=intel,
+            cross_variant_proof_lines=brief.get("cross_variant_proof_lines", []),
         )
 
         task = self._render(task_template, **task_vars)
