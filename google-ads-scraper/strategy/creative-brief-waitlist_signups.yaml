@@ -1,0 +1,233 @@
+campaign: "Aagman Waitlist Launch \u2014 Phase 1 Experimentation Sprint"
+objective: Drive 500 verified (double opt-in confirmed) waitlist signups in 6 weeks
+  while identifying the cheapest-converting segment and messaging angle to inform
+  Q2 scaling.
+audience: "Three test segments from source-of-truth personas: S1 \u2014 active NIFTY/BANKNIFTY\
+  \ F&O traders on Zerodha/Dhan frustrated by limited order types (45% of test budget);\
+  \ S2 \u2014 rule-based retail traders without coding skills (35%); S3 \u2014 long-term\
+  \ quality-stock investors and screener users (20%). Excluded: MF-only buyers, multi-language-first\
+  \ users (Phase 2), crypto/forex/international audiences."
+success_metric: 500 verified waitlist signups at blended CPA <= Rs.150; pause any
+  ad group with CPA > Rs.250 after ~Rs.3,000 spend; minimum Rs.5,000 spend per test
+  cell before judging; track signup-to-activation as secondary quality signal.
+variants:
+- id: v1
+  angle: "Angle A \u2014 Proof before money"
+  persona: "S2 \u2014 No-code systematic retail"
+  hook_direction: "Describe your strategy in plain language, backtest it on real historical\
+    \ data with fees and slippage baked in, and only deploy what survives \u2014 no\
+    \ Python, no Excel."
+  cta: "Join the waitlist \u2014 free in beta, no card required"
+  claim_refs:
+  - "Section 16 \u2014 Backtesting: Yes"
+  - "Section 8.1 \u2014 backtest methodology with look-ahead-bias protection and cost\
+    \ assumptions"
+  - "Section 8.2 \u2014 backtest report suite (Sharpe, drawdown, win rate, expectancy)"
+  - "Section 10 \u2014 pricing & access"
+  - "Section 16 \u2014 Paper trading: Partially (frame as enforced discipline only)"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v2
+  angle: "Angle A \u2014 Proof before money"
+  persona: "S1 \u2014 Active F&O trader"
+  hook_direction: "Stop trading on gut feel \u2014 prove your strategy with real numbers,\
+    \ full report suite included, before risking real capital."
+  cta: "Get early access \u2014 legacy rates locked forever"
+  claim_refs:
+  - "Section 16 \u2014 Backtesting: Yes"
+  - "Section 8.2 \u2014 backtest report suite"
+  - "Section 10 \u2014 pricing & access"
+  - "Section 16 \u2014 Paper trading: Partially (cautious wording only)"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v3
+  angle: "Angle A \u2014 Proof before money"
+  persona: "S3 \u2014 Quality-stock investor"
+  hook_direction: "We don't just say ask before you trade \u2014 we say prove it first:\
+    \ backtest any idea with realistic costs before you invest a rupee."
+  cta: Reserve your beta spot
+  claim_refs:
+  - "Section 16 \u2014 Backtesting: Yes"
+  - "Section 8.1 \u2014 cost assumptions and slippage baked in"
+  - "Section 8.2 \u2014 report metrics"
+  - "Section 10 \u2014 pricing & access"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v4
+  angle: "Angle B \u2014 The order types your broker app hides"
+  persona: "S1 \u2014 Active F&O trader"
+  hook_direction: "Your broker app has 4 order types \u2014 Aagman has 9, including\
+    \ MIT, LIT, Market-to-Limit, trailing stops and brackets, from a chat window."
+  cta: "Join the waitlist \u2014 free in beta"
+  claim_refs:
+  - "Section 16 \u2014 TWAP/VWAP: Yes"
+  - "Section 7.1 \u2014 9 native order types incl. MIT/LIT/MTL, trailing stops, brackets"
+  - "Section 7.2 \u2014 retail-vs-institutional comparison table"
+  - "Section 10 \u2014 pricing & access"
+  - "Guardrail: never mention Iceberg or POV (Section 16 \u2014 coming next, not safe\
+    \ to claim)"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v5
+  angle: "Angle B \u2014 The order types your broker app hides"
+  persona: "S1 \u2014 Active F&O trader"
+  hook_direction: "Institutional-grade TWAP and VWAP execution algos, now available\
+    \ to retail traders \u2014 no desk required."
+  cta: "Get early access \u2014 legacy rates forever"
+  claim_refs:
+  - "Section 16 \u2014 TWAP/VWAP: Yes"
+  - "Section 7.1 \u2014 execution algos"
+  - "Section 7.2 \u2014 retail-vs-institutional comparison table"
+  - "Section 10 \u2014 pricing & access"
+  - 'Guardrail: no Iceberg/POV claims (Section 16)'
+  formats:
+  - google_rsa
+  - linkedin
+- id: v6
+  angle: "Angle B \u2014 The order types your broker app hides"
+  persona: "S1 \u2014 Active F&O trader"
+  hook_direction: "Multi-leg options executed in sync, up to 4 legs \u2014 built for\
+    \ NIFTY and BANKNIFTY traders who've outgrown their broker app."
+  cta: "Reserve your beta spot \u2014 no card required"
+  claim_refs:
+  - "Section 7.1 \u2014 multi-leg options up to 4 legs"
+  - "Section 16 \u2014 TWAP/VWAP: Yes"
+  - "Section 10 \u2014 pricing & access"
+  - 'Guardrail: no Iceberg/POV claims (Section 16)'
+  formats:
+  - google_rsa
+  - linkedin
+- id: v7
+  angle: "Angle C \u2014 Regulated. Whitebox. Yours."
+  persona: "S1 \u2014 Active F&O trader"
+  hook_direction: "SEBI-registered Investment Adviser and NSE-empanelled Whitebox\
+    \ algo provider \u2014 every algo order tagged, auditable, and approved by you."
+  cta: "Join the waitlist \u2014 free in beta"
+  claim_refs:
+  - "Section 9.2 \u2014 SEBI IA INA000021951, NSE Whitebox empanelment, unique algo\
+    \ IDs, DPDP-aligned India hosting"
+  - "Section 9.1 \u2014 four-layer kill switch, pre-trade risk checks, circuit breakers"
+  - "Section 14 pillar 8 \u2014 capital stays at broker"
+  - "Section 10 \u2014 pricing & access"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v8
+  angle: "Angle C \u2014 Regulated. Whitebox. Yours."
+  persona: "S3 \u2014 Quality-stock investor"
+  hook_direction: "Your capital never leaves your broker \u2014 a four-layer kill\
+    \ switch and pre-trade risk checks stand between every idea and your money."
+  cta: "Get early access \u2014 no card required"
+  claim_refs:
+  - "Section 9.1 \u2014 four-layer kill switch, pre-trade risk checks"
+  - "Section 9.2 \u2014 SEBI IA registration, NSE empanelment"
+  - "Section 14 pillar 8 \u2014 capital stays at broker"
+  - "Section 10 \u2014 pricing & access"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v9
+  angle: "Angle C \u2014 Regulated. Whitebox. Yours."
+  persona: "S2 \u2014 No-code systematic retail"
+  hook_direction: "You brief, they work, you approve \u2014 every real-capital step\
+    \ requires your explicit approval. One coherent story, no 'AI trades for you'\
+    \ wobble."
+  cta: "Reserve your beta spot \u2014 legacy rates forever"
+  claim_refs:
+  - "Section 1 \u2014 positioning: you brief, they work, you approve"
+  - "Section 14 pillar 2 \u2014 explicit user approval for real-capital steps"
+  - "Section 9.2 \u2014 SEBI IA INA000021951"
+  - "Section 10 \u2014 pricing & access"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v10
+  angle: "Angle D \u2014 Screen like an analyst, without the spreadsheet"
+  persona: "S3 \u2014 Quality-stock investor"
+  hook_direction: "Find quality compounders \u2014 ROE above 15%, low debt, steady\
+    \ growth \u2014 with analyst-grade fundamental screens, no Excel required."
+  cta: "Join the waitlist \u2014 free in beta"
+  claim_refs:
+  - "Section 16 \u2014 Screener: Yes"
+  - "Section 6.2 \u2014 fundamental metrics incl. ROE, ROCE, debt-to-equity, Piotroski"
+  - "Section 4.4 \u2014 investor workflow steps 1-2"
+  - "Section 10 \u2014 pricing & access"
+  - "Guardrail: no portfolio health scores, tax insights, or curated news (Section\
+    \ 16 \u2014 coming soon)"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v11
+  angle: "Angle D \u2014 Screen like an analyst, without the spreadsheet"
+  persona: "S3 \u2014 Quality-stock investor"
+  hook_direction: "Screener is step one, not the product \u2014 screen, then backtest\
+    \ the screen on real historical data before you invest a rupee."
+  cta: "Get early access \u2014 legacy rates locked forever"
+  claim_refs:
+  - "Section 16 \u2014 Screener: Yes"
+  - "Section 16 \u2014 Backtesting: Yes"
+  - "Section 6.2 \u2014 fundamental metrics"
+  - "Section 4.4 \u2014 investor workflow"
+  - "Section 10 \u2014 pricing & access"
+  - 'Guardrail: no health scores/tax/news claims (Section 16)'
+  formats:
+  - google_rsa
+  - linkedin
+- id: v12
+  angle: "Angle D \u2014 Screen like an analyst, without the spreadsheet"
+  persona: "S3 \u2014 Quality-stock investor"
+  hook_direction: "Type what you're looking for in plain language \u2014 Piotroski\
+    \ scores, ROCE, debt-to-equity \u2014 and get an investable shortlist in minutes."
+  cta: "Reserve your beta spot \u2014 no card required"
+  claim_refs:
+  - "Section 16 \u2014 Screener: Yes"
+  - "Section 6.2 \u2014 Piotroski, ROCE, debt-to-equity metrics"
+  - "Section 6.1 \u2014 example prompts"
+  - "Section 10 \u2014 pricing & access"
+  - 'Guardrail: no coming-soon feature claims (Section 16)'
+  formats:
+  - google_rsa
+  - linkedin
+- id: v13
+  angle: "Angle E \u2014 Free in beta. Locked in forever."
+  persona: "All segments \u2014 offer layer on winning angle"
+  hook_direction: "Early waitlist users get legacy rates forever \u2014 free while\
+    \ in beta, no card required. A concrete, time-boxed reason to join now."
+  cta: "Join the waitlist now \u2014 free in beta"
+  claim_refs:
+  - "Section 10 \u2014 pricing & access: free in beta, no card, legacy rates forever\
+    \ for early users"
+  formats:
+  - google_rsa
+  - linkedin
+- id: v14
+  angle: "Angle E \u2014 Free in beta. Locked in forever."
+  persona: "S1 \u2014 Active F&O trader"
+  hook_direction: 'Be first: institutional execution tools, free during beta, with
+    your early-user pricing locked in for life.'
+  cta: Claim your early-user rate
+  claim_refs:
+  - "Section 10 \u2014 pricing & access"
+  - "Section 16 \u2014 TWAP/VWAP: Yes"
+  - "Section 7.1 \u2014 order types"
+  - 'Guardrail: no Iceberg/POV claims (Section 16)'
+  formats:
+  - google_rsa
+  - linkedin
+- id: v15
+  angle: "Angle E \u2014 Free in beta. Locked in forever."
+  persona: "S2 \u2014 No-code systematic retail"
+  hook_direction: "Skip the paid tools and the learning curve \u2014 backtest your\
+    \ ideas free during beta, and keep early pricing forever."
+  cta: "Join free \u2014 no card required"
+  claim_refs:
+  - "Section 10 \u2014 pricing & access"
+  - "Section 16 \u2014 Backtesting: Yes"
+  - "Section 8.1 \u2014 backtest methodology"
+  formats:
+  - google_rsa
+  - linkedin

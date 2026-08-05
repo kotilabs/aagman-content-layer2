@@ -1,0 +1,39 @@
+{
+  "campaign": "Aagman Beta Waitlist — Google Search",
+  "objective": "Drive waitlist signups for Aagman's free beta (free backtest + no-code strategy builder) among active Indian traders",
+  "audience": "Active Indian traders across five intent clusters: (A) strategy backtesters, (B) no-code systematic traders, (C) screener/second-opinion seekers, (D) tool-switchers searching competitor alternatives, (E) advanced order-type searchers (TWAP/VWAP/trailing stop)",
+  "success_metric": "CPA < ₹600 per waitlist signup (≥167 signups on ₹1,00,000 over 4 weeks; stretch 250+ at ₹400 CPA). Diagnostics: CTR ≥4%, LP CVR ≥12%, impression share ≥60% by week 3",
+  "variants": {
+    "v1": {
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Backtest Any Strategy — Free",
+            "Start Free Backtest",
+            "Prove It Before You Trade It",
+            "Backtest Strategies in India",
+            "See Past Performance First",
+            "Test Before You Trade",
+            "No Credit Card Needed",
+            "Free During Beta",
+            "Describe It in Plain English",
+            "Backtest, Paper, Then Live",
+            "Know Your Strategy's History",
+            "Validate Ideas Before Risking",
+            "Historical Results in Minutes",
+            "Trade With Proof, Not Hope",
+            "Free Backtesting Tool India"
+          ],
+          "descriptions": [
+            "Describe your strategy in plain English. See historical performance before you trade.",
+            "Backtest, paper trade, then go live — prove your idea at every step. Start free.",
+            "Free during beta. No credit card needed. Start your free backtest today.",
+            "Why guess? Backtest any trading strategy and decide with real historical data."
+          ]
+        }
+      },
+      "variant_id": "v1",
+      "angle": "Prove it before you trade it (Proof-first)"
+    }
+  }
+}

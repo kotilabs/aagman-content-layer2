@@ -1,0 +1,548 @@
+{
+  "campaign": "Aagman Waitlist Launch — Phase 1 Experimentation Sprint",
+  "objective": "Drive 500 verified (double opt-in confirmed) waitlist signups in 6 weeks while identifying the cheapest-converting segment and messaging angle to inform Q2 scaling.",
+  "audience": "Three test segments from source-of-truth personas: S1 — active NIFTY/BANKNIFTY F&O traders on Zerodha/Dhan frustrated by limited order types (45% of test budget); S2 — rule-based retail traders without coding skills (35%); S3 — long-term quality-stock investors and screener users (20%). Excluded: MF-only buyers, multi-language-first users (Phase 2), crypto/forex/international audiences.",
+  "success_metric": "500 verified waitlist signups at blended CPA <= Rs.150; pause any ad group with CPA > Rs.250 after ~Rs.3,000 spend; minimum Rs.5,000 spend per test cell before judging; track signup-to-activation as secondary quality signal.",
+  "variants": {
+    "v1": {
+      "variant_id": "v1",
+      "angle": "Angle A — Proof before money",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Backtest Before You Bet",
+            "Proof Before Your Money",
+            "No Python. No Excel.",
+            "Test Strategies, Not Luck",
+            "Join the Waitlist - Free",
+            "Free in Beta. No Card.",
+            "Describe It. Backtest It.",
+            "Deploy Only What Survives",
+            "Your Strategy, Backtested",
+            "Real Data. Fees Included.",
+            "Plain Language, Real Tests",
+            "Build Without Code. Test.",
+            "Backtest First, Trade Later",
+            "An AI Trading Team for You",
+            "Sign Up Free - Beta Access"
+          ],
+          "descriptions": [
+            "Describe your strategy in plain words. Backtest it with fees & slippage. No code.",
+            "Test on real historical data before risking a rupee. Deploy only what survives.",
+            "Proof before money. Backtest, paper trade, then go live — you approve every step.",
+            "Join the waitlist — free in beta, no card needed. Your capital stays with your broker."
+          ]
+        },
+        "linkedin": {
+          "intro": "Most retail traders go live on a hunch. Aagman flips that order. Describe your strategy in plain language — no Python, no Excel — and our AI team backtests it on real historical data with fees and slippage baked in. Deploy only what survives the test, through your existing broker, with you approving every step that touches real capital.",
+          "headline": "Backtest your strategy in plain English. No code.",
+          "description": "Brief your idea, get a backtest with fees and slippage included, then move from backtest to paper to live — with a kill switch and your approval at every step. Multi-broker execution included. Join the waitlist — free in beta, no card required."
+        }
+      }
+    },
+    "v2": {
+      "variant_id": "v2",
+      "angle": "Angle A — Proof before money",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Stop Trading on Gut Feel",
+            "Backtest Before You Trade",
+            "Prove Your Strategy First",
+            "Backtest → Paper → Live",
+            "Real Numbers, Not Hunches",
+            "Backtest Any F&O Strategy",
+            "Describe It. We Backtest.",
+            "Test on Paper Before Live",
+            "Full Report Suite Included",
+            "Your AI Trading Team",
+            "You Approve Every Trade",
+            "Gut Feel Pe Trade Mat Karo",
+            "Get Early Access Today",
+            "Lock Legacy Rates Forever",
+            "Join the Waitlist Now"
+          ],
+          "descriptions": [
+            "Backtest your F&O strategy on real numbers before risking a rupee. Get early access.",
+            "Describe your strategy in plain words. Get a full backtest report before you go live.",
+            "No more gut feel. Backtest, paper trade, then deploy — you approve every step.",
+            "Join the waitlist now. Early members lock legacy rates forever. Proof before capital."
+          ]
+        },
+        "linkedin": {
+          "intro": "Every F&O trader has a strategy they believe in. The problem? Belief isn't proof. With Aagman, you describe your strategy in plain language, backtest it against real market data, and review a full report suite — all before a single rupee of real capital is at risk. Our waitlist is now open, and early members lock in legacy rates forever.",
+          "headline": "Stop trading on gut feel. Prove your F&O strategy first.",
+          "description": "Aagman is an AI trading team built for Indian markets. Type your strategy in natural language — no Python, no Excel — and our agents build the backtest for you. Validate it with real numbers, then go live through your existing broker with a kill switch and TWAP/VWAP execution built in. You brief, they work, you approve every step involving real capital. Join the waitlist for early access — legacy rates locked forever."
+        }
+      }
+    },
+    "v3": {
+      "variant_id": "v3",
+      "angle": "Angle A — Proof before money",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Prove It Before You Invest",
+            "Backtest First, Invest Later",
+            "Test Every Rupee First",
+            "Proof Before Your Money",
+            "Screen. Backtest. Then Invest.",
+            "Backtest Any Stock Idea",
+            "Quality Picks, Tested First",
+            "Don't Buy. Backtest First.",
+            "Ask Less. Prove More.",
+            "Reserve Your Beta Spot",
+            "Beta for Quality Investors",
+            "Join the Proof-First Beta",
+            "Verify Ideas Before Rupees",
+            "Build, Backtest, Approve",
+            "Research. Prove. Then Buy."
+          ],
+          "descriptions": [
+            "Backtest your idea with realistic costs before you invest a rupee. Reserve your beta spot.",
+            "Screen quality stocks, test the strategy first, then go live — only when you approve.",
+            "Pehle proof, phir paisa. Backtest any idea in plain language before going live.",
+            "Describe your strategy in plain words. Backtest it, paper trade it, go live with approval."
+          ]
+        },
+        "linkedin": {
+          "intro": "Most investing advice says \"do your research.\" Few tools let you actually prove an idea works before a single rupee leaves your account. With Aagman, you describe your strategy in plain language, screen for the quality compounders you care about, and backtest the whole idea against real market history — before you commit. Real capital only moves with your approval, through your existing broker.",
+          "headline": "Backtest any investing idea before you invest a rupee",
+          "description": "Screen quality stocks, describe your strategy in plain language, and test it with backtesting and paper trading first. Capital stays in your broker account; you approve every step. Reserve your beta spot."
+        }
+      }
+    },
+    "v4": {
+      "variant_id": "v4",
+      "angle": "Angle B — The order types your broker app hides",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "9 Order Types. Yours Has 4.",
+            "Order Types Your Broker Hides",
+            "MIT, LIT, Trailing Stops",
+            "Trade With 9 Order Types",
+            "Trailing Stops From a Chat",
+            "Bracket Orders, From Chat",
+            "Market-to-Limit? We Have It",
+            "MIT, LIT & Bracket Orders",
+            "Chat Window. 9 Order Types.",
+            "Stop Using Just 4 Order Types",
+            "Join the Waitlist - Free",
+            "Free in Beta. Join Now.",
+            "Unlock 9 Order Types Free",
+            "Join Waitlist - Free in Beta",
+            "9 Order Types, Ek Chat"
+          ],
+          "descriptions": [
+            "MIT, LIT, Market-to-Limit, trailing stops & brackets — from chat, with your approval.",
+            "Your app shows 4 order types. Aagman has 9 — and backtests before a rupee moves.",
+            "Join the waitlist — free in beta. Keep your broker; brief trades in plain English.",
+            "Built for F&O discipline: chat the setup, test it, paper it, go live only on approval."
+          ]
+        },
+        "linkedin": {
+          "intro": "If you trade F&O actively, you already know the frustration: your broker app gives you 4 basic order types and calls it a day. Serious traders need more control — MIT, LIT, Market-to-Limit, trailing stops, brackets. Aagman gives you 9 order types, typed in plain language from a chat window, executed on your existing broker account. And the enforced Backtest → Paper → Live workflow means nothing goes live without your approval.",
+          "headline": "Your broker app has 4 order types. Aagman has 9.",
+          "description": "MIT, LIT, Market-to-Limit, trailing stops, brackets and more — brief it in plain language, backtest it, go live with your approval. Free in beta. Join the waitlist."
+        }
+      }
+    },
+    "v5": {
+      "variant_id": "v5",
+      "angle": "Angle B — The order types your broker app hides",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "TWAP & VWAP for Retail",
+            "Your Broker Hid These Algos",
+            "Institutional Algos. No Desk.",
+            "Get Early Access Today",
+            "Legacy Rates Forever",
+            "TWAP. VWAP. Now Retail.",
+            "Hidden Order Types, Unlocked",
+            "You Brief, They Work",
+            "Backtest, Paper, Then Live",
+            "Stop Guessing. Use TWAP.",
+            "Algos Your Broker Hides",
+            "Join the Aagman Waitlist",
+            "Early Access. Legacy Rates.",
+            "No Desk Needed. Just Brief.",
+            "Trade Like a Desk Trader"
+          ],
+          "descriptions": [
+            "TWAP & VWAP execution algos, finally for retail traders. Join the waitlist today.",
+            "Split big orders like institutions do. No desk needed. Get early access now.",
+            "Backtest, paper trade, go live — TWAP & VWAP algos included. Legacy rates forever.",
+            "Your broker app hides these order types. Ours doesn't. Lock in legacy rates today."
+          ]
+        },
+        "linkedin": {
+          "intro": "Your broker app gives you market, limit, SL. Institutions get TWAP and VWAP execution algos that slice big orders without moving the price. That gap ends now. Aagman puts institutional-grade algos in your hands — no desk, no quant team required. Brief the AI, backtest it, go live on your existing broker account.",
+          "headline": "TWAP & VWAP algos your broker app never showed you",
+          "description": "Institutional-grade execution algos, now for retail F&O traders. Backtest, paper trade, then deploy live through your existing broker — with you approving every step. Join the Aagman waitlist for early access and lock in legacy rates forever."
+        }
+      }
+    },
+    "v6": {
+      "variant_id": "v6",
+      "angle": "Angle B — The order types your broker app hides",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "4-Leg Options, One Sync",
+            "Your Broker Hides This",
+            "Multi-Leg Orders, One Command",
+            "Built for BANKNIFTY Traders",
+            "Outgrown Your Broker App?",
+            "Reserve Your Beta Spot",
+            "Join Beta Free — No Card",
+            "NIFTY Traders, Level Up",
+            "Up to 4 Legs, Synced",
+            "Order Types Brokers Hide",
+            "TWAP, VWAP & 4-Leg Sync",
+            "Backtest Before You Burn",
+            "Reserve Free Beta Access",
+            "Beta Access. No Card Needed",
+            "Brief It. Backtest. Trade."
+          ],
+          "descriptions": [
+            "Trade NIFTY & BANKNIFTY spreads as one synced 4-leg order, not four separate tickets.",
+            "Brief in plain English; backtest the idea, then go live only after you approve.",
+            "Built for F&O traders who want TWAP, VWAP and synced multi-leg execution in one place.",
+            "Reserve your beta spot—no card required. Built for traders who've outgrown basic apps."
+          ]
+        },
+        "linkedin": {
+          "intro": "If you trade NIFTY and BANKNIFTY options, you've felt it — your broker app buries the order types you actually need. Aagman changes that. Describe your strategy in plain language, and an AI trading team executes multi-leg options in sync — up to 4 legs — with every real-capital step going through Backtest → Paper → Live, and you approving before anything deploys. Your capital stays in your existing broker account. Reserve your beta spot — no card required.",
+          "headline": "Multi-leg options, executed in sync. Up to 4 legs.",
+          "description": "Built for active F&O traders who've outgrown their broker app. Brief in natural language, backtest first, deploy across major brokers with a kill switch always on. Join the waitlist — no card required."
+        }
+      }
+    },
+    "v7": {
+      "variant_id": "v7",
+      "angle": "Angle C — Regulated. Whitebox. Yours.",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "SEBI Registered NSE Empanelled",
+            "Regulated. Whitebox. Yours.",
+            "Every Algo Order, Auditable",
+            "You Approve Every Live Order",
+            "Join the Waitlist — Free Beta",
+            "Free in Beta. Join Waitlist",
+            "Backtest → Paper → Live",
+            "Your Broker. Your Approval.",
+            "F&O Trading, Fully Audited",
+            "Algo Trading You Can Audit",
+            "NSE-Empanelled Whitebox Algos",
+            "SEBI-Registered Adviser Inside",
+            "Brief. They Work. You Approve.",
+            "Type It. We Build. You Approve",
+            "Kill Switch on Every Algo"
+          ],
+          "descriptions": [
+            "SEBI-registered adviser. Every algo order tagged, auditable, approved by you.",
+            "Run your F&O algos on an NSE-empanelled whitebox platform. Join the waitlist.",
+            "You approve every order before it goes live. Backtest to paper to live — always.",
+            "Free in beta. Describe your F&O strategy in plain language; deploy via your broker."
+          ]
+        },
+        "linkedin": {
+          "intro": "Serious F&O traders don't need another tip service — they need infrastructure they can audit. Aagman is built by a SEBI-registered Investment Adviser and NSE-empanelled Whitebox algo provider. Describe your strategy in plain language, backtest it, paper it, then go live — every algo order is tagged, auditable, and executed only with your approval, through your own broker. Kill switch included. TWAP/VWAP execution supported.",
+          "headline": "SEBI-Registered. NSE-Empanelled. Your Algos, Your Approval.",
+          "description": "An AI trading team for Indian markets — you brief, they work, you approve. Backtest → Paper → Live, with every order tagged and auditable. Capital stays in your existing broker account. Join the waitlist — free in beta."
+        }
+      }
+    },
+    "v8": {
+      "variant_id": "v8",
+      "angle": "Angle C — Regulated. Whitebox. Yours.",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Your Capital Stays Yours",
+            "Regulated. Whitebox. Yours.",
+            "Get Early Access Today",
+            "No Card. Just Early Access",
+            "4-Layer Kill Switch Built-In",
+            "Pre-Trade Risk Checks On",
+            "Money Never Leaves Your Broker",
+            "Screen Quality Compounders",
+            "Backtest Before You Invest",
+            "Join The Waitlist Free",
+            "AI Team. You Approve.",
+            "Find High-ROE Quality Stocks",
+            "Aapka Paisa, Aapke Broker Mein",
+            "Research. Plan. Invest.",
+            "Built For Indian Markets"
+          ],
+          "descriptions": [
+            "Your capital stays at your broker. 4-layer kill switch guards every order. Early access.",
+            "Pre-trade risk checks on every order. You approve every rupee. Join the waitlist.",
+            "No black box. See the logic, backtest it, paper trade first. Early access, no card needed.",
+            "Screen quality stocks, backtest first, go live only on your approval. No card needed."
+          ]
+        },
+        "linkedin": {
+          "intro": "You've spent years building a portfolio of quality compounders. The last thing you need is a black-box algo touching it. Aagman is an AI trading team built for Indian markets — you brief it in plain language, it screens, backtests, and plans, and you approve every step that involves real capital. Your money stays in your existing broker account, protected by a four-layer kill switch and pre-trade risk checks. Regulated. Whitebox. Yours.",
+          "headline": "Your Capital Never Leaves Your Broker. Get Early Access.",
+          "description": "An AI trading team for Indian markets — natural-language strategies, backtesting, and screeners, with a four-layer kill switch and pre-trade risk checks on every order. You approve every step before real capital moves. Join the waitlist for early access — no card required."
+        }
+      }
+    },
+    "v9": {
+      "variant_id": "v9",
+      "angle": "Angle C — Regulated. Whitebox. Yours.",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "You Brief. They Work.",
+            "You Approve Every Trade",
+            "Regulated. Whitebox. Yours.",
+            "No Code. Just Your Words.",
+            "Backtest Before You Bet",
+            "Reserve Your Beta Spot",
+            "Legacy Rates, Locked Forever",
+            "Your AI Trading Team",
+            "Every Trade Needs Your OK",
+            "Strategies Without Python",
+            "Built for Indian Markets",
+            "Backtest, Paper, Then Live",
+            "Your Broker. Your Capital.",
+            "Aap Brief Karo, Wo Kaam Kare",
+            "Lock Legacy Rates Today"
+          ],
+          "descriptions": [
+            "Describe your strategy in plain words. Backtest it, go live — every step needs your nod.",
+            "No code, no black box. You brief, they work, you approve. Reserve your beta spot today.",
+            "Run screens and backtests without Excel or Python. Capital stays in your broker account.",
+            "Lock legacy rates forever. Join the beta, approve every trade, and keep full control."
+          ]
+        },
+        "linkedin": {
+          "intro": "No Python. No Excel. No black box. Describe your strategy in plain language, watch specialized AI agents backtest it and paper trade it, and approve every real-capital step yourself. That's the Aagman way — Backtest → Paper → Live, with a kill switch in your hands and your capital never leaving your existing broker account.",
+          "headline": "Regulated. Whitebox. Yours. Reserve your beta spot.",
+          "description": "An AI trading team built for Indian markets — you brief, they work, you approve. Live trading across major brokers, TWAP/VWAP execution, and full visibility into every decision. Join the beta waitlist now and lock in legacy rates forever."
+        }
+      }
+    },
+    "v10": {
+      "variant_id": "v10",
+      "angle": "Angle D — Screen like an analyst, without the spreadsheet",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Find ROE 15%+ Stocks Fast",
+            "Screen Like An Analyst",
+            "No Excel. Just Insights.",
+            "Quality Stocks, Zero Excel",
+            "Join The Waitlist — Free",
+            "Low Debt. High ROE. Found.",
+            "Find Compounders In Seconds",
+            "Analyst Screens, No Excel",
+            "Free In Beta — Join Now",
+            "ROE 15%+? We Find Them",
+            "Your AI Research Team",
+            "Steady Growth, Screened Fast",
+            "Skip The Spreadsheet",
+            "Join Waitlist — Free Beta",
+            "Screen Stocks Like A Pro"
+          ],
+          "descriptions": [
+            "Screen stocks by ROE, debt and growth — no Excel needed. Join the waitlist, free in beta.",
+            "Find quality compounders with analyst-grade screens. Free in beta — join the waitlist.",
+            "Type your screen in plain language. Backtest before you invest. Join the waitlist — free.",
+            "High ROE, low debt, steady growth — screen stocks like an analyst, minus the spreadsheet."
+          ]
+        },
+        "linkedin": {
+          "intro": "Quality compounders don't hide — but finding them usually means hours in Excel. What if you could screen for ROE above 15%, low debt, and steady growth just by describing it in plain language? Aagman's AI research team runs analyst-grade fundamental screens for you, lets you backtest the results, and paper trades before a single rupee moves. You brief, they work, you approve.",
+          "headline": "Screen quality stocks like an analyst. No spreadsheet needed.",
+          "description": "Find high-ROE, low-debt compounders with natural-language screens, backtest them, and go live only when you're ready. Join the Aagman waitlist — free in beta."
+        }
+      }
+    },
+    "v11": {
+      "variant_id": "v11",
+      "angle": "Angle D — Screen like an analyst, without the spreadsheet",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Screen, Then Backtest It First",
+            "Backtest Your Screen First",
+            "Don't Trust a Screen Untested",
+            "Screen Like an Analyst",
+            "Test Before You Invest a Rupee",
+            "No Excel. No Guesswork.",
+            "Get Early Access Today",
+            "Legacy Rates Locked Forever",
+            "Lock Legacy Rates for Life",
+            "Join the Aagman Waitlist",
+            "Screen. Backtest. Then Invest.",
+            "Quality Stocks, Proof First",
+            "Backtest on Real History",
+            "Screen Karo, Test Karo",
+            "Pehle Test, Phir Invest"
+          ],
+          "descriptions": [
+            "Screen stocks, backtest on real data before you invest a rupee. Early access open.",
+            "Screener is step one. Backtest your screen on real data first. Lock legacy rates.",
+            "Quality stocks screen karo, real data pe backtest karo — bina spreadsheet. Waitlist open.",
+            "Screen like an analyst — no Excel, no Python. Backtest first. Early access open."
+          ]
+        },
+        "linkedin": {
+          "intro": "A screener tells you which stocks passed your filters. It can't tell you if those filters ever worked. Aagman flips the order — describe your quality screen in plain language, backtest it against real historical data, and only then put a rupee behind it. Screen like an analyst, without the spreadsheet.",
+          "headline": "Your screener is step one. Backtest the screen before you invest.",
+          "description": "Built for Indian markets — natural-language screens, backtesting, and a Backtest → Paper → Live workflow where you approve every real-capital step. Join the waitlist and get early access with legacy rates locked forever."
+        }
+      }
+    },
+    "v12": {
+      "variant_id": "v12",
+      "angle": "Angle D — Screen like an analyst, without the spreadsheet",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Screen Stocks Like an Analyst",
+            "No Spreadsheet. Just Type.",
+            "Piotroski Score? Just Ask.",
+            "Type a Filter. Get a List.",
+            "High ROCE, Low Debt? Ask.",
+            "Reserve Your Beta Spot",
+            "Join the Beta — No Card",
+            "Beta Access. Zero Card.",
+            "Backtest Before You Buy",
+            "Shortlist Stocks in Minutes",
+            "Your AI Research Team",
+            "Skip Excel. Type It Plainly",
+            "From Screen to Backtest, Fast",
+            "Analyst Screens, Minus Excel",
+            "Free Beta. Reserve a Spot"
+          ],
+          "descriptions": [
+            "Type 'high ROCE, low debt' and get an investable shortlist in minutes. Join the beta.",
+            "Screen like an analyst, no spreadsheet. Piotroski, ROCE, debt filters in plain English.",
+            "Backtest your shortlist before real money. You approve every step. No card required.",
+            "Quality stocks dhundo bina Excel ke. Plain bhasha mein screen karo. Beta spot book karo."
+          ]
+        },
+        "linkedin": {
+          "intro": "You know exactly what a quality stock looks like — strong ROCE, low debt-to-equity, a clean Piotroski score. What you don't have is three hours in a spreadsheet to find them. With Aagman, you describe your screen in plain language and get an investable shortlist in minutes. Backtest it before you commit a rupee. Reserve your beta spot — no card required.",
+          "headline": "Screen Stocks Like an Analyst. No Spreadsheet Needed.",
+          "description": "Type your criteria in plain language — Piotroski scores, ROCE, debt-to-equity — and get an investable shortlist in minutes. Backtest, paper trade, then go live with your approval. Join the Aagman beta waitlist today. No card required."
+        }
+      }
+    },
+    "v13": {
+      "variant_id": "v13",
+      "angle": "Angle E — Free in beta. Locked in forever.",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Free in Beta. Locked Forever",
+            "Join Free — No Card Needed",
+            "Lock Legacy Rates Forever",
+            "AI Trading Team for India",
+            "Join the Waitlist — Free",
+            "Legacy Rates, Locked Forever",
+            "Free While in Beta",
+            "No Card. Just Join Free.",
+            "Backtest. Paper. Go Live.",
+            "You Brief. They Work.",
+            "Early Users Lock Free Rates",
+            "Join Waitlist. Stay Free.",
+            "Built for Indian Markets",
+            "Beta's Free. Forever's Yours.",
+            "Beta Mein Free — Join Now"
+          ],
+          "descriptions": [
+            "Free in beta. Lock in legacy rates forever. Join the waitlist now — no card required.",
+            "Describe your strategy in plain language, backtest it, go live. Free while in beta.",
+            "Early waitlist users get legacy rates for life. Free in beta, no card needed. Join now.",
+            "Join the waitlist now — backtest, paper trade, go live with approval. Free in beta."
+          ]
+        },
+        "linkedin": {
+          "intro": "Most trading tools launch free, then quietly raise prices on the people who believed first. Aagman works the other way around. Early waitlist users lock in legacy rates forever — the platform is free while in beta, and no card is required to join. Brief your AI trading team in plain language, backtest the strategy, screen the market, and go live through your existing broker — with your approval at every step that involves real capital. Built for Indian markets, by Koti Labs.",
+          "headline": "Free in beta. Legacy rates forever. Join the waitlist.",
+          "description": "Natural-language strategy creation, backtesting, screeners, and multi-broker execution — with a kill switch in your hands. Join the Aagman waitlist now: free in beta, no card required, and your early rate stays locked in for life."
+        }
+      }
+    },
+    "v14": {
+      "variant_id": "v14",
+      "angle": "Angle E — Free in beta. Locked in forever.",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Free in Beta. Yours Forever.",
+            "Lock Your Early-User Rate",
+            "Institutional Tools, Free Now",
+            "Claim Your Early-User Rate",
+            "TWAP & VWAP, Free in Beta",
+            "Beta Pricing, Locked for Life",
+            "Trade F&O Like Institutions",
+            "Early Users Pay Less Forever",
+            "Your Rate. Locked In. Forever.",
+            "Join the Beta, Keep the Rate",
+            "Free Beta. Lifetime Pricing.",
+            "Be First. Pay Less Forever.",
+            "Beta Free Hai, Rate Lock Karo",
+            "Claim Early Access, Free Today",
+            "First In. Locked In Forever."
+          ],
+          "descriptions": [
+            "TWAP, VWAP & kill switch — pro execution, free in beta. Claim your early rate.",
+            "Describe your F&O strategy in words. Backtest, paper, go live. Beta free, rate locked.",
+            "Your broker, your capital. Aagman runs TWAP/VWAP execution. Lock your beta rate forever.",
+            "Broker apps hide advanced orders? You approve every step to live. Free in beta."
+          ]
+        },
+        "linkedin": {
+          "intro": "Institutional-grade execution used to mean expensive terminals and clunky broker apps. Not anymore. Aagman is your AI trading team for Indian markets — describe your F&O strategy in plain language, backtest it, paper trade it, and go live through your existing broker with TWAP/VWAP execution and a kill switch. We're in beta, which means it's free right now — and early users keep their rate for life.",
+          "headline": "Free in beta. Your early-user rate, locked in forever.",
+          "description": "Backtest → Paper → Live, with your approval at every step. Multi-broker execution built for active F&O traders. Claim your early-user rate before beta closes."
+        }
+      }
+    },
+    "v15": {
+      "variant_id": "v15",
+      "angle": "Angle E — Free in beta. Locked in forever.",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Backtest Free in Beta",
+            "Free in Beta. Forever Price.",
+            "Join Free — No Card Needed",
+            "No Code. No Excel. No Python.",
+            "Your AI Trading Team Awaits",
+            "Type Strategy. Get Backtest.",
+            "Lock Early Pricing Forever",
+            "Skip Paid Tools. Go Free.",
+            "Join the Aagman Waitlist",
+            "Backtest Ideas in Plain Hindi",
+            "Build Strategies, Not Code",
+            "Free Beta. Locked Forever.",
+            "No Card? No Problem. Join.",
+            "Strategies in Your Language",
+            "Join Free. Keep Beta Price."
+          ],
+          "descriptions": [
+            "No Excel, no Python. Backtest your ideas in plain words. Free in beta — join the waitlist.",
+            "Build a screen, run a backtest, go live with your broker. Free in beta — no card needed.",
+            "You brief, AI builds, you approve. Free in beta — beta pricing locked forever.",
+            "Skip the paid tools. Backtest free in beta — early pricing locked forever. No card needed."
+          ]
+        },
+        "linkedin": {
+          "intro": "You don't need Python, Excel formulas, or expensive backtesting tools to trade systematically. With Aagman, you describe your strategy in plain language — our AI agents screen it, backtest it, and take it from paper to live with your approval at every step. It's free during beta, and early members lock in launch pricing forever.",
+          "headline": "Backtest Your Strategy Free in Beta — No Code, No Card",
+          "description": "Skip the paid tools and the learning curve. Describe your strategy in plain language, backtest it on Indian markets, and go paper to live with your approval. Multi-broker execution, kill switch, TWAP/VWAP built in. Join free — no card required — and keep early pricing forever."
+        }
+      }
+    }
+  }
+}
