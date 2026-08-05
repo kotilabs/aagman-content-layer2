@@ -29,8 +29,7 @@ variants:
     \ plain words, get a backtest report \u2014 no Python, no Excel, no code. Target\
     \ 'backtest trading strategy India' Search intent; position Aagman as the only\
     \ tool that takes an idea to evidence, not just analysis."
-  cta: "Join the waitlist \u2014 free while in beta, no credit card. Early users lock\
-    \ legacy rates forever."
+  cta: "Join the waitlist"
   claim_refs:
   - Section 1 (natural-language workspace)
   - Section 6.1 (prompt grammar)
@@ -45,8 +44,7 @@ variants:
     \ of its copy denying: every action is approval-gated, nothing deploys autonomously,\
     \ funds stay at the user's existing broker. Never imply autonomous execution \u2014\
     \ every execution claim must carry the approval gate."
-  cta: "Join the waitlist \u2014 free while in beta, no credit card. Early users lock\
-    \ legacy rates forever."
+  cta: "Join the waitlist"
   claim_refs:
   - Section 1 (core promise; what it is not)
   - Section 7.3 (approval-gated execution)
@@ -63,8 +61,7 @@ variants:
     \ strangles, iron condors \u2014 up to 4 legs in sync, described in one plain\
     \ sentence. Concreteness ('4 legs in sync') carries credibility in a 30-character\
     \ headline."
-  cta: "Join the waitlist \u2014 free while in beta, no credit card. Early users lock\
-    \ legacy rates forever."
+  cta: "Join the waitlist"
   claim_refs:
   - "Section 7.1 (options execution \u2014 multi-leg up to 4 legs in sync)"
   - Section 5 (F&O coverage)
@@ -79,8 +76,7 @@ variants:
     \ order types as a sibling ad group under the same 'institutional execution for\
     \ retail' theme. Do NOT mention Iceberg or POV \u2014 those are 'coming next'\
     \ and not claimable."
-  cta: "Join the waitlist \u2014 free while in beta, no credit card. Early users lock\
-    \ legacy rates forever."
+  cta: "Join the waitlist"
   claim_refs:
   - "Section 7.1 (execution algorithms \u2014 TWAP/VWAP live; MIT/LIT/MTL)"
   - Section 7.2 (retail broker comparison)
@@ -96,8 +92,7 @@ variants:
     \ and NSE-empanelled Whitebox algo provider. Verifiable registration numbers beat\
     \ 'trust us' framing and are structurally hard to copy \u2014 a competitor would\
     \ need the registrations, not the words."
-  cta: "Join the waitlist \u2014 free while in beta, no credit card. Early users lock\
-    \ legacy rates forever."
+  cta: "Join the waitlist"
   claim_refs:
   - "Section 9.2 (regulatory & compliance claims \u2014 INA000021951; NSE Circular\
     \ Ref. 40/2026)"

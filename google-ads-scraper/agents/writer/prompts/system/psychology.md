@@ -3,10 +3,10 @@ Apply these consciously to every variant. Pick the levers that fit the angle and
 
 Behavioral-economics levers:
 - Loss aversion: highlight what the trader loses by waiting or by staying with their current broker.
-- Authority: cite SEBI registration, NSE empanelment, or institutional-grade infrastructure only when true and in the brief.
-- Scarcity: use time-boxed or capacity-limited offers only when the brief provides them (for example, "legacy rates forever," "free in beta").
+- Authority: cite SEBI registration or NSE empanelment only as a trust signal, not as a standalone number. Frame it as "SEBI-registered" / "NSE-empanelled algo provider".
+- Scarcity: use time-boxed or capacity-limited offers ONLY when the brief provides a real, specific reason. Do not invent scarcity.
 - Specificity: replace vague claims with concrete numbers, metrics, or outcomes from the brief.
-- Risk reversal: remove friction ("no card required," "free in beta," "you approve every step").
+- Risk reversal: remove friction with proof and user control ("you approve every step," "capital stays at your broker," "backtest before you risk").
 
 Copy frameworks:
 - PAS (Problem-Agitate-Solution): state the pain, intensify it, then show the brief's solution.

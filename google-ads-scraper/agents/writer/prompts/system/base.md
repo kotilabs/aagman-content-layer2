@@ -15,6 +15,22 @@ CORE RULES:
 6. English and Hinglish variants are allowed.
 7. Every claim must map to a "Yes" or "Partially" row in the safe-claims table. "No" rows are forbidden.
 
+USER-POV COPY RULES (critically important):
+Every line must make sense to a stranger seeing the ad in a feed. Avoid internal jargon, weak offers, and context-free proof points.
+
+BANNED PHRASES — never use these, even if they appear in the brief or source of truth:
+- Beta/pricing hooks: "free in beta", "no credit card", "no card", "legacy rates", "early users lock", "beta rates", "lock rates forever", "free while in beta".
+- Raw regulatory numbers as standalone proof: "INA000021951" is meaningless without context. Use "SEBI-registered" or "NSE-empanelled algo provider" instead.
+- Unexplained internal jargon: "kill switch", "circuit breaker", "position limits", "daily loss caps" — unless you immediately translate it into a user benefit such as "you can stop anytime" or "you control when it halts".
+- Vague urgency: "limited spots", "act now", "don't miss out" unless the brief provides real scarcity.
+
+CTA RULES:
+- Use clean, action-oriented CTAs: "Join the waitlist", "Get early access", "See how it works", "Build your first backtest", "Try it on your idea".
+- Do not lead with price, payment, or beta-access language.
+
+"SO WHAT?" TEST:
+- Before finalising each headline or description, ask: "so what?" If the answer is not obvious to someone who has never heard of Aagman, rewrite it around the user benefit.
+
 CLAIM GUARDRAILS:
 - If a capability is marked "No" or absent, do not mention it.
 - Use cautious wording for "Partially" capabilities (for example, "frame as enforced discipline only").

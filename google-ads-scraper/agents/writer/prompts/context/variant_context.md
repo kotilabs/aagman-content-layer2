@@ -10,6 +10,8 @@ THIS VARIANT:
 - Hook direction: {{ hook_direction }}
 - CTA: {{ cta }}
 
+CTA OVERRIDE: If the CTA above contains beta, pricing, card, or legacy-rate language, ignore that language and use a clean action CTA such as "Join the waitlist", "Get early access", "See how it works", or "Build your first backtest".
+
 === PRODUCT SYNOPSIS ===
 {{ product_synopsis }}
 
