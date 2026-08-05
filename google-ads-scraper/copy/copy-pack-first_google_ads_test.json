@@ -1,0 +1,163 @@
+{
+  "campaign": "Aagman Waitlist Spike — Google Ads Test #1",
+  "objective": "Drive a measurable spike in waitlist signups via the first Google Ads test, leading with proof-and-execution positioning (idea → backtest → approval-gated deployment) that neither competitor occupies.",
+  "audience": "Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate competitor set — ICP is unconfirmed in the brief; if the primary audience is long-term investors, variant prioritization must be redone and the investor angle promoted to lead)",
+  "success_metric": "Waitlist signup volume vs. current baseline — AMBIGUOUS: no numeric target, CPL ceiling, or timeframe is defined, and no baseline waitlist number exists to measure the 'spike' against. Recommend setting a signup target and max cost-per-signup before launch.",
+  "variants": {
+    "v1": {
+      "variant_id": "v1",
+      "angle": "Plain words to backtest — no code",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Type an Idea, Get a Backtest",
+            "Backtest Trading Strategies",
+            "No Python. No Excel. Tested.",
+            "Backtest Ideas Without Code",
+            "Idea to Evidence, Not Tips",
+            "Stop Guessing. Start Testing.",
+            "Proof Before Your Money Moves",
+            "You Approve Every Trade",
+            "Capital Stays at Your Broker",
+            "Kill Switch on Every Trade",
+            "Built for Indian Markets",
+            "Join the Waitlist — Free",
+            "Free in Beta. No Card Needed",
+            "Lock Legacy Rates Forever",
+            "Early Users Lock Rates Forever"
+          ],
+          "descriptions": [
+            "Type your idea in plain words. Get a backtest report. No Python, no Excel, no code.",
+            "Free while in beta. No credit card. Join the waitlist and lock legacy rates forever.",
+            "Backtest first. Go live only with your approval — capital stays at your broker.",
+            "Still testing ideas in Excel? Describe yours in plain words and get a real backtest."
+          ]
+        }
+      }
+    },
+    "v2": {
+      "variant_id": "v2",
+      "angle": "You brief, they work, you approve — capital never leaves your broker",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "You Brief, They Work, Approve",
+            "Capital Stays at Your Broker",
+            "You Approve Every Trade",
+            "No Auto-Deploy. Ever.",
+            "Nothing Runs Without You",
+            "Free in Beta. No Card.",
+            "Lock Legacy Rates Forever",
+            "Join the Waitlist. Free.",
+            "Backtest Before You Risk",
+            "Aap Socho, Woh Kaam Kare",
+            "TWAP/VWAP Execution Built In",
+            "Not a Tip. Not a Bot.",
+            "Multi-Broker, One Workspace",
+            "Kill Switch on Every Trade",
+            "SEBI IA. NSE Empanelled."
+          ],
+          "descriptions": [
+            "Every trade needs your approval before it goes live. Capital never leaves your broker.",
+            "You brief, AI builds and backtests, you approve. Nothing deploys without your go-ahead.",
+            "No tips, no bots trading behind your back. Backtest → paper → live, all approval-gated.",
+            "Join the waitlist — free in beta, no credit card. Early users lock legacy rates forever."
+          ]
+        }
+      }
+    },
+    "v3": {
+      "variant_id": "v3",
+      "angle": "Multi-leg options, up to 4 legs in sync, from one sentence",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "4-Leg Strategies, One Sentence",
+            "Straddles From One Sentence",
+            "Iron Condors, 4 Legs in Sync",
+            "Strangles in Plain English",
+            "Free While in Beta — Join",
+            "No Credit Card Required",
+            "Lock Legacy Rates Forever",
+            "Join the Waitlist Today",
+            "Backtest Every Multi-Leg Idea",
+            "You Approve Every Trade",
+            "Your Broker. Your Capital.",
+            "SEBI IA + NSE Empanelled",
+            "TWAP & VWAP Built In",
+            "Describe It. We Build It.",
+            "Bol Se Banao: 4-Leg Strategy"
+          ],
+          "descriptions": [
+            "Describe your straddle in one line. Aagman builds, backtests, runs up to 4 legs in sync.",
+            "Iron condor? Backtest it, paper trade it, go live — all 4 legs executed in sync.",
+            "Free while in beta. No credit card. Early waitlist users lock legacy rates forever.",
+            "You approve every trade. Capital stays at your broker. Join the waitlist today."
+          ]
+        }
+      }
+    },
+    "v4": {
+      "variant_id": "v4",
+      "angle": "Institutional execution, actually shipped — TWAP/VWAP live today",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "TWAP & VWAP. Live Today.",
+            "MIT, LIT, MTL Orders Live",
+            "Desk-Grade Algos for Retail",
+            "Trade Like an Institutional",
+            "Join the Waitlist — Free",
+            "Free in Beta. No Card.",
+            "Lock Legacy Rates Forever",
+            "Backtest, Paper, Go Live",
+            "You Approve Every Trade",
+            "Capital Stays at Your Broker",
+            "TWAP Splits Your Big Orders",
+            "No Python. Just Your Words.",
+            "Big Orders, Clean Fills",
+            "Early Users Lock Beta Rates",
+            "Kill Switch Built In"
+          ],
+          "descriptions": [
+            "TWAP & VWAP live today. Slice big orders like a desk; you approve every step.",
+            "Free while in beta, no card. Join the waitlist and lock legacy rates forever.",
+            "MIT, LIT, MTL plus TWAP/VWAP: institutional order types without an institutional desk.",
+            "Backtest first, then go live with approval-gated execution built for Indian markets."
+          ]
+        }
+      }
+    },
+    "v5": {
+      "variant_id": "v5",
+      "angle": "Verifiable regulatory credentials — SEBI IA + NSE-empanelled Whitebox",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "SEBI IA: INA000021951",
+            "NSE-Empanelled Whitebox Algos",
+            "Registration You Can Verify",
+            "Verify Us. Don't Trust Us.",
+            "INA000021951. Verify It.",
+            "Is It Legit? Check the Reg.",
+            "Backtest Before You Deploy",
+            "Backtest, Paper, Then Live",
+            "You Approve Every Live Trade",
+            "Your Capital Stays With You",
+            "Free in Beta. No Card Needed.",
+            "Lock Legacy Rates Forever",
+            "Join the Waitlist. It's Free.",
+            "AI Trading Team for India",
+            "TWAP/VWAP Execution Built In"
+          ],
+          "descriptions": [
+            "SEBI-registered IA (INA000021951). NSE-empanelled Whitebox provider. Verify us.",
+            "Your capital stays at your broker. You approve every live trade. Join the waitlist free.",
+            "Backtest first, paper trade, then live. Nothing deploys without your OK. Free in beta.",
+            "Early users lock legacy rates forever. No credit card. INA000021951 — look us up."
+          ]
+        }
+      }
+    }
+  }
+}
