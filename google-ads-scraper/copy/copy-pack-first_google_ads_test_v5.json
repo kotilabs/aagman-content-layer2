@@ -135,26 +135,26 @@
         "google_rsa": {
           "headlines": [
             "Your AI Trading Team",
-            "Built for Indian Markets",
-            "Idea to Live, You Approve",
-            "Backtest Before You Trade",
-            "No Code. Just Your Idea.",
+            "Idea to Trade, You Approve",
+            "Backtest Before You Risk",
             "You Brief. They Work.",
-            "Approve Every Live Order",
-            "Capital Stays at Your Broker",
+            "No Code. No Excel.",
+            "Built for Indian Markets",
+            "Capital Stays With Your Broker",
             "SEBI-Registered Advisor",
-            "Equities, F&O, One Team",
             "Bol Ke Banao Strategy",
-            "Build with Your AI Team",
-            "Backtest, Paper, Then Live",
-            "Not Tips. Your Strategy.",
-            "TWAP & VWAP Execution"
+            "Test on Paper First",
+            "Every Trade Needs Your Yes",
+            "Build With Your AI Team",
+            "Screener to Live Order",
+            "Not Tips. Not Bots. Yours.",
+            "Trade in English or Hindi"
           ],
           "descriptions": [
-            "Tell Aagman your idea in plain words — AI agents build it, backtest it, take it live.",
-            "SEBI-registered IA, NSE-empanelled algo provider. You approve every live trade.",
-            "Aagman backtests your idea, builds 4-leg options strategies, runs TWAP/VWAP execution.",
-            "Capital stays at your broker. Backtest first, then go live — you approve every step."
+            "Brief your idea in plain words. Your AI team builds, backtests, and waits for your go.",
+            "SEBI-registered IA, NSE-empanelled algo provider. Your capital stays at your own broker.",
+            "Built for Indian markets: equities, indices, F&O. You approve every step before live.",
+            "Not a tip service, not a bot. Type in English, Hindi, or Hinglish — no code needed."
           ]
         }
       }

@@ -56,7 +56,7 @@ variants:
 - id: v5
   angle: "Your AI trading team for Indian markets"
   persona: Active Indian trader or investor who wants a systematic, code-free way to turn ideas into screens, backtests, paper trades, and live orders
-  hook_direction: "Broad positioning variant: Aagman is not a screener, not a tip service, and not an autonomous bot. It is an AI trading team that takes your idea in plain language, builds it, backtests it, and executes it — with you approving every step that involves real capital. Lead with the full loop: idea → build → backtest → approve → live. Emphasise Indian markets and multi-asset coverage."
+  hook_direction: "Broad positioning variant: Aagman is not a screener, not a tip service, and not an autonomous bot. It is an AI trading team that takes your idea in plain language, builds it, backtests it, and executes it — with you approving every step that involves real capital. Lead with the full loop: idea → build → backtest → approve → live. Emphasise Indian markets, multi-asset coverage, and the approval-gated workflow. DO NOT get into specific features like TWAP/VWAP or 4-leg options; keep this variant at the level of the overall workflow."
   cta: "Build with your AI team"
   claim_refs:
   - Section 1 (natural-language workspace; AI team promise)
