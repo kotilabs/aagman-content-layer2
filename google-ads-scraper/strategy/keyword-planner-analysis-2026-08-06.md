@@ -84,6 +84,16 @@ options/algo/AI shows best CTR. The split is a starting hypothesis, not a
   angles with the cheapest verified signups, remainder continues exploration.
   If nothing converted, credit funds the LP/offer fix before more media spend.
 
+**AG5 term-level resolution (2026-08-06):** pulled all 90+ AI-trading variant rows
+from the export. Final group = 10 keywords: ai trading, ai stock analysis,
+ai trading app, artificial intelligence trading, ai for stock market,
+ai trading platform, ai trading software, ai stock trading, ai for stock analysis,
+ai trading bot india. Excluded: "invest in ai stocks" (wrong intent — buying AI
+company stocks), algo-trading-ai variants (cannibalizes AG4), forex/crypto,
+informational lookups (price forecast/rating/review), awkward close-variants
+covered by phrase match. "ai trading bot india" kept despite bot-framing
+expectation gap — India-qualified volume is rare; RSA copy pre-qualifies the click.
+
 **Signup projection:** ~650–950 clicks over the sprint; at 8–15% waitlist
 conversion = ~50–140 verified signups.
 
