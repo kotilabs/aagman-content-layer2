@@ -1,0 +1,163 @@
+{
+  "campaign": "Aagman Waitlist Spike — Google Ads Test #1",
+  "objective": "Drive a measurable spike in waitlist signups via the first Google Ads test, leading with proof-and-execution positioning (idea → backtest → approval-gated deployment) that neither competitor occupies.",
+  "audience": "Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate competitor set — ICP is unconfirmed in the brief; if the primary audience is long-term investors, variant prioritization must be redone and the investor angle promoted to lead)",
+  "success_metric": "Waitlist signup volume vs. current baseline — AMBIGUOUS: no numeric target, CPL ceiling, or timeframe is defined, and no baseline waitlist number exists to measure the 'spike' against. Recommend setting a signup target and max cost-per-signup before launch.",
+  "variants": {
+    "v1": {
+      "variant_id": "v1",
+      "angle": "Plain words to backtest — no code",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Type Ideas, Get Backtests",
+            "No Python. No Excel.",
+            "Build It In Plain Words",
+            "Backtest Before You Risk",
+            "Your Idea, Tested First",
+            "Idea To Evidence, Clearly",
+            "Hindi Or English, Your Call",
+            "Bol Ke Banao Strategy",
+            "You Approve Every Step",
+            "Capital Stays At Your Broker",
+            "SEBI-Registered IA",
+            "NSE-Empanelled Algo Provider",
+            "Screen, Backtest, Then Deploy",
+            "Approve Before Any Trade",
+            "Type Your Idea"
+          ],
+          "descriptions": [
+            "Type your trading idea in plain words — Aagman runs the backtest. No Python, no Excel.",
+            "Backtest on real market data with a SEBI-registered IA. Test before you risk capital.",
+            "Type in English, Hindi, or Hinglish — the language you think in. Idea in, evidence out.",
+            "Like the results? Approve and go live through your existing broker. You stay in control."
+          ]
+        }
+      }
+    },
+    "v2": {
+      "variant_id": "v2",
+      "angle": "You brief, they work, you approve — capital never leaves your broker",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "You Brief. You Approve.",
+            "Funds Stay at Your Broker",
+            "Nothing Trades Without Your OK",
+            "Backtest Before Risking Money",
+            "No Tips. No Signals. Proof.",
+            "SEBI-Registered IA",
+            "NSE-Empanelled Algo Provider",
+            "Approve Your First Trade",
+            "Bolo. Test Karo. Approve Karo.",
+            "Not a Bot. Not a Tip Service.",
+            "Backtest, Paper Trade, Go Live",
+            "No Trades Fire Without You",
+            "Trade With Your Own Broker",
+            "Type in Hindi or English",
+            "Institutional-Grade Execution"
+          ],
+          "descriptions": [
+            "Brief your idea. Aagman builds and backtests it — nothing goes live until you approve.",
+            "Your capital never leaves your existing broker. SEBI-registered IA and NSE-empanelled.",
+            "No autopilot bots. Aagman runs TWAP/VWAP execution only after you approve each trade.",
+            "Type your idea in English or Hindi. Check the backtest, then approve your first trade."
+          ]
+        }
+      }
+    },
+    "v3": {
+      "variant_id": "v3",
+      "angle": "Multi-leg options, up to 4 legs in sync, from one sentence",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "4-Leg Options, One Sentence",
+            "Straddles To Iron Condors",
+            "Iron Condors From One Prompt",
+            "Describe Your Strategy",
+            "Backtest Before You Risk",
+            "4 Legs In Sync. Instantly.",
+            "Build Spreads Without Code",
+            "Your Broker. Your Capital.",
+            "Bol Ke Banao Strategy",
+            "Strangle In One Line",
+            "SEBI & NSE Verified",
+            "You Approve Every Step",
+            "Multi-Leg Made Simple",
+            "Test Your Straddle First",
+            "One Sentence. Four Legs."
+          ],
+          "descriptions": [
+            "Describe a straddle or iron condor in one sentence — Aagman builds all 4 legs in sync.",
+            "Aagman backtests your multi-leg idea on real market data before a rupee is at risk.",
+            "Every leg executes only after your approval, via your own broker. Capital stays put.",
+            "Type your 4-leg options idea in English or Hindi — Aagman handles the build and execution."
+          ]
+        }
+      }
+    },
+    "v4": {
+      "variant_id": "v4",
+      "angle": "Institutional execution, actually shipped — TWAP/VWAP live today",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "TWAP & VWAP, Live Today",
+            "Institutional Algos for Retail",
+            "Think Like an FII Desk",
+            "MIT, LIT & MTL Order Types",
+            "Slice Big Orders Like a Desk",
+            "Your Capital Stays at Broker",
+            "You Approve Every Live Order",
+            "Backtest Before You Deploy",
+            "SEBI-Reg. NSE-Empanelled",
+            "See the Algos Live",
+            "No Code. No Excel. No Python",
+            "Bolo, Backtest Karo, Deploy",
+            "Algos Your Broker App Hides",
+            "Multi-Broker Execution Ready",
+            "Test It, Approve It, Go Live"
+          ],
+          "descriptions": [
+            "Aagman runs TWAP and VWAP algos live today — desk-grade execution for retail traders.",
+            "Split big orders with TWAP or VWAP. Aagman executes slices through your existing broker.",
+            "MIT, LIT and MTL orders included — Aagman fires them at your price, not the market's.",
+            "SEBI-registered, NSE-empanelled. Capital stays at your broker; you approve each run."
+          ]
+        }
+      }
+    },
+    "v5": {
+      "variant_id": "v5",
+      "angle": "Your AI trading team for Indian markets",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Your AI Trading Team",
+            "Idea to Live, You Approve",
+            "Built for Indian Markets",
+            "Backtest Before You Trade",
+            "No Code. Just Your Idea.",
+            "Describe It. They Build It.",
+            "Backtest → Paper → Live",
+            "You Approve Every Live Trade",
+            "Capital Stays at Your Broker",
+            "SEBI-Registered. NSE Algo.",
+            "Hindi ya English, Dono Chale",
+            "Stocks, F&O, One Workspace",
+            "Not Tips. Not a Bot.",
+            "Build With Your AI Team",
+            "Type a Strategy. Test It."
+          ],
+          "descriptions": [
+            "Brief Aagman in plain words. It builds, backtests, and deploys — you approve live trades.",
+            "Capital stays at your broker. SEBI-registered IA; nothing goes live without your go.",
+            "Built for Indian markets — NSE, BSE, F&O. Your AI team handles idea to live order.",
+            "Not a screener, not tips, not an auto-bot. Aagman works only with your approval."
+          ]
+        }
+      }
+    }
+  }
+}

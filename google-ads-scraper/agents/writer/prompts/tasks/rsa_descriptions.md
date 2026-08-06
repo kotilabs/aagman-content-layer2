@@ -25,11 +25,20 @@ PAIRING RULES:
 - Avoid one-line fragments like "Free in beta." or "Join today." Descriptions should be full, readable sentences.
 - Do not repeat the exact wording of the CTA or hook_direction; translate them into user benefit.
 
+ANGLE-SPECIFIC RULE:
+- This variant is about ONE specific angle. Every description must tie back to that angle.
+- Do NOT drop generic trust boilerplate like "SEBI-registered IA and NSE-empanelled algo provider. Capital stays at your broker." unless you immediately connect it to THIS variant's feature.
+- If you mention SEBI/NSE/capital/approval, explain WHY it matters for THIS specific capability (e.g. for 4-leg options, for TWAP execution, for backtesting).
+- Trust is a support line, not a standalone description.
+
 CLARITY RULE:
 - Subheadlines must be crystal clear. A stranger who has never heard of Aagman should understand exactly what is being offered after one read.
 - Avoid clever-but-vague phrases. Prefer direct, plain language.
 - Each description should contain: WHO does it (Aagman), WHAT the user does (brief/describe/type), and WHAT the outcome is (backtest/live trade/etc.).
 - If a description sounds like it could mean multiple things, rewrite it until it means only one thing.
+
+BAD (generic): "SEBI-registered IA and NSE-empanelled algo provider. Capital stays at your broker."  
+GOOD (angle-specific): "Describe a 4-leg options strategy in one sentence. Aagman builds it, backtests it, and places the trade through your existing broker."
 
 BAD (unclear): "Your AI team builds, backtests, and waits for your go."  
 GOOD (clear): "Tell Aagman your idea in plain words. It builds and backtests the strategy, then waits for your approval before live trading."
