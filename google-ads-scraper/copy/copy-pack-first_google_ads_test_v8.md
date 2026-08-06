@@ -87,20 +87,20 @@
 - Trade Like an FII Desk (22 chars)
 - Algos Your Broker App Hides (27 chars)
 - Institutional Algos for Retail (30 chars)
-- Type It. Aagman Runs the Algo (29 chars)
-- Bol Ke Banao Trading Algo (25 chars)
-- Describe Orders in Hindi (24 chars)
-- Backtest First. Go Live Next (28 chars)
-- No Excel. No Python. Algos (26 chars)
-- You Approve Before Money Moves (30 chars)
-- Plain Words In, Algos Out (25 chars)
+- Order in Your Own Language (26 chars)
+- Type It in Tamil, We Run It (27 chars)
+- Slice Big Orders Like a Desk (28 chars)
+- Your Algo Desk, No Code (23 chars)
+- Backtest Before You Go Live (27 chars)
+- Type in Any Indian Language (27 chars)
+- See the Algos Live (18 chars)
 
 **Descriptions (max 90 chars):**
 
-- Type your order in Hindi or English. Aagman turns it into institutional-grade execution. (88 chars)
-- Aagman runs TWAP and VWAP algos — the same execution big desks use, now in your hands. (86 chars)
-- SEBI-registered, NSE-empanelled. Capital stays at your broker; you approve every algo. (86 chars)
-- Backtest first, then deploy with your approval. No code or institutional desk needed. (85 chars)
+- Describe your order in plain language — Tamil, Telugu, English. Aagman runs the algo. (85 chars)
+- Aagman runs TWAP & VWAP algos through your broker — execution broker apps hide from you. (88 chars)
+- SEBI-registered, NSE-empanelled. Institutional-grade algos; capital stays at your broker. (89 chars)
+- Desk-grade algos, retail control. Aagman executes only after you approve the trade. (83 chars)
 
 ## Variant v5: Your AI trading team for Indian markets
 

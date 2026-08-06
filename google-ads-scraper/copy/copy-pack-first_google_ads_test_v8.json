@@ -91,19 +91,19 @@
             "Trade Like an FII Desk",
             "Algos Your Broker App Hides",
             "Institutional Algos for Retail",
-            "Type It. Aagman Runs the Algo",
-            "Bol Ke Banao Trading Algo",
-            "Describe Orders in Hindi",
-            "Backtest First. Go Live Next",
-            "No Excel. No Python. Algos",
-            "You Approve Before Money Moves",
-            "Plain Words In, Algos Out"
+            "Order in Your Own Language",
+            "Type It in Tamil, We Run It",
+            "Slice Big Orders Like a Desk",
+            "Your Algo Desk, No Code",
+            "Backtest Before You Go Live",
+            "Type in Any Indian Language",
+            "See the Algos Live"
           ],
           "descriptions": [
-            "Type your order in Hindi or English. Aagman turns it into institutional-grade execution.",
-            "Aagman runs TWAP and VWAP algos — the same execution big desks use, now in your hands.",
-            "SEBI-registered, NSE-empanelled. Capital stays at your broker; you approve every algo.",
-            "Backtest first, then deploy with your approval. No code or institutional desk needed."
+            "Describe your order in plain language — Tamil, Telugu, English. Aagman runs the algo.",
+            "Aagman runs TWAP & VWAP algos through your broker — execution broker apps hide from you.",
+            "SEBI-registered, NSE-empanelled. Institutional-grade algos; capital stays at your broker.",
+            "Desk-grade algos, retail control. Aagman executes only after you approve the trade."
           ]
         }
       }

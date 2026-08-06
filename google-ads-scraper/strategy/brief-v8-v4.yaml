@@ -20,7 +20,7 @@ competitive_intel: 'The category is saturated with ''AI second opinion'' positio
   no competitor can claim.'
 cross_variant_proof_lines:
 - SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
-- Type your idea in English, Hindi, Hinglish, or the language you think in
+- Type your idea in English or any Indian language — not only Hindi
 - An AI trading team that builds, backtests, and executes — all approval-gated
 variants:
 - id: v4
@@ -28,13 +28,14 @@ variants:
   persona: Active Indian retail trader who wants institutional-grade execution without
     an institutional desk (implied ICP, unconfirmed)
   hook_direction: 'Lead with the desk metaphor: ''Trade Like an FII Desk'', ''Algos
-    Your Broker App Hides'', ''Institutional Algos for Retail''. The shift is that
-    the user describes the order in plain language (English, Hindi, Hinglish) and
-    Aagman runs the algo. Do NOT lead headlines with TWAP, VWAP, Iceberg, or POV.
-    Those specific algo names should appear only 2-3 times across the descriptions
-    (subheadlines), not as the primary headline hook. The main story is: retail traders
-    now get the execution desk big institutions use, controlled by typing or speaking
-    naturally.'
+    Your Broker App Hides'', ''Institutional Algos for Retail''. The user describes
+    the order in plain language — English or any Indian language — and Aagman runs
+    the algo. Do NOT lead headlines with TWAP, VWAP, Iceberg, or POV. Those specific
+    algo names should appear only 2-3 times across the descriptions (subheadlines),
+    not as the primary headline hook. When writing Indian-language headlines, do NOT
+    default to Hindi. Use generic phrasing like ''your own language'', ''any Indian language'',
+    or a non-Hindi example (Tamil, Telugu, Kannada, Marathi, Gujarati, Bengali, Punjabi)
+    — never imply Hindi is the only option.'
   cta: See the algos live
   claim_refs:
   - Section 7.1 (execution algorithms — TWAP/VWAP live; MIT/LIT/MTL)
