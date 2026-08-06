@@ -54,10 +54,13 @@ Seed list: 55 terms (`keyword-research-seed-list.md`) + URL discovery on competi
 
 | Ad Group | Copy variant | Budget share | Why |
 |---|---|---|---|
-| Stock Screener | v6 | ~40% | 50K+/mo volume at ₹0.3–1.4 CPC |
-| Options Strategy | v3 | ~25% | High-intent F&O, ₹17–150 CPC |
-| Backtest | v1 + v2 | ~20% | 5K+/mo at ₹4–20 CPC |
+| Stock Screener | v6 | ~35% | 50K+/mo volume at ₹0.3–1.4 CPC |
+| Options Strategy | v3 | ~20% | High-intent F&O, ₹17–150 CPC |
+| Backtest | v1 + v2 | ~15% | 5K+/mo at ₹4–20 CPC |
+| AI Trading | v5 | ~15% | 5K+/mo per variant at ₹7–163 CPC — contested (Draconic's zone) but user-requested inclusion; watch CPA closely |
 | Algo Trading | v4 | ~15% | Broker-anchored, ₹17–120 CPC |
+
+Note: AI Trading was re-added after the initial pass. Its CPCs are the highest in the set — cap at 15% and judge on verified-signup CPA, not CTR.
 
 ## Next data step
 

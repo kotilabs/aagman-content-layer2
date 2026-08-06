@@ -1,0 +1,49 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive waitlist signups via the first Google Ads Search campaign. This ad
+  group captures broker-anchored algo trading searches.
+audience: 'Indian retail traders on Zerodha and other major brokers who want automation
+  beyond their broker app. They search algo terms anchored to their broker — ''algo
+  trading zerodha'', ''algo trading software'', ''best algo trading software india''.'
+success_metric: 'Verified waitlist signups (double opt-in). CPCs ₹17–120 — mid-range.
+  Budget share ~15%.'
+competitive_intel: 'Algo searches are broker-anchored: ''algo trading zerodha''
+  (5,000/mo), ''algorithmic trading in zerodha'' (5,000/mo), ''algo trading software''
+  (5,000/mo), ''best algo trading software india'' (5,000/mo, ₹19–120). Searchers want
+  algos that work WITH their existing broker, not a new account. Āagman''s edge: sits
+  on top of the broker they already have — algos the broker app does not expose
+  (TWAP/VWAP live, MIT/LIT/MTL), approval-gated. Do NOT lead headlines with TWAP/VWAP
+  — zero search volume; those names belong in descriptions as proof, max 2–3 mentions.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English or any Indian language — not only Hindi
+- An AI trading team that builds, backtests, and executes — all approval-gated
+keyword_data:
+  note: 'Headlines must contain ''algo trading'' or ''algos''. Broker compatibility
+    (''works with your broker'', ''keep your broker'') is the hook — searchers are
+    broker-anchored. TWAP/VWAP/MIT/LIT in descriptions only.'
+  top_keywords:
+  - algo trading zerodha (5,000/mo)
+  - algo trading software (5,000/mo)
+  - best algo trading software india (5,000/mo)
+  - algorithmic trading software (5,000/mo)
+  - algo trading app (500/mo)
+variants:
+- id: v9_algo
+  angle: Algo trading that works with your broker — the desk tools your broker app hides
+  persona: Active Indian retail trader on Zerodha/a major broker who wants automation
+    without switching brokers
+  hook_direction: 'Lead with ''Algo Trading'' and the broker angle: ''Algos That Work
+    With Your Broker'', ''Algos Your Broker App Hides'', ''Trade Like an FII Desk''.
+    The story: keep your existing broker and capital; Āagman adds the execution layer
+    institutions use, approval-gated. TWAP/VWAP and order-type names (MIT, LIT, MTL)
+    appear only in descriptions, 2–3 mentions max. Never mention Iceberg or POV as
+    live — they are coming next (Section 16: not safe to claim). Do NOT default to
+    Hindi; ''any Indian language'' phrasing only.'
+  cta: See the algos live
+  claim_refs:
+  - Section 7.1 (9 native order types; TWAP/VWAP live)
+  - Section 7.2 (retail broker comparison table)
+  - Section 7.3 (works with major Indian brokers)
+  - 'Guardrail: no Iceberg/POV claims (Section 16)'
+  formats:
+  - google_rsa

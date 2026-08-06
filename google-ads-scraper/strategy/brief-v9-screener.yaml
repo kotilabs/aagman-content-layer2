@@ -1,0 +1,52 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive waitlist signups via the first Google Ads Search campaign. This ad
+  group captures the highest-volume, cheapest intent in the account — stock screener
+  queries (50,000+/mo at ₹0.3–1.4 CPC) — validated by Tradomate's sustained spend.
+audience: Indian retail investors and traders searching for stock screeners — they
+  want to find stocks by criteria (ROE, debt, breakouts, technicals) and are comparing
+  screener tools. Quality-compounder investors and breakout hunters.
+success_metric: 'Verified waitlist signups (double opt-in). Target: cheapest CPA in
+  the account given ₹0.3–1.4 CPCs. Budget share ~35%.'
+competitive_intel: 'Tradomate owns screener-led SEO and has run screener ads since
+  Jul 2025 — the demand is proven, but CPCs remain at ₹0.3–1.4 because nobody is
+  bidding aggressively. Searchers type ''stock screener'', ''stock screener free'',
+  ''best stock screener india'', ''screener for indian stocks'', ''mutual fund screener'',
+  ''breakout stocks screener''. Bare ''screener'' (5M/mo) is navigational for
+  screener.in — excluded. Āagman''s edge: screener is step one — screen, then backtest
+  the screen, then deploy. Tradomate stops at the table.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English or any Indian language — not only Hindi
+- An AI trading team that builds, backtests, and executes — all approval-gated
+keyword_data:
+  note: 'Mirror query language: headlines must contain ''stock screener'' or
+    ''screener'' for message match. ''Free'' appears only because high-volume keywords
+    contain it (stock screener free, 5,000/mo) — use as message match, never as a
+    ''free in beta'' pitch.'
+  top_keywords:
+  - stock screener (50,000/mo)
+  - stock screener free (5,000/mo)
+  - best stock screener india (5,000/mo)
+  - screener for indian stocks (5,000/mo)
+  - mutual fund screener (5,000/mo)
+  - breakout stocks screener (5,000/mo)
+variants:
+- id: v9_screener
+  angle: The stock screener that keeps going — screen, backtest, deploy in one chat
+  persona: Indian retail investor/trader actively comparing screener tools; wants
+    results fast without learning formula syntax
+  hook_direction: 'Lead with the exact query words: ''Stock Screener'' must appear
+    in the headline set multiple ways. Then differentiate from Tradomate/screener.in:
+    those stop at a filter table; Āagman lets you backtest the screen and act on it.
+    Natural language instead of formula syntax. Screen 500+ stocks, options, mutual
+    funds. One ''free'' headline is allowed as message match (''Free Stock Screener''),
+    no beta/legacy-rate framing. Do NOT lead with backtesting, execution algos, or
+    options. Do NOT default to Hindi; ''any Indian language'' phrasing only.'
+  cta: Try the screener free
+  claim_refs:
+  - Section 4.2 (Research Workflow — Screen)
+  - Section 6.2 (Indicators & Screeners)
+  - Section 8.3 (Screener Outputs)
+  - Section 16 — Screener row (Yes)
+  formats:
+  - google_rsa

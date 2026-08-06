@@ -1,0 +1,52 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive waitlist signups via the first Google Ads Search campaign. This ad
+  group captures AI trading category searches — the broadest positioning.
+audience: Indian retail traders and investors searching AI trading terms — ''ai
+  trading'', ''ai stock analysis'', ''ai trading app'', ''artificial intelligence
+  trading''. They are AI-curious, comparing AI trading products, often earlier in
+  their evaluation than strategy-name searchers.
+success_metric: 'Verified waitlist signups (double opt-in). CPCs are the highest in
+  the account (₹7–163, Medium competition — Draconic''s contested zone). Capped at
+  ~15% budget; judge strictly on verified-signup CPA, not CTR.'
+competitive_intel: 'Draconic owns ''AI second opinion for F&O'' with ~90% of its
+  inventory on this positioning, but stops at analysis and has a bot/execution
+  messaging contradiction (''AI trades for you'' vs ''not a bot''). Āagman resolves
+  it: a full AI trading TEAM — strategy, screen, backtest, risk, execution — where
+  every real-capital step is user-approved. One coherent story: you brief, they work,
+  you approve. Broader than any single feature: built for Indian markets, in the
+  language the user thinks in.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English or any Indian language — not only Hindi
+- An AI trading team that builds, backtests, and executes — all approval-gated
+keyword_data:
+  note: 'Headlines must contain ''AI trading'' / ''AI'' + trading/stock terms for
+    message match. The differentiator is TEAM (multiple specialists) + approval-gated,
+    not ''AI'' alone — Draconic owns generic AI opinion positioning.'
+  top_keywords:
+  - ai trading (5,000/mo)
+  - ai stock analysis (5,000/mo)
+  - ai trading app (5,000/mo)
+  - artificial intelligence trading (5,000/mo)
+  - ai for stock market (5,000/mo)
+  - ai trading platform (500/mo)
+variants:
+- id: v9_ai
+  angle: An AI trading team for Indian markets — you brief, they work, you approve
+  persona: AI-curious Indian retail trader/investor comparing AI trading products;
+    wants more than a chatbot opinion
+  hook_direction: 'Lead with ''AI Trading'' + the team concept: ''Your AI Trading
+    Team'', ''An AI Team for Indian Markets'', ''Beyond AI Opinions''. Contrast with
+    single-opinion tools: Āagman''s agents screen, backtest, and execute — approval-gated
+    at every money step. Never say or imply ''AI trades for you'' / autonomous trading
+    — that is Draconic''s exposed contradiction and a compliance line we never cross.
+    ''Not a tip service'' framing is allowed. Do NOT default to Hindi; ''any Indian
+    language'' phrasing only.'
+  cta: Meet your AI trading team
+  claim_refs:
+  - Section 1 (positioning — you brief, they work, you approve)
+  - Section 3 (the agent team)
+  - Section 14 pillar 2 (explicit approval for real-capital steps)
+  - Section 9.2 (SEBI IA INA000021951)
+  formats:
+  - google_rsa

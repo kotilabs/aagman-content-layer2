@@ -1,0 +1,49 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive waitlist signups via the first Google Ads Search campaign. This ad
+  group captures high-intent F&O options traders searching strategy names and builders.
+audience: Active Indian F&O/options traders (NIFTY, BANKNIFTY, stock options) who
+  search for specific strategy names — straddle, strangle, iron condor — and for
+  strategy builder tools. They already trade options; they want better construction
+  and execution.
+success_metric: 'Verified waitlist signups (double opt-in). CPCs here are the highest
+  in the account (₹17–150) — judge on verified-signup CPA. Budget share ~20%.'
+competitive_intel: 'Searchers type strategy NAMES, not feature-speak: ''options
+  strategy builder'' (5,000/mo), ''straddle strategy'' (5,000/mo), ''iron condor
+  strategy'' (5,000/mo), ''strangle option strategy'' (5,000/mo), ''free option
+  strategy builder'' (500/mo). Nobody searches ''4-leg options'' or ''multi-leg
+  execution'' — that is vendor language. Sensibull/Opstra own the builder-tool
+  mental slot; Draconic analyzes options but does not execute. Āagman builds the
+  named strategy from one sentence and syncs all legs, approval-gated.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English or any Indian language — not only Hindi
+- An AI trading team that builds, backtests, and executes — all approval-gated
+keyword_data:
+  note: 'Headlines must use the strategy names searchers type: straddle, strangle,
+    iron condor, options strategy builder. One ''free'' headline allowed as message
+    match (free option strategy builder, 500/mo). Never ''4-leg'' or ''multi-leg''
+    as the lead — legs belong in descriptions.'
+  top_keywords:
+  - options strategy builder (5,000/mo)
+  - free option strategy builder (500/mo)
+  - straddle strategy (5,000/mo)
+  - iron condor strategy (5,000/mo)
+  - strangle option strategy (5,000/mo)
+  - options strategy (5,000/mo)
+variants:
+- id: v9_options
+  angle: Name the strategy — straddle, condor, strangle — built from one sentence
+  persona: Active NIFTY/BANKNIFTY options trader who knows strategy names and wants
+    a builder that also executes
+  hook_direction: 'Lead with strategy names in headlines: ''Iron Condor'', ''Straddle'',
+    ''Strangle'', ''Options Strategy Builder''. The story: describe the strategy in
+    plain language, Āagman builds it, backtests it, and syncs all legs on approval.
+    One ''free'' headline allowed as message match. Legs (up to 4, in sync) go in
+    descriptions, not headlines. Do NOT default to Hindi; ''any Indian language''
+    phrasing only.'
+  cta: Build your strategy
+  claim_refs:
+  - Section 7.1 (multi-leg options up to 4 legs, in sync)
+  - Section 16 — Screener/Backtesting rows (Yes)
+  formats:
+  - google_rsa

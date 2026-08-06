@@ -1,0 +1,51 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive waitlist signups via the first Google Ads Search campaign. This ad
+  group captures proof-seeking traders searching backtesting — our core differentiator.
+audience: Indian retail traders with rule-based ideas who want to validate before
+  risking capital. They search ''backtest trading strategy'', ''backtesting'', ''free
+  backtest software'', ''how do I backtest a trading strategy''. Mix of F&O traders
+  and systematic equity traders; many cannot code.
+success_metric: 'Verified waitlist signups (double opt-in). CPCs are cheap (₹4–20)
+  — this group should deliver volume signups at low CPA. Budget share ~15%.'
+competitive_intel: 'Backtest intent is real but mid-volume: ''backtest trading
+  strategy'' (5,000/mo), ''backtesting'' (5,000/mo), ''free backtest software''
+  (5,000/mo), ''how do i backtest a trading strategy'' (5,000/mo). Draconic owns
+  ''AI second opinion'' — validation by vibes. Nobody else in the category runs
+  proof-first ads. Āagman''s edge: describe in plain language, backtest on real
+  historical data with fees/slippage, then paper, then live — one loop. Paper trading
+  keywords have zero volume; do not build headlines around ''paper trading''.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English or any Indian language — not only Hindi
+- An AI trading team that builds, backtests, and executes — all approval-gated
+keyword_data:
+  note: 'Headlines must contain ''backtest''. One ''free'' headline allowed as
+    message match (free backtest software, 5,000/mo). Avoid ''paper trading'' —
+    zero search volume; the concept belongs in descriptions as part of the workflow,
+    framed as product discipline (cautious claim per Section 16: Partially).'
+  top_keywords:
+  - backtest trading strategy (5,000/mo)
+  - backtesting (5,000/mo)
+  - free backtest software (5,000/mo)
+  - backtesting trading (5,000/mo)
+  - backtest options strategy (500/mo)
+  - how do i backtest a trading strategy (5,000/mo)
+variants:
+- id: v9_backtest
+  angle: Backtest before you risk a rupee — proof, not opinions
+  persona: Indian retail trader with a strategy idea who wants evidence first;
+    often no Python/Excel skills
+  hook_direction: 'Lead with ''Backtest'' in headlines — ''Backtest Your Strategy'',
+    ''Backtest Before You Trade'', ''Backtest Ideas Without Code''. Contrast against
+    Draconic''s opinion positioning: we prove with numbers (Sharpe, drawdown, win
+    rate), not takes. Plain language input, no code. One ''free'' headline allowed
+    as message match. Approval-gated workflow and capital-stays-at-broker belong in
+    descriptions. Do NOT default to Hindi; ''any Indian language'' phrasing only.'
+  cta: Backtest your idea
+  claim_refs:
+  - Section 16 — Backtesting row (Yes)
+  - Section 8.1 (backtest methodology — look-ahead protection, fees/slippage)
+  - Section 8.2 (report suite — Sharpe, drawdown, win rate, expectancy)
+  - 'Section 16 — Paper trading: Partially (frame as enforced discipline only)'
+  formats:
+  - google_rsa

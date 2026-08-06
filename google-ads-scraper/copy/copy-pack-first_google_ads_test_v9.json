@@ -1,0 +1,138 @@
+{
+  "campaign": "Aagman Waitlist Spike — Google Ads Test #1",
+  "objective": "Drive waitlist signups via the first Google Ads Search campaign. This ad group captures the highest-volume, cheapest intent in the account — stock screener queries (50,000+/mo at ₹0.3–1.4 CPC) — validated by Tradomate's sustained spend.",
+  "audience": "Indian retail investors and traders searching for stock screeners — they want to find stocks by criteria (ROE, debt, breakouts, technicals) and are comparing screener tools. Quality-compounder investors and breakout hunters.",
+  "success_metric": "Verified waitlist signups (double opt-in). Target: cheapest CPA in the account given ₹0.3–1.4 CPCs. Budget share ~35%.",
+  "variants": {
+    "v9_screener": {
+      "variant_id": "v9_screener",
+      "angle": "The stock screener that keeps going — screen, backtest, deploy in one chat",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Free Stock Screener",
+            "Stock Screener That Backtests",
+            "Screen, Backtest, Then Deploy",
+            "No Formula Syntax Needed",
+            "Screen in Any Indian Language",
+            "Screen 500+ Stocks & MFs",
+            "Try the Screener Free",
+            "Best Stock Screener in India?",
+            "Breakout Stocks Screener",
+            "Screen It. Then Act On It."
+          ],
+          "descriptions": [
+            "Type your screen in plain words — no formula syntax. Aagman filters 500+ stocks instantly.",
+            "Other screeners stop at a table. Aagman backtests your screen before you risk a rupee.",
+            "SEBI-registered IA. Backtest your screen before deploying — capital stays at your broker.",
+            "Free screener for stocks, options & mutual funds. Type in any Indian language."
+          ]
+        }
+      }
+    },
+    "v9_options": {
+      "variant_id": "v9_options",
+      "angle": "Name the strategy — straddle, condor, strangle — built from one sentence",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Iron Condor From One Sentence",
+            "Straddle Builder That Executes",
+            "Strangle From One Sentence",
+            "Options Strategy Builder",
+            "Free Options Strategy Builder",
+            "Describe It. We Build It.",
+            "Backtested Before You Approve",
+            "Build Your Strategy",
+            "Type in Any Indian Language",
+            "A Builder, Not a Tip Service"
+          ],
+          "descriptions": [
+            "Say 'iron condor on NIFTY'. Aagman builds all 4 legs, backtests it, waits for your go.",
+            "SEBI-registered IA. Strategies trade via your own broker, only after your approval.",
+            "Straddle, strangle, or condor — up to 4 legs in sync. Backtest before you risk a rupee.",
+            "Describe your strangle in any Indian language. Aagman builds and trades via your broker."
+          ]
+        }
+      }
+    },
+    "v9_backtest": {
+      "variant_id": "v9_backtest",
+      "angle": "Backtest before you risk a rupee — proof, not opinions",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Backtest Your Strategy",
+            "Backtest Before You Trade",
+            "Backtest Ideas Without Code",
+            "Backtest Your Idea Today",
+            "Free Backtest on Real Data",
+            "Test Before You Risk a Rupee",
+            "Proof, Not Opinions",
+            "See Sharpe, Win Rate & More",
+            "Describe It. Backtest It.",
+            "Any Indian Language Works"
+          ],
+          "descriptions": [
+            "Type your idea in plain words — Aagman backtests it with Sharpe, drawdown and win rate.",
+            "SEBI-registered IA, NSE-empanelled. Aagman tests your strategy before you risk a rupee.",
+            "No Python, no Excel. Describe in any Indian language and get a full backtest report.",
+            "Backtest first, then go live only with your approval. Your capital stays at your broker."
+          ]
+        }
+      }
+    },
+    "v9_algo": {
+      "variant_id": "v9_algo",
+      "angle": "Algo trading that works with your broker — the desk tools your broker app hides",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Algos Your Broker App Hides",
+            "Algo Trading With Your Broker",
+            "Keep Your Existing Broker",
+            "No New Broker Account Needed",
+            "Trade Like an FII Desk",
+            "Type a Strategy, Get an Algo",
+            "Build Algos — No Code Needed",
+            "Backtest Algos Before Trading",
+            "Not a Bot. Not a Tip Service.",
+            "See the Algos Live"
+          ],
+          "descriptions": [
+            "Aagman runs algos on your existing broker account — no switching, no new account needed.",
+            "TWAP and VWAP execution live, plus MIT, LIT, MTL orders your broker app hides.",
+            "Approval-gated algos: Aagman executes only after your go. SEBI-registered IA.",
+            "Describe it in plain words. Aagman builds, backtests, and runs it on your broker."
+          ]
+        }
+      }
+    },
+    "v9_ai": {
+      "variant_id": "v9_ai",
+      "angle": "An AI trading team for Indian markets — you brief, they work, you approve",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Your AI Trading Team",
+            "An AI Team for Indian Markets",
+            "Beyond AI Opinions",
+            "Brief. They Work. You Approve",
+            "Not a Bot. Not a Tip Service.",
+            "Backtest Ideas Without Code",
+            "Type Your Trading Idea",
+            "Test Before You Risk Money",
+            "Trade in Any Indian Language",
+            "Meet Your AI Trading Team"
+          ],
+          "descriptions": [
+            "Brief Aagman in plain words. Its AI agents screen, backtest, and build. You approve.",
+            "Not just an AI opinion. Aagman's agents do the work; you approve every money step.",
+            "Type in your own language. Aagman turns words into a backtested, tradable strategy.",
+            "SEBI-registered IA. Capital stays at your broker; live trades go only with your approval."
+          ]
+        }
+      }
+    }
+  }
+}
