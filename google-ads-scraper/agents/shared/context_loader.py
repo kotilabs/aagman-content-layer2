@@ -119,6 +119,47 @@ def load_safe_claims_for_variant(claim_refs: list[str], root: Path | str | None 
     return "\n".join(relevant)
 
 
+def load_ppc_playbook(root: Path | str | None = None) -> str:
+    """Load the strategist's PPC practitioner playbook."""
+    if root is None:
+        root = Path(__file__).resolve().parents[2]  # google-ads-scraper/
+    path = Path(root) / "agents" / "strategist" / "knowledge" / "ppc-playbook.md"
+    if not path.exists():
+        return "_PPC playbook not found._"
+    return path.read_text(encoding="utf-8")
+
+
+def find_keyword_data(root: Path | str | None = None) -> Path | None:
+    """Find the newest Keyword Planner analysis/stats file under strategy/, if any."""
+    if root is None:
+        root = Path(__file__).resolve().parents[2]
+    strategy_dir = Path(root) / "strategy"
+    if not strategy_dir.exists():
+        return None
+    candidates = sorted(
+        [
+            p
+            for p in strategy_dir.iterdir()
+            if p.is_file()
+            and any(
+                marker in p.name.lower()
+                for marker in ("keyword-planner-analysis", "keyword-stats", "keyword_planner")
+            )
+        ],
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    return candidates[0] if candidates else None
+
+
+def load_keyword_data(root: Path | str | None = None, explicit_path: Path | str | None = None) -> str | None:
+    """Load keyword demand data (Keyword Planner export/analysis). None if unavailable."""
+    path = Path(explicit_path) if explicit_path else find_keyword_data(root)
+    if not path or not path.exists():
+        return None
+    return path.read_text(encoding="utf-8")
+
+
 def load_competitive_intel_summary(root: Path | str | None = None) -> str:
     """Read the latest competitor analysis.md files under reports/ and return a short markdown summary.
 
@@ -191,10 +232,14 @@ def build_context_block(root: Path | str | None = None, compact: bool = False) -
 
     sot = load_source_of_truth(root)
     competitors = load_competitor_reports(root)
+    playbook = load_ppc_playbook(root)
 
     lines = [
         "# Āagman Capability Source of Truth\n",
         sot,
+        "\n---\n",
+        "# PPC Playbook (practitioner knowledge — follow it)\n",
+        playbook,
         "\n---\n",
         "# Competitive Ad Intelligence\n",
     ]

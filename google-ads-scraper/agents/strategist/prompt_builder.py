@@ -59,11 +59,26 @@ class PromptBuilder:
             context=context,
         )
 
+    def render_keyword_plan(self, understand_output: str, evaluate_output: str, keyword_data: str | None) -> str:
+        """Render the keyword-plan user prompt.
+
+        ``keyword_data`` is the demand-data text, or None when unavailable —
+        the template handles both branches via {% if keyword_data %}.
+        """
+        template = self._templates.get("phases/keyword_plan.md", "")
+        return self._render(
+            template,
+            understand_output=understand_output,
+            evaluate_output=evaluate_output,
+            keyword_data=keyword_data or "",
+        )
+
     def render_brief(
         self,
         understand_output: str,
         competitive_gap_output: str,
         evaluate_output: str,
+        keyword_plan_output: str,
         context: str,
         competitive_intel_summary: str,
     ) -> str:
@@ -74,6 +89,7 @@ class PromptBuilder:
             understand_output=understand_output,
             competitive_gap_output=competitive_gap_output,
             evaluate_output=evaluate_output,
+            keyword_plan_output=keyword_plan_output,
             context=context,
             competitive_intel_summary=competitive_intel_summary,
         )

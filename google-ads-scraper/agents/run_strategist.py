@@ -26,9 +26,15 @@ def main() -> None:
         action="store_true",
         help="Force interactive mode (requires a real TTY).",
     )
+    parser.add_argument(
+        "--keyword-data",
+        dest="keyword_data_path",
+        help="Path to Keyword Planner export/analysis. If omitted, strategy/ is scanned "
+        "for keyword-planner-analysis files; interactive mode will ask.",
+    )
     args = parser.parse_args()
 
-    strategist = Strategist(root=ROOT)
+    strategist = Strategist(root=ROOT, keyword_data_path=args.keyword_data_path)
 
     # If no input provided and stdin is not a TTY, refuse to crash with EOFError.
     if args.input_text is None and not args.interactive:

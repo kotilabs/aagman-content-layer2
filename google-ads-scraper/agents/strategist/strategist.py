@@ -8,7 +8,11 @@ from pathlib import Path
 
 import yaml
 
-from ..shared.context_loader import build_context_block, load_competitive_intel_summary
+from ..shared.context_loader import (
+    build_context_block,
+    load_competitive_intel_summary,
+    load_keyword_data,
+)
 from ..shared.llm import AdsLLM
 from .prompt_builder import PromptBuilder
 
@@ -21,12 +25,14 @@ class Strategist:
         root: Path | str | None = None,
         llm: AdsLLM | None = None,
         prompts_dir: Path | str | None = None,
+        keyword_data_path: Path | str | None = None,
     ):
         self.root = Path(root) if root else Path(__file__).resolve().parents[2]
         self.llm = llm or AdsLLM()
         self.prompt_builder = PromptBuilder(root=self.root, prompts_dir=prompts_dir)
         self.context = build_context_block(self.root)
         self.competitive_intel_summary = load_competitive_intel_summary(self.root)
+        self.keyword_data = load_keyword_data(self.root, explicit_path=keyword_data_path)
 
     # ------------------------------------------------------------------
     # Public run modes
@@ -85,6 +91,18 @@ class Strategist:
         else:
             combined_input = raw_input
 
+        # Demand-data gate: keyword plans are not finalized without search-volume data.
+        if self.keyword_data is None:
+            print("\nNo Keyword Planner / demand data was found in strategy/.")
+            print("Keyword plans are provisional without it. If you have an export,")
+            raw_path = input("paste the file path (or press Enter to skip): ").strip()
+            if raw_path:
+                self.keyword_data = load_keyword_data(self.root, explicit_path=raw_path)
+                if self.keyword_data is None:
+                    print(f"Could not load keyword data from: {raw_path} — proceeding provisional.")
+        else:
+            print("\nKeyword demand data found — keyword plan will be data-backed.")
+
         return self._run_pipeline(
             combined_input,
             pre_understand_output=raw_understand,
@@ -108,7 +126,7 @@ class Strategist:
             raw_path = strategy_dir / f"phase-00-understand-raw-{safe_name}.md"
             raw_path.write_text(pre_understand_output, encoding="utf-8")
 
-        print("\nPhase 1/5: understanding the brief...")
+        print("\nPhase 1/6: understanding the brief...")
         understand_output = self._call_phase(
             "understand",
             input_text=input_text,
@@ -116,7 +134,7 @@ class Strategist:
         )
         self._save_artifact(strategy_dir, f"phase-01-understand-{safe_name}.md", understand_output)
 
-        print("Phase 2/5: analyzing competitive gaps...")
+        print("Phase 2/6: analyzing competitive gaps...")
         competitive_gap_output = self._call_phase(
             "competitive_gap",
             understand_output=understand_output,
@@ -128,7 +146,7 @@ class Strategist:
             competitive_gap_output,
         )
 
-        print("Phase 3/5: brainstorming angles...")
+        print("Phase 3/6: brainstorming angles...")
         brainstorm_output = self._call_phase(
             "brainstorm",
             understand_output=understand_output,
@@ -141,7 +159,7 @@ class Strategist:
             brainstorm_output,
         )
 
-        print("Phase 4/5: evaluating angles...")
+        print("Phase 4/6: evaluating angles...")
         evaluate_output = self._call_phase(
             "evaluate",
             understand_output=understand_output,
@@ -154,17 +172,32 @@ class Strategist:
             evaluate_output,
         )
 
-        print("Phase 5/5: writing the creative brief...")
+        print("Phase 5/6: keyword & demand plan...")
+        keyword_plan_output = self._call_phase(
+            "keyword_plan",
+            understand_output=understand_output,
+            evaluate_output=evaluate_output,
+            keyword_data=self.keyword_data,
+        )
+        self._save_artifact(
+            strategy_dir,
+            f"phase-05-keyword-plan-{safe_name}.md",
+            keyword_plan_output,
+        )
+
+        print("Phase 6/6: writing the creative brief...")
         brief = self._generate_brief(
             understand_output=understand_output,
             competitive_gap_output=competitive_gap_output,
             evaluate_output=evaluate_output,
+            keyword_plan_output=keyword_plan_output,
         )
 
         strategy_markdown = self._render_strategy_markdown(
             understand_output=understand_output,
             competitive_gap_output=competitive_gap_output,
             evaluate_output=evaluate_output,
+            keyword_plan_output=keyword_plan_output,
             brief=brief,
         )
 
@@ -197,6 +230,7 @@ class Strategist:
         understand_output: str,
         competitive_gap_output: str,
         evaluate_output: str,
+        keyword_plan_output: str,
     ) -> dict:
         """Generate and parse the final JSON creative brief."""
         system_prompt = self.prompt_builder.render_system()
@@ -204,6 +238,7 @@ class Strategist:
             understand_output=understand_output,
             competitive_gap_output=competitive_gap_output,
             evaluate_output=evaluate_output,
+            keyword_plan_output=keyword_plan_output,
             context=self.context,
             competitive_intel_summary=self.competitive_intel_summary,
         )
@@ -268,6 +303,7 @@ class Strategist:
         understand_output: str,
         competitive_gap_output: str,
         evaluate_output: str,
+        keyword_plan_output: str,
         brief: dict,
     ) -> str:
         """Assemble a human-readable strategy summary from phase outputs."""
@@ -282,6 +318,7 @@ class Strategist:
             f"**Objective:** {objective}",
             f"**Audience:** {audience}",
             f"**Success Metric:** {success_metric}",
+            f"**Keyword data status:** {brief.get('keyword_data_status', 'provisional')}",
             "",
             "---",
             "",
@@ -297,7 +334,11 @@ class Strategist:
             "",
             evaluate_output,
             "",
-            "## 4. Final Variant Plan",
+            "## 4. Keyword & Demand Plan",
+            "",
+            keyword_plan_output,
+            "",
+            "## 5. Final Variant Plan",
             "",
         ]
 
@@ -331,9 +372,15 @@ def main() -> None:
         dest="input_text",
         help="Freeform campaign brief. If omitted, interactive mode is used.",
     )
+    parser.add_argument(
+        "--keyword-data",
+        dest="keyword_data_path",
+        help="Path to Keyword Planner export/analysis. If omitted, strategy/ is scanned "
+        "for keyword-planner-analysis files; interactive mode will ask.",
+    )
     args = parser.parse_args()
 
-    strategist = Strategist()
+    strategist = Strategist(keyword_data_path=args.keyword_data_path)
     strategist.run(args.input_text)
 
 
