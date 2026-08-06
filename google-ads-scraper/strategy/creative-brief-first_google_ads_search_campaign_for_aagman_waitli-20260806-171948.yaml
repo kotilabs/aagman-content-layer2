@@ -1,0 +1,199 @@
+campaign: "\u0100agman Waitlist \u2014 Search Test (\u20B975K / 6 weeks)"
+objective: "Drive waitlist signups at the lowest cost per verified signup, compared\
+  \ across messaging angles, in \u0100agman's first Google Ads campaign"
+audience: "Active Indian retail traders (F&O and equity) seeking systematic, no-code\
+  \ tools; secondary: self-directed investors using screeners. ICP not explicitly\
+  \ confirmed in brief \u2014 trader-leaning per demand data"
+success_metric: Cost per verified signup (email/WhatsApp-verified lead, not raw form
+  fill), compared per angle; requires GCLID capture + offline conversion upload before
+  launch
+competitive_intel: "Draconic owns 'AI second opinion for F&O' and Tradomate owns 'AI\
+  \ stock screener' \u2014 both heavily contest free-signup messaging, making 'free\
+  \ in beta' table stakes, not a hook. Neither competitor claims backtesting, paper\
+  \ trading, staged deployment, execution algos (TWAP/VWAP), or regulatory credentials\
+  \ (SEBI IA, NSE empanelment) \u2014 that evidence-plus-execution territory is \u0100\
+  agman's ownable white space. Never mirror Draconic's fear stats, bot/execution contradiction,\
+  \ or Tradomate's 'AI picks stocks' signals framing."
+keyword_data_status: provided
+variants:
+- id: v1
+  angle: A stock screener that doesn't stop at screening
+  persona: Self-directed Indian equity investor/trader searching for screening tools
+  hook_direction: "Match the high-volume screener intent head-on, then differentiate\
+    \ in one line: screen \u2192 backtest the screen itself, in a single chat \u2014\
+    \ something Tradomate's screening-only product structurally can't copy. Keep 'free\
+    \ in beta' as a supporting description line, not the hook."
+  cta: "Join the waitlist \u2014 free while in beta"
+  claim_refs:
+  - "SoT \xA73 Screener agent"
+  - "SoT \xA76.2 screener metrics"
+  - "SoT \xA74.4 investor workflow step 2 (screen \u2192 backtest)"
+  - "SoT \xA716: screener Live \u2014 Yes"
+  - "SoT \xA716: backtesting Live \u2014 Yes"
+  formats:
+  - google_rsa
+- id: v2
+  angle: "No code, no Excel, no Python \u2014 describe the rule, deploy the strategy"
+  persona: No-code systematic user / F&O trader who wants to build options strategies
+    without programming
+  hook_direction: 'Positive framing only (state what the product IS): describe an
+    options strategy in plain language and deploy it through your own broker. Pair
+    with the confirmed free-beta offer in descriptions to convert the ''free option
+    strategy builder'' intent. Never imply unattended autonomy or stock-picking.'
+  cta: "Join the waitlist \u2014 free while in beta"
+  claim_refs:
+  - "SoT \xA72 no-code systematic users"
+  - "SoT \xA76.1 prompt grammar replaces scripting"
+  - "SoT \xA714 pillar 7"
+  - "SoT \xA716: natural-language strategy creation Live \u2014 Yes"
+  formats:
+  - google_rsa
+- id: v3
+  angle: Backtest a strategy in one sentence / Prove it before you trade it
+  persona: Active trader who wants evidence before risking capital
+  hook_direction: "Lead with the concrete promise \u2014 describe a strategy in one\
+    \ line, get a full institutional-grade backtest report. Umbrella philosophy (Backtest\
+    \ \u2192 Paper \u2192 Live workflow, proof before capital) lives in descriptions\
+    \ and RSA asset pinning so the two intents don't cannibalize. Paper trading referenced\
+    \ only as workflow phrasing, not a standalone product claim."
+  cta: "Join the waitlist \u2014 backtest your first strategy free"
+  claim_refs:
+  - "SoT \xA76.1 natural-language prompt grammar"
+  - "SoT \xA78.2 backtest report outputs"
+  - "SoT \xA74.1 enforced Idea \u2192 Backtest \u2192 Paper \u2192 Live workflow"
+  - "SoT \xA78.1 look-ahead-safe backtest mechanics"
+  - "SoT \xA714 pillar 2"
+  - "SoT \xA716: backtesting Live \u2014 Yes; paper trading Partially (workflow phrasing\
+    \ only)"
+  formats:
+  - google_rsa
+- id: v4
+  angle: "Algos your broker app never shows you \u2014 execution depth via your existing\
+    \ broker"
+  persona: Active trader on Zerodha (or similar retail broker) searching for algo
+    trading on their broker
+  hook_direction: "Keywords carry the broker-anchored intent; copy delivers the differentiator:\
+    \ TWAP/VWAP and 9 execution-native order types on top of the user's existing broker,\
+    \ capital never leaves their account, user approves every order. Do NOT use TWAP/VWAP\
+    \ as keywords (zero confirmed volume) \u2014 they live in descriptions and LP.\
+    \ Exclude Iceberg/POV (unshipped)."
+  cta: "Join the waitlist \u2014 run real algos on your broker"
+  claim_refs:
+  - "SoT \xA77.1 order types & algos \u2014 TWAP/VWAP live (Iceberg/POV excluded,\
+    \ coming-next)"
+  - "SoT \xA77.2 retail broker comparison table"
+  - "SoT \xA714 pillar 4"
+  - 'SoT pillars 7/8: user approves every order, not a broker'
+  formats:
+  - google_rsa
+- id: v5
+  angle: "Ask before you trade \u2014 a second opinion with a backtest attached"
+  persona: F&O trader searching AI trading tools (contested Draconic territory)
+  hook_direction: "Enter the contested AI-trading cluster as a challenger, not a shouter:\
+    \ the differentiator is that the second opinion comes with evidence (backtest\
+    \ attached), not just a chat answer. Capped budget, judged on verified-signup\
+    \ CPA only, killed if week-2 CPA runs >2\xD7 the backtest group. Pull exact term-level\
+    \ variants from the export before launch."
+  cta: "Join the waitlist \u2014 ask before your next trade"
+  claim_refs:
+  - "SoT \xA714 pillar 1 (ask before you trade)"
+  - "SoT \xA78.2 backtest report outputs"
+  - "SoT \xA716: backtesting Live \u2014 Yes"
+  formats:
+  - google_rsa
+keyword_plan:
+  ad_groups:
+  - name: "AG1 \u2014 Stock Screener"
+    maps_to_variant: v1
+    budget_share_pct: 35
+    keywords:
+    - '[stock screener]'
+    - '"stock screener"'
+    - '[stock screener free]'
+    - '"stock screener free"'
+    - '[best stock screener india]'
+    - '"best stock screener india"'
+    - '[screener for indian stocks]'
+    - '"screener for indian stocks"'
+    provisional: false
+  - name: "AG2 \u2014 Options Strategy Builder"
+    maps_to_variant: v2
+    budget_share_pct: 20
+    keywords:
+    - '"option trading"'
+    - '[options strategy builder]'
+    - '"options strategy builder"'
+    - '[straddle strategy]'
+    - '"straddle strategy"'
+    - '[iron condor strategy]'
+    - '"iron condor strategy"'
+    - '"strangle"'
+    - '[free option strategy builder]'
+    - '"free option strategy builder"'
+    provisional: false
+  - name: "AG3 \u2014 Backtest"
+    maps_to_variant: v3
+    budget_share_pct: 15
+    keywords:
+    - '[backtest trading strategy]'
+    - '"backtest trading strategy"'
+    - '[free backtest software]'
+    - '"free backtest software"'
+    - '[how do i backtest a trading strategy]'
+    provisional: false
+  - name: "AG4 \u2014 Algo Trading (broker-anchored)"
+    maps_to_variant: v4
+    budget_share_pct: 15
+    keywords:
+    - '[algo trading zerodha]'
+    - '"algo trading zerodha"'
+    - '[algorithmic trading in zerodha]'
+    - '"algorithmic trading in zerodha"'
+    provisional: false
+  - name: "AG5 \u2014 AI Trading (capped test)"
+    maps_to_variant: v5
+    budget_share_pct: 15
+    keywords:
+    - '[ai trading]'
+    - '"ai trading"'
+    provisional: false
+  negative_themes:
+  - 'Navigational/incumbent: screener.in navigational leakage (bare 5M/mo ''screener''
+    excluded by keyword selection; add ''screener in'' negative phrase if SQR shows
+    drift)'
+  - 'Wrong market: us stock, us market, nyse, nasdaq, forex, crypto'
+  - 'Informational-only: chart, charts, meaning, what is, pdf, book, course, tutorial
+    (keep ''free'' as qualified modifier; negate informational free-compounds as they
+    surface)'
+  - 'Jobs/careers: job, jobs, salary, career, internship, interview'
+  - 'DIY-code intent: python, github, code, api documentation (review against week-1
+    SQR before hardening)'
+  - 'Unshipped capability drift: mcx, commodity, commodities'
+  - 'Tips-provider spam: tips, telegram, sure shot, jackpot'
+  - 'Ambiguous-term bleed for ''strangle'': movie/review/film terms as they surface'
+  education_play_angles:
+  - "Angle 2 \u2014 Paper trade with live prices (zero demand terms \u226550/mo; LP\
+    \ workflow mention only, also 'Partially' per SoT \xA716)"
+  - "Angle 6 vocabulary \u2014 TWAP/VWAP/institutional order types as search terms\
+    \ (zero volume; survives as copy on AG4 broker-anchored keywords, vocabulary routed\
+    \ to LP/video)"
+  - Angle 13 'no code' phrasing as keywords ('no code algo trading' = 50/mo; angle
+    survives as copy in AG2 only)
+  - "Angle 8 \u2014 SEBI-registered / NSE-empanelled (zero demand; trust layer in\
+    \ descriptions, sitelinks, LP \u2014 never a headline keyword)"
+  - "Angles 7, 9, 14 \u2014 capital-custody/approval, whitebox, kill switches (insider\
+    \ vocabulary, no demand cluster; descriptions/sitelinks/LP trust blocks)"
+  - "Conquesting \u2014 sensibull/opstra alternative terms (50/mo, too thin for a\
+    \ 6-week test; revisit with remarketing post-launch)"
+  - "Angle 10 \u2014 Invest in your language (not testable on English Search; YouTube/vernacular\
+    \ surfaces in a later campaign)"
+campaign_settings:
+  network: "Google Search only \u2014 Display Network OFF, Search partners OFF for\
+    \ week 1"
+  location: India, Presence targeting only (not Presence or interest), pan-India
+  language: English
+  initial_bidding: "Manual CPC (new account per playbook), initial bids at low-to-mid\
+    \ cluster range: \u20B91\u20132 screener, \u20B940\u201360 options, \u20B95\u2013\
+    10 backtest, \u20B920\u201340 algo, \u20B930\u201350 AI; exact + phrase only,\
+    \ no broad; no automated strategies until 30+ verified conversions; no PMax"
+  daily_budget_inr: 1785
