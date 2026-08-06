@@ -1,0 +1,15 @@
+[2026-08-07 01:07:54] letters requested: 0-9, A
+[2026-08-07 01:07:54] mechanism: POST /sebiweb/ajax/other/getintmfpiinfo.jsp inside Playwright session; p1 next=s&doDirect=-1&nextValue=1; page k>1 next=n&doDirect=k-1&nextValue=1; alp param: 0-9 -> A1, letters map to themselves
+[2026-08-07 01:08:01] page loaded, session established
+[2026-08-07 01:08:01]   letter 0-9: reported 6 records across 1 page(s) [p1 from cache]
+[2026-08-07 01:08:03]   letter A: reported 145 records across 6 page(s) [p1 from cache]
+[2026-08-07 01:08:04]   p2 ok: 26 to 50 of 145 [cache]
+[2026-08-07 01:08:06]   p3 ok: 51 to 75 of 145 [cache]
+[2026-08-07 01:08:07]   p4 ok: 76 to 100 of 145 [cache]
+[2026-08-07 01:08:09]   p5 ok: 101 to 125 of 145 [cache]
+[2026-08-07 01:08:10]   p6 ok: 126 to 145 of 145 [cache]
+[2026-08-07 01:08:12] letter 0-9: scraped 6 vs reported 6 -> MATCH
+[2026-08-07 01:08:12] letter A: scraped 145 vs reported 145 -> MATCH
+[2026-08-07 01:08:12] duplicate registration numbers found: {"INA000017657": ["Apricus Wealth Investment Managers LLP", "Apricus Wealth Investment Managers LLP"]}
+[2026-08-07 01:08:12] records missing telephone=34 fax=55 email=4 (of 151)
+[2026-08-07 01:08:12] wrote 151 records to /Users/aryansinha/sebi-ia-scraper/output/sebi_ia_register_TEST.csv and /Users/aryansinha/sebi-ia-scraper/output/raw_TEST.jsonl

@@ -1,0 +1,29 @@
+[2026-08-07 01:21:56] letters requested: B, C, D, E, F, G, H, I
+[2026-08-07 01:21:56] mechanism: POST /sebiweb/ajax/other/getintmfpiinfo.jsp inside Playwright session; p1 next=s&doDirect=-1&nextValue=1; page k>1 next=n&doDirect=k-1&nextValue=1; alp param: 0-9 -> A1, letters map to themselves
+[2026-08-07 01:21:59] page loaded, session established
+[2026-08-07 01:21:59]   letter B: reported 35 records across 2 page(s) [p1 from fetched]
+[2026-08-07 01:22:00]   p2 ok: 26 to 35 of 35 [fetched]
+[2026-08-07 01:22:02]   letter C: reported 45 records across 2 page(s) [p1 from fetched]
+[2026-08-07 01:22:04]   p2 ok: 26 to 45 of 45 [fetched]
+[2026-08-07 01:22:05]   letter D: reported 41 records across 2 page(s) [p1 from fetched]
+[2026-08-07 01:22:07]   p2 ok: 26 to 41 of 41 [fetched]
+[2026-08-07 01:22:09]   letter E: reported 22 records across 1 page(s) [p1 from fetched]
+[2026-08-07 01:22:10]   letter F: reported 37 records across 2 page(s) [p1 from fetched]
+[2026-08-07 01:22:12]   p2 ok: 26 to 37 of 37 [fetched]
+[2026-08-07 01:22:14]   letter G: reported 32 records across 2 page(s) [p1 from fetched]
+[2026-08-07 01:22:15]   p2 ok: 26 to 32 of 32 [fetched]
+[2026-08-07 01:22:17]   letter H: reported 26 records across 2 page(s) [p1 from fetched]
+[2026-08-07 01:22:19]   p2 ok: 26 to 26 of 26 [fetched]
+[2026-08-07 01:22:20]   letter I: reported 29 records across 2 page(s) [p1 from fetched]
+[2026-08-07 01:22:22]   p2 ok: 26 to 29 of 29 [fetched]
+[2026-08-07 01:22:23] letter B: scraped 35 vs reported 35 -> MATCH
+[2026-08-07 01:22:23] letter C: scraped 45 vs reported 45 -> MATCH
+[2026-08-07 01:22:23] letter D: scraped 41 vs reported 41 -> MATCH
+[2026-08-07 01:22:23] letter E: scraped 22 vs reported 22 -> MATCH
+[2026-08-07 01:22:23] letter F: scraped 37 vs reported 37 -> MATCH
+[2026-08-07 01:22:23] letter G: scraped 32 vs reported 32 -> MATCH
+[2026-08-07 01:22:23] letter H: scraped 26 vs reported 26 -> MATCH
+[2026-08-07 01:22:23] letter I: scraped 29 vs reported 29 -> MATCH
+[2026-08-07 01:22:23] duplicate registration numbers found: {"INA000016843": ["Chase Alpha Partners LLP", "Chase Alpha Partners LLP"]}
+[2026-08-07 01:22:23] records missing telephone=66 fax=89 email=7 (of 267)
+[2026-08-07 01:22:23] wrote 267 records to /Users/aryansinha/sebi-ia-scraper/output/sebi_ia_register_B-I.csv and /Users/aryansinha/sebi-ia-scraper/output/raw_B-I.jsonl

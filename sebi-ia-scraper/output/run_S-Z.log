@@ -1,0 +1,30 @@
+[2026-08-07 01:24:27] letters requested: S, T, U, V, W, X, Y, Z
+[2026-08-07 01:24:27] mechanism: POST /sebiweb/ajax/other/getintmfpiinfo.jsp inside Playwright session; p1 next=s&doDirect=-1&nextValue=1; page k>1 next=n&doDirect=k-1&nextValue=1; alp param: 0-9 -> A1, letters map to themselves
+[2026-08-07 01:24:30] page loaded, session established
+[2026-08-07 01:24:30]   letter S: reported 133 records across 6 page(s) [p1 from cache]
+[2026-08-07 01:24:31]   p2 ok: 26 to 50 of 133 [cache]
+[2026-08-07 01:24:33]   p3 ok: 51 to 75 of 133 [cache]
+[2026-08-07 01:24:34]   p4 ok: 76 to 100 of 133 [cache]
+[2026-08-07 01:24:36]   p5 ok: 101 to 125 of 133 [cache]
+[2026-08-07 01:24:37]   p6 ok: 126 to 133 of 133 [cache]
+[2026-08-07 01:24:39]   letter T: reported 27 records across 2 page(s) [p1 from cache]
+[2026-08-07 01:24:41]   p2 ok: 26 to 27 of 27 [cache]
+[2026-08-07 01:24:42]   letter U: reported 11 records across 1 page(s) [p1 from cache]
+[2026-08-07 01:24:44]   letter V: reported 61 records across 3 page(s) [p1 from cache]
+[2026-08-07 01:24:45]   p2 ok: 26 to 50 of 61 [cache]
+[2026-08-07 01:24:47]   p3 ok: 51 to 61 of 61 [cache]
+[2026-08-07 01:24:48]   letter W: reported 23 records across 1 page(s) [p1 from cache]
+[2026-08-07 01:24:50]   letter X: no records (empty letter) [p1 from fetched]
+[2026-08-07 01:24:52]   letter Y: reported 6 records across 1 page(s) [p1 from cache]
+[2026-08-07 01:24:53]   letter Z: reported 5 records across 1 page(s) [p1 from cache]
+[2026-08-07 01:24:55] letter S: scraped 133 vs reported 133 -> MATCH
+[2026-08-07 01:24:55] letter T: scraped 27 vs reported 27 -> MATCH
+[2026-08-07 01:24:55] letter U: scraped 11 vs reported 11 -> MATCH
+[2026-08-07 01:24:55] letter V: scraped 61 vs reported 61 -> MATCH
+[2026-08-07 01:24:55] letter W: scraped 23 vs reported 23 -> MATCH
+[2026-08-07 01:24:55] letter X: scraped 0 vs reported 0 -> MATCH
+[2026-08-07 01:24:55] letter Y: scraped 6 vs reported 6 -> MATCH
+[2026-08-07 01:24:55] letter Z: scraped 5 vs reported 5 -> MATCH
+[2026-08-07 01:24:55] duplicate registration numbers found: {"INA000017620": ["VSK FINANCIAL CONSULTANCY SERVICES PVT. LTD.", "VSK FINANCIAL CONSULTANCY SERVICES PVT. LTD."]}
+[2026-08-07 01:24:55] records missing telephone=76 fax=104 email=4 (of 266)
+[2026-08-07 01:24:55] wrote 266 records to /Users/aryansinha/sebi-ia-scraper/output/sebi_ia_register_S-Z.csv and /Users/aryansinha/sebi-ia-scraper/output/raw_S-Z.jsonl
