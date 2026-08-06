@@ -1,0 +1,41 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive a measurable spike in waitlist signups via the first Google Ads test,
+  leading with proof-and-execution positioning (idea → backtest → approval-gated deployment)
+  that neither competitor occupies.
+audience: Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate
+  competitor set — ICP is unconfirmed in the brief; if the primary audience is long-term
+  investors, variant prioritization must be redone and the investor angle promoted
+  to lead)
+success_metric: 'Waitlist signup volume vs. current baseline — AMBIGUOUS: no numeric
+  target, CPL ceiling, or timeframe is defined, and no baseline waitlist number exists
+  to measure the ''spike'' against. Recommend setting a signup target and max cost-per-signup
+  before launch.'
+competitive_intel: 'The category is saturated with ''AI second opinion'' positioning
+  (Draconic, ~90% of inventory), screener-led SEO harvesting (Tradomate), and generic
+  ''free signup'' friction hooks — entering these head-on means paying auction premiums
+  for undifferentiated copy. Ownable gaps with verified capabilities: proof-first
+  workflow (backtest → paper → live), institutional execution actually shipped (TWAP/VWAP,
+  MIT/LIT/MTL, 4-leg multi-leg options), approval-gated execution with capital staying
+  at the user''s broker, and verifiable SEBI IA + NSE Whitebox empanelment credentials
+  no competitor can claim.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English, Hindi, Hinglish, or the language you think in
+- An AI trading team that builds, backtests, and executes — all approval-gated
+variants:
+- id: v2
+  angle: You brief, they work, you approve — capital never leaves your broker
+  persona: Active Indian retail trader skeptical of 'AI trading bot' claims and signal-tip
+    scams (implied ICP, unconfirmed)
+  hook_direction: 'Own the positive version of the trust barrier Draconic spends most
+    of its copy denying: every action is approval-gated, nothing deploys autonomously,
+    funds stay at the user''s existing broker. Never imply autonomous execution —
+    every execution claim must carry the approval gate.'
+  cta: Approve your first trade
+  claim_refs:
+  - Section 1 (core promise; what it is not)
+  - Section 7.3 (approval-gated execution)
+  - Section 9 (capital stays at your broker)
+  - Content pillar 8
+  formats:
+  - google_rsa

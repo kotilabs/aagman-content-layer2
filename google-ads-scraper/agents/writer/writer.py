@@ -16,7 +16,7 @@ from .validators import validate_copy_pack, ValidationError
 FORMATS_SPEC = {
     "google_rsa": {
         "description": "Google Responsive Search Ad",
-        "headlines": {"count": 15, "max_chars": 30},
+        "headlines": {"count": 10, "max_chars": 30},
         "descriptions": {"count": 4, "max_chars": 90},
     },
     "linkedin": {

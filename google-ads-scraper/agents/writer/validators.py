@@ -14,9 +14,9 @@ class ValidationError:
 def validate_google_rsa(headlines: list[str], descriptions: list[str]) -> list[ValidationError]:
     """Validate Google Responsive Search Ad copy."""
     errors: list[ValidationError] = []
-    if len(headlines) != 15:
+    if len(headlines) != 10:
         errors.append(
-            ValidationError("google_rsa", "headline_count", f"Expected 15 headlines, got {len(headlines)}")
+            ValidationError("google_rsa", "headline_count", f"Expected 10 headlines, got {len(headlines)}")
         )
     for idx, h in enumerate(headlines, 1):
         if len(h) > 30:

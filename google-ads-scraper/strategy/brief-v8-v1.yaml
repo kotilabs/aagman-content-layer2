@@ -1,0 +1,42 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive a measurable spike in waitlist signups via the first Google Ads test,
+  leading with proof-and-execution positioning (idea → backtest → approval-gated deployment)
+  that neither competitor occupies.
+audience: Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate
+  competitor set — ICP is unconfirmed in the brief; if the primary audience is long-term
+  investors, variant prioritization must be redone and the investor angle promoted
+  to lead)
+success_metric: 'Waitlist signup volume vs. current baseline — AMBIGUOUS: no numeric
+  target, CPL ceiling, or timeframe is defined, and no baseline waitlist number exists
+  to measure the ''spike'' against. Recommend setting a signup target and max cost-per-signup
+  before launch.'
+competitive_intel: 'The category is saturated with ''AI second opinion'' positioning
+  (Draconic, ~90% of inventory), screener-led SEO harvesting (Tradomate), and generic
+  ''free signup'' friction hooks — entering these head-on means paying auction premiums
+  for undifferentiated copy. Ownable gaps with verified capabilities: proof-first
+  workflow (backtest → paper → live), institutional execution actually shipped (TWAP/VWAP,
+  MIT/LIT/MTL, 4-leg multi-leg options), approval-gated execution with capital staying
+  at the user''s broker, and verifiable SEBI IA + NSE Whitebox empanelment credentials
+  no competitor can claim.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English, Hindi, Hinglish, or the language you think in
+- An AI trading team that builds, backtests, and executes — all approval-gated
+variants:
+- id: v1
+  angle: Plain words to backtest — no code
+  persona: Active Indian retail trader with strategy ideas but no Python/Excel quant
+    skills (implied ICP, unconfirmed)
+  hook_direction: 'Lead with the category-creating mechanic: type a trading idea in
+    plain words, get a backtest report — no Python, no Excel, no code. Target ''backtest
+    trading strategy India'' Search intent; position Aagman as the only tool that
+    takes an idea to evidence, not just analysis. Mention that the user can type in
+    the language they think in.'
+  cta: Type your idea
+  claim_refs:
+  - Section 1 (natural-language workspace)
+  - Section 6.1 (prompt grammar)
+  - Section 11 (multi-language support)
+  - Section 16 — Backtesting row (Yes)
+  formats:
+  - google_rsa

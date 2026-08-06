@@ -31,8 +31,9 @@ CTA RULES:
 - Let the action come from the variant's hook: if the angle is backtesting, CTA around building/testing an idea; if the angle is execution, CTA around deploying/approving a strategy; if the angle is options, CTA around describing a multi-leg idea.
 
 REGULATORY PROOF RULES:
-- SEBI registration / NSE empanelment is a trust UNLOCK, not a campaign lead. Use it in description lines, subheadlines, or sitelinks — never as a standalone RSA variant unless the brief explicitly asks for one.
-- Examples of good trust lines: "SEBI-registered IA. NSE-empanelled algo provider.", "Regulated, verifiable infrastructure.", "Check our SEBI credentials before you trade."
+- SEBI registration / NSE empanelment is a trust UNLOCK, not a headline lead. Use it in description lines (subheadlines), sitelinks, or callouts — never as a standalone headline.
+- Never write headlines like "SEBI-Registered IA", "NSE-Empanelled Algo Provider", "SEBI & NSE Verified", or "Capital Stays at Your Broker" as standalone click drivers.
+- Examples of good trust lines in descriptions: "SEBI-registered IA. NSE-empanelled algo provider.", "Regulated, verifiable infrastructure.", "Check our SEBI credentials before you trade."
 
 "SO WHAT?" TEST:
 - Before finalising each headline or description, ask: "so what?" If the answer is not obvious to someone who has never heard of Aagman, rewrite it around the user benefit.
