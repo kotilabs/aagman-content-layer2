@@ -1,5 +1,9 @@
 # Aagman Waitlist Spike — Google Ads Test #1 — v9 (keyword-data-informed)
 
+> v9.1 edit (2026-08-06): SEBI-registered IA / NSE-empanelled mentions removed from
+> descriptions — trust signals are carried by campaign callouts to avoid duplicated
+> text when callouts serve alongside descriptions.
+
 ## v9_screener: The stock screener that keeps going — screen, backtest, deploy in one chat
 
 **Headlines:**
@@ -19,7 +23,7 @@
 
 - Type your screen in plain words. Aagman filters 500+ stocks, options and MFs instantly. (87 chars)
 - Other screeners stop at a table. Aagman backtests your screen before you risk a rupee. (86 chars)
-- SEBI-registered IA. Backtest your screen before deploying — capital stays at your broker. (89 chars)
+- Backtest your screen before you deploy — capital stays at your broker till you say go. (86 chars)
 - Free screener for stocks, options & mutual funds. Type in any Indian language. (78 chars)
 
 ## v9_options: Name the strategy — straddle, condor, strangle — built from one sentence
@@ -40,7 +44,7 @@
 **Descriptions:**
 
 - Say 'iron condor on NIFTY'. Aagman builds all 4 legs, backtests it, waits for your go. (86 chars)
-- SEBI-registered IA. Strategies trade via your own broker, only after your approval. (83 chars)
+- Strategies trade via your own broker account, and only ever after your approval. (80 chars)
 - Straddle, strangle, or condor — up to 4 legs in sync. Backtest before you risk a rupee. (87 chars)
 - Describe your strangle in any Indian language. Aagman builds and trades via your broker. (88 chars)
 
@@ -62,7 +66,7 @@
 **Descriptions:**
 
 - Type your idea in plain words — Aagman backtests it with Sharpe, drawdown and win rate. (87 chars)
-- SEBI-registered IA, NSE-empanelled. Aagman tests your strategy before you risk a rupee. (87 chars)
+- Aagman tests your strategy on real historical data before you risk a rupee. (75 chars)
 - No Python, no Excel. Describe in any Indian language and get a full backtest report. (84 chars)
 - Backtest first, then go live only with your approval. Your capital stays at your broker. (88 chars)
 
@@ -85,7 +89,7 @@
 
 - Aagman runs algos on your existing broker account — no switching, no new account needed. (88 chars)
 - TWAP and VWAP execution live, plus MIT, LIT, MTL orders your broker app hides. (78 chars)
-- Approval-gated algos: Aagman executes only after your go. SEBI-registered IA. (77 chars)
+- Approval-gated algos: nothing executes on your account until you say go. (72 chars)
 - Describe it in plain words. Aagman builds, backtests, and runs it on your broker. (81 chars)
 
 ## v9_ai: An AI trading team for Indian markets — you brief, they work, you approve
@@ -108,4 +112,4 @@
 - Brief Aagman in plain words. Its AI agents screen, backtest, and build. You approve. (84 chars)
 - Not just an AI opinion. Aagman's agents do the work; you approve every money step. (82 chars)
 - Type in your own language. Aagman turns words into a backtested, tradable strategy. (83 chars)
-- SEBI-registered IA. Capital stays at your broker; live trades go only with your approval. (89 chars)
+- Capital stays at your broker; live trades go out only with your explicit approval. (82 chars)

@@ -24,7 +24,7 @@
           "descriptions": [
             "Type your screen in plain words. Aagman filters 500+ stocks, options and MFs instantly.",
             "Other screeners stop at a table. Aagman backtests your screen before you risk a rupee.",
-            "SEBI-registered IA. Backtest your screen before deploying — capital stays at your broker.",
+            "Backtest your screen before you deploy — capital stays at your broker till you say go.",
             "Free screener for stocks, options & mutual funds. Type in any Indian language."
           ]
         }
@@ -49,7 +49,7 @@
           ],
           "descriptions": [
             "Say 'iron condor on NIFTY'. Aagman builds all 4 legs, backtests it, waits for your go.",
-            "SEBI-registered IA. Strategies trade via your own broker, only after your approval.",
+            "Strategies trade via your own broker account, and only ever after your approval.",
             "Straddle, strangle, or condor — up to 4 legs in sync. Backtest before you risk a rupee.",
             "Describe your strangle in any Indian language. Aagman builds and trades via your broker."
           ]
@@ -75,7 +75,7 @@
           ],
           "descriptions": [
             "Type your idea in plain words — Aagman backtests it with Sharpe, drawdown and win rate.",
-            "SEBI-registered IA, NSE-empanelled. Aagman tests your strategy before you risk a rupee.",
+            "Aagman tests your strategy on real historical data before you risk a rupee.",
             "No Python, no Excel. Describe in any Indian language and get a full backtest report.",
             "Backtest first, then go live only with your approval. Your capital stays at your broker."
           ]
@@ -102,7 +102,7 @@
           "descriptions": [
             "Aagman runs algos on your existing broker account — no switching, no new account needed.",
             "TWAP and VWAP execution live, plus MIT, LIT, MTL orders your broker app hides.",
-            "Approval-gated algos: Aagman executes only after your go. SEBI-registered IA.",
+            "Approval-gated algos: nothing executes on your account until you say go.",
             "Describe it in plain words. Aagman builds, backtests, and runs it on your broker."
           ]
         }
@@ -129,7 +129,7 @@
             "Brief Aagman in plain words. Its AI agents screen, backtest, and build. You approve.",
             "Not just an AI opinion. Aagman's agents do the work; you approve every money step.",
             "Type in your own language. Aagman turns words into a backtested, tradable strategy.",
-            "SEBI-registered IA. Capital stays at your broker; live trades go only with your approval."
+            "Capital stays at your broker; live trades go out only with your explicit approval."
           ]
         }
       }
