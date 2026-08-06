@@ -125,3 +125,27 @@
 - Aagman never trades without your go-ahead. Capital stays at your existing broker. (81 chars)
 - SEBI-registered IA and NSE-empanelled. An AI trading team built for Indian markets. (83 chars)
 - No Python, no Excel. Type in English, Hindi, or Hinglish and your AI team handles it. (85 chars)
+
+## Variant v6: Natural-language stock screener — no formulas, no Excel, just type what you want
+
+### Google Responsive Search Ad
+
+**Headlines (max 30 chars):**
+
+- Screen 500+ Stocks, Just Ask (28 chars)
+- No Formulas. Just Type It. (26 chars)
+- Find Stocks Without Excel (25 chars)
+- Ask in Your Own Language (24 chars)
+- Type It, We Screen It (21 chars)
+- Stock Screener Minus Syntax (27 chars)
+- Screen Stocks in Tamil Too (26 chars)
+- Filters Without the Formula (27 chars)
+- Screen Stocks Now — Type It (27 chars)
+- Like Asking a Research Analyst (30 chars)
+
+**Descriptions (max 90 chars):**
+
+- Type 'ROE above 20%, low debt' — Aagman screens 500+ stocks, options and mutual funds. (86 chars)
+- Ask in Tamil, Telugu or any Indian language — Aagman screens by what you say. No formulas. (90 chars)
+- SEBI-registered IA. Screen by technicals, fundamentals, or options data in plain words. (87 chars)
+- Tell Aagman what you want. It screens the market and shows matching stocks in seconds. (86 chars)

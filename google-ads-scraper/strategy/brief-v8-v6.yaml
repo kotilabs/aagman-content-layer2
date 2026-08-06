@@ -1,0 +1,47 @@
+campaign: 'Aagman Waitlist Spike — Google Ads Test #1'
+objective: Drive a measurable spike in waitlist signups via the first Google Ads test,
+  leading with proof-and-execution positioning (idea → backtest → approval-gated deployment)
+  that neither competitor occupies.
+audience: Active Indian retail F&O and equity traders (implied by the Draconic/Tradomate
+  competitor set — ICP is unconfirmed in the brief; if the primary audience is long-term
+  investors, variant prioritization must be redone and the investor angle promoted
+  to lead)
+success_metric: 'Waitlist signup volume vs. current baseline — AMBIGUOUS: no numeric
+  target, CPL ceiling, or timeframe is defined, and no baseline waitlist number exists
+  to measure the ''spike'' against. Recommend setting a signup target and max cost-per-signup
+  before launch.'
+competitive_intel: 'The category is saturated with ''AI second opinion'' positioning
+  (Draconic, ~90% of inventory), screener-led SEO harvesting (Tradomate), and generic
+  ''free signup'' friction hooks — entering these head-on means paying auction premiums
+  for undifferentiated copy. Ownable gaps with verified capabilities: proof-first
+  workflow (backtest → paper → live), institutional execution actually shipped (TWAP/VWAP,
+  MIT/LIT/MTL, 4-leg multi-leg options), approval-gated execution with capital staying
+  at the user''s broker, natural-language screener across 500+ stocks/options/MFs with
+  technical, fundamental, and options filters, and verifiable SEBI IA + NSE Whitebox
+  empanelment credentials no competitor can claim.'
+cross_variant_proof_lines:
+- SEBI-registered Investment Adviser + NSE-empanelled Whitebox algo provider
+- Type your idea in English or any Indian language — not only Hindi
+- An AI trading team that builds, backtests, and executes — all approval-gated
+variants:
+- id: v6
+  angle: Natural-language stock screener — no formulas, no Excel, just type what you want
+  persona: Active Indian retail trader or investor who wants to find ideas quickly
+    without learning screener syntax or building Excel models
+  hook_direction: 'Lead with the speed and simplicity of finding ideas in plain language.
+    Āagman screens 500+ stocks, options, and mutual funds using technical, fundamental,
+    and options filters — all from a typed or spoken sentence. The competitor angle
+    is that Tradomate sells screeners; Āagman lets you ask for results like you would
+    ask a research analyst. Do NOT lead with backtesting, execution algos, or F&O multi-leg
+    in this variant. When referencing Indian languages, do NOT default to Hindi. Use
+    generic phrasing like ''any Indian language'', ''your own language'', or a non-Hindi
+    example (Tamil, Telugu, Kannada, Marathi, Bengali, etc.). The story is: discovery
+    is instant, in your language, and requires no formulas.'
+  cta: Screen stocks now
+  claim_refs:
+  - Section 4.2 (Research Workflow — Screen)
+  - Section 6.2 (Indicators & Screeners)
+  - Section 8.3 (Screener Outputs)
+  - Section 16 — Screener row (Yes)
+  formats:
+  - google_rsa

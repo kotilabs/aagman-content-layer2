@@ -133,6 +133,32 @@
           ]
         }
       }
+    },
+    "v6": {
+      "variant_id": "v6",
+      "angle": "Natural-language stock screener — no formulas, no Excel, just type what you want",
+      "formats": {
+        "google_rsa": {
+          "headlines": [
+            "Screen 500+ Stocks, Just Ask",
+            "No Formulas. Just Type It.",
+            "Find Stocks Without Excel",
+            "Ask in Your Own Language",
+            "Type It, We Screen It",
+            "Stock Screener Minus Syntax",
+            "Screen Stocks in Tamil Too",
+            "Filters Without the Formula",
+            "Screen Stocks Now — Type It",
+            "Like Asking a Research Analyst"
+          ],
+          "descriptions": [
+            "Type 'ROE above 20%, low debt' — Aagman screens 500+ stocks, options and mutual funds.",
+            "Ask in Tamil, Telugu or any Indian language — Aagman screens by what you say. No formulas.",
+            "SEBI-registered IA. Screen by technicals, fundamentals, or options data in plain words.",
+            "Tell Aagman what you want. It screens the market and shows matching stocks in seconds."
+          ]
+        }
+      }
     }
   }
 }
