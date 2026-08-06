@@ -84,26 +84,26 @@
     },
     "v4": {
       "variant_id": "v4",
-      "angle": "Institutional execution, actually shipped — TWAP/VWAP live today",
+      "angle": "Institutional execution for retail traders — talk to the desk in your language",
       "formats": {
         "google_rsa": {
           "headlines": [
-            "TWAP & VWAP Algos, Live Today",
-            "Institutional Algos for Retail",
             "Trade Like an FII Desk",
-            "Slice Big Orders With TWAP",
-            "VWAP Execution, No Desk Needed",
-            "MIT, LIT & MTL Orders Built In",
-            "Big Order? Slice It Smartly",
-            "Algo Execution Without a Desk",
-            "See TWAP & VWAP Algos Live",
-            "Algos Your Broker App Hides"
+            "Algos Your Broker App Hides",
+            "Institutional Algos for Retail",
+            "Type It. Aagman Runs the Algo",
+            "Bol Ke Banao Trading Algo",
+            "Describe Orders in Hindi",
+            "Backtest First. Go Live Next",
+            "No Excel. No Python. Algos",
+            "You Approve Before Money Moves",
+            "Plain Words In, Algos Out"
           ],
           "descriptions": [
-            "Aagman runs TWAP and VWAP execution algos live today — the algos big institutions use.",
-            "SEBI-registered, NSE-empanelled. Algo orders run through your own broker account.",
-            "Slice large orders with TWAP/VWAP, or use MIT, LIT and MTL order types — all live now.",
-            "Tell Aagman your order in plain words. It runs TWAP or VWAP only after your approval."
+            "Type your order in Hindi or English. Aagman turns it into institutional-grade execution.",
+            "Aagman runs TWAP and VWAP algos — the same execution big desks use, now in your hands.",
+            "SEBI-registered, NSE-empanelled. Capital stays at your broker; you approve every algo.",
+            "Backtest first, then deploy with your approval. No code or institutional desk needed."
           ]
         }
       }

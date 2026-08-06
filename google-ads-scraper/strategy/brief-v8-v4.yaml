@@ -24,14 +24,17 @@ cross_variant_proof_lines:
 - An AI trading team that builds, backtests, and executes — all approval-gated
 variants:
 - id: v4
-  angle: Institutional execution, actually shipped — TWAP/VWAP live today
+  angle: Institutional execution for retail traders — talk to the desk in your language
   persona: Active Indian retail trader who wants institutional-grade execution without
     an institutional desk (implied ICP, unconfirmed)
-  hook_direction: 'Claim functionally what Draconic only gestures at emotionally (''think
-    like an FII desk''): TWAP and VWAP execution algos live today, plus MIT/LIT/MTL
-    order types as a sibling ad group under the same ''institutional execution for
-    retail'' theme. Do NOT mention Iceberg or POV — those are ''coming next'' and
-    not claimable.'
+  hook_direction: 'Lead with the desk metaphor: ''Trade Like an FII Desk'', ''Algos
+    Your Broker App Hides'', ''Institutional Algos for Retail''. The shift is that
+    the user describes the order in plain language (English, Hindi, Hinglish) and
+    Aagman runs the algo. Do NOT lead headlines with TWAP, VWAP, Iceberg, or POV.
+    Those specific algo names should appear only 2-3 times across the descriptions
+    (subheadlines), not as the primary headline hook. The main story is: retail traders
+    now get the execution desk big institutions use, controlled by typing or speaking
+    naturally.'
   cta: See the algos live
   claim_refs:
   - Section 7.1 (execution algorithms — TWAP/VWAP live; MIT/LIT/MTL)

@@ -78,29 +78,29 @@
 - SEBI-registered, NSE-empanelled. Multi-leg trades run through your existing broker. (83 chars)
 - Aagman backtests your strangle first. Approve, and it fires all legs in sync. (77 chars)
 
-## Variant v4: Institutional execution, actually shipped — TWAP/VWAP live today
+## Variant v4: Institutional execution for retail traders — talk to the desk in your language
 
 ### Google Responsive Search Ad
 
 **Headlines (max 30 chars):**
 
-- TWAP & VWAP Algos, Live Today (29 chars)
-- Institutional Algos for Retail (30 chars)
 - Trade Like an FII Desk (22 chars)
-- Slice Big Orders With TWAP (26 chars)
-- VWAP Execution, No Desk Needed (30 chars)
-- MIT, LIT & MTL Orders Built In (30 chars)
-- Big Order? Slice It Smartly (27 chars)
-- Algo Execution Without a Desk (29 chars)
-- See TWAP & VWAP Algos Live (26 chars)
 - Algos Your Broker App Hides (27 chars)
+- Institutional Algos for Retail (30 chars)
+- Type It. Aagman Runs the Algo (29 chars)
+- Bol Ke Banao Trading Algo (25 chars)
+- Describe Orders in Hindi (24 chars)
+- Backtest First. Go Live Next (28 chars)
+- No Excel. No Python. Algos (26 chars)
+- You Approve Before Money Moves (30 chars)
+- Plain Words In, Algos Out (25 chars)
 
 **Descriptions (max 90 chars):**
 
-- Aagman runs TWAP and VWAP execution algos live today — the algos big institutions use. (86 chars)
-- SEBI-registered, NSE-empanelled. Algo orders run through your own broker account. (81 chars)
-- Slice large orders with TWAP/VWAP, or use MIT, LIT and MTL order types — all live now. (86 chars)
-- Tell Aagman your order in plain words. It runs TWAP or VWAP only after your approval. (85 chars)
+- Type your order in Hindi or English. Aagman turns it into institutional-grade execution. (88 chars)
+- Aagman runs TWAP and VWAP algos — the same execution big desks use, now in your hands. (86 chars)
+- SEBI-registered, NSE-empanelled. Capital stays at your broker; you approve every algo. (86 chars)
+- Backtest first, then deploy with your approval. No code or institutional desk needed. (85 chars)
 
 ## Variant v5: Your AI trading team for Indian markets
 
