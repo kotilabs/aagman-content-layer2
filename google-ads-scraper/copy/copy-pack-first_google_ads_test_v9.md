@@ -7,7 +7,7 @@
 - Free Stock Screener (19 chars)
 - Stock Screener That Backtests (29 chars)
 - Screen, Backtest, Then Deploy (29 chars)
-- No Formula Syntax Needed (24 chars)
+- Screen Stocks in Plain Words (28 chars)
 - Screen in Any Indian Language (29 chars)
 - Screen 500+ Stocks & MFs (24 chars)
 - Try the Screener Free (21 chars)
@@ -17,7 +17,7 @@
 
 **Descriptions:**
 
-- Type your screen in plain words — no formula syntax. Aagman filters 500+ stocks instantly. (90 chars)
+- Type your screen in plain words. Aagman filters 500+ stocks, options and MFs instantly. (87 chars)
 - Other screeners stop at a table. Aagman backtests your screen before you risk a rupee. (86 chars)
 - SEBI-registered IA. Backtest your screen before deploying — capital stays at your broker. (89 chars)
 - Free screener for stocks, options & mutual funds. Type in any Indian language. (78 chars)
@@ -35,7 +35,7 @@
 - Backtested Before You Approve (29 chars)
 - Build Your Strategy (19 chars)
 - Type in Any Indian Language (27 chars)
-- A Builder, Not a Tip Service (28 chars)
+- From Sentence to Live Trade (27 chars)
 
 **Descriptions:**
 
@@ -78,7 +78,7 @@
 - Type a Strategy, Get an Algo (28 chars)
 - Build Algos — No Code Needed (28 chars)
 - Backtest Algos Before Trading (29 chars)
-- Not a Bot. Not a Tip Service. (29 chars)
+- You Approve Every Algo Trade (28 chars)
 - See the Algos Live (18 chars)
 
 **Descriptions:**
@@ -96,7 +96,7 @@
 - An AI Team for Indian Markets (29 chars)
 - Beyond AI Opinions (18 chars)
 - Brief. They Work. You Approve (29 chars)
-- Not a Bot. Not a Tip Service. (29 chars)
+- One Chat. Full Trading Team. (28 chars)
 - Backtest Ideas Without Code (27 chars)
 - Type Your Trading Idea (22 chars)
 - Test Before You Risk Money (26 chars)

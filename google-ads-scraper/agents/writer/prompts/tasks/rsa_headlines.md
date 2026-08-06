@@ -16,13 +16,19 @@ STRONG HEADLINE ANGLES:
 - The outcome or benefit (e.g. "Test Before You Risk Money")
 - A specific capability (e.g. "4-Leg Options From One Sentence")
 - A local-language or Hinglish variant that feels natural
-- One trust-integrated line only if it carries the benefit with it (e.g. "Test Ideas, Not Tips" or "Not a Bot. Not a Tip Service.")
+- One trust-integrated line only if it carries the benefit with it (e.g. "Test Ideas, Not Tips")
+
+NEGATIVE-ONLY FRAMINGS ARE BANNED:
+- Never write a headline that only says what the product is NOT. "Not a Bot. Not a Tip Service." fails — a searcher with no context cannot tell what the product IS. Always state the positive: "You Approve Every Trade", "Full Team, Not Just Opinions".
+- Never use insider vocabulary the searcher does not think in: "formula syntax", "multi-leg", "4-leg", "SIR". Say the plain-language version: "Type It In Plain Words", "Strategies From One Sentence".
 
 WEAK HEADLINES TO AVOID:
 - "SEBI-Registered IA" — trust fragment, not a search answer.
 - "NSE-Empanelled Algo Provider" — jargon, no user intent.
 - "You Approve Every Step" — weak benefit, better in description.
 - "Capital Stays at Your Broker" — defensive, not a click driver.
+- "No Formula Syntax Needed" — insider language; the searcher never thought in formulas to begin with. Use "Screen Stocks in Plain Words".
+- "Not a Bot. Not a Tip Service." — negative-only framing; say what it IS.
 - "Type Your Idea" — too vague; "Type Your Trading Idea" or "Type a Strategy Idea" is better.
 
 QUALITY OVER QUANTITY:
