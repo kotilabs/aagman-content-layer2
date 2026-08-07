@@ -87,45 +87,42 @@ check us out at: aagman.ai. also happy to answer any questions you might have.
 
 ---
 
-## AD 3 — Founder Q&A (pure question-answer post)
+## AD 3 — Founder's letter post (who ajit is + the thesis + capabilities + invite)
 
-hey folks, i'm ajit - ex-cxo at etmoney, early cred, ex prop trader since 2003.
+hey folks, i'm ajit.
 
-i'm building aagman (aagman.ai), a quant platform for indian markets, and i keep getting
-the same questions. answering them here instead of one by one.
+prop trader since 2003. traded institutional books where decisions had immediate
+consequences. then fintech - cxo at etmoney, early team at cred.
 
-"is aagman a broker?"
-no. it connects to your existing broker to support execution. it does not custody funds
-or replace your brokerage. your money never touches us.
+most of what hits your screen isn't signal. it's a distraction designed to make you react.
 
-"does it predict markets?"
-no. it does not forecast price direction. it helps you structure, test, and maintain your
-own trading logic under live conditions. your brain stays the alpha.
+two decades around markets made certain things hard to unsee. how quickly context slips
+when positions move. how hard it becomes to tell what you chose to pay attention to, and
+what simply forced its way in. most systems make it easier to act inside that noise.
+i'm building aagman (aagman.ai) to help you step back from it.
 
-"why can't i just use chatgpt, claude, or grok?"
-because they respond to prompts. they don't track live positions, ingest real-time feeds,
-compute indicators continuously, or stay in sync with your broker. aagman works inside a
-live market state, not outside it.
+no urgency bait. no performative certainty. just a way to keep your original thinking
+intact when pressure sets in.
 
-"does it trade autonomously with my capital?"
-no. every real-money step needs your explicit approval. you brief, the agents work, you
-approve. nothing trades behind your back - every order routes through a machine you control.
+what that looks like in practice: a full-stack quant platform for indian markets. no code -
+describe what you want in any language, the system runs it.
 
-"is it a tip or signal service?"
-no. no tips, no alerts, no copy-trading. it supports your own strategy and decision process.
+screen funds & stocks with plain-language filters.
+example: "stocks with roe >15% and debt-to-equity <0.5"
+backtest strategies before you commit capital.
+example: "backtest an ema 9/21 crossover on [stock name], cash equity, 500 shares, last 1 year."
+run conditional orders without writing code. price, sl, target, trailing stop - in plain
+words. aagman watches the market, you confirm, the order goes through your own broker.
+example: "every tuesday at 9:20 am, if vix is above 14, sell 1 lot nifty weekly straddle.
+exit at 25% profit, 40% stop loss, or 3:15 pm"
 
-"is it regulated?"
-yes. sebi-registered investment adviser (ina000021951) and nse-empanelled algo provider
-(nse circular ref. 40/2026).
-
-"what does it actually do day to day?"
-you type things like "stocks with roe >15% and low debt" or "backtest ema 9/21 on banknifty,
-2 years, with fees and slippage" and it does them. screen, backtest, paper, live - one chat,
-any indian language.
+execution runs through your existing broker (zerodha, mofsl live, more coming).
+sebi-registered investment adviser (ina000021951), nse-empanelled algo provider.
 
 we're in beta (no money or hidden pricing involved). 6 months free for feedback.
 
-check us out at: aagman.ai. ask me anything else below - i'll answer every question.
+check us out at: aagman.ai. and ask me anything below - about the platform, markets, or
+the last 20 years. i'll answer every question.
 
 ---
 
