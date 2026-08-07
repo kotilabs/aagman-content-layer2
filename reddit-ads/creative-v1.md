@@ -84,53 +84,11 @@ check us out at: aagman.ai/invest. happy to answer any questions.
 
 ---
 
-## AD 3 — Founder's letter post (who ajit is + the thesis + capabilities + invite)
-
-hey folks, i'm ajit.
-
-prop trader since 2003. traded institutional books where decisions had immediate
-consequences. then fintech - cxo at etmoney, early team at cred.
-
-most of what hits your screen isn't signal. it's a distraction designed to make you react.
-
-two decades around markets made certain things hard to unsee. how quickly context slips
-when positions move. how hard it becomes to tell what you chose to pay attention to, and
-what simply forced its way in. most systems make it easier to act inside that noise.
-i'm building aagman (aagman.ai) to help you step back from it.
-
-no urgency bait. no performative certainty. just a way to keep your original thinking
-intact when pressure sets in.
-
-what that looks like in practice: a full-stack quant platform for indian markets. no code -
-describe what you want in any language, the system runs it.
-
-screen funds & stocks with plain-language filters.
-example: "stocks with roe >15% and debt-to-equity <0.5"
-backtest strategies before you commit capital.
-example: "backtest an ema 9/21 crossover on [stock name], cash equity, 500 shares, last 1 year."
-run conditional orders without writing code. price, sl, target, trailing stop - in plain
-words. aagman watches the market, you confirm, the order goes through your own broker.
-example: "every tuesday at 9:20 am, if vix is above 14, sell 1 lot nifty weekly straddle.
-exit at 25% profit, 40% stop loss, or 3:15 pm"
-
-execution runs through your existing broker (zerodha, mofsl live, more coming).
-sebi-registered investment adviser (ina000021951), nse-empanelled algo provider.
-
-we're in beta (no money or hidden pricing involved). 6 months free for feedback.
-
-check us out at: aagman.ai. and ask me anything below - about the platform, markets, or
-the last 20 years. i'll answer every question.
-
----
-
 ## Targeting notes (for the build)
 
 - AD 1 → traders: r/IndianStreetBets, r/IndiaAlgoTrading, r/DalalStreetBets(+watch quality),
-  r/options_trading, r/IndianF&O if targetable; keyword cluster: algo trading, backtesting,
-  option selling, straddle, strangle
+  r/options_trading, r/IndianF&O if targetable
 - AD 2 → investors: r/personalfinanceindia, r/FIRE_Ind, r/mutualfunds, r/IndianFIRE,
-  r/investing; keyword cluster: mutual funds, sip, index funds, stock screener
-- AD 3 → broad finance interest cluster + the same two clusters at lower bids; works as the
-  conversation-starter (comments ON, founder answers)
+  r/investing
 - All: India geo, comments ON, conversions objective, human review takes ~1 day (finance may
   face extra scrutiny), submit 48h before intended start.
