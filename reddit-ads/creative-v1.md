@@ -53,37 +53,34 @@ the ad account's profile. Two paths:
 
 ---
 
-## AD 2 — Investors cohort (same voice, /invest content)
+## AD 2 — Investors cohort
 
 hey folks, i'm ajit - ex-cxo at etmoney, early cred, ex prop trader since 2003.
 
-most of what hits your screen isn't signal. it's a distraction designed to make you react.
-so i'm building aagman (aagman.ai) - a quieter way to invest in indian markets.
+i'm building aagman (aagman.ai) - an ai investing assistant for indian markets. no code, no spreadsheets, no screen-watching. describe what you want in any language, the system does the work.
 
 what it does
-find funds & stocks by just asking. no formulas, no spreadsheets.
-example: "large cap mfs with lowest expense ratio"
-example: "elss funds with 5+ year track record sorted by returns"
-example: "stocks with roe above 15% and debt-to-equity below 0.5"
-(and yes - english, hindi, hinglish, tamil, bengali. ask however you think in.)
 
-two proofs before your money goes in. backtest the idea on 5 years of real history. then
-paper trade it live with zero capital. only then does aagman ask for your ok to go live.
+screen funds & stocks with plain-language filters. ask in english, hindi, hinglish, tamil, or bengali.
+example: "best large cap mutual funds by 1-year return"
+example: "stocks with roe above 15% and debt-to-equity below 0.5"
+example: "ache fundamentals wale stocks - roe 15% se zyada, low debt"
+
+don't buy on gut feeling. run your idea through real market history first, then paper trade it live with zero capital.
+example: "backtest buying [stock name] every time it drops 10% from its 52-week high, ₹10,000 each time, last 5 years."
 backtest → paper → live. that's the order. no shortcuts.
 
-set-and-forget orders in plain words. your price, your stop-loss, your rules.
+set conditional orders in plain words. your price, your stop-loss, your target. aagman watches the market so you don't have to.
 example: "buy 10 reliance shares if the price drops to 2900."
-aagman watches the market so you don't have to. set it before the market opens, go about
-your day. you confirm, the order goes through your own broker.
+set it before market open, go to work, aagman doesn't blink.
 
-built for real money. risk gates stop bad orders before they leave, and every order routes
-through a machine you control - so even aagman can't trade behind your back.
-sebi-registered investment adviser (ina000021951), nse-empanelled algo provider.
+coming soon: portfolio health check and tax insights from a single upload. see what a hasty sale costs you before you hit sell - like knowing you're 18 days away from ltcg and waiting saves you ₹15,750.
 
-we're opening up beta (no money or hidden pricing involved) and want feedback. 6 months
-free for helping.
+no need to move your money anywhere. aagman connects to your existing broker (zerodha, mofsl live, more coming). your holdings stay where they are, your demat stays where it is. you just get a smarter layer on top of the account you already have.
 
-check us out at: aagman.ai. also happy to answer any questions you might have.
+we're opening up beta (free to try, no credit card) and want feedback from real investors.
+
+check us out at: aagman.ai/invest. happy to answer any questions.
 
 ---
 
