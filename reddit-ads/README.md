@@ -16,6 +16,8 @@ Nothing goes live without founder approval.
 - Creative v1 (2 Reddit ads): `creative-v1.md`
 - Reddit campaign log: `campaign-log.md`
 - Google Ads campaign log: `google-ads-campaign-log.md`
+- Google Ads strategy workspace: `../google-ads-scraper/` (keyword research, copy pack,
+  competitive gap analysis, launch-readiness note)
 - Raw research streams: `research/00-official-mechanics.md` (Reddit Help Center),
   `research/01-practitioner-best-practices.md`, `research/02-reddit-community-tips-hacks.md`,
   `research/03-finance-vertical-india.md`
@@ -48,6 +50,9 @@ Nothing goes live without founder approval.
 
 ## Google Ads
 
+All strategy, keyword, copy, and competitive research work lives in
+[`../google-ads-scraper/`](../google-ads-scraper/).
+
 - **Campaign:** Aagman Waitlist — Search
 - **Network:** Search-only, India + English
 - **Budget:** ₹1,430/day manual CPC
@@ -56,7 +61,7 @@ Nothing goes live without founder approval.
 ### Google Ads status
 
 - [x] Account connected + Pipeboard MCP verified
-- [x] Strategy, keywords, negatives, and copy ready
+- [x] Strategy, keywords, negatives, and copy ready in `../google-ads-scraper/`
 - [x] Campaign fully built and PAUSED in Google Ads
 - [x] GCLID capture live on `aagman.ai`
 - [x] GA4 ↔ Google Ads linked
