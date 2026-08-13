@@ -1,0 +1,1 @@
+Not a glitch — design. Since Aug 3, F&O stocks close in a 20-min auction, not the old 30-min VWAP. The "indicative" 78,860 at 3:28 was never the price; orders stack in till a random close at 3:30. Analysts warned on day one this would hit expiry settlements. Today it did.
