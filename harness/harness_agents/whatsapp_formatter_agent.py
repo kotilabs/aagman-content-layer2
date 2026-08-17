@@ -41,8 +41,14 @@ RULES = """\
 
 Register: the audience is informed. purely fact-led. no hook theatrics, no
 rhetorical questions, no slogan closers, no marketing language. state facts,
-attribute sources inline, and let the implication speak for itself. end on the
-open question or the mechanism, never a punchline.
+attribute sources inline, and let the implication speak for itself.
+
+Structure: treat the source material (blog, research artifact, infographic) as
+truth — fetch and read it before writing, take facts from it, never from
+memory. give the meat in the message itself: the core facts and the one real
+insight. then the closing line leads into the writeup by previewing what the
+reader will find there that the message could not fit ("the full piece gets
+into X, Y and Z"), then the raw URL on the last line. never a bare "read more".
 """
 
 

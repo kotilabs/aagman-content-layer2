@@ -1,13 +1,10 @@
-the us and japan confirmed a coordinated yen-buying intervention on august 3, the first joint operation since 1998.
+the us joined japan's yen intervention on july 31, the first time washington has bought yen since 1998. japan spent ~$59bn solo on july 30, its largest single-day currency defense ever, and ~$75bn in total. the us leg was small on purpose: *$5-10bn*, per bessent's own notepad photographed at camp david.
 
-the numbers:
-- japan spent an estimated *¥8.45tn (~$59bn)* on july 30, a record single day, plus *¥5.33tn* in the joint round on july 31. two-day total: *~¥13.8tn (~$85-95bn)*
-- usd/jpy peaked at *163.73*, the yen's weakest in 40 years, then fell to 155.20
-- the us side, run through the new york fed, was much smaller. jpmorgan notes treasury's fx reserves are finite; unconventional measures could extend capacity to ~$187bn
+the mechanism is the story. japan's reserves sit in us treasuries, so every yen defense begins with treasury selling, and the us 10-year was already at 4.6%. washington's operation was designed to keep those bonds off the market: the us sold *euros, not dollars*, and japan will now finance future interventions through the fed's fima repo facility, borrowing dollars against treasuries instead of selling them.
 
-why would washington spend its reserves supporting another currency? self-interest. japan holds roughly *$1 trillion* of us treasuries. funding solo intervention meant selling those into a bond market already strained by record issuance. better to spend fx reserves than watch your largest creditor turn seller.
+the us did not spend $5-10bn to move the yen. it spent $5-10bn to change how japan pays for moving it.
 
-both finance ministers used the same phrase: "will not hesitate." a 1% boj and a 3.50-3.75% fed produced the 40-year-low yen. intervention treats the symptom, not the spread.
+the full piece gets into what doesn't fit here: why 1998 shows intervention buys a bounce but never the turn, the four honest readings of what washington is actually doing, and the detail to watch next: the ecb stood aside while its own currency was the instrument.
 
-full breakdown:
+full piece:
 https://aagman2.substack.com/p/why-did-the-us-join-the-yen-intervention
