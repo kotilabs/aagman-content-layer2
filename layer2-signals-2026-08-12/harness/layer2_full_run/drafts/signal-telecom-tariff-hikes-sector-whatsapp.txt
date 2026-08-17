@@ -1,14 +1,18 @@
-airtel removed its ₹299 prepaid plan in early august. ₹349 is now the minimum cost of keeping a sim active, a 17% rise at the entry point. the floor was ₹249 a year ago, so the minimum is up 40% in twelve months without a single announced hike.
+airtel removed its ₹299 prepaid plan in early august. ₹349 is now the minimum cost of keeping a sim active, with no hike announced.
 
-jio, airtel and vi are expected to raise prepaid tariffs *12-15% by november*. if the hike reaches the floor, the entry price will be up ~60% in two years.
+the numbers:
+- the entry floor has gone ₹249 to ₹299 to ₹349 in two years, a *40%* rise in the minimum cost of a connection
+- jio, airtel and vi are expected to raise prepaid tariffs *12-15% by november*. if it lands on the floor: ~60%
+- airtel and jio made *~₹64,000 crore* net profit in fy26
 
-context:
-- three private operators remain of the 10-15 that existed before jio's 2016 launch; trai practises tariff forbearance and does not set prices
-- airtel and jio reported a combined *~₹64,000 crore* net profit in fy26
-- the 5g build is *99.9% complete*, so incremental tariff now funds margins, not construction
-- ~150 million feature-phone users on bundled plans pay an effective *₹94-99 per gb*, the highest unit rate in the market, for data they do not use (consumer-group submissions to trai, june 2026)
+why they can:
+- three private operators remain of the 10-15 that existed before jio's 2016 launch; customers have nowhere to port
+- trai practises tariff forbearance: it does not set prices
+- the 5g build is *99.9% complete*, so this hike funds margins, not construction
 
-the one open regulatory item: trai's draft rule mandating proportionately cheaper voice-and-sms-only vouchers at every validity. all three operators opposed it in june.
+who pays most: ~150 million feature-phone users on bundled plans pay an effective *₹94-99 per gb*, the highest unit rate in the market, for data they never use.
 
-sources and full breakdown:
+the full piece gets into what doesn't fit here: how deleting the cheapest plan replaced the headline hike, the government's four-way conflict as regulator, creditor, vi shareholder and bsnl owner, and the trai voice-only voucher rule all three operators opposed in june.
+
+full breakdown:
 https://x.com/tradewithaagman/status/2089284176281555167
