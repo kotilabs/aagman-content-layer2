@@ -38,6 +38,11 @@ RULES = """\
 - short paragraphs, one idea each, blank line between
 - lowercase house voice
 - target <= 1200 chars
+
+Register: the audience is informed. purely fact-led. no hook theatrics, no
+rhetorical questions, no slogan closers, no marketing language. state facts,
+attribute sources inline, and let the implication speak for itself. end on the
+open question or the mechanism, never a punchline.
 """
 
 
