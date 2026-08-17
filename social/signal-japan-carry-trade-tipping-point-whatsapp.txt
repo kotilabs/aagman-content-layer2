@@ -1,0 +1,15 @@
+the bank of japan raised its policy rate to 1.0% on 16 june, the highest since september 1995, and said it will "continue to raise the policy interest rate." the fed is on hold at 3.50-3.75%.
+
+the yen has been the developed world's cheapest funding currency for a generation. the fed-boj spread is *+2.62%* and projected to compress to *+1.38%* in 12 months, closing from both sides: boj hikes from below, a fed on hold from above.
+
+the positioning:
+- leveraged funds are net short *90,461 yen futures contracts* (cftc, 14 july)
+- usd/jpy breached *163* on 21 july, a 40-year extreme
+- japan's mof spent *¥11.7 trillion* on yen-buying intervention between late april and late may, and ran rate checks in early july, the usual precursor to more
+
+the template is august 2024: a ~$250 billion carry stock unwound in days. the nikkei fell 12.4% in a session, vix printed above 65, the s&p dropped 3%.
+
+the risk is not a rate level, it is a positioning level. if the yen appreciates fast enough, forced carry closures buy yen, which appreciates it further.
+
+sources and full breakdown:
+https://github.com/kotilabs/aagman-content-layer2/blob/main/research/signal-japan-carry-trade-tipping-point.md
