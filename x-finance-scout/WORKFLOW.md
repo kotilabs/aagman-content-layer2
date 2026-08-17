@@ -11,7 +11,17 @@ Feed access is the same as `aagman-harness-run/harness_agents/x_scout_agent.py`:
 - `drafts/` — writeups before posting
 - `research/` — research notes per topic
 
-Posting has no script yet — it's driven interactively via browser-use commands (`open <permalink>`, then Repost → Quote → fill → Post using `state`/`click`/`input`/`eval`).
+Posting is driven interactively via browser-use. Proven flow (X composer, learned 2026-08-17):
+
+1. `browser-use --profile kotilabs.com --headed open "https://x.com/compose/post"`
+2. `state` → find the `Post text` textbox index (it changes every load, never reuse an old index)
+3. Insert text via `eval` with `document.execCommand('insertText', ...)` — `browser-use input` mangles newlines into one block. Clear first with select-all + `execCommand('delete')`.
+4. **Verify before touching anything else**: eval the composer and check `chars` and that `innerText.slice(0, N)` matches the draft's exact first words. The clear-and-retype path leaves one stray character behind (posted "aairtel" live because of this). If head ≠ draft head, delete everything and redo — do not proceed with images until text is exact.
+5. Images: `browser-use upload <file-input-index> <path>` — ONE file per call. X caps at 4 images/post. The "Add media" button goes `disabled=true` when full; use that as the count check.
+6. `eval` a click on `[data-testid="tweetButton"]`.
+7. Verify on the profile page (`open https://x.com/<handle>`) — newest post's text head, photo count, timestamp. Check `posted.jsonl` gets the new URL.
+
+Two gotchas: Buffer can't post X long-form (reports the channel as "X Free Profile" and caps at 280 even on Premium accounts) — long posts must go through the browser. And the browser profile's logged-in account may not be the target account — check the composer account switcher, because a mismatch means you can't delete the post later either.
 
 ## The loop (human-in-the-loop — the user is the editor)
 
