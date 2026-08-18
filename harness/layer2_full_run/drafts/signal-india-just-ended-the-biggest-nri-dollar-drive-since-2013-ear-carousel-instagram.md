@@ -2,82 +2,54 @@ Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advic
 
 ## Instagram Carousel — The RBI Closed Its Biggest Dollar Drive Since 2013, a Month Early
 
+**India recruited $56.8 billion of diaspora dollars to defend the rupee. Then it shut the window a month early — nine days after saying it wouldn't.**
+
 ---
 
 ### Slide 1
 
-**The RBI closed its biggest dollar drive since 2013 — a month early.**
-
-$56.8 billion collected. The window was supposed to run to September 30. On August 14, it was shut for August 31 instead — nine days after the Governor publicly ruled out closing it early.
-
-Why would a central bank cut short the most successful fund-raising scheme it has run in thirteen years? That answer depends on what you think the scheme was really for.
+On June 8, 2026, the Reserve Bank of India made an unusual offer. The rupee had just spent May as Asia's worst-performing currency, hitting a record low of 96.34 against the dollar. So the central bank opened a window: NRIs could place dollar deposits with Indian banks, and the RBI itself would absorb the currency-hedging cost through a special swap facility. The window would stay open until September 30.
 
 ---
 
 ### Slide 2
 
-Start with how fast the money came in.
-
-FCNR(B) deposits under the scheme stood at $17.4 billion on July 17. By July 31, $36.7 billion. By August 13, $52.3 billion. The first $20 billion took 38 days. The last $16 billion took 13.
-
-The scheme didn't approach its target. It ran through it.
+The money did not trickle in. It flooded. Deposits under the scheme stood at $17.4 billion on July 17. By July 31, $36.7 billion. By August 13, $52.3 billion. The first $20 billion took 38 days to arrive. The last $16 billion took 13. The scheme did not approach its target. It ran straight through it.
 
 ---
 
 ### Slide 3
 
-The mechanism mattered more than the marketing.
-
-A bank took an NRI's dollar deposit and swapped it with the RBI: rupees today, dollars returned at the same exchange rate in 3 to 5 years. Tenor-matched, at par. The central bank absorbed the entire hedging cost that normally caps what banks can pay on these deposits.
-
-That is how NRI dollar deposits came to pay up to 7.8%. The RBI wasn't just inviting dollars in. It was paying, in hedging terms, to recruit them.
+The mechanism did the heavy lifting. A bank took an NRI's dollar deposit and swapped it with the RBI: rupees today, dollars returned at the same exchange rate in three to five years. Tenor-matched, at par. With the central bank absorbing the entire hedging cost, NRI dollar deposits could pay up to 7.8% — a rate no bank could have offered on its own.
 
 ---
 
 ### Slide 4
 
-One week before the early closure, a notice almost nobody read.
-
-On August 7, the RBI excluded loans backed by these new FCNR(B) and NRE deposits from banks' priority-sector lending calculations — effective immediately. NRI-dollar-funded credit growth was quietly ring-fenced from lending targets before the window was shut.
-
-Schemes are designed for the inflow you expect. This one was engineered for a flood.
+Then, three dates in quick succession. On August 5, the Governor publicly ruled out closing the window early. On August 7, the RBI quietly excluded loans backed by these deposits from banks' priority-sector calculations, ring-fencing the inflow from lending targets. On August 14, it closed the window for August 31. A scheme built for a flood had decided it had seen enough water.
 
 ---
 
 ### Slide 5
 
-Which brings up the question that matters.
-
-This isn't a deposit story. It's a balance-sheet story.
-
-Every swapped dollar is a forward liability. The RBI must deliver tens of billions of dollars back to banks in 2029–2031 — at August 2026 exchange rates. The cost of this scheme will only be known at maturity.
+But every swapped dollar is a forward liability. And over the scheme's entire life, the rupee moved from 95.39 to 95.45 — fifty billion dollars of inflows, no lasting relief.
 
 ---
 
 ### Slide 6
 
-And here is the uncomfortable part.
-
-Over the scheme's life, USD/INR moved from 95.39 on June 5 to 95.45 on August 14. The mid-July recovery to 94.30 faded. More than $50 billion of inflows bought no lasting currency relief — while the RBI's net short forward book was reportedly around $106.6 billion at end-May.
-
-If the subsidy was paid and the rupee didn't turn, was the scheme a success — or an expensive holding action?
+India has run this play once before. In 2013, mid-taper tantrum, the same instrument raised roughly $34 billion at a concessional 3.5% swap rate — an all-in cost of about 5% for three-year dollars, by one prominent estimate. That cost looked acceptable only because the rupee eventually turned. The 2013 window was never closed early. This one was.
 
 ---
 
 ### Slide 7
 
-The last time India ran this play was 2013.
-
-During the taper tantrum, concessional swaps at 3.5% pulled in roughly $26 billion of FCNR(B) deposits. The all-in cost worked out to around 5% for three-year dollars, by one prominent estimate. Much of it was leveraged bank money, not diaspora savings — and the cost looked acceptable only because the rupee eventually turned.
-
-The 2013 window was never closed early. This one was.
+So the early close reads two ways: a scheme so oversubscribed it finished early, or a subsidy whose carry cost became uncomfortable while the currency refused to respond. The answer sits in the RBI's forward book, reportedly already $106.6 billion short at end-May, and it will not be visible until the swaps mature between 2029 and 2031.
 
 ---
 
 ### Slide 8
 
-So watch the forward book, not the press release.
+The full story — the swap mechanics, the ring-fencing, the 2013 template, and what to watch in the forward book — is on the Aagman Substack.
 
-What does the RBI's position look like if the rupee retests its record low of 96.34 before the swaps season? The scheme's success metric — reserves gained per dollar of subsidy — will only be visible when those swaps mature.
-
-The full analysis — the swap mechanics, the PSL carve-out, the 2013 template, and what remains unknowable — is on the Aagman Substack. Link in bio.
+Link in bio.
