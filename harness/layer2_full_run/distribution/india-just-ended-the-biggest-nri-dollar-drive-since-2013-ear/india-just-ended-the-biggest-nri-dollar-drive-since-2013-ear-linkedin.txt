@@ -1,17 +1,13 @@
 the rbi just closed its biggest dollar-collecting scheme since 2013. a month early. nine days after saying it had no plans to.
 
-the backstory, quickly. when the rupee weakens, india needs dollars. in june, the rbi opened a window: nris parked dollars in indian bank deposits, and the rbi covered the currency-hedging cost itself. that let banks offer up to 7.8% on a dollar deposit.
+quick context. when the rupee weakens, india needs dollars. in june, the rbi opened a window: nris parked dollars in indian bank deposits, and the rbi covered the currency-hedging cost itself. that let banks offer up to 7.8% on a dollar deposit.
 
-the money came in faster than anyone planned. the first $20 billion took 38 days. the next $20 billion took 14. the last $16 billion took 13. total haul: $56.8 billion, double what the same playbook raised in the 2013 taper tantrum, in a third of the time.
+the money came in faster than anyone planned. the first $20 billion took 38 days. the next $20 billion took 14. the last $16 billion took 13. total: $56.8 billion, double the 2013 taper-tantrum haul, in a third of the time.
 
-then on august 14, the rbi shut the window. deposits stop august 31.
+then on august 14, the rbi shut the window.
 
-two things worth knowing.
+here is the part worth thinking about. over the scheme's entire life, the rupee moved from 95.39 to 95.45. fifty billion dollars of subsidised inflows, and the currency did not move. india bought a dollar stockpile, not a stronger rupee.
 
-the money isn't free. for every dollar taken, the rbi must hand dollars back to banks between 2029 and 2031, at today's exchange rate. think gift cards sold for cash today. the bill arrives later, sized by wherever the rupee is then.
+and every one of those swapped dollars has to be returned to banks between 2029 and 2031, at today's exchange rate.
 
-and while all this money arrived, the rupee went from 95.39 to 95.45. essentially nothing. india bought a dollar stockpile, not a stronger currency.
-
-so why close early? either the scheme hit its target ahead of schedule, or carrying the hedge on tens of billions got expensive. both fit the facts. anyone claiming certainty is guessing.
-
-the full mechanics, the 2013 comparison, and the august 7 rule change that shows how carefully this was designed. link in the first comment.
+why the early close, what the nine-day reversal means, and the 2013 lesson about who actually provides "nri money". link in the first comment.
