@@ -1,94 +1,83 @@
 Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advice — no buy/sell recommendation.
 
-## Instagram Carousel — FCNR(B) Early Window Close
-
-**Slide count:** 8 (promo, per brief)
-**Format:** Instagram carousel, minimal text per slide, one idea per slide
+## Instagram Carousel — The RBI Closed Its Biggest Dollar Drive Since 2013, a Month Early
 
 ---
 
-### Slide 1 — Hook
+### Slide 1
 
-- **Kicker:** INDIA, AUGUST 2026
-- **Headline:** The RBI closed its biggest dollar drive since 2013 — a month early.
-- **Body:** $56.8 billion collected. Window cut from September 30 to August 31. Announced nine days after the Governor ruled out early closure.
-- **Hero stat:** $56.8bn inflows by August 13 — CNBC-TV18
-- **Design note:** Full-bleed dark slide. One line of type, "$56.8bn" oversized in the centre. No imagery of currency notes; restraint reads as confidence.
-- **Speaker note:** Names the shift, not the topic — the event is the early close, the number earns the swipe.
+**The RBI closed its biggest dollar drive since 2013 — a month early.**
 
----
+$56.8 billion collected. The window was supposed to run to September 30. On August 14, it was shut for August 31 instead — nine days after the Governor publicly ruled out closing it early.
 
-### Slide 2 — The velocity
-
-- **Kicker:** THE ACCELERATION
-- **Headline:** The first $20bn took 38 days. The last $16bn took 13.
-- **Body:** FCNR(B) deposits: $17.4bn on July 17. $36.7bn on July 31. $52.3bn on August 13. The scheme didn't approach its target — it ran through it.
-- **Hero stat:** $16bn in the final 13 days — NDTV Profit / SBI Research
-- **Design note:** Three ascending bars labelled 38 days / 14 days / 13 days. Numbers large, labels small.
-- **Speaker note:** Concrete data first; this is the evidence slide that makes the early closure legible as oversubscription.
+Why would a central bank cut short the most successful fund-raising scheme it has run in thirteen years? That answer depends on what you think the scheme was really for.
 
 ---
 
-### Slide 3 — The mechanism
+### Slide 2
 
-- **Kicker:** HOW IT WORKED
-- **Headline:** Banks took NRI dollars. The RBI took the currency risk.
-- **Body:** A bank swapped each dollar deposit with the RBI — rupees today, dollars back at the same rate in 3–5 years. Tenor-matched, at par. The central bank absorbed the entire hedging cost. That's how deposits paid up to 7.8%.
-- **Hero stat:** Up to 7.8% on USD deposits — Moneycontrol
-- **Design note:** Simple two-arrow diagram: dollars → RBI, rupees → bank, loop closing in 2029–2031. Monochrome, thin lines.
-- **Speaker note:** The named mechanism slide — no number needed beyond the rate; the swap structure is the content.
+Start with how fast the money came in.
 
----
+FCNR(B) deposits under the scheme stood at $17.4 billion on July 17. By July 31, $36.7 billion. By August 13, $52.3 billion. The first $20 billion took 38 days. The last $16 billion took 13.
 
-### Slide 4 — The quiet companion notice
-
-- **Kicker:** AUGUST 7, ONE WEEK EARLIER
-- **Headline:** Loans against these deposits were carved out of priority-sector rules.
-- **Body:** The RBI excluded credit funded by fresh FCNR(B) and NRE deposits from banks' priority-sector calculations — effective immediately. NRI-dollar-funded lending was ring-fenced before the window was closed.
-- **Hero stat:** PSL exclusion notified August 7, 2026 — Moneycontrol
-- **Design note:** A document icon with a ruled line struck through "ANBC." Understated; the slide's power is the date.
-- **Speaker note:** Introduces the detail most coverage missed — the ring-fencing that hints at liability-quality concern.
+The scheme didn't approach its target. It ran through it.
 
 ---
 
-### Slide 5 — Pivot
+### Slide 3
 
-- **Kicker:** THE REAL QUESTION
-- **Headline:** This isn't a deposit story. It's a balance-sheet story.
-- **Body:** Every swapped dollar is a forward liability. The RBI must deliver tens of billions of dollars back to banks in 2029–2031 — at August 2026 exchange rates.
-- **Hero stat:** Swaps mature in a 2029–2031 cluster — Aagman analysis of scheme terms
-- **Design note:** Sparse. One sentence on a blank field. This slide breathes after two dense ones.
-- **Speaker note:** The pivot — reframes oversubscription success as a liability-structure question.
+The mechanism mattered more than the marketing.
 
----
+A bank took an NRI's dollar deposit and swapped it with the RBI: rupees today, dollars returned at the same exchange rate in 3 to 5 years. Tenor-matched, at par. The central bank absorbed the entire hedging cost that normally caps what banks can pay on these deposits.
 
-### Slide 6 — The counterevidence
-
-- **Kicker:** WHAT THE RUPEE SAID
-- **Headline:** $50bn of inflows bought no currency relief.
-- **Body:** USD/INR: 95.39 on June 5. 95.45 on August 14. The mid-July recovery to 94.30 faded. Meanwhile the RBI's net short forward book was reportedly ~$106.6bn at end-May.
-- **Hero stat:** 95.39 → 95.45 (−0.2%) over the scheme's life — Moneycontrol; ~$106.6bn forward book, market-reported — Finnovate
-- **Design note:** Flat line chart, deliberately uneventful. The flatness is the point.
-- **Speaker note:** Weights the carry-discomfort reading fairly — the subsidy was paid without the rupee turning.
+That is how NRI dollar deposits came to pay up to 7.8%. The RBI wasn't just inviting dollars in. It was paying, in hedging terms, to recruit them.
 
 ---
 
-### Slide 7 — 2013, briefly
+### Slide 4
 
-- **Kicker:** THE LAST TIME
-- **Headline:** In 2013 the same scheme raised $34bn — and India paid a hidden 5% for the money.
-- **Body:** Concessional swaps at 3.5% pulled in ~$26bn of FCNR(B) deposits during the taper tantrum. Much of it was leveraged bank money, not diaspora savings. The realised cost looked fine only because the rupee turned. The 2013 window was never closed early.
-- **Hero stat:** ~5% all-in for 3-year dollars, ~4.35% over USTs — Ananth Narayan, SPJIMR
-- **Design note:** Split frame: "2013 / 2026" with three rows — price charged, scale, ended early? Keep it tabular.
-- **Speaker note:** Historical memory as perspective, not prediction — one structural comparison, tied back to the present.
+One week before the early closure, a notice almost nobody read.
+
+On August 7, the RBI excluded loans backed by these new FCNR(B) and NRE deposits from banks' priority-sector lending calculations — effective immediately. NRI-dollar-funded credit growth was quietly ring-fenced from lending targets before the window was shut.
+
+Schemes are designed for the inflow you expect. This one was engineered for a flood.
 
 ---
 
-### Slide 8 — Open question + CTA
+### Slide 5
 
-- **Kicker:** WHAT TO WATCH
-- **Headline:** What does the RBI's forward book look like if the rupee retests its record low before the swaps season?
-- **Body:** The full analysis — the swap mechanics, the PSL carve-out, the 2013 template, and what remains unknowable — is on the Aagman Substack. Link in bio.
-- **Hero stat:** Record low: 96.34/USD, May 18, 2026 — HDFC Sky
-- **Design note:** Clean closing card. Question in large type, single Substack line beneath. No arrows, no "follow for more."
-- **Speaker note:** Ends on the open cognitive loop and routes to the blog — the only CTA in the deck.
+Which brings up the question that matters.
+
+This isn't a deposit story. It's a balance-sheet story.
+
+Every swapped dollar is a forward liability. The RBI must deliver tens of billions of dollars back to banks in 2029–2031 — at August 2026 exchange rates. The cost of this scheme will only be known at maturity.
+
+---
+
+### Slide 6
+
+And here is the uncomfortable part.
+
+Over the scheme's life, USD/INR moved from 95.39 on June 5 to 95.45 on August 14. The mid-July recovery to 94.30 faded. More than $50 billion of inflows bought no lasting currency relief — while the RBI's net short forward book was reportedly around $106.6 billion at end-May.
+
+If the subsidy was paid and the rupee didn't turn, was the scheme a success — or an expensive holding action?
+
+---
+
+### Slide 7
+
+The last time India ran this play was 2013.
+
+During the taper tantrum, concessional swaps at 3.5% pulled in roughly $26 billion of FCNR(B) deposits. The all-in cost worked out to around 5% for three-year dollars, by one prominent estimate. Much of it was leveraged bank money, not diaspora savings — and the cost looked acceptable only because the rupee eventually turned.
+
+The 2013 window was never closed early. This one was.
+
+---
+
+### Slide 8
+
+So watch the forward book, not the press release.
+
+What does the RBI's position look like if the rupee retests its record low of 96.34 before the swaps season? The scheme's success metric — reserves gained per dollar of subsidy — will only be visible when those swaps mature.
+
+The full analysis — the swap mechanics, the PSL carve-out, the 2013 template, and what remains unknowable — is on the Aagman Substack. Link in bio.
