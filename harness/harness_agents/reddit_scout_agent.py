@@ -87,7 +87,11 @@ class RedditScoutAgent:
     # -- browser automation helpers ---------------------------------------- #
 
     def _run_bu(self, args: list[str], timeout: float = 60.0) -> str:
-        cmd = ["browser-use"] + args
+        cmd = ["browser-use"]
+        session = os.environ.get("BROWSER_USE_SESSION")
+        if session:
+            cmd.extend(["--session", session])
+        cmd.extend(args)
         try:
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, check=False)
         except subprocess.TimeoutExpired as exc:
@@ -115,9 +119,13 @@ class RedditScoutAgent:
         if self._session_started:
             out = self._run_bu(["open", url], timeout=timeout)
         else:
-            args = ["--profile", self.config.browser_profile]
+            args: list[str] = []
             if self.config.headed:
                 args.append("--headed")
+            if os.environ.get("BROWSER_USE_CDP_URL"):
+                args.extend(["--cdp-url", os.environ["BROWSER_USE_CDP_URL"]])
+            else:
+                args.extend(["--profile", self.config.browser_profile])
             args.extend(["open", url])
             out = self._run_bu(args, timeout=timeout)
             self._session_started = True

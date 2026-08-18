@@ -66,11 +66,19 @@ Topic Selection Constraints
 ❌ No Tier 3 sources: SEO blogs, aggregator sites, unverified social posts, or content farms
 This is about what is moving Indian markets and companies right now, not big-picture India essays.
 
+Date Guard / Recency Requirement — CRITICAL
+This is a daily scout for Indian markets. Every source cited must be from the last 48 hours before the PUBLICATION DATE below. Older sources are strictly forbidden.
+- Before citing any article, verify its published date from the page metadata, dateline, or URL.
+- Reject and do not cite: evergreen SEO articles, annual explainers, "what to expect" previews, or aggregator posts that rank high but are not from the last 48 hours.
+- If a source is undated or the date cannot be confirmed, drop it.
+- When searching, include explicit date filters in the query (e.g., "after:2026-08-10", "past 24 hours", "today", "this week") and prefer sources with a clear timestamp.
+- If fewer than 3 genuinely fresh, editorial-grade candidates exist, return only those. Do not pad the digest with old news.
+
 Source Requirements
 Every fact, number, and claim must be traceable to a Tier 1 or Tier 2 Indian business source.
 Tier 1 sources: The Economic Times, Business Standard, Mint, The Hindu BusinessLine, CNBC-TV18, Moneycontrol, BloombergQuint / BQ Prime, Reuters India, Livemint.
 Tier 2 sources: Financial Express, Business Today, Forbes India, Outlook Business, Capitalmind, Screener.in, Trendlyne, official exchange / regulator releases (NSE, BSE, RBI, SEBI).
-For each candidate and reading item, list the exact source name and direct URL. If a strong claim cannot be sourced to Tier 1 or Tier 2, drop the claim, not the source standard.
+For each candidate and reading item, list the exact source name, direct URL, and the published date. If a strong claim cannot be sourced to Tier 1 or Tier 2, drop the claim, not the source standard.
 
 Success Criteria
 A successful output makes the editor think:
