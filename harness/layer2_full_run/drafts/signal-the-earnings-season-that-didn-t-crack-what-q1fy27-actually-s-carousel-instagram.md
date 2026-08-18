@@ -26,30 +26,40 @@ That is the tell. This season was never about beats. A beats count measures resu
 
 ### Slide 4
 
-Since June-end, the upgrades clustered in specific places: basic materials, financials, industrials, consumer staples. Underneath them sits one engine — non-food credit growing 18.3% year on year in June, against roughly 10% in late 2025. The downgrades landed in consumption's other half: discretionary, health care, utilities. Premium demand held. The mass end is where the red ink sits.
+Since June-end, the upgrades clustered in specific places: basic materials, financials, industrials, consumer staples. Underneath them sits one engine — non-food credit growing 18.3% year on year in June, against roughly 10% in late 2025. The upgrades have an identifiable, checkable source.
 
 ---
 
 ### Slide 5
 
-And then there is IT, where the paradox is sharpest. TCS won $9.5 billion of deals in the quarter; revenue barely moved. Infosys narrowed its FY27 growth guidance to 1.5–3% — after posting double-digit growth. Outcome-based AI contracts change when revenue is recognised, not how much exists. The pipeline and the P&L now measure different things.
+The downgrades landed in consumption's other half: consumer discretionary, health care, utilities — even as staples were upgraded and Titan, Hero MotoCorp and Tata Motors' commercial vehicles posted strong quarters. "Consumption is resilient" and "consumption is being downgraded" are both true. Of different Indias.
 
 ---
 
 ### Slide 6
 
-Here is why the distinction matters. The Nifty sits about 15% below its January peak. Foreign investors sold a record ₹2.87 lakh crore by mid-June — then turned: plus ₹17,227 crore in July, more in August. Returning capital is not underwriting beats. It is underwriting revisions.
+And then there is IT, where the paradox is sharpest. TCS won $9.5 billion of deals in the quarter; revenue barely moved. Infosys narrowed its FY27 growth guidance to 1.5–3% — after posting double-digit growth. Outcome-based AI contracts change when revenue is recognised, not how much exists. The pipeline and the P&L now measure different things.
 
 ---
 
 ### Slide 7
 
-But nobody has published the net count. Upgrades in four sectors, downgrades in three — and whether the market-wide FY27 estimate rose or fell overall remains uncomputed in public. That single number decides whether returning foreign money finds confirmation or a trap.
+Here is why the distinction matters. The Nifty sits about 15% below its January peak. Foreign investors sold a record ₹2.87 lakh crore by mid-June — then turned: plus ₹17,227 crore in July, more in August. Returning capital is not underwriting beats. It is underwriting revisions.
 
 ---
 
 ### Slide 8
 
-We went through the season sector by sector — the petroleum distortion, the credit engine, the IT revenue model — on the Aagman Substack.
+So did the market-wide FY27 estimate actually rise or fall? Nobody has published the net count. Upgrades in four sectors, downgrades in three — the aggregate sits uncomputed in public, and the consensus still assumes roughly 14% growth for 2026 and 17% for 2027.
 
-Link in bio.
+---
+
+### Slide 9
+
+You can compute it yourself, roughly. Watch the September estimate revisions from the big brokerages: if FY27 earnings-per-share estimates for the Nifty keep drifting down while the season "beat", the market is underwriting a story the spreadsheets have already left. If estimates stabilise, the season was as good as its headline.
+
+---
+
+### Slide 10
+
+The season didn't crack. But the way it is being scored did — and the re-scoring happens quietly, in revision tables, over the next two quarters. Read those, not the wrap-ups.
