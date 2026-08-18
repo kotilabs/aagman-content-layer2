@@ -1,0 +1,12 @@
+context: india's bank deposit growth hit 15.4% yoy as of july 31, the fastest in over a decade (rbi data, reported by cnbc-tv18 and reuters).
+
+the numbers:
+- growth was *12.7%* on july 15, so the print jumped *270 bps* in one fortnight
+- deposits fell *rs 3.87 trillion* between april 1 and june 15, then rose *rs 11 trillion* in the three fortnights to july 31, taking the total to a record *rs 269.4 trillion*
+- credit is still growing faster, at *19.3%*
+
+why: the rbi's fcnr(b) dollar-swap window opened june 8 and pulled in *$52.3 billion* before being closed early. banks took nri dollars, swapped them with the rbi for rupees at a fixed rate, and those rupees landed as deposits. *$36.7 billion* of it arrived in the same weeks the growth print jumped.
+
+takeaway: the decade-high print is largely a policy inflow, and the rbi does not publish the conversion-versus-organic split, so the household-savings story is unproven.
+
+the full piece gets into what does not fit here: the 2013 taper-tantrum comparison, the rbi's december 2025 reporting-convention change, and why the mid-august print, out early september, is the real test. on the aagman substack this week.

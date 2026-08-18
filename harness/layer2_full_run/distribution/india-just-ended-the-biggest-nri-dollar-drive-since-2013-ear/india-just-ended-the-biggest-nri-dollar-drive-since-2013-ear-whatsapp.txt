@@ -1,0 +1,16 @@
+the rbi closed its biggest nri dollar drive since 2013 a month early, nine days after the governor said there were no plans to.
+
+the numbers:
+- *$56.85 billion* total inflows by aug 13, of which *$52.3 billion* came through fcnr(b) deposits (cnbctv18)
+- the first *$20 billion* took 38 days, the next *$20 billion* took 14, then *$16 billion* in 13 days (ndtv profit)
+- usd/inr went from 95.39 to *95.45* over the scheme's life: inflows bought reserves, not rupee relief
+- the rbi's net short-dollar forward book was reportedly about *$106.6 billion* at end-may
+
+why it matters:
+- banks offered up to *7.8%* on dollar deposits because the rbi absorbed the full hedging cost through swaps
+- every swapped dollar is a forward liability: the rbi must return the dollars in 2029-2031 at today's exchange rate
+- 2013 raised about $26 billion this way in three months; this raised double that in ten weeks
+
+takeaway: the closure reads as oversubscription success or as a carry cost that got uncomfortable. the nine-day reversal is the odd detail either way.
+
+the full piece gets into the swap mechanics, the priority-sector ring-fence, and the 2013 leverage lesson, on the aagman substack this week.

@@ -1,0 +1,11 @@
+On August 14, the RBI closed its special FCNR(B) dollar window a month ahead of schedule. Nine days earlier, the Governor had publicly ruled out doing exactly that.
+
+What happened: the scheme, opened June 8, let banks swap NRI dollar deposits with the RBI at par, tenor-matched. The central bank absorbed the entire hedging cost, which is how banks could offer up to 7.8% on dollar deposits. Money arrived at a pace nobody modeled. The first $20 billion took 38 days, the next $20 billion took 14, and $16 billion came in the final 13 days. Total inflows crossed $56.8 billion by August 13; FCNR(B) deposits alone hit $52.3 billion, double the entire 2013 haul.
+
+The mechanism cuts both ways. Every swapped dollar is a forward liability: between 2029 and 2031, the RBI must return those dollars at today's exchange rate. And every swapped dollar injects rupees, one reason surplus liquidity sits near Rs 3 lakh crore and SBI Research projects Rs 8-9 lakh crore eventually flowing into the banking system, with 3-7 year government bonds the clearest beneficiary.
+
+Why this instance differs from 2013: that window charged banks a concessional 3.5% and ran to its announced end. This one absorbed the full hedging cost, and was closed early.
+
+Who bears the cost is the open question. The rupee moved from 95.39 to 95.45 over the scheme's life; the subsidy was paid without currency relief. The RBI's net short forward book was reportedly $106.6 billion at end-May. Oversubscription success and carry discomfort both fit the facts. The nine-day reversal fits neither cleanly.
+
+The full breakdown, including the swap mechanics and the 2013 leverage lesson, is in the carousel document. The long version is on the Aagman Substack this week.

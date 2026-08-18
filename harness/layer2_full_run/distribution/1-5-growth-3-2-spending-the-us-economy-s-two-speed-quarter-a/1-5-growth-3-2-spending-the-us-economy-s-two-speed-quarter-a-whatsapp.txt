@@ -1,0 +1,17 @@
+us q2 gdp came in at *1.5%*, down from 2.1% in q1. the headline says slowdown. the composition says otherwise.
+
+the numbers (bea advance estimate, july 30):
+- consumer spending added *+2.12 pts*, up from +0.37 in q1, consistent with roughly 3.2% real growth
+- the fed's demand gauge, final sales to private domestic purchasers, accelerated to *3.9%* from 1.7%
+- fixed investment still added *+1.20 pts*
+
+why the drag carries little information:
+- inventories subtracted 0.67 pts; drawdowns mechanically reverse
+- net exports subtracted 1.01 pts on capital-goods imports, a sign of investment demand
+- government subtracted 0.14 pts via strategic petroleum reserve sales, which bea says have no direct gdp effect
+
+the catch: the june saving rate fell to *2.7%*, a fifth straight monthly decline, lowest since june 2022. real spending is growing *2.54%* a year against *0.52%* real income growth.
+
+takeaway: the consumer is carrying a slowing headline on shrinking savings.
+
+the full piece on the aagman substack gets into what does not fit here: the sector revenue map, why blended eps growth drops from 50.4% to 32.0% without two one-time gains, and what the august 26 revision could change.

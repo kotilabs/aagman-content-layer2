@@ -1,0 +1,13 @@
+India's bank deposits grew 15.4% year-on-year as of July 31, the fastest pace in more than a decade. Two weeks earlier, the number was 12.7%.
+
+No organic shift in how a country saves moves a deposit base above Rs 260 trillion by 270 basis points in a single fortnight. Something else did.
+
+Between April 1 and June 15, Indian banks actually lost Rs 3.87 trillion in deposits. Then, over the three fortnights to July 31, the system added Rs 11 trillion, taking total deposits to a record Rs 269.4 trillion. Traders quoted by Reuters attribute the jump largely to one piece of RBI plumbing: a special dollar-swap window for FCNR(B) deposits, opened June 8, that let banks convert NRI dollars into rupees at a fixed rate. It pulled in $52.3 billion before the RBI closed it early, and $36.7 billion of that arrived in exactly the weeks the growth print jumped.
+
+That timing is what separates this from a normal deposit cycle: the easing came from a policy lever, while household deposit behaviour is not separately visible in the data. Even so, credit is still growing faster than deposits, 19.3% against 15.4%, so the funding pressure that squeezed bank margins through FY25 and FY26 has eased without closing. Banks with deep NRI franchises receive the windfall first; everyone else still bids for household savings.
+
+A measurement caveat is worth holding as well: the RBI changed its fortnight reporting convention in December 2025, and this data is provisional.
+
+The open question is the next print. The window takes its last deposits on August 31. Does growth hold near 15%, or mean-revert toward 12-13%?
+
+The full breakdown, including the 2013 taper-tantrum comparison and the forward dollar obligations the RBI's swap book creates for 2027-2029, is on the Aagman Substack this week.
