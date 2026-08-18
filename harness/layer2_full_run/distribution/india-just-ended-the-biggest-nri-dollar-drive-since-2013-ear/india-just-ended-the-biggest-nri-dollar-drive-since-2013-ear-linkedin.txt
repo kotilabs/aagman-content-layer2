@@ -1,21 +1,17 @@
 the rbi just closed its biggest dollar-collecting scheme since 2013. a month early. nine days after saying it had no plans to.
 
-here is what happened, in plain terms.
+the backstory, quickly. when the rupee weakens, india needs dollars. in june, the rbi opened a window: nris parked dollars in indian bank deposits, and the rbi covered the currency-hedging cost itself. that let banks offer up to 7.8% on a dollar deposit.
 
-when the rupee weakens, india needs dollars. one fast way to get them is from nris. in june, the rbi opened a special window: an nri could park dollars in an indian bank deposit, and the rbi itself would cover the currency-hedging cost. with that cost gone, banks could offer up to 7.8% on a dollar deposit. that is a very good rate, and nris noticed.
+the money came in faster than anyone planned. the first $20 billion took 38 days. the next $20 billion took 14. the last $16 billion took 13. total haul: $56.8 billion, double what the same playbook raised in the 2013 taper tantrum, in a third of the time.
 
-the money came in faster than anyone planned for. the first $20 billion took 38 days. the next $20 billion took 14. the last $16 billion took 13. by august 13, the scheme had pulled in $56.8 billion — roughly double what the same playbook raised during the 2013 taper tantrum, in a third of the time.
+then on august 14, the rbi shut the window. deposits stop august 31.
 
-then, on august 14, the rbi shut the window. deposits now stop on august 31.
+two things worth knowing.
 
-two details make this worth understanding.
+the money isn't free. for every dollar taken, the rbi must hand dollars back to banks between 2029 and 2031, at today's exchange rate. think gift cards sold for cash today. the bill arrives later, sized by wherever the rupee is then.
 
-first, the money is not free. for every dollar swapped, the rbi has promised to hand dollars back to banks between 2029 and 2031, at today's exchange rate. think of it as a store raising cash by selling gift cards. great for cash flow today. the bill comes due later, and the size of that bill depends on where the rupee is then.
+and while all this money arrived, the rupee went from 95.39 to 95.45. essentially nothing. india bought a dollar stockpile, not a stronger currency.
 
-second, look at what the rupee did while all this money arrived: it moved from 95.39 to 95.45. essentially nothing. india bought a large dollar stockpile, but not a stronger currency.
+so why close early? either the scheme hit its target ahead of schedule, or carrying the hedge on tens of billions got expensive. both fit the facts. anyone claiming certainty is guessing.
 
-so why close early? two readings fit. the generous one: the scheme worked so well that the rbi hit its target ahead of schedule. the cautious one: holding the hedging cost of tens of billions of dollars was getting expensive, and the rbi decided to stop adding to it.
-
-the honest answer is that we cannot tell yet, and anyone claiming certainty either way is guessing. what we can watch is the forward book — the rbi's pile of promised future dollars — as these swaps start maturing.
-
-i wrote up the full mechanics, the 2013 comparison, and the small rule change on august 7 that reveals how carefully this was all designed. link in the first comment.
+the full mechanics, the 2013 comparison, and the august 7 rule change that shows how carefully this was designed. link in the first comment.
