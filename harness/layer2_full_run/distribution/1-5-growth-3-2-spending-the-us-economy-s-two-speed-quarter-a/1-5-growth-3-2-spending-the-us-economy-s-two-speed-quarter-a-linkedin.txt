@@ -1,13 +1,13 @@
-The US economy grew 1.5% last quarter. The American consumer spent like it grew 3.2%.
+the us economy grew 1.5% last quarter. the american consumer spent like it grew 3.2%.
 
-Both figures come from the same BEA advance estimate (July 30). Real GDP decelerated from 2.1% in Q1, while consumer spending's contribution jumped from +0.37 to +2.12 points, more than the entire quarter's growth.
+both figures come from the same bea advance estimate (july 30). real gdp decelerated from 2.1% in q1, while consumer spending's contribution jumped from +0.37 to +2.12 points, more than the entire quarter's growth.
 
-GDP is an accounting identity, so the drag was forced into specific lines. Inventories subtracted 0.67 points, net exports 1.01, government 0.14. Capex is absent from that list: fixed investment still added 1.20. The import drag was led by capital goods, telecom equipment and semiconductors, which is what an investment boom looks like in the trade account. The government decline was Strategic Petroleum Reserve oil sales, an accounting mechanic BEA itself flags as having no direct GDP effect. And the Fed's preferred demand gauge, real final sales to private domestic purchasers, accelerated from 1.7% to 3.9%.
+gdp is an accounting identity, so the drag was forced into specific lines. inventories subtracted 0.67 points, net exports 1.01, government 0.14. capex is absent from that list: fixed investment still added 1.20. the import drag was led by capital goods, telecom equipment and semiconductors, which is what an investment boom looks like in the trade account. the government decline was strategic petroleum reserve oil sales, an accounting mechanic bea itself flags as having no direct gdp effect. and the fed's preferred demand gauge, real final sales to private domestic purchasers, accelerated from 1.7% to 3.9%.
 
-What makes this instance different is the funding. June's saving rate hit 2.7%, a fifth straight monthly decline and the lowest since June 2022. Real spending is up 2.54% over the year against real income growth of 0.52%. The 3.2% consumer is drawing down savings to exist.
+what makes this instance different is the funding. june's saving rate hit 2.7%, a fifth straight monthly decline and the lowest since june 2022. real spending is up 2.54% over the year against real income growth of 0.52%. the 3.2% consumer is drawing down savings to exist.
 
-Meanwhile companies report against nominal growth, and current-dollar GDP rose 7.9%. That is the bridge between a 1.5% quarter and 15.0% blended S&P 500 revenue growth, with all 11 sectors positive. Strip out two one-time gains at Alphabet and Amazon and headline EPS growth drops from 50.4% to 32.0%.
+meanwhile companies report against nominal growth, and current-dollar gdp rose 7.9%. that is the bridge between a 1.5% quarter and 15.0% blended s&p 500 revenue growth, with all 11 sectors positive. strip out two one-time gains at alphabet and amazon and headline eps growth drops from 50.4% to 32.0%.
 
-The open question: at a 2.7% saving rate, how many more quarters can spending outgrow income five-to-one? The August 26 second estimate is the next checkpoint.
+the open question: at a 2.7% saving rate, how many more quarters can spending outgrow income five-to-one? the august 26 second estimate is the next checkpoint.
 
-The full decomposition, including the sector-by-sector revenue map, is in this week's Aagman Substack writeup.
+the full decomposition, including the sector-by-sector revenue map, is in this week's aagman substack writeup.
