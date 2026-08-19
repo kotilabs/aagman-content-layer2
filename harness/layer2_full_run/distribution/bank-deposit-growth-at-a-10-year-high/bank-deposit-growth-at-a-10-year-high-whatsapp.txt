@@ -1,4 +1,4 @@
-context: india's bank deposit growth hit 15.4% yoy as of july 31, the fastest in over a decade (rbi data, reported by cnbc-tv18 and reuters).
+context: india's bank deposit growth hit 15.4% yoy as of july 31, the fastest in over a decade, per rbi data.
 
 the numbers:
 - growth was *12.7%* on july 15, so the print jumped *270 bps* in one fortnight

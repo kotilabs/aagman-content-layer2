@@ -1,6 +1,6 @@
 us q2 gdp came in at *1.5%*, down from 2.1% in q1. the headline says slowdown. the composition says otherwise.
 
-the numbers (bea advance estimate, july 30):
+the numbers, from the bea's july 30 advance estimate:
 - consumer spending added *+2.12 pts*, up from +0.37 in q1, consistent with roughly 3.2% real growth
 - the fed's demand gauge, final sales to private domestic purchasers, accelerated to *3.9%* from 1.7%
 - fixed investment still added *+1.20 pts*
