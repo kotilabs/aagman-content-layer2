@@ -1,11 +1,10 @@
 the rbi closed its biggest nri dollar drive since 2013 a month early, nine days after the governor said there were no plans to.
 
-what happened:
-- the scheme let banks swap nri dollar deposits with the rbi, which absorbed the whole hedging cost, so banks could offer up to *7.8%* on dollar deposits
-- the money flooded in: the first *$20 billion* took 38 days, the next *$20 billion* took 14, then *$16 billion* in 13 days. total *$56.85 billion*, of which *$52.3 billion* came through fcnr(b) deposits
-- the rupee went from 95.39 to *95.45* the whole time: inflows bought reserves, not relief
-- every swapped dollar has to be returned in 2029-2031 at today's exchange rate. and in 2013, mid-crisis, this same instrument raised *$26 billion* in three months; this year it did double that in ten weeks
+- the scheme let banks swap nri dollars with the rbi, which ate the hedging cost, so deposits paid up to *7.8%*
+- *$56.85 billion* came in: the first $20bn took 38 days, the last $16bn took 13
+- the rupee still went 95.39 to *95.45*. reserves were bought, relief was not
+- those dollars must be returned in 2029-2031 at today's rate
 
-takeaway: either the rbi got its dollars early, or the hedge was getting expensive. the governor ruled out early closure nine days before doing exactly that.
+takeaway: either the rbi got its dollars early, or the hedge was getting expensive. the governor ruled that out nine days earlier.
 
 the full piece is on the aagman substack this week: how it worked, the quiet rule change a week before the closure, and whose money it really was.
