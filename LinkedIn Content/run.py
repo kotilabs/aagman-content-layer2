@@ -253,6 +253,34 @@ def cmd_add_source(args):
     print(f"Added '{name}' (cutoff {cutoff}d) to {sources_path}")
 
 
+def _first_run_gate(command: str) -> None:
+    """On the very first run on a machine, walk the user through setup."""
+    if command in ("setup", "status"):
+        return
+    marker = ROOT / ".setup-done"
+    if marker.exists():
+        return
+    print("== First run — let's set you up ==")
+    # 1. LLM backend
+    if os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("OPENAI_API_KEY"):
+        print("LLM backend: API key found ✓")
+    elif shutil.which("kimi"):
+        print("LLM backend: kimi CLI found ✓ (set ANTHROPIC_API_KEY/OPENAI_API_KEY in .env later for speed)")
+    else:
+        print("LLM backend: NONE found. Add ANTHROPIC_API_KEY or OPENAI_API_KEY to .env, or install the kimi CLI.")
+    # 2. Browser / LinkedIn setup (needed by LinkedIn-touching agents)
+    if not (ROOT / "config.json").exists():
+        try:
+            ans = input("\nRun browser + LinkedIn setup now? [Y/n] ").strip().lower()
+        except EOFError:
+            ans = "n"
+        if ans in ("", "y", "yes"):
+            from engine import browser_setup
+            browser_setup.run_setup()
+    marker.write_text("done\n")
+    print("Setup complete. Run `python3 run.py status` anytime to re-check.\n")
+
+
 def main():
     p = argparse.ArgumentParser(prog="run.py", description="Ajit's LinkedIn post-writing engine")
     sub = p.add_subparsers(dest="command", required=True)
@@ -327,6 +355,7 @@ def main():
     ss.set_defaults(func=cmd_status)
 
     args = p.parse_args()
+    _first_run_gate(args.command)
     try:
         args.func(args)
     except RuntimeError as e:
