@@ -1,0 +1,5 @@
+[
+  {"name": "pulse", "url": "https://pulse.zerodha.com/", "cutoff_days": 3, "enabled": true},
+  {"name": "zerohedge", "url": "https://www.zerohedge.com/", "cutoff_days": 14, "enabled": true},
+  {"name": "armstrong", "url": "https://www.armstrongeconomics.com/", "cutoff_days": 14, "enabled": true}
+]

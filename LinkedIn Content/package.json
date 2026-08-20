@@ -1,0 +1,10 @@
+{
+  "name": "ajit-linkedin-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Signal scout + browser automation for the LinkedIn writing engine",
+  "dependencies": {
+    "playwright": "^1.49.0",
+    "ws": "^8.18.0"
+  }
+}

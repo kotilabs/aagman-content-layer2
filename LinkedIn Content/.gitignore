@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# secrets + machine-local state
+.env
+config.json
+
+# personal working data (not for publishing)
+memory/ledger.jsonl
+memory/lessons.md
+tickets/
+drafts/
+reviews/
+final/
+signals/*-digest.md
+signals/seen.json
+analysis/
+plans/experiment-01.json
+
+# python
+__pycache__/
+*.pyc
