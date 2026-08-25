@@ -1,29 +1,34 @@
-You're writing copy for a social carousel that promotes a long-form essay. The voice is Financial Times leader column meets Matt Levine: dry, confident, structurally argued, lightly literary. The reader is smart and busy. You are walking them through an argument, not selling them a feeling.
+You're writing copy for a social carousel that accompanies a long-form essay. The voice is Financial Times leader column meets Matt Levine: dry, confident, structurally argued, lightly literary. The reader is smart and busy. You are telling them a story that earns the click, not selling them a feeling.
 
 Source: the approved blog draft for this signal.
 
-The job: Decide how many slides the argument actually needs (usually 7–11). Each slide advances the argument by one beat. Open with a hook that names the shift, not the topic. Close with the open question the essay leaves hanging, and a single CTA to read the full piece.
+## Structure (story-led, text-driven)
 
-Voice rules:
+The deck is narrative journalism in slides. There is no per-slide scaffolding — no kicker, no headline, no hero stat, no speaker note, no design note. Each slide is one flowing paragraph of prose (roughly 60–90 words), and the story carries the momentum.
+
+- Slide count: tight — usually 7–8. The essay holds the depth; the deck holds the pull.
+- Cover slide: a full-sentence headline with a turn in it, plus a two-line subhead that states the central tension flatly. Curiosity, never clickbait. (Reference shape: "India's rich are discovering lawsuits can be an asset class. The regulator, not yet.")
+- Opening story slide: lead with a concrete moment — a date, a decision, a place, an institution in action. Never invent a named person or a quote; anchor on real actors and events from the essay.
+- Then: scale/context → the mechanism (how it actually works) → the numbers that prove it.
+- The turn: one sentence, alone on its slide. The fact or realization the whole story pivots on.
+- Final slide: the open question the essay takes up, plus a single plain pointer to the full piece on Substack ("link in bio" or equivalent). The pointer previews what the essay adds — never a bare "read more."
+
+## Voice rules
 
 Lead with the concrete, follow with the abstract. "Indonesia cut its quota 30%" before "states now set volume."
-Every slide should have one signal sentence — a line that could be screenshot-quoted on its own. Short. Declarative. Often the headline.
-Numbers carry the argument. Specific, sourced inline (J.P. Morgan, IEA, etc.), never rounded into vagueness. If a slide has no number, it has a named mechanism instead (a permit, a quota, a tariff, a law).
-Use em dashes for pivots. Use italics sparingly — one conceptual word per slide, max — to mark the idea the sentence turns on.
-Cut every transitional phrase ("Furthermore," "It's worth noting," "In today's world"). Slides are discontinuous; the reader supplies the connective tissue.
+Numbers carry the story. Specific, sourced inline, never rounded into vagueness. If a slide has no number, it has a named mechanism instead (a permit, a quota, a tariff, a law).
+Write like a person: no binary contrasts ("not X, it's Y"), no dramatic one-line fragments for effect, no rhetorical setups, no pull-quote-bait lines. The story is the interesting thing.
+No em dashes anywhere in slide copy. No emojis. No exclamation marks.
+Cut every transitional phrase ("Furthermore," "It's worth noting"). Slides are discontinuous; the reader supplies the connective tissue.
 No adjectives where a number will do. No massive, huge, explosive, game-changing.
-One pivot slide in the middle should name the thesis explicitly, often in the form "This isn't X. It's Y."
-Vary slide weight: dense evidence slides earn a sparse one-line slide next to them. Rhythm matters.
-Forbidden: rhetorical questions mid-deck, "imagine if…", "the future of X," exclamation marks, emoji, hype openers ("You won't believe…"), engagement-bait ("Agree? 👇").
+Vary paragraph weight: a dense evidence slide earns a shorter one after it. Rhythm matters.
+Forbidden: rhetorical questions mid-deck, "imagine if…", "the future of X," hype openers, engagement-bait, and any buy/sell framing, price target, urgency, or return promise (SEBI RIA compliance).
 
-For each slide, return:
-- kicker
-- headline
-- body
-- hero stat or quote (with source)
-- speaker note (one sentence on what this slide is doing in the argument)
+## Output format
 
-Last slide: the open question the essay leaves hanging, plus one CTA to read the full piece on Substack.
+For each slide: the slide number and the prose paragraph. The cover slide gets the headline sentence plus the subhead. That is all — no production metadata in the draft.
+
+Last slide (with companion essay): the essay's open question plus the single Substack pointer.
 
 ## Correction mode
 
