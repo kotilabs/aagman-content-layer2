@@ -1,7 +1,5 @@
 Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advice — no buy/sell recommendation.
 
-Educational content from Koti Labs (SEBI RIA INA000021951). Not investment advice — no buy/sell recommendation.
-
 # India's Trade Deficit Blew Out by $17 Billion. The Headline Says Nothing Happened.
 
 ## A $3.1 billion current account print looks like calm; the composition underneath it is a single export engine and a central bank renting out its balance sheet.
