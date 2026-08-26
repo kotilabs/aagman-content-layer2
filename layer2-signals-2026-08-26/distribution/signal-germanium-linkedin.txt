@@ -1,0 +1,17 @@
+China has been squeezing Taiwan's chip supply chain since 2025. Nothing was ever banned.
+
+As Nikkei Asia first reported on August 20, customs clearance for Taiwan-bound germanium and quartz shipments has simply been getting slower. Suppliers on the mainland have been summoned and questioned about their customers. Optical manufacturers report industrywide lead-time extensions. One chip equipment executive says quartz shortages have stretched his company's lead time by months.
+
+The mechanism is a two-dial system. Every gallium and germanium export has required a license since August 2023, and dual-use shipments to the US have been generally denied since December 2024. Formal denial is the first dial. Clearance speed is the second: deniable, reversible, and nearly impossible to litigate.
+
+The price data shows where the squeeze actually lives. Chinese domestic germanium fell 9.2 percent in August to $3,104 a kilo, giving back most of July's spike. American warehouse germanium held at $6,350. The Western premium widened to 104.6 percent. The constraint is physical availability outside China, not the headline price.
+
+What the evidence does not show is a wafer fab cutting output. The loudest version of that claim came from a trading desk with a disclosed short position in TSMC. The verified record stops at lead times for optics, equipment, and aerospace magnets.
+
+Who bears the cost: supply chains with no alternative source and a three-year wait for domestic capacity.
+
+The open question: does Taiwan's Q3 import data convert the delay story into a volume story, and does any fab disclose its materials-inventory coverage?
+
+The full research note, with the evidence boundary drawn explicitly, is in the first comment.
+
+#semiconductors #supplychain #geopolitics

@@ -1,0 +1,15 @@
+us total public debt crossed *$40 trillion* on august 24, up about *$970bn* since january 1, over *$4bn a day*. the milestone is not the story. the bill is.
+
+the numbers:
+- debt held by the public: *$32.27tn*, or *99.4%* of q2 gdp. the 100% crossing is close, not confirmed
+- net interest: *$1,247bn* annual rate in q2, a record
+- that is *16.1%* of all federal outlays, one dollar in six
+- and *38.2%* of receipts, nearly 40 cents of every revenue dollar
+- interest now exceeds the defense budget: *$1,247bn* vs *$1,198bn*
+
+why it compounds: maturing 2020-21 coupons get refinanced at 3.31-3.76%, so the interest line rises even when deficits do not.
+
+takeaway: the debt is a stock, the deficit is a flow, the interest is the bill. only the bill touches the budget, and it is at a record.
+
+the full research note adds the 1946 and early-1990s comparisons, and why the consumer-collapse claim fails the verified data.
+https://github.com/kotilabs/aagman-content-layer2/blob/main/layer2-signals-2026-08-26/research/signal-us-fiscal-macro-risk.md

@@ -1,0 +1,15 @@
+india's april-june current account deficit came in at *$3.1bn*, nearly flat to a year ago. the goods trade deficit widened by *$16.8bn* to *$85.7bn*. that gap is the story.
+
+the numbers:
+- net services exports: *+$52.2bn*, covering *61%* of the goods deficit
+- remittances: *+$41.4bn*, up *34%* in a year
+- services plus remittances covered *109%* of the goods hole
+- capital account: *-$5.0bn* as foreign investors pulled *$9.6bn*
+- overall balance of payments: *-$8.1bn*, drawn from reserves
+
+why it holds: the rbi's june swap window absorbed the full hedging cost on nri dollar deposits. *$72.8bn* arrived in eleven weeks; the window closed a month early. those deposits come due between 2029 and 2031.
+
+takeaway: the headline deficit is the residual of one export sector, one remittance spike, and a central bank renting out its balance sheet.
+
+the full piece adds what doesn't fit here: why 2013 misleads as a comparison, and the three prints that settle which reading is right.
+https://github.com/kotilabs/aagman-content-layer2/blob/main/layer2-signals-2026-08-26/final/signal-q1-fy27-current-account-deficit-contained-at-3-1bn-services-exports-blog.md
